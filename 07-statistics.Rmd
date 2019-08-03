@@ -1,0 +1,19 @@
+# Mineração e estatísticas básicas {#stat}
+
+EM CONSTRUÇÃO...
+
+## Análise de frequência
+
+## Nuvem de palavras
+
+## tf-idf
+
+## Rede de n-grams
+
+## Correlação pareada
+
+## Diversidade lexical
+
+## Similaridade entre documentos/termos
+
+## KEYNESS: Análise de Frequência Relativa

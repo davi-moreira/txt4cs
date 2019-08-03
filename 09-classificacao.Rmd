@@ -1,0 +1,11 @@
+# Classificação {#classificacao}
+
+EM CONSTRUÇÃO...
+
+## Método de dicionário: Análise de sentimento
+
+## Naive Bayes
+
+## LDA: Latent Dirichlet Allocation 
+
+## STM: Structed Topic Model

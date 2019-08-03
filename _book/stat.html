@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 7 Mineração e estatísticas básicas | Text as Data para Ciências Sociais</title>
+  <meta name="description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 7 Mineração e estatísticas básicas | Text as Data para Ciências Sociais" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 7 Mineração e estatísticas básicas | Text as Data para Ciências Sociais" />
+  
+  <meta name="twitter:description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
+  
+
+<meta name="author" content="Davi Moreira" />
+
+
+<meta name="date" content="2019-08-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="processamento.html">
+<link rel="next" href="scalling.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Text as Data para Ciências Sociais</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i>Objetivo</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#sobre-o-autororganizador"><i class="fa fa-check"></i>Sobre o autor/organizador</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licenca"><i class="fa fa-check"></i>Licença</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="tada.html"><a href="tada.html"><i class="fa fa-check"></i><b>2</b> Text as data: o texto como dado</a><ul>
+<li class="chapter" data-level="2.1" data-path="tada.html"><a href="tada.html#quadro-geral-de-metodologias"><i class="fa fa-check"></i><b>2.1</b> Quadro geral de metodologias</a></li>
+<li class="chapter" data-level="2.2" data-path="tada.html"><a href="tada.html#o-processo-de-analise-do-texto-como-dado"><i class="fa fa-check"></i><b>2.2</b> O processo de análise do texto como dado</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="regex.html"><a href="regex.html"><i class="fa fa-check"></i><b>3</b> R e o Processamento de Linguagem Natural</a><ul>
+<li class="chapter" data-level="3.1" data-path="regex.html"><a href="regex.html#encoding---codificacao-de-caracteres"><i class="fa fa-check"></i><b>3.1</b> Encoding - Codificação de caracteres</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="stringR.html"><a href="stringR.html"><i class="fa fa-check"></i><b>4</b> Strings no <code>R</code></a><ul>
+<li class="chapter" data-level="4.1" data-path="stringR.html"><a href="stringR.html#strings"><i class="fa fa-check"></i><b>4.1</b> Strings</a></li>
+<li class="chapter" data-level="4.2" data-path="stringR.html"><a href="stringR.html#o-pacote-stringr"><i class="fa fa-check"></i><b>4.2</b> O pacote <code>stringr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="scrape.html"><a href="scrape.html"><i class="fa fa-check"></i><b>5</b> Obtenção de conteúdo</a><ul>
+<li class="chapter" data-level="5.1" data-path="scrape.html"><a href="scrape.html#webscraping"><i class="fa fa-check"></i><b>5.1</b> Webscraping</a></li>
+<li class="chapter" data-level="5.2" data-path="scrape.html"><a href="scrape.html#arquvos-.pdf"><i class="fa fa-check"></i><b>5.2</b> Arquvos <code>.pdf</code></a></li>
+<li class="chapter" data-level="5.3" data-path="scrape.html"><a href="scrape.html#twitter"><i class="fa fa-check"></i><b>5.3</b> Twitter</a></li>
+<li class="chapter" data-level="5.4" data-path="scrape.html"><a href="scrape.html#audio-transcricao"><i class="fa fa-check"></i><b>5.4</b> Áudio Transcrição</a></li>
+<li class="chapter" data-level="5.5" data-path="scrape.html"><a href="scrape.html#imagens"><i class="fa fa-check"></i><b>5.5</b> Imagens</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="processamento.html"><a href="processamento.html"><i class="fa fa-check"></i><b>6</b> Processamento dos dados</a><ul>
+<li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.1</b> Tokens</a></li>
+<li class="chapter" data-level="6.2" data-path="processamento.html"><a href="processamento.html#corpus"><i class="fa fa-check"></i><b>6.2</b> Corpus</a></li>
+<li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.3</b> Tokens e Corpus</a></li>
+<li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.4</b> DFM: Matriz de documentos e termos</a></li>
+<li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a></li>
+<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrencia-de-termos"><i class="fa fa-check"></i><b>6.6</b> FCM: Matriz de co-ocorrência de termos</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="stat.html"><a href="stat.html"><i class="fa fa-check"></i><b>7</b> Mineração e estatísticas básicas</a><ul>
+<li class="chapter" data-level="7.1" data-path="stat.html"><a href="stat.html#analise-de-frequencia"><i class="fa fa-check"></i><b>7.1</b> Análise de frequência</a></li>
+<li class="chapter" data-level="7.2" data-path="stat.html"><a href="stat.html#nuvem-de-palavras"><i class="fa fa-check"></i><b>7.2</b> Nuvem de palavras</a></li>
+<li class="chapter" data-level="7.3" data-path="stat.html"><a href="stat.html#tf-idf"><i class="fa fa-check"></i><b>7.3</b> tf-idf</a></li>
+<li class="chapter" data-level="7.4" data-path="stat.html"><a href="stat.html#rede-de-n-grams"><i class="fa fa-check"></i><b>7.4</b> Rede de n-grams</a></li>
+<li class="chapter" data-level="7.5" data-path="stat.html"><a href="stat.html#correlacao-pareada"><i class="fa fa-check"></i><b>7.5</b> Correlação pareada</a></li>
+<li class="chapter" data-level="7.6" data-path="stat.html"><a href="stat.html#diversidade-lexical"><i class="fa fa-check"></i><b>7.6</b> Diversidade lexical</a></li>
+<li class="chapter" data-level="7.7" data-path="stat.html"><a href="stat.html#similaridade-entre-documentostermos"><i class="fa fa-check"></i><b>7.7</b> Similaridade entre documentos/termos</a></li>
+<li class="chapter" data-level="7.8" data-path="stat.html"><a href="stat.html#keyness-analise-de-frequencia-relativa"><i class="fa fa-check"></i><b>7.8</b> KEYNESS: Análise de Frequência Relativa</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="scalling.html"><a href="scalling.html"><i class="fa fa-check"></i><b>8</b> Escalonamento</a><ul>
+<li class="chapter" data-level="8.1" data-path="scalling.html"><a href="scalling.html#wordscore"><i class="fa fa-check"></i><b>8.1</b> Wordscore</a></li>
+<li class="chapter" data-level="8.2" data-path="scalling.html"><a href="scalling.html#wordfish"><i class="fa fa-check"></i><b>8.2</b> Wordfish</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="classificacao.html"><a href="classificacao.html"><i class="fa fa-check"></i><b>9</b> Classificação</a><ul>
+<li class="chapter" data-level="9.1" data-path="classificacao.html"><a href="classificacao.html#metodo-de-dicionario-analise-de-sentimento"><i class="fa fa-check"></i><b>9.1</b> Método de dicionário: Análise de sentimento</a></li>
+<li class="chapter" data-level="9.2" data-path="classificacao.html"><a href="classificacao.html#naive-bayes"><i class="fa fa-check"></i><b>9.2</b> Naive Bayes</a></li>
+<li class="chapter" data-level="9.3" data-path="classificacao.html"><a href="classificacao.html#lda-latent-dirichlet-allocation"><i class="fa fa-check"></i><b>9.3</b> LDA: Latent Dirichlet Allocation</a></li>
+<li class="chapter" data-level="9.4" data-path="classificacao.html"><a href="classificacao.html#stm-structed-topic-model"><i class="fa fa-check"></i><b>9.4</b> STM: Structed Topic Model</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><em>Text as Data</em> para Ciências Sociais</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="stat" class="section level1">
+<h1><span class="header-section-number">Capítulo 7</span> Mineração e estatísticas básicas</h1>
+<p>EM CONSTRUÇÃO…</p>
+<div id="analise-de-frequencia" class="section level2">
+<h2><span class="header-section-number">7.1</span> Análise de frequência</h2>
+</div>
+<div id="nuvem-de-palavras" class="section level2">
+<h2><span class="header-section-number">7.2</span> Nuvem de palavras</h2>
+</div>
+<div id="tf-idf" class="section level2">
+<h2><span class="header-section-number">7.3</span> tf-idf</h2>
+</div>
+<div id="rede-de-n-grams" class="section level2">
+<h2><span class="header-section-number">7.4</span> Rede de n-grams</h2>
+</div>
+<div id="correlacao-pareada" class="section level2">
+<h2><span class="header-section-number">7.5</span> Correlação pareada</h2>
+</div>
+<div id="diversidade-lexical" class="section level2">
+<h2><span class="header-section-number">7.6</span> Diversidade lexical</h2>
+</div>
+<div id="similaridade-entre-documentostermos" class="section level2">
+<h2><span class="header-section-number">7.7</span> Similaridade entre documentos/termos</h2>
+</div>
+<div id="keyness-analise-de-frequencia-relativa" class="section level2">
+<h2><span class="header-section-number">7.8</span> KEYNESS: Análise de Frequência Relativa</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="processamento.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="scalling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["txt4cs.gitbook", "txt4cs.pdf", "txt4cs.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

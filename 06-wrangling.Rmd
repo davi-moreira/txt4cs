@@ -1,0 +1,15 @@
+# Processamento dos dados {#processamento}
+
+EM CONSTRUÇÃO...
+
+## Tokens
+
+## Corpus
+
+## Tokens e Corpus
+
+## DFM: Matriz de documentos e termos
+
+## Stemming
+
+## FCM: Matriz de co-ocorrência de termos

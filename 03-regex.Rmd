@@ -1,0 +1,5 @@
+# R e o Processamento de Linguagem Natural {#regex}
+
+EM CONSTRUÇÃO...
+
+## Encoding - Codificação de caracteres

@@ -1,0 +1,13 @@
+# Obtenção de conteúdo {#scrape}
+
+EM CONSTRUÇÃO...
+
+## Webscraping
+
+## Arquvos `.pdf`
+
+## Twitter
+
+## Áudio Transcrição
+
+## Imagens

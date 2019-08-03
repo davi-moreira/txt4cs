@@ -1,0 +1,8 @@
+# Strings no `R` {#stringR}
+
+EM CONSTRUÇÃO...
+
+## Strings
+
+
+## O pacote `stringr` 

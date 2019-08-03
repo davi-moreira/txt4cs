@@ -1,0 +1,53 @@
+--- 
+knit: 'bookdown::publish_book(render = "local")'
+title: "_Text as Data_ para Ciências Sociais"
+subtitle: 'guia prático com aplicações'
+author: "Davi Moreira"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [biblioteca.bib, book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Compilação de métodos e técnicas para análise automatizada de conteúdo"
+urlcolor: blue  
+---
+
+# Prefácio {-}
+```{r fig.width=2, fig.height=1.5, fig.align="center", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+
+img <- readPNG("./images/txt4cs.png")
+grid.raster(img)
+```
+
+A partir da produção de material para o curso _Text as Data_: análise automatizada de conteúdo que ministrei no [MQ-UFMG](http://www.fafich.ufmg.br/~mq/) em 2019 e no artigo que publiquei em coautoria com [Maurício Izumi](http://lattes.cnpq.br/2546701843557096) (2018), esse livro tem como propósito difundir nas ciências sociais e humanidades técnicas e métodos de análise automatizada de conteúdo usando a linguagem `R`. 
+
+## Objetivo {-}
+
+O principal objetivo do livro é ser tutorial prático de uso e aplicação de técnicas e métodos de análise automatizada de conteúdo na língua portuguesa através da linguagem `R` .
+
+## Sobre o autor/organizador {-}
+
+Davi Moreira é Professor Visitante do departamento de Ciência Política da Universidade Federal de Pernambuco (UFPE). Ph.D. em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atuo nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
+
+Para mais informações:
+
+- [Página pessoal](https://davimoreira.com/). 
+
+- [Currículo Lattes](http://lattes.cnpq.br/7406586493977047).
+
+- [Google Scholar](https://scholar.google.com.br/citations?hl=pt-BR&user=dS9bbdMAAAAJ).
+
+## Licença {-}
+
+Este livro é distribuído de acordo com a licença  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License ([<small>CC BY-NC-SA 4.0</small>](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
+
+## Agradecimentos {-}
+
+Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos Manoel Galdino, Rafael Magalhães, Lincon Ribeiro e Umberto Mignozetti pelo apoio e incentivo ao longo de toda minha trajetória como cientista. 
+
+Este livro é escrito com o uso do pacote **bookdown** [@R-bookdown], através do  `R Markdown` e **knitr** [@xie2015].
+

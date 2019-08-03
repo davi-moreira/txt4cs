@@ -1,0 +1,5 @@
+book_filename: "txt4cs"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Capítulo "
