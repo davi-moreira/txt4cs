@@ -24,7 +24,7 @@
 <meta name="author" content="Davi Moreira" />
 
 
-<meta name="date" content="2019-08-03" />
+<meta name="date" content="2019-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,6 +49,68 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -72,7 +134,14 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licenca"><i class="fa fa-check"></i>Licença</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#o-r-e-o-rstudio"><i class="fa fa-check"></i><b>1.1</b> O <code>R</code> e o <code>RStudio</code></a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#o-pacote-txt4cs-e-outros"><i class="fa fa-check"></i><b>1.2</b> O Pacote <code>txt4cs</code> e outros</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#material-de-apoio"><i class="fa fa-check"></i><b>1.3</b> Material de apoio</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#referencias-para-processamento-de-sequencias-de-caracteres-com-o-r"><i class="fa fa-check"></i><b>1.3.1</b> Referências para processamento de sequências de caracteres com o <code>R</code></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#referencias-em-analise-de-conteudo-com-o-r"><i class="fa fa-check"></i><b>1.3.2</b> Referências em análise de conteúdo com o <code>R</code>:</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="tada.html"><a href="tada.html"><i class="fa fa-check"></i><b>2</b> Text as data: o texto como dado</a><ul>
 <li class="chapter" data-level="2.1" data-path="tada.html"><a href="tada.html#quadro-geral-de-metodologias"><i class="fa fa-check"></i><b>2.1</b> Quadro geral de metodologias</a></li>
 <li class="chapter" data-level="2.2" data-path="tada.html"><a href="tada.html#o-processo-de-analise-do-texto-como-dado"><i class="fa fa-check"></i><b>2.2</b> O processo de análise do texto como dado</a></li>
@@ -142,8 +211,73 @@
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Capítulo 1</span> Introdução</h1>
-<p>EM CONSTRUÇÃO…</p>
+<div id="o-r-e-o-rstudio" class="section level2">
+<h2><span class="header-section-number">1.1</span> O <code>R</code> e o <code>RStudio</code></h2>
+<p>Com o objetivo de ser um tutorial prático de uso e aplicação de técnicas e métodos de análise automatizada de conteúdo para ciências sociais e humanidades este livro fará uso da linguagem <code>R</code>.</p>
+<p><code>R</code> é uma linguagem de programação e também um ambiente de desenvolvimento integrado
+para cálculos estatísticos e gráficos. Ele pode ser facilmente instalado através do link: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>.</p>
+<p>Para auxiliar no desenvolvimento das análises, este livro incentiva o uso do <a href="https://www.rstudio.com/">RStudio</a>. Trata-se de um software livre de ambiente de desenvolvimento integrado (IDE) para o <code>R</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>De forma ilustrativa, o <code>R</code> e o <code>RStudio</code> operam como a figura abaixo:</p>
+<p><img src="txt4cs_files/figure-html/fig:rrstudio-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Com o <code>RStudio</code>, você estará diante do seguinte dashboard:</p>
+<p><img src="txt4cs_files/figure-html/fig:rstudio-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Se está começando a usar o <code>R</code> para análise de dados, recomendo o seguinte material:</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://r4ds.had.co.nz/">R for Data Science</a>;</p></li>
+<li><p><a href="https://moderndive.com/index.html">Modern Dive - Statistical Inference via Data Science</a>;</p></li>
+<li><p><a href="http://material.curso-r.com/rbase/">Curso R</a>;</p></li>
+<li><p><a href="http://electionsbr.com/livro/">Usando R: Um Guia para Cientistas Políticos</a>;</p></li>
+</ol>
+<p>Em caso de dúvidas, use e abuse de fóruns como o <a href="https://stackoverflow.com/">Stackoverflow</a>. Para aprimorar seu código e otimizar o desenvolvimento de suas análises, os guias de estilo do <a href="https://google.github.io/styleguide/Rguide.xml">Google</a> e do <a href="http://adv-r.had.co.nz/Style.html">RStudio</a> são ótimas referências.</p>
+</div>
+<div id="o-pacote-txt4cs-e-outros" class="section level2">
+<h2><span class="header-section-number">1.2</span> O Pacote <code>txt4cs</code> e outros</h2>
+<p><img src="txt4cs_files/figure-html/unnamed-chunk-1-1.png" width="192" style="display: block; margin: auto;" /></p>
+<p>Este livro conta com o pacote <code>txt4cs</code>. Ele traz consigo funções específicas e bases de dados utilizadas nos exemplos apresentados. Um dos acervos de exemplo se refere ao conteúdo proferido em 17 de abril de 2016, dia de aprovação do impeachment da então Presidenta Dilma Rousseff na Câmara dos Deputados.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-2-1.png" alt="Fonte: Empresa Brasil de Comunicação - EBC" width="672" />
+<p class="caption">
+Figure 1.1: Fonte: Empresa Brasil de Comunicação - EBC
+</p>
+</div>
+<p>Para instalação, use os comandos abaixo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span>(<span class="kw">require</span>(devtools) <span class="op">==</span><span class="st"> </span>F) <span class="kw">install.packages</span>(<span class="st">&#39;devtools&#39;</span>); <span class="kw">require</span>(devtools);</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;davi-moreira/txt4cs-pkg&quot;</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">require</span>(txt4cs)</a></code></pre></div>
+<p>Ademais, os seguintes pacotes são essenciais para o desenvolvimento da análise automatizada de conteúdo com o <code>R</code>. Conforme forem necessários, serão apresentados no livro.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">install.packages</span>(<span class="st">&quot;quanteda&quot;</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">install.packages</span>(<span class="st">&quot;readtext&quot;</span>)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw">install.packages</span>(<span class="st">&quot;tm&quot;</span>)</a></code></pre></div>
+</div>
+<div id="material-de-apoio" class="section level2">
+<h2><span class="header-section-number">1.3</span> Material de apoio</h2>
+<p>Este livro não é feito do zero e resulta de inspiração em diferentes fontes. As principais são:</p>
+<div id="referencias-para-processamento-de-sequencias-de-caracteres-com-o-r" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Referências para processamento de sequências de caracteres com o <code>R</code></h3>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://www.gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf">Handling and Processing Strings in R</a> e <a href="https://www.gastonsanchez.com/r4strings/">Handling Strings with R</a></p></li>
+<li><p><a href="http://en.wikibooks.org/wiki/R_Programming/Text_Processing">R Wikibook: Programming and Text Processing</a></p></li>
+<li><p><a href="https://journal.r-project.org/archive/2010-2/RJournal_2010-2_Wickham.pdf">stringr: modern, consistent string
+processing</a></p></li>
+</ol>
+</div>
+<div id="referencias-em-analise-de-conteudo-com-o-r" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Referências em análise de conteúdo com o <code>R</code>:</h3>
+<ol style="list-style-type: decimal">
+<li><a href="https://tutorials.quanteda.io/">Quanteta Tutorials</a></li>
+<li><a href="https://www.tidytextmining.com/">Text Mining with R</a></li>
+</ol>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>IDE, do inglês <em>Integrated Development Environment</em>, é um programa de computador que reúne características e ferramentas de apoio ao desenvolvimento de software com o objetivo de agilizar este processo.<a href="intro.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

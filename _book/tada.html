@@ -24,7 +24,7 @@
 <meta name="author" content="Davi Moreira" />
 
 
-<meta name="date" content="2019-08-03" />
+<meta name="date" content="2019-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -72,10 +72,19 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licenca"><i class="fa fa-check"></i>Licença</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#o-r-e-o-rstudio"><i class="fa fa-check"></i><b>1.1</b> O <code>R</code> e o <code>RStudio</code></a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#o-pacote-txt4cs-e-outros"><i class="fa fa-check"></i><b>1.2</b> O Pacote <code>txt4cs</code> e outros</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#material-de-apoio"><i class="fa fa-check"></i><b>1.3</b> Material de apoio</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#referencias-para-processamento-de-sequencias-de-caracteres-com-o-r"><i class="fa fa-check"></i><b>1.3.1</b> Referências para processamento de sequências de caracteres com o <code>R</code></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#referencias-em-analise-de-conteudo-com-o-r"><i class="fa fa-check"></i><b>1.3.2</b> Referências em análise de conteúdo com o <code>R</code>:</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="tada.html"><a href="tada.html"><i class="fa fa-check"></i><b>2</b> Text as data: o texto como dado</a><ul>
-<li class="chapter" data-level="2.1" data-path="tada.html"><a href="tada.html#quadro-geral-de-metodologias"><i class="fa fa-check"></i><b>2.1</b> Quadro geral de metodologias</a></li>
-<li class="chapter" data-level="2.2" data-path="tada.html"><a href="tada.html#o-processo-de-analise-do-texto-como-dado"><i class="fa fa-check"></i><b>2.2</b> O processo de análise do texto como dado</a></li>
+<li class="chapter" data-level="2.1" data-path="tada.html"><a href="tada.html#panorama-da-area"><i class="fa fa-check"></i><b>2.1</b> Panorama da área</a></li>
+<li class="chapter" data-level="2.2" data-path="tada.html"><a href="tada.html#oportunidades"><i class="fa fa-check"></i><b>2.2</b> Oportunidades</a></li>
+<li class="chapter" data-level="2.3" data-path="tada.html"><a href="tada.html#quadro-geral-de-metodologias"><i class="fa fa-check"></i><b>2.3</b> Quadro geral de metodologias</a></li>
+<li class="chapter" data-level="2.4" data-path="tada.html"><a href="tada.html#o-processo-de-analise-do-texto-como-dado"><i class="fa fa-check"></i><b>2.4</b> O processo de análise do texto como dado</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regex.html"><a href="regex.html"><i class="fa fa-check"></i><b>3</b> R e o Processamento de Linguagem Natural</a><ul>
 <li class="chapter" data-level="3.1" data-path="regex.html"><a href="regex.html#encoding---codificacao-de-caracteres"><i class="fa fa-check"></i><b>3.1</b> Encoding - Codificação de caracteres</a></li>
@@ -142,13 +151,109 @@
             <section class="normal" id="section-">
 <div id="tada" class="section level1">
 <h1><span class="header-section-number">Capítulo 2</span> Text as data: o texto como dado</h1>
-<p>EM CONSTRUÇÃO…</p>
+<div id="panorama-da-area" class="section level2">
+<h2><span class="header-section-number">2.1</span> Panorama da área</h2>
+<p>A análise de conteúdo possui grande relevância para as ciências sociais. Contudo, sua abordagem manual sempre limitou o volume de documentos sob análise. São raros os projetos como o <a href="https://manifestoproject.wzb.eu/"><em>Manifesto Research Group</em></a> que, desde os anos 1970, analisa a ênfase temática de manifestos partidários ou o <a href="http://www.comparativeagendas.net/"><em>Comparative Agendas Project</em></a>, que coleta e analisa dados sobre agendas de políticas públicas em diferentes países.</p>
+<p>O avanço tecnológico e científico permitiu que técnicas automatizadas de análise do conteúdo fossem desenvolvidas e aplicadas de forma simples a grandes acervos. Este avanço não foi realizado sem a contribuição das ciências sociais. Só a <a href="https://www.cambridge.org/core/journals/political-analysis"><em>Political Analysis</em></a>, principal revista de métodos em ciência política, possui dois <em>special issues</em> dedicados ao tema (<a href="https://www.cambridge.org/core/journals/political-analysis/article/introduction-to-the-special-issue-the-statistical-analysis-of-political-text/E3D4575845083A506B2177F3F1152100"><em>Special Issue</em></a>, <a href="https://www.cambridge.org/core/journals/political-analysis/issue/FF88EF06ABD5D421202E8284F67DE2F7"><em>Virtual Issue</em></a>).</p>
+</div>
+<div id="oportunidades" class="section level2">
+<h2><span class="header-section-number">2.2</span> Oportunidades</h2>
+<p>Com o desenvolvimento de métodos para análise automatizada de conteúdo, hoje o leque de oportunidades as ciências sociais é diverso e promissor. Agora, é possível:</p>
+<ul>
+<li><strong>Analisar grandes acervos</strong> de forma ágil e barata, otimizando o trabalho do pesquisador.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-1-1.png" alt="Biblioteca Florestan Fernandes - FFLCH - USP" width="576" />
+<p class="caption">
+Figure 2.1: Biblioteca Florestan Fernandes - FFLCH - USP
+</p>
+</div>
+<ul>
+<li><strong>Pesquisar novos acervos</strong> para inferir o conteúdo presente e assim guiar pesquisas através de atalhos informacionais.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-2-1.png" alt="Acervo da CIA: &lt;https://www.cia.gov/library/readingroom/advanced-search-view&gt;" width="576" />
+<p class="caption">
+Figure 2.2: Acervo da CIA: <a href="https://www.cia.gov/library/readingroom/advanced-search-view" class="uri">https://www.cia.gov/library/readingroom/advanced-search-view</a>
+</p>
+</div>
+<ul>
+<li><strong>Analisar processos políticos contemporâneos.</strong></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-3-1.png" alt="Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante seu voto no processo de impeachment da então Presidenta da República Dilma Rousseff em 2016." width="576" />
+<p class="caption">
+Figure 2.3: Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante seu voto no processo de impeachment da então Presidenta da República Dilma Rousseff em 2016.
+</p>
+</div>
+<ul>
+<li><strong>Redes sociais.</strong></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-4-1.png" alt="Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019." width="576" />
+<p class="caption">
+Figure 2.4: Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019.
+</p>
+</div>
+<ul>
+<li><strong>Fake news!</strong></li>
+</ul>
+<p><img src="txt4cs_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
+<ul>
+<li><strong>Olhar o passado com as lentes do presente</strong>. Questões que antes não podiam ser enunciadas agora podem ser respondidas! Processos políticos conhecidos podem ganhar novas interpretações através do uso de métodos e técnicas contemporâneas de análise automatizada de conteúdo.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-6-1.png" alt="Liberdade Guiando o Povo - Eugène Delacroix - 1830" width="576" />
+<p class="caption">
+Figure 2.5: Liberdade Guiando o Povo - Eugène Delacroix - 1830
+</p>
+</div>
+<ul>
+<li><strong>Contribuir socialmente:</strong> <a href="http://retorica.labhackercd.leg.br/">Retórica Parlamentar</a> - Projeto experimental desenvolvido no primeiro Hackathon da Câmara dos Deputados em 2013 por Davi Moreira, Manoel Galdino e Luis Carli. Posteriormente incubado pelo Laboratório Hacker da Câmara dos Deputados.</li>
+</ul>
+<p><img src="txt4cs_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
 <div id="quadro-geral-de-metodologias" class="section level2">
-<h2><span class="header-section-number">2.1</span> Quadro geral de metodologias</h2>
+<h2><span class="header-section-number">2.3</span> Quadro geral de metodologias</h2>
+<p>Dada a complexidade da linguagem, o processo de geração, produção e seleção de dados que resultam na comunicação humana é ainda um mistério para a ciência <span class="citation">(Izumi and Moreira <a href="#ref-izumi_o_2018">2018</a>; Grimmer and Stewart <a href="#ref-grimmer_text_2013">2013</a>)</span>. Logo, modelos estatísticos desenvolvidos falham na tarefa de prover um relato preciso do processo de geração de dados utilizados na produção de conteúdo e, principalmente, em seu significado.</p>
+<p>Os modelos de análise de conteúdo, portanto, não devem ser avaliados pelo quanto explicam do processo de geração dos dados. Transformar palavras em números não substitui a leitura cuidadosa e atenta de documentos. Reconhecendo que “métodos de análise automatizada de conteúdo são modelos incorretos de linguagem” <span class="citation">(Grimmer and Stewart <a href="#ref-grimmer_text_2013">2013</a>, 2)</span>, a performance de qualquer método automatizado não é garantida sem a consideração de ao menos quatro princípios:</p>
+<ol style="list-style-type: decimal">
+<li><p>Todos os modelos quantitativos de análise de conteúdo estão errados, mas alguns são úteis;</p></li>
+<li><p>Métodos quantitativos de análise de conteúdo amplificam a capacidade humana, mas não a substitui;</p></li>
+<li><p>Não há um método global para a análise automatizada de conteúdo;</p></li>
+<li><p>Validar, validar, validar.</p></li>
+</ol>
+<p>A escolha do modelo, da família de modelos ou de eventuais combinações a serem utilizadas é resultado dos objetivos almejados. Há uma variedade de modelos disponíveis e nenhum deles se sobrepõe aos demais.</p>
+<p>Além de estatísticas e outras informações que podem ser obtidas através da mineração do texto enquanto dados, nesse livro será dado foco aos métodods de escalonamento e classificação de conteúdo. Assim, como indicado pelo quadro de Grimmer e Stewart <span class="citation">(<a href="#ref-grimmer_text_2013">2013</a>)</span> métodos de análise supervisionada e não supervisionada serão abordados.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-8-1.png" alt="Quadro geral de metodologias para análise automatizada de conteúdo (Grimmer e Stewart, 2013)" width="768" />
+<p class="caption">
+Figure 2.6: Quadro geral de metodologias para análise automatizada de conteúdo (Grimmer e Stewart, 2013)
+</p>
+</div>
 </div>
 <div id="o-processo-de-analise-do-texto-como-dado" class="section level2">
-<h2><span class="header-section-number">2.2</span> O processo de análise do texto como dado</h2>
+<h2><span class="header-section-number">2.4</span> O processo de análise do texto como dado</h2>
+<p>O processo de trabalho para análise quantitativa de texto é muito similar a qualquer tipo de fluxo de trabalho para análise de dados em geral. Como indicado no livro <a href="https://www.tidytextmining.com/topicmodeling.html">Text Mining with R: a tidy approach</a> <span class="citation">(Silge and Robinson <a href="#ref-silge_text_2017">2017</a>)</span>, o seguinte fluxograma será adotado nesse livro:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-9-1.png" alt="Fonte: Text Mining with R" width="768" />
+<p class="caption">
+Figure 2.7: Fonte: Text Mining with R
+</p>
+</div>
 
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-grimmer_text_2013">
+<p>Grimmer, Justin, and Brandon M. Stewart. 2013. “Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts.” <em>Political Analysis</em>, January, mps028. <a href="https://doi.org/10.1093/pan/mps028">https://doi.org/10.1093/pan/mps028</a>.</p>
+</div>
+<div id="ref-izumi_o_2018">
+<p>Izumi, Mauricio Yoshida, and D. C. Moreira. 2018. “O Texto Como Dado: Desafios E Oportunidades Para as Ciências Sociais.” <em>REVISTA BRASILEIRA DE INFORMAÇÃO BIBLIOGRÁFICA EM CIÊNCIAS SOCIAIS - BIB</em> 2 (86): 138–74.</p>
+</div>
+<div id="ref-silge_text_2017">
+<p>Silge, Julia, and David Robinson. 2017. <em>Text Mining with R: A Tidy Approach</em>. Edição: 1. Beijing ; Boston: O’Reilly Media.</p>
 </div>
 </div>
             </section>

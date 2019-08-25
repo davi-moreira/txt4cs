@@ -23,7 +23,7 @@ img <- readPNG("./images/txt4cs.png")
 grid.raster(img)
 ```
 
-A partir da produção de material para o curso _Text as Data_: análise automatizada de conteúdo que ministrei no [MQ-UFMG](http://www.fafich.ufmg.br/~mq/) em 2019 e no artigo que publiquei em coautoria com [Maurício Izumi](http://lattes.cnpq.br/2546701843557096) (2018), esse livro tem como propósito difundir nas ciências sociais e humanidades técnicas e métodos de análise automatizada de conteúdo usando a linguagem `R`. 
+A partir da produção de material para o curso _Text as Data_: análise automatizada de conteúdo que ministrei no [MQ-UFMG](http://www.fafich.ufmg.br/~mq/) em 2019 e no artigo que publiquei em coautoria com [Maurício Izumi](http://lattes.cnpq.br/2546701843557096) [@izumi_o_2018], esse livro tem como propósito difundir nas ciências sociais e humanidades técnicas e métodos de análise automatizada de conteúdo usando a linguagem `R`. 
 
 ## Objetivo {-}
 

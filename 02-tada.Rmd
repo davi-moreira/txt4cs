@@ -1,7 +1,129 @@
 # Text as data: o texto como dado {#tada}
 
-EM CONSTRUÇÃO...
+## Panorama da área
+
+A análise de conteúdo possui grande relevância para as ciências sociais.  Contudo, sua abordagem manual sempre limitou o volume de documentos sob análise. São raros os projetos como o [*Manifesto Research Group*](https://manifestoproject.wzb.eu/) que, desde os anos 1970, analisa a ênfase temática de manifestos partidários ou o [*Comparative Agendas Project*](http://www.comparativeagendas.net/), que coleta e analisa dados sobre agendas de políticas públicas em diferentes países.
+
+O avanço tecnológico e científico permitiu que técnicas automatizadas de análise do conteúdo fossem desenvolvidas e aplicadas de forma simples a grandes acervos. Este avanço não foi realizado sem a contribuição das ciências sociais. Só a [*Political Analysis*](https://www.cambridge.org/core/journals/political-analysis), principal revista de métodos em ciência política, possui dois *special issues* dedicados ao tema ([*Special Issue*](https://www.cambridge.org/core/journals/political-analysis/article/introduction-to-the-special-issue-the-statistical-analysis-of-political-text/E3D4575845083A506B2177F3F1152100), [*Virtual Issue*](https://www.cambridge.org/core/journals/political-analysis/issue/FF88EF06ABD5D421202E8284F67DE2F7)).
+
+## Oportunidades
+
+Com o desenvolvimento de métodos para análise automatizada de conteúdo, hoje o leque de oportunidades as ciências sociais é diverso e promissor. Agora, é possível:
+
+- **Analisar grandes acervos** de forma ágil e barata, otimizando o trabalho do pesquisador. 
+
+```{r fig.width=6, fig.height=3, fig.align="center", fig.cap = "Biblioteca Florestan Fernandes - FFLCH - USP", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+img <- readJPEG("./images/livros.jpg")
+grid.raster(img)
+```
+
+- **Pesquisar novos acervos** para inferir o conteúdo presente e assim guiar pesquisas através de atalhos informacionais.
+
+```{r fig.width=6, fig.height=3, fig.align="center", fig.cap = "Acervo da CIA: <https://www.cia.gov/library/readingroom/advanced-search-view>", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+img <- readPNG("./images/cia_2.png")
+grid.raster(img)
+```
+
+- **Analisar processos políticos contemporâneos.**
+
+```{r fig.width=6, fig.height=3, fig.align="center", fig.cap = "Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante seu voto no processo de impeachment da então Presidenta da República Dilma Rousseff em 2016.", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+img <- readJPEG("./images/fabricio-arregalado.jpg")
+grid.raster(img)
+```
+
+- **Redes sociais.**
+
+```{r fig.width=6, fig.height=3, fig.align="center", fig.cap = "Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019.", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+img <- readPNG("./images/deputados-celulares.png")
+grid.raster(img)
+```
+
+- **Fake news!**
+
+```{r fig.width=4, fig.height=2, fig.align="center", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+
+img <- readPNG("./images/tweet_bolsonaro_cp.png")
+
+grid.raster(img)
+```
+
+- **Olhar o passado com as lentes do presente**. Questões que antes não podiam ser enunciadas agora podem ser respondidas! Processos políticos conhecidos podem ganhar novas interpretações através do uso de métodos e técnicas contemporâneas de análise automatizada de conteúdo.
+
+```{r fig.width=6, fig.height=3, fig.align="center", fig.cap = "Liberdade Guiando o Povo - Eugène Delacroix - 1830", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+
+img <- readJPEG("./images/rev_francesa.jpg")
+
+grid.raster(img)
+```
+
+- **Contribuir socialmente:** [Retórica Parlamentar](http://retorica.labhackercd.leg.br/) - Projeto experimental desenvolvido no primeiro Hackathon da Câmara dos Deputados em 2013 por Davi Moreira, Manoel Galdino e Luis Carli. Posteriormente incubado pelo Laboratório Hacker da Câmara dos Deputados.
+
+```{r fig.width=6, fig.height=3, fig.align="center", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+
+img <- readPNG("./images/retorica_parlamentar.png")
+
+grid.raster(img)
+```
 
 ## Quadro geral de metodologias
 
+Dada a complexidade da linguagem, o processo de geração, produção e seleção de dados que resultam na comunicação humana é ainda um mistério para a ciência [@izumi_o_2018; @grimmer_text_2013]. Logo, modelos estatísticos desenvolvidos falham na tarefa de prover um relato preciso do processo de geração de dados utilizados na produção de conteúdo e, principalmente, em seu significado.
+
+Os modelos de análise de conteúdo, portanto, não devem ser avaliados pelo quanto explicam do processo de geração dos dados. Transformar palavras em números não substitui a leitura cuidadosa e atenta de documentos. Reconhecendo que "métodos de análise automatizada de conteúdo são modelos incorretos de linguagem" [@grimmer_text_2013, p. 2], a performance de qualquer método automatizado não é garantida sem a consideração de ao menos quatro princípios:
+
+1. Todos os modelos quantitativos de análise de conteúdo estão errados, mas alguns são úteis;
+
+2. Métodos quantitativos de análise de conteúdo amplificam a capacidade humana, mas não a substitui;
+
+3. Não há um método global para a análise automatizada de conteúdo;
+
+4. Validar, validar, validar.
+
+A escolha do modelo, da família de modelos ou de eventuais combinações a serem utilizadas é resultado dos objetivos almejados. Há uma variedade de modelos disponíveis e nenhum deles se sobrepõe aos demais. 
+
+Além de estatísticas e outras informações que podem ser obtidas através da mineração do texto enquanto dados, nesse livro será dado foco aos métodods de escalonamento e classificação de conteúdo. Assim, como indicado pelo quadro de Grimmer e Stewart [-@grimmer_text_2013] métodos de análise supervisionada e não supervisionada serão abordados.
+
+```{r fig.width=8, fig.height=5, fig.align="center", fig.cap = "Quadro geral de metodologias para análise automatizada de conteúdo (Grimmer e Stewart, 2013)", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+
+img <- readPNG("./images/quadro_grimmer.png")
+grid.raster(img)
+
+```
+
 ## O processo de análise do texto como dado
+
+O processo de trabalho para análise quantitativa de texto é muito similar a qualquer tipo de fluxo de trabalho para análise de dados em geral. Como indicado no livro [Text Mining with R: a tidy approach](https://www.tidytextmining.com/topicmodeling.html) [@silge_text_2017], o seguinte fluxograma será adotado nesse livro:
+
+```{r fig.width=8, fig.height=5, fig.align="center", fig.cap = "Fonte: Text Mining with R", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+
+img <- readPNG("./images/tidyflow-ch-6.png")
+grid.raster(img)
+```
+

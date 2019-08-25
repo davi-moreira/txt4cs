@@ -1,4 +1,101 @@
 # Introdução {#intro}
 
-EM CONSTRUÇÃO...
+## O `R` e o `RStudio`
 
+Com o objetivo de ser um tutorial prático de uso e aplicação de técnicas e métodos de análise automatizada de conteúdo para ciências sociais e humanidades este livro fará uso da linguagem `R`.
+
+`R` é uma linguagem de programação e também um ambiente de desenvolvimento integrado 
+para cálculos estatísticos e gráficos. Ele pode ser facilmente instalado através do link: <https://cran.r-project.org/>. 
+
+Para auxiliar no desenvolvimento das análises, este livro incentiva o uso do [RStudio](https://www.rstudio.com/). Trata-se de um software livre de ambiente de desenvolvimento integrado (IDE) para o `R`^[IDE, do inglês *Integrated Development Environment*, é um programa de computador que reúne características e ferramentas de apoio ao desenvolvimento de software com o objetivo de agilizar este processo.]. 
+
+De forma ilustrativa, o `R` e o `RStudio` operam como a figura abaixo:
+
+```{r fig:rrstudio, fig.width=7, fig.height=2, fig.align="center", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+img <- readPNG("./images/r_rstudio_motor.png")
+grid.raster(img)
+```
+
+Com o `RStudio`, você estará diante do seguinte dashboard:
+
+```{r fig:rstudio, fig.width=7, fig.height=6, fig.align="center", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+img <- readJPEG("./images/1-tela-inicial.jpeg")
+ grid.raster(img)
+```
+
+Se está começando a usar o `R` para análise de dados, recomendo o seguinte material:
+
+1. [R for Data Science](https://r4ds.had.co.nz/);
+
+2. [Modern Dive - Statistical Inference via Data Science](https://moderndive.com/index.html);
+
+3. [Curso R](http://material.curso-r.com/rbase/);
+
+4. [Usando R: Um Guia para Cientistas Políticos](http://electionsbr.com/livro/);
+
+Em caso de dúvidas, use e abuse de fóruns como o [Stackoverflow](https://stackoverflow.com/). Para aprimorar seu código e otimizar o desenvolvimento de suas análises, os guias de estilo do [Google](https://google.github.io/styleguide/Rguide.xml) e do [RStudio](http://adv-r.had.co.nz/Style.html) são ótimas referências.
+
+## O Pacote `txt4cs` e outros
+
+```{r fig.width=2, fig.height=1.5, fig.align="center", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+
+img <- readPNG("./images/txt4cs.png")
+grid.raster(img)
+```
+
+Este livro conta com o pacote `txt4cs`. Ele traz consigo funções específicas e bases de dados utilizadas nos exemplos apresentados. Um dos acervos de exemplo se refere ao conteúdo proferido em 17 de abril de 2016, dia de aprovação do impeachment da então Presidenta Dilma Rousseff na Câmara dos Deputados.
+
+```{r fig.width=7, fig.height=4, fig.align="center", fig.cap = "Fonte: Empresa Brasil de Comunicação - EBC", echo=FALSE, message=FALSE, warning=F}
+if(require(png) == F) install.packages('png'); require(png);
+if(require(jpeg) == F) install.packages('jpeg'); require(jpeg);
+if(require(grid) == F) install.packages('grid'); require(grid);
+img <- readJPEG("./images/impeachment-dilma-ebc.jpg")
+ grid.raster(img)
+```
+
+Para instalação, use os comandos abaixo:
+
+```{r txt4cs:install, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
+
+if(require(devtools) == F) install.packages('devtools'); require(devtools);
+devtools::install_github("davi-moreira/txt4cs-pkg")
+require(txt4cs)
+
+```
+
+Ademais, os seguintes pacotes são essenciais para o desenvolvimento da análise automatizada de conteúdo com o `R`. Conforme forem necessários, serão apresentados no livro.
+
+```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
+install.packages("tidyverse")
+install.packages("stringr")
+install.packages("quanteda")
+install.packages("readtext")
+install.packages("tm")
+```
+
+## Material de apoio
+
+Este livro não é feito do zero e resulta de inspiração em diferentes fontes. As principais são:
+
+### Referências para processamento de sequências de caracteres com o `R`
+
+1. [Handling and Processing Strings in R](https://www.gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf) e [Handling Strings with R](https://www.gastonsanchez.com/r4strings/)
+
+2. [R Wikibook: Programming and Text Processing](http://en.wikibooks.org/wiki/R_Programming/Text_Processing)
+
+3. [stringr: modern, consistent string
+processing](https://journal.r-project.org/archive/2010-2/RJournal_2010-2_Wickham.pdf)
+
+### Referências em análise de conteúdo com o `R`:
+
+1. [Quanteta Tutorials](https://tutorials.quanteda.io/)
+2. [Text Mining with R](https://www.tidytextmining.com/)
