@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 2 Text as data: o texto como dado | Text as Data para Ciências Sociais</title>
   <meta name="description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.14.1 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 Text as data: o texto como dado | Text as Data para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Davi Moreira" />
 
 
-<meta name="date" content="2019-08-25" />
+<meta name="date" content="2019-10-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro.html">
-<link rel="next" href="regex.html">
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="regex.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +40,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -49,6 +50,70 @@
 
 
 
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -69,35 +134,37 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i>Objetivo</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#sobre-o-autororganizador"><i class="fa fa-check"></i>Sobre o autor/organizador</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licenca"><i class="fa fa-check"></i>Licença</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licença"><i class="fa fa-check"></i>Licença</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimentos"><i class="fa fa-check"></i>Agradecimentos</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#o-r-e-o-rstudio"><i class="fa fa-check"></i><b>1.1</b> O <code>R</code> e o <code>RStudio</code></a></li>
 <li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#o-pacote-txt4cs-e-outros"><i class="fa fa-check"></i><b>1.2</b> O Pacote <code>txt4cs</code> e outros</a></li>
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#material-de-apoio"><i class="fa fa-check"></i><b>1.3</b> Material de apoio</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#referencias-para-processamento-de-sequencias-de-caracteres-com-o-r"><i class="fa fa-check"></i><b>1.3.1</b> Referências para processamento de sequências de caracteres com o <code>R</code></a></li>
-<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#referencias-em-analise-de-conteudo-com-o-r"><i class="fa fa-check"></i><b>1.3.2</b> Referências em análise de conteúdo com o <code>R</code>:</a></li>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#referências-para-processamento-de-sequências-de-caracteres-com-o-r"><i class="fa fa-check"></i><b>1.3.1</b> Referências para processamento de sequências de caracteres com o <code>R</code></a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#referências-em-análise-de-conteúdo-com-o-r"><i class="fa fa-check"></i><b>1.3.2</b> Referências em análise de conteúdo com o <code>R</code>:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="tada.html"><a href="tada.html"><i class="fa fa-check"></i><b>2</b> Text as data: o texto como dado</a><ul>
-<li class="chapter" data-level="2.1" data-path="tada.html"><a href="tada.html#panorama-da-area"><i class="fa fa-check"></i><b>2.1</b> Panorama da área</a></li>
+<li class="chapter" data-level="2.1" data-path="tada.html"><a href="tada.html#panorama-da-área"><i class="fa fa-check"></i><b>2.1</b> Panorama da área</a></li>
 <li class="chapter" data-level="2.2" data-path="tada.html"><a href="tada.html#oportunidades"><i class="fa fa-check"></i><b>2.2</b> Oportunidades</a></li>
 <li class="chapter" data-level="2.3" data-path="tada.html"><a href="tada.html#quadro-geral-de-metodologias"><i class="fa fa-check"></i><b>2.3</b> Quadro geral de metodologias</a></li>
-<li class="chapter" data-level="2.4" data-path="tada.html"><a href="tada.html#o-processo-de-analise-do-texto-como-dado"><i class="fa fa-check"></i><b>2.4</b> O processo de análise do texto como dado</a></li>
+<li class="chapter" data-level="2.4" data-path="tada.html"><a href="tada.html#o-processo-de-análise-do-texto-como-dado"><i class="fa fa-check"></i><b>2.4</b> O processo de análise do texto como dado</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regex.html"><a href="regex.html"><i class="fa fa-check"></i><b>3</b> R e o Processamento de Linguagem Natural</a><ul>
-<li class="chapter" data-level="3.1" data-path="regex.html"><a href="regex.html#encoding---codificacao-de-caracteres"><i class="fa fa-check"></i><b>3.1</b> Encoding - Codificação de caracteres</a></li>
+<li class="chapter" data-level="3.1" data-path="regex.html"><a href="regex.html#encoding---codificação-de-caracteres"><i class="fa fa-check"></i><b>3.1</b> Encoding - Codificação de caracteres</a></li>
+<li class="chapter" data-level="3.2" data-path="regex.html"><a href="regex.html#encoding-para-remover-acentos"><i class="fa fa-check"></i><b>3.2</b> Encoding para remover acentos</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="stringR.html"><a href="stringR.html"><i class="fa fa-check"></i><b>4</b> Strings no <code>R</code></a><ul>
 <li class="chapter" data-level="4.1" data-path="stringR.html"><a href="stringR.html#strings"><i class="fa fa-check"></i><b>4.1</b> Strings</a></li>
 <li class="chapter" data-level="4.2" data-path="stringR.html"><a href="stringR.html#o-pacote-stringr"><i class="fa fa-check"></i><b>4.2</b> O pacote <code>stringr</code></a></li>
+<li class="chapter" data-level="4.3" data-path="stringR.html"><a href="stringR.html#regular-expressions-no-r"><i class="fa fa-check"></i><b>4.3</b> Regular Expressions no <code>R</code></a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="scrape.html"><a href="scrape.html"><i class="fa fa-check"></i><b>5</b> Obtenção de conteúdo</a><ul>
 <li class="chapter" data-level="5.1" data-path="scrape.html"><a href="scrape.html#webscraping"><i class="fa fa-check"></i><b>5.1</b> Webscraping</a></li>
 <li class="chapter" data-level="5.2" data-path="scrape.html"><a href="scrape.html#arquvos-.pdf"><i class="fa fa-check"></i><b>5.2</b> Arquvos <code>.pdf</code></a></li>
 <li class="chapter" data-level="5.3" data-path="scrape.html"><a href="scrape.html#twitter"><i class="fa fa-check"></i><b>5.3</b> Twitter</a></li>
-<li class="chapter" data-level="5.4" data-path="scrape.html"><a href="scrape.html#audio-transcricao"><i class="fa fa-check"></i><b>5.4</b> Áudio Transcrição</a></li>
+<li class="chapter" data-level="5.4" data-path="scrape.html"><a href="scrape.html#áudio-transcrição"><i class="fa fa-check"></i><b>5.4</b> Áudio Transcrição</a></li>
 <li class="chapter" data-level="5.5" data-path="scrape.html"><a href="scrape.html#imagens"><i class="fa fa-check"></i><b>5.5</b> Imagens</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="processamento.html"><a href="processamento.html"><i class="fa fa-check"></i><b>6</b> Processamento dos dados</a><ul>
@@ -106,29 +173,29 @@
 <li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.3</b> Tokens e Corpus</a></li>
 <li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.4</b> DFM: Matriz de documentos e termos</a></li>
 <li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a></li>
-<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrencia-de-termos"><i class="fa fa-check"></i><b>6.6</b> FCM: Matriz de co-ocorrência de termos</a></li>
+<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrência-de-termos"><i class="fa fa-check"></i><b>6.6</b> FCM: Matriz de co-ocorrência de termos</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stat.html"><a href="stat.html"><i class="fa fa-check"></i><b>7</b> Mineração e estatísticas básicas</a><ul>
-<li class="chapter" data-level="7.1" data-path="stat.html"><a href="stat.html#analise-de-frequencia"><i class="fa fa-check"></i><b>7.1</b> Análise de frequência</a></li>
+<li class="chapter" data-level="7.1" data-path="stat.html"><a href="stat.html#análise-de-frequência"><i class="fa fa-check"></i><b>7.1</b> Análise de frequência</a></li>
 <li class="chapter" data-level="7.2" data-path="stat.html"><a href="stat.html#nuvem-de-palavras"><i class="fa fa-check"></i><b>7.2</b> Nuvem de palavras</a></li>
 <li class="chapter" data-level="7.3" data-path="stat.html"><a href="stat.html#tf-idf"><i class="fa fa-check"></i><b>7.3</b> tf-idf</a></li>
 <li class="chapter" data-level="7.4" data-path="stat.html"><a href="stat.html#rede-de-n-grams"><i class="fa fa-check"></i><b>7.4</b> Rede de n-grams</a></li>
-<li class="chapter" data-level="7.5" data-path="stat.html"><a href="stat.html#correlacao-pareada"><i class="fa fa-check"></i><b>7.5</b> Correlação pareada</a></li>
+<li class="chapter" data-level="7.5" data-path="stat.html"><a href="stat.html#correlação-pareada"><i class="fa fa-check"></i><b>7.5</b> Correlação pareada</a></li>
 <li class="chapter" data-level="7.6" data-path="stat.html"><a href="stat.html#diversidade-lexical"><i class="fa fa-check"></i><b>7.6</b> Diversidade lexical</a></li>
 <li class="chapter" data-level="7.7" data-path="stat.html"><a href="stat.html#similaridade-entre-documentostermos"><i class="fa fa-check"></i><b>7.7</b> Similaridade entre documentos/termos</a></li>
-<li class="chapter" data-level="7.8" data-path="stat.html"><a href="stat.html#keyness-analise-de-frequencia-relativa"><i class="fa fa-check"></i><b>7.8</b> KEYNESS: Análise de Frequência Relativa</a></li>
+<li class="chapter" data-level="7.8" data-path="stat.html"><a href="stat.html#keyness-análise-de-frequência-relativa"><i class="fa fa-check"></i><b>7.8</b> KEYNESS: Análise de Frequência Relativa</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="scalling.html"><a href="scalling.html"><i class="fa fa-check"></i><b>8</b> Escalonamento</a><ul>
 <li class="chapter" data-level="8.1" data-path="scalling.html"><a href="scalling.html#wordscore"><i class="fa fa-check"></i><b>8.1</b> Wordscore</a></li>
 <li class="chapter" data-level="8.2" data-path="scalling.html"><a href="scalling.html#wordfish"><i class="fa fa-check"></i><b>8.2</b> Wordfish</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="classificacao.html"><a href="classificacao.html"><i class="fa fa-check"></i><b>9</b> Classificação</a><ul>
-<li class="chapter" data-level="9.1" data-path="classificacao.html"><a href="classificacao.html#metodo-de-dicionario-analise-de-sentimento"><i class="fa fa-check"></i><b>9.1</b> Método de dicionário: Análise de sentimento</a></li>
+<li class="chapter" data-level="9.1" data-path="classificacao.html"><a href="classificacao.html#método-de-dicionário-análise-de-sentimento"><i class="fa fa-check"></i><b>9.1</b> Método de dicionário: Análise de sentimento</a></li>
 <li class="chapter" data-level="9.2" data-path="classificacao.html"><a href="classificacao.html#naive-bayes"><i class="fa fa-check"></i><b>9.2</b> Naive Bayes</a></li>
 <li class="chapter" data-level="9.3" data-path="classificacao.html"><a href="classificacao.html#lda-latent-dirichlet-allocation"><i class="fa fa-check"></i><b>9.3</b> LDA: Latent Dirichlet Allocation</a></li>
 <li class="chapter" data-level="9.4" data-path="classificacao.html"><a href="classificacao.html#stm-structed-topic-model"><i class="fa fa-check"></i><b>9.4</b> STM: Structed Topic Model</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -151,7 +218,7 @@
             <section class="normal" id="section-">
 <div id="tada" class="section level1">
 <h1><span class="header-section-number">Capítulo 2</span> Text as data: o texto como dado</h1>
-<div id="panorama-da-area" class="section level2">
+<div id="panorama-da-área" class="section level2">
 <h2><span class="header-section-number">2.1</span> Panorama da área</h2>
 <p>A análise de conteúdo possui grande relevância para as ciências sociais. Contudo, sua abordagem manual sempre limitou o volume de documentos sob análise. São raros os projetos como o <a href="https://manifestoproject.wzb.eu/"><em>Manifesto Research Group</em></a> que, desde os anos 1970, analisa a ênfase temática de manifestos partidários ou o <a href="http://www.comparativeagendas.net/"><em>Comparative Agendas Project</em></a>, que coleta e analisa dados sobre agendas de políticas públicas em diferentes países.</p>
 <p>O avanço tecnológico e científico permitiu que técnicas automatizadas de análise do conteúdo fossem desenvolvidas e aplicadas de forma simples a grandes acervos. Este avanço não foi realizado sem a contribuição das ciências sociais. Só a <a href="https://www.cambridge.org/core/journals/political-analysis"><em>Political Analysis</em></a>, principal revista de métodos em ciência política, possui dois <em>special issues</em> dedicados ao tema (<a href="https://www.cambridge.org/core/journals/political-analysis/article/introduction-to-the-special-issue-the-statistical-analysis-of-political-text/E3D4575845083A506B2177F3F1152100"><em>Special Issue</em></a>, <a href="https://www.cambridge.org/core/journals/political-analysis/issue/FF88EF06ABD5D421202E8284F67DE2F7"><em>Virtual Issue</em></a>).</p>
@@ -162,8 +229,8 @@
 <ul>
 <li><strong>Analisar grandes acervos</strong> de forma ágil e barata, otimizando o trabalho do pesquisador.</li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="txt4cs_files/figure-html/unnamed-chunk-1-1.png" alt="Biblioteca Florestan Fernandes - FFLCH - USP" width="576" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-5-1.png" alt="Biblioteca Florestan Fernandes - FFLCH - USP" width="576" />
 <p class="caption">
 Figure 2.1: Biblioteca Florestan Fernandes - FFLCH - USP
 </p>
@@ -171,8 +238,8 @@ Figure 2.1: Biblioteca Florestan Fernandes - FFLCH - USP
 <ul>
 <li><strong>Pesquisar novos acervos</strong> para inferir o conteúdo presente e assim guiar pesquisas através de atalhos informacionais.</li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="txt4cs_files/figure-html/unnamed-chunk-2-1.png" alt="Acervo da CIA: &lt;https://www.cia.gov/library/readingroom/advanced-search-view&gt;" width="576" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-6-1.png" alt="Acervo da CIA: &lt;https://www.cia.gov/library/readingroom/advanced-search-view&gt;" width="576" />
 <p class="caption">
 Figure 2.2: Acervo da CIA: <a href="https://www.cia.gov/library/readingroom/advanced-search-view" class="uri">https://www.cia.gov/library/readingroom/advanced-search-view</a>
 </p>
@@ -180,8 +247,8 @@ Figure 2.2: Acervo da CIA: <a href="https://www.cia.gov/library/readingroom/adva
 <ul>
 <li><strong>Analisar processos políticos contemporâneos.</strong></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="txt4cs_files/figure-html/unnamed-chunk-3-1.png" alt="Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante seu voto no processo de impeachment da então Presidenta da República Dilma Rousseff em 2016." width="576" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-7-1.png" alt="Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante seu voto no processo de impeachment da então Presidenta da República Dilma Rousseff em 2016." width="576" />
 <p class="caption">
 Figure 2.3: Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante seu voto no processo de impeachment da então Presidenta da República Dilma Rousseff em 2016.
 </p>
@@ -189,8 +256,8 @@ Figure 2.3: Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante s
 <ul>
 <li><strong>Redes sociais.</strong></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="txt4cs_files/figure-html/unnamed-chunk-4-1.png" alt="Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019." width="576" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-8-1.png" alt="Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019." width="576" />
 <p class="caption">
 Figure 2.4: Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019.
 </p>
@@ -198,12 +265,12 @@ Figure 2.4: Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019.
 <ul>
 <li><strong>Fake news!</strong></li>
 </ul>
-<p><img src="txt4cs_files/figure-html/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="txt4cs_files/figure-html/unnamed-chunk-9-1.png" width="384" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>Olhar o passado com as lentes do presente</strong>. Questões que antes não podiam ser enunciadas agora podem ser respondidas! Processos políticos conhecidos podem ganhar novas interpretações através do uso de métodos e técnicas contemporâneas de análise automatizada de conteúdo.</li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="txt4cs_files/figure-html/unnamed-chunk-6-1.png" alt="Liberdade Guiando o Povo - Eugène Delacroix - 1830" width="576" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-10-1.png" alt="Liberdade Guiando o Povo - Eugène Delacroix - 1830" width="576" />
 <p class="caption">
 Figure 2.5: Liberdade Guiando o Povo - Eugène Delacroix - 1830
 </p>
@@ -211,7 +278,7 @@ Figure 2.5: Liberdade Guiando o Povo - Eugène Delacroix - 1830
 <ul>
 <li><strong>Contribuir socialmente:</strong> <a href="http://retorica.labhackercd.leg.br/">Retórica Parlamentar</a> - Projeto experimental desenvolvido no primeiro Hackathon da Câmara dos Deputados em 2013 por Davi Moreira, Manoel Galdino e Luis Carli. Posteriormente incubado pelo Laboratório Hacker da Câmara dos Deputados.</li>
 </ul>
-<p><img src="txt4cs_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="txt4cs_files/figure-html/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="quadro-geral-de-metodologias" class="section level2">
 <h2><span class="header-section-number">2.3</span> Quadro geral de metodologias</h2>
@@ -225,18 +292,18 @@ Figure 2.5: Liberdade Guiando o Povo - Eugène Delacroix - 1830
 </ol>
 <p>A escolha do modelo, da família de modelos ou de eventuais combinações a serem utilizadas é resultado dos objetivos almejados. Há uma variedade de modelos disponíveis e nenhum deles se sobrepõe aos demais.</p>
 <p>Além de estatísticas e outras informações que podem ser obtidas através da mineração do texto enquanto dados, nesse livro será dado foco aos métodods de escalonamento e classificação de conteúdo. Assim, como indicado pelo quadro de Grimmer e Stewart <span class="citation">(<a href="#ref-grimmer_text_2013">2013</a>)</span> métodos de análise supervisionada e não supervisionada serão abordados.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="txt4cs_files/figure-html/unnamed-chunk-8-1.png" alt="Quadro geral de metodologias para análise automatizada de conteúdo (Grimmer e Stewart, 2013)" width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-12-1.png" alt="Quadro geral de metodologias para análise automatizada de conteúdo (Grimmer e Stewart, 2013)" width="768" />
 <p class="caption">
 Figure 2.6: Quadro geral de metodologias para análise automatizada de conteúdo (Grimmer e Stewart, 2013)
 </p>
 </div>
 </div>
-<div id="o-processo-de-analise-do-texto-como-dado" class="section level2">
+<div id="o-processo-de-análise-do-texto-como-dado" class="section level2">
 <h2><span class="header-section-number">2.4</span> O processo de análise do texto como dado</h2>
 <p>O processo de trabalho para análise quantitativa de texto é muito similar a qualquer tipo de fluxo de trabalho para análise de dados em geral. Como indicado no livro <a href="https://www.tidytextmining.com/topicmodeling.html">Text Mining with R: a tidy approach</a> <span class="citation">(Silge and Robinson <a href="#ref-silge_text_2017">2017</a>)</span>, o seguinte fluxograma será adotado nesse livro:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="txt4cs_files/figure-html/unnamed-chunk-9-1.png" alt="Fonte: Text Mining with R" width="768" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="txt4cs_files/figure-html/unnamed-chunk-13-1.png" alt="Fonte: Text Mining with R" width="768" />
 <p class="caption">
 Figure 2.7: Fonte: Text Mining with R
 </p>
@@ -267,11 +334,13 @@ Figure 2.7: Fonte: Text Mining with R
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

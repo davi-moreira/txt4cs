@@ -1,5 +1,51 @@
 # R e o Processamento de Linguagem Natural {#regex}
 
-EM CONSTRUÇÃO...
+O [processamento de linguagem natural (NLP)](https://en.wikipedia.org/wiki/Natural_language_processing) é um subcampo da ciência da computação relacionado às interações entre computadores e a linguagem humana. O `R` dispõe de uma [série de pacotes](https://cran.r-project.org/web/views/NaturalLanguageProcessing.html) dedicados a essa área e apresenta grande potencial ao conectar o processamento de linguagem natural a todo seu arcabouço de pacotes estatísticos^[Este capítulo tem inspiração nesse [Wikibook](https://en.wikibooks.org/wiki/R_Programming/Text_Processing).].
 
 ## Encoding - Codificação de caracteres
+
+Um repertório de caracteres é representado por algum tipo de sistema de codificação ( [Wiki](https://en.wikipedia.org/wiki/Character_encoding#cite_note-1) ). Exemplo comum de sistema de codificação é o código Morse que codifica as letras do alfabeto latino e os numerais como sequências de pulsos elétricos de longa e curta duração. Outro exemplo é o sistema de codificação [UTF-8](https://en.wikipedia.org/wiki/UTF-8), capaz de codificar todos os 1.112.064 pontos de código válidos em Unicode usando até 8 bits.
+
+O `R` fornece funções para lidar com diferentes sistemas de codificação. Isso é útil se você lida com arquivos de texto que foram criados com outro sistema operacional e especialmente se o idioma não for o inglês e tiver muitos acentos e caracteres específicos. Por exemplo, o esquema de codificação padrão no Linux é [UTF-8](https://en.wikipedia.org/wiki/UTF-8), enquanto o esquema de codificação padrão no Windows é [Latin1](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)). 
+
+A função `Encoding()` retorna a codificação de uma sequência de caracteres. Por sua vez, a função `iconv()` é usado para converter a codificação. Vejamos um exemplo de identificação do encoding de uma sequência de caracteres:
+
+```{r, echo = TRUE, warning = F, message = F}
+chr <- "olê, olê, olê, olá, Lula, Lula"
+Encoding(chr) <- "UTF-8"
+Encoding(chr)
+```
+
+Utilizando o resultado do código do bloco acima, vamos agora converter o sistema de codificação para [Latin1](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)):
+
+```{r, echo = TRUE, warning = F, message = F}
+chr <- iconv(chr, from = "UTF-8", to = "latin1")
+Encoding(chr)
+```
+
+Para conhecer a lista de sistemas de codificação de seu computador, use a função `iconvlist()`.
+
+## Encoding para remover acentos
+
+Conhecer o sistema de codificação e como utilizá-lo é útil se você lida com arquivos de texto criados com outro sistema operacional e/ou em idiomas que utilizam acentos e caracteres específicos. A depender da análise que deseja fazer, pode ser do seu interesse remover os acentos de uma sequência de caracteres. Nesse caso, vejamos um exemplo com o uso do pacote `stringi`:
+
+```{r, echo = TRUE, warning = F, message = F}
+library(stringi)
+chr <- "olê, olê, olê, olá, Lula, Lula"
+stri_trans_general(chr, "Latin-ASCII")
+```
+
+No exemplo acima, removemos os acentos da sequência de caracteres utilizando o 
+American Standard Code for Information Interchange - [ASCII](https://en.wikipedia.org/wiki/ASCII).
+
+Se desejar uma solução caseira, o pacote `txt4cs`, que acompanha o livro, possui a função `remove_accent()`. Abaixo a sua aplicação:
+
+```{r , echo = T, eval = F, warning = F, message = F}
+library(txt4cs)
+chr <- "olê, olê, olê, olá, Lula, Lula"
+remove_accent(chr)
+```
+
+
+
+

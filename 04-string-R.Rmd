@@ -1,8 +1,450 @@
 # Strings no `R` {#stringR}
 
-EM CONSTRUÇÃO...
+Na ciência da computação chamamos uma sequência de caracteres de `string`. Para 
+o desenvolvimento de análises automatizadas de conteúdo, é necessário saber como processar esse tipo especial de dado (o texto como dado)^[Esse capítulo do material é inspirado no livro [Handling Strings with R](https://www.gastonsanchez.com/r4strings/)]. Nesse sentido, três coisas são importantes de serem lembradas aqui:
 
-## Strings
+1. Computadores não interpretam letras. No limite, todos os caracteres são transformados em sequências compostas por zeros e uns. Logo, é através de padrões que caracteres são interpretados e os computadores armazenam os dados que retornam a nossos olhos.
 
+2. Programar é escrever! Não é à toa que chamamos as formas de escrita em programação de linguagens de programação. Nesse livro, por exemplo, usamos a linguagem `R`. Sabendo disso, o desafio de se trabalhar com o texto como dado é o desafio de fazer com que o computador diferencie `código escrito` do `"texto como dado"` que ele precisará processar de acordo com os interesses do analista. 
+
+3. Como nós brasileiros lemos, o código e texto é processado pelo computador no seguinte sentido: da esquerda para a direita e de cima para baixo. Logo, ao desenvolver seu `script` é importante ter atenção em relação à ordem de escrita para que o computador possa desempenhar corretamente suas tarefas.
+
+É possível utilizar toda a versatilidade de estruturas de dados no `R` (vetores, matrizes, listas, data.frame, etc.) para processar sequências de caracteres. Como trabalhar com `strings` no `R`, portanto?
+
+## Strings e vetores
+
+Para declarar uma string, utilizamos aspas simples `'` ou aspas dupla """. Vejamos o caso dos dois vetores abaixo, ambos recebendo a letra "a".
+
+```{r, echo = TRUE, eval = TRUE, warning = F, message = F}
+# Vetores de caracteres 
+caracter1 <- "a"
+caracter2 <- 'A'
+
+class(caracter1)
+class(caracter2)
+```
+
+Ambos são da classe `character`.
+
+### O `R` é case sensitive
+
+O `R` diferencia letras maiúsculas de letras minúsculas. Se compararmos os dois objetos criados acima, temos:
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+caracter1 == caracter2
+```
+
+### Sequências de caracteres
+
+
+```{r, echo = TRUE, eval= F, warning = F, message = F}
+
+# string
+txt <- "uma string é uma sequência de caracteres"
+txt <- 'também pode ser utilizada com aspas simples'
+
+txt <- "no caso de aspas dupla, usa-se 'aspas simples' na string"
+txt <- 'no caso de aspas simples, usa-se "aspas dupla" na string'
+
+```
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+
+txt <- "para usar \"aspas dupla\" na string é necessário usar \\"
+cat(txt) 
+
+```
+
+O `R` armazena a sequência de caracteres conforme ela é apresentada. Porém, é possível fazer uso de caracteres especiais para que o computador interprete e apresente o texto de forma adequada. Como vimos acima, o objeto `txt` armazena a string conforme foi redigida, mas com o uso da função `cat()` podemos apresentá-lo de forma adequada. Perceba a diferença entre o resultado e a sequência de caracteres que, de fato, foi armazenada no objeto `txt`.
+
+### Operações básicas com vetores de strings
+
+É possível declarar um vetor de caracteres vazio.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+
+# vetor de caracteres com 5 strings vazias
+palmeiras <- character(5)
+palmeiras
+```
+
+Vejamos seu tamanho:
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+
+length(palmeiras)  # verificando o tamanho do vetor
+
+```
+
+Vemos que o objeto `palmeiras` possui 5 elementos, todos sem qualquer conteúdo, mas da classe `character`. 
+
+Será que é possível inserir conteúdo em elementos específicos do vetor? Vejamos:
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# incluindo string no primeiro e terceiro elementos do vetor
+palmeiras[1] <- "Quando surge o alviverde imponente"
+palmeiras[3] <- "Sabe bem o que vem pela frente"
+palmeiras
+```
+
+Ótimo! Significa que podemos ter um vetor no com o [Hino do Palmeiras](http://www.palmeiras.com.br/historia/hino), sendo cada um de seus elementos um verso dessa bela poesia. 
+
+E seria possível ter um vetor cujos elementos fossem os hinos (sequências de caracteres/strings) de todos os times do país? Sim!
+
+#### Atenção
+
+Um vetor com uma string vazia é diferente de um vetor sem strings
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Atenção:
+str_vazia <- ""  # string vazia
+char_vazio <- character(0)  # caracter vazio
+
+length(str_vazia)
+length(char_vazio)
+```
+
+### Caracteres e outros tipos de dados
+
+É importante saber como o `R` processa o texto como dado (`character`) em conjunto com outros formatos. 
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+frase <- "Campeonatos Brasileiros vencidos pelo Palmeiras."
+is.numeric(frase)
+is.character(frase)
+```
+
+Acima verificamos que a classe do objeto `frase` é de tipo `character`.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+quantidade <- 5 + 5
+quantidade
+is.numeric(quantidade)
+is.character(quantidade)
+```
+
+Acima verificamos que a classe do objeto `quantidade` é de tipo `numeric`. Seria possível converter de um tipo para outro?
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# convertendo quantidade
+quantidade <- as.character(quantidade)
+quantidade
+is.character(quantidade)
+```
+
+Sim! Veja que agora o valor 10 aparece entre aspas, pois o objeto `quantidade` foi convertido para a classe `character`.
+
+E se um vetor possuir números e caracteres em diferentes elementos, como o `R` interpreta a classe desse vetor?
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# vetor com números e strings
+brasileiros <- c(10, "Campeonatos Brasileiros vencidos pelo Palmeiras.")
+brasileiros
+class(brasileiros)
+
+```
+
+Perceba que o vetor é declarado com o número 10 no primeiro elemento e uma string no segundo elemento. Contudo, o `R` adota um critério de coerção de dados para que o vetor seja da classe `character`. Por isso, o número 10 é automaticamente convertido como caracter.
+
+O R segue duas regras básicas de coerção de tipos de dados: 
+
+1. Se uma cadeia de caracteres estiver presente em um vetor, todo o resto do vetor  será convertido em cadeias de caracteres. 
+
+2. Se um vetor tiver apenas elementos lógicos e números, os elementos lógicos  serão convertidos em números; Valores TRUE se tornam 1 e os valores FALSE se tornam 0.
+
+## Strings e matrizes
+
+No `R` matrizes são estruturas de dados que suportam apenas um tipo de classe de dados. Logo, assim como no caso do vetor visto anteriormente, ao constatar a presenção de alguma entrada de classe `character` automaticamente todos os elementos da matriz são convertidos.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Matrizes ----
+m <- rbind(c(1:5), letters[1:5])
+m
+class(m)
+```
+
+## Strings e data.frames
+
+`data.frames` são as estruturas de dados mais utilizadas no `R`. Sua versatilidade permite ter no mesmo objeto dados de classes diferentes num formato de matriz (matriz de dados). Vejamos:
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Data Frames  ----
+df1 <- data.frame(numeros = 1:5, letras = letters[1:5])
+str(df1)
+```
+
+Como padrão da função `data.frame()` strings são transformadas em fatores. Para manter strings como caracteres deve-se usar o argumento: `stringsAsFactors = FALSE`.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+df1 <- data.frame(numeros = 1:5, letras = letters[1:5], stringsAsFactors = FALSE)
+str(df1)
+```
+
+## Strings e listas
+
+Das estruturas de objetos mais populares no `R`, listas são as mais complexas. Sua grande vantagem em relação às demais estruturas é permitir uma organização hierárquica dos dados independente de sua classe e tamanho. Vejamos um exemplo:
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Listas ----
+# listas contemplam qualquer tipo de estrutura de dados
+ls <- list(1:10, letters[1:5], rnorm(5), m)
+ls
+
+```
+
+No exemplo acima, o objeto `ls` é composto por quatro elementos que contêm, cada um, diferentes tamanhos e diferentes estruturas de dados.
+
+## Processamento básico
+
+### Contando caracteres
+
+A função `nchar()` é um forma ágil e fácil de se obter o número de caracteres de uma string ou de strings de um vetor.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+nchar(c("Quantos", "caracteres?"))
+nchar("Quantos caracteres?")
+```
+
+No exemplo acima, perceba que a função contabiliza o espaço entre palavras como caracter. Por isso, a soma do total de caracteres do primeiro caso ($7 + 11 = 18$ caracteres) não é igual ao total de caracteres do segundo ($19$ caracteres).
+
+### `toupper()`, `tolower()`
+
+Sendo o `R` *case sensitive*, para o processamento do texto como dado, pode ser de interesse do pesquisador harmonizar o conteúdo sob análise com o objetivo de ter todos os caracteres em formato maiúsculo ou minúsculo. As funções `toupper()` e `tolower()` desempenham bem esse papel.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+tolower(c("TUdo eM MinúsCuLA", "ABCDE"))
+```
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+toupper(c("TUdo eM mAiúsCula", "ABCDE"))
+```
+
+#### Recortando strings:  `substr()`, `substring()`.  
+
+Para o processamento do texto como dado, também pode ser de interesse do pesquisador a seleção de trechos de uma sequência de caracteres. Isso pode ser facilmente feito com as funções `substr()` e `substring()` indicando como parâmetros a posição nas quais a string deve ser recortada.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+substr("O Palmeiras é o time da virada, o Palmeiras é o time do amor.", 1, 30)
+substring("O Palmeiras é o time da virada, o Palmeiras é o time do amor.", 33, 60)
+```
+
+#### União, Intersecção, Diferença, Igualdade
+
+Operações com vetores de forma geral podem ser aplicadas a vetores com strings. Podemos, por exemplo, unir diferentes vetores.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# União 
+vec1 <- c("algumas", "palavras", "aleatória", "aqui")
+vec2 <- c("e", "algumas", "palavras", "ali")
+union(vec1, vec2)
+```
+
+Verificar a intersecção entre dois vetores.
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Intersecção 
+intersect(vec1, vec2)
+```
+
+Verificar a diferença entre dois vetores.
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Diferença 
+setdiff(vec1, vec2)
+```
+
+E a igualdade de elementos entre dois vetores. No caso, entre o vetor `vec1` e ele mesmo.
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Igualdade 
+identical(vec1, vec1)
+```
+
+#### Elemento contido em
+
+Outra operação básica de interesse é a verificação se um elemento (no caso, uma sequência de caracteres) está contido num objeto. Vamos verificar abaixo se a sequência "aqui" está contida no vetor `vec1` através do operador `%in%`.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Elemento contido em ----
+elem <- "aqui"
+elem %in% vec1
+```
+
+É importante destacar que o exemplo acima é uma operação básica de vetores no `R` e não exclusiva para sequência de caracteres. Nesse sentido, ela apenas checa se no vetor `vec1` há algum elemento idêntico ao padrão "aqui". Mais adiante verificaremos como identificar a presença de sequências de caracteres no interior de outras strings sem que tenham de ser idênticas.
+
+#### Ordenação
+
+É possível ordenar um vetor de strings em ordem alfabética ou em sentido oposto como no exemplo abaixo. Tal versatilidade pode ser útil para o ordenamento de uma matriz de dados completa com base numa variável de nomes, por exemplo.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# Ordenando ----
+sort(vec1, decreasing = TRUE)
+```
 
 ## O pacote `stringr` 
+
+[O pacote `stringr`](https://stringr.tidyverse.org/) integra uma coleção de pacotes projetados para a ciência de dados, o [`tidyverse`](https://www.tidyverse.org/). Combinado ao [pacote `stringi`](https://cran.r-project.org/web/packages/stringi/index.html), você terá acesso a praticamente todas as possíveis funções necessárias para o processamento de strings em mais alto nível.
+
+Existem quatro famílias principais de funções no `stringr`:
+
+1. Manipulação de caracteres: essas funções permitem que você manipule caracteres individuais dentro de sequências de caracteres.
+
+2. Ferramentas de espaço em branco para adicionar, remover e manipular espaços.
+
+3. Operações sensíveis à localização geográfica, cujas operações irão variar de local para local.
+
+4. Funções de correspondência de padrões, sendo o mais comum as expressões regulares.
+
+Além do que veremos neste material, é altamente recomendável a consulta ao [capítulo sobre strings do R for Data Science](https://r4ds.had.co.nz/strings.html).
+
+```{r, echo = TRUE, eval= TRUE, results = 'hide', warning = F, message = F}
+# carregando pacote ----
+library(stringr)
+```
+
+### Verificando o tamanho de uma string^[Assim como fizemos anteriormente com a função `nchar()`.]
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_length("O Palmeiras é o time da virada, o Palmeiras é o time do amor.")
+```
+
+### Identificando caracter numa posição específica.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# vetor de strings
+txt <- c("O Palmeiras é o time da virada", "o Palmeiras é o time do amor.")
+```
+
+Selecionando o terceiro caracter.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+# identificando terceira letra
+str_sub(txt, 3, 3)
+```
+
+Selecionando do segundo caracter de trás pra frente.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_sub(txt, 2, -2)
+```
+
+### Incluindo caracter ou string numa posicao específica.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_sub(txt, 3, 11) <- "PALMEIRAS"
+txt
+```
+
+Preencher uma string em tamanho fixo.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_pad(txt, 50) # por padrão: left
+```
+
+Remove espaço extra.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+txt <- str_pad(txt, 50) # por padrão: left
+str_trim(txt)
+
+```
+
+### Recortando uma string para obter parte da sequência de caracteres.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_sub(txt, start = 3, end = 11)
+```
+
+É possível fazer o recorte usando índices de trás pra frente.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_sub(txt, start = -14, end = -1)
+```
+
+Extração de palavras.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+word(txt, 2)
+word(txt, -1)
+```
+
+## Regular Expressions no `R`
+
+Até aqui você viu funções básicas e intermediárias para o processamento de sequências de caracteres no `R`. Para avançar, é necessário aprender o uso de expressões regulares ( _Regular Expressions_ ). 
+
+Como definido no livro [Handling Strings with R](https://www.gastonsanchez.com/r4strings/regex1.html),  uma expressão regular é um conjunto de símbolos que descreve um padrão de texto. Mais formalmente, uma expressão regular é um padrão que descreve um conjunto de cadeias de caracteres. Como o termo "expressão regular" é bastante longo, a maioria das pessoas usa a palavra **regex** para se referir à área. 
+
+Entre outras tarefas, o uso de expressões regulares pode ajudá-lo a [@wickham_r_2017]:
+
+- Determinar cadeias de caracteres correspondentes a um padrão.
+- Encontrar as posições de padrões correspondentes.
+- Extrair o conteúdo de padrões correspondentes.
+- Substituir o padrão correspondente por novos valores.
+- Dividir uma sequência com base na correspondência de um padrão determinado.
+
+No entanto, é preciso ter atenção, pois o uso de expressões regulares pode se tornar uma tarefa realmente complexa. Veja [esta discussão do StackOverflow](https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression/201378#201378) a respeito de seu uso para identificação de endereços de e-mail, por exemplo.
+
+Dada a complexidade que a área pode assumir, vamos verificar o uso das *regex* em algumas funções do pacote `stringr` com base [nesse tutorial](https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html). Junto a ele, é recomendável que a leitura atenta do `?regex` no `R`.
+
+### Identificação e Extração de padrão
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+txt <- c("O Palmeiras é o time da virada", "o Palmeiras é o time do amor.")
+str_extract(txt, "amor")
+```
+
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_detect(txt, "amor")
+```
+
+Utilizando o operador `|` ("OU"):
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+str_detect(c("presidente", "presidencialismo", "presidencialista", "parlamentarismo"), "ente|ismo")
+
+str_extract(c("presidente", "presidencialismo", "presidencialista", "parlamentarismo"), "ente|ismo")
+
+str_extract(c("presidente", "presidencialismo", "presidencialista", "parlamentarismo"), "(presidencial|parlamentar)ismo")
+```
+
+Usar o "." corresponde a qualquer caracter exceto uma nova linha: 
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+txt <- c("presidente", "presidencialismo", "presidencialista", "parlamentarismo")
+str_extract(txt, "..a.....")
+```
+
+Para identificar o "." de fato, usamos "\\.". Para poder usar a "\\", adicionamos mais uma e temos:
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+txt <- c("O Palmeiras é o time da virada", "o Palmeiras é o time do amor.")
+str_detect(txt, "\\.")
+```
+
+Para identificar a "\\" de fato, usamos "\\\\":
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+txt <- c("O Palmeiras é o time da virada \\ o Palmeiras é o time do amor.")
+writeLines(txt)
+str_detect(txt, "\\.")
+```
+
+### Substituição
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+txt <- c("O Palmeiras é o time da virada", "o Palmeiras é o time do amor.")
+str_replace(txt, "Palmeiras", "PALMEIRAS")
+```
+
+### Âncoras
+
+Por padrão, expressões regulares buscam por correspondência em qualquer parte de uma sequência de caracteres. Porém, é extremamente útil poder ancorar a busca pela correspondência no início ou no final de uma string. Podemos usar:
+
+- "^" para coincidir com o início da string.
+- "$" para coincidir com o final da string.
+
+```{r, echo = TRUE, eval= TRUE, warning = F, message = F}
+txt <- c("O Palmeiras é o time da virada", "o Palmeiras é o time do amor.")
+str_detect(txt, "^O")
+str_detect(txt, "\\.$")
+```
+
+
