@@ -1,13 +1,379 @@
 # Obtenção de conteúdo {#scrape}
 
-EM CONSTRUÇÃO...
+Uma das tarefas mais importantes para a análise de conteúdo consiste na sua própria busca e aquisição. O `R` nos ajuda nessa tarefa a partir de distintas estratégias. A seguir apresento aquelas nas quais o uso de técnicas computacionais e programação potencializa o alcance e escala de acervos a serem utilizados para pesquisas.
 
 ## Webscraping
 
-## Arquvos `.pdf`
+O *Webscraping* consiste na possibilidade de uso de programação para raspagem de dados da web. Nesse sentido, suponha que ao invés de montar uma equipe que irá acessar páginas na web para coletar seu conteúdo, você desenvolverá um programa específico para realizar essa tarefa com foco sobre os objetivos de sua pesquisa.
+
+### Pacotes para raspagem de dados
+
+Há diversos pacotes para raspagem de dados com o `R`. Abaixo segue um lista com os
+principais. Para referências sobre seu uso, consulte os links indicados, 
+[este tutorial sobre o `rvest`](https://www.datacamp.com/community/tutorials/r-web-scraping-rvest) e 
+[este capitulo sobre web scraping](http://material.curso-r.com/scrape/). 
+
+* [\textcolor{blue}{`httr`}](https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html)
+* [\textcolor{blue}{`xml2`}](https://cran.r-project.org/web/packages/xml2/xml2.pdf)
+* [\textcolor{blue}{`rvest`}](https://blog.rstudio.com/2014/11/24/rvest-easy-web-scraping-with-r/)
+
+Como o site [Curso-R](http://material.curso-r.com/scrape/) destaca, esses pacotes não são suficientes para acessar todo tipo de conteúdo da web. Páginas com conteúdo produzido na linguagem `javascript`, 
+por exemplo, precisam de outras ferramentas para acesso a seu conteúdo. Nesses casos, é necessário 
+“simular” um navegador que acessa a página web e realiza consultas. Uma das melhores ferramentas para 
+isso é o `selenium`, abaixo indicado.
+
+* [`RSelenium`](https://ropensci.org/tutorials/rselenium_tutorial/)
+
+### Etapas para raspagem de dados na web
+
+Etapa 1. Conhecer detalhadamente o caminho para acesso aos dados
+Etapa 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa
+Etapa 3. Obter os dados
+Etapa 4. Processar os dados obtidos
+
+### Código fonte 
+
+É possível conhecer o código fonte de um site ao clicar com o botão direito do mouse
+no conteúdo da página. 
+
+* [Discursos Deputados](https://www2.camara.leg.br/atividade-legislativa/discursos-e-notas-taquigraficas)
+
+```{r fig.width=5, fig.height=50, fig.align="center", echo=FALSE}
+library(png)
+library(grid)
+ img <- readPNG("./images/deputados.png")
+ grid.raster(img)
+```
+
+#### Obtenção de Código Fonte - Exemplo prático:
+
+Vamos obter o conteúdo presente [nesta página do portal da Câmara dos Deputados](https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&nuSessao=
+174.4.53.O&nuQuarto=56&nuOrador=2&nuInsercao=0&dtHorarioQuarto=11:46&sgFaseSessao=BC&
+Data=17/08/2010&txApelido=JAIR%20BOLSONARO,%20PP-RJ&txFaseSessao=Breves%20Comunica
+%C3%A7%C3%B5es&txTipoSessao=Extraordin%C3%A1ria%20-%20CD&dtHoraQuarto=11:46&txEtapa=) e que apresenta um dos discursos realizados pelo então Deputado Jair Bolsonaro^[Conteúdo publicado sem revisão do autor.].
+
+Como guia para nossa tarefa, vamos utilizar as Etapas anteriormente apresentadas:
+
+De uma só vez, conseguimos cumprir as Etapas 1 e 2 com o código abaixo:
+
+Etapa 1. Conhecer detalhadamente o caminho para acesso aos dados: o código fonte do endereço virtual que apresenta o discurso também nos apresenta o conteúdo publicado.
+
+Etapa 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa: nesse exemplo, trata-se de apenas um endereço que armazenamos no objeto `link`.
+
+```{r, echo = TRUE, warning = F, message = F}
+# carregando pacotes ----
+if(require(tidyverse) == F) install.packages('tidyverse'); require(tidyverse)
+if(require(rvest) == F) install.packages('rvest'); require(rvest)
+if(require(httr) == F) install.packages('httr'); require(httr)
+if(require(xml2) == F) install.packages('xml2'); require(xml2)
+
+#################################################################################
+# ETAPA 1. Conhecer detalhadamente o caminho para acesso aos dados
+# ETAPA 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa
+
+# defnindo endereço da web
+link <- "https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&nuSessao=
+174.4.53.O&nuQuarto=56&nuOrador=2&nuInsercao=0&dtHorarioQuarto=11:46&sgFaseSessao=BC&
+Data=17/08/2010&txApelido=JAIR%20BOLSONARO,%20PP-RJ&txFaseSessao=Breves%20Comunica
+%C3%A7%C3%B5es&txTipoSessao=Extraordin%C3%A1ria%20-%20CD&dtHoraQuarto=11:46&txEtapa="
+```
+
+Etapa 3. Obter os dados: Podemos facilmente obter o código fonte de um endereço na internet com o uso da função `readLines`. Aplicamos, portanto, a função sobre o objeto `link` e o salvamos no obejto `conteudo`.
+
+```{r, echo = TRUE, warning = F, message = F}
+#################################################################################
+# ETAPA 3. Obter os dados
+conteudo <- readLines(link)  # obtem o codigo fonte
+```
+
+Veja que o objeto `conteudo` é um vetor cujos elementos são cada uma das linhas presentes no código fonte da página. Isso significa que não precisamos mais do acesso à internet ou do próprio endereço para processar o conteúdo obtido uma vez que já está retido na memória física do computador. Nessa etapa, pode ser conveniente salvar o objeto `conteudo` do modo como foi obtido para posterior tratamento.
+
+Para finalizar nossa tarefa de obter o conteúdo do discurso do então Deputado Jair Bolsonaro, proferido em 17 de agosto de 2010, vamos para a última etapa.
+
+Etapa 4. Processar os dados obtidos: uma rápida análise do objeto `conteudo` (código fonte da página que publicou o discurso), nos mostra que o elemento 320 apresenta o conteúdo de interesse. Logo, vamos selecionar apenas este elemento e assim concluímos nossa missão.
+
+```{r, echo = TRUE, warning = F, message = F}
+#################################################################################
+# ETAPA 4. Processar os dados obtidos 
+conteudo <- conteudo[320]
+```
+
+##### Atividade prática
+
+Com base no exemplo acima, obtenha o código fonte da página do [Chico Buarque na Wikipédia](https://pt.wikipedia.org/wiki/Chico_Buarque). 
+
+## Web Service
+
+Os [Web services](https://pt.wikipedia.org/wiki/Web_service) são componentes que 
+permitem às aplicações enviar e receber dados. Um dos motivos que tornam os Web Services atrativos é o fato deste modelo ser baseado em tecnologias standards, em particular XML e HTTP (Hypertext Transfer Protocol). Os Web Services são utilizados para disponibilizar serviços interativos na Web, podendo ser acessados por outras aplicações. O objetivo dos Web Services é a comunicação de aplicações através da Internet.
+
+#### Obtenção de conteúdo via WS - Exemplo prático:
+
+A Câmara dos Deputados do Brasil possui um excelente serviço de transparência. Estimulado pela iniciativa do [Laboratório Hacker](http://labhackercd.leg.br/), foi desenvolvido o [Web service da Câmara dos Deputados](http://www2.camara.leg.br/transparencia/dados-abertos/dados-abertos-legislativo/webservices).
+
+```{r fig.width=5, fig.height=50, fig.align="center", echo=FALSE}
+library(png)
+library(grid)
+ img <- readPNG("./images/webservice.png")
+ grid.raster(img)
+```
+
+Após a realização da Primeira Maratona Hacker da Câmara dos Deputados, quando fora desenvolvido o [Projeto Retórica Parlamentar](http://retorica.labhackercd.leg.br/), o Web Service da CD passou a disponibilizar os discursos proferidos pelos deputados federais em plenário. 
+
+Nossa tarefa será a de obter os dados e o conteúdo dos discursos proferidos no dia 11 de setembro de 2001, quando ocorreu o [atentado às Torres Gêmeas em Nova Iorque nos Estados Unidos](https://pt.wikipedia.org/wiki/Ataques_de_11_de_setembro_de_2001). Em virtude da estrutura de disponibilização dos dados no WS, nossa tarefa será dividida em duas subtarefas: a) obter os meta-dados dos discursos; b) obter o conteúdo dos discursos (inteiror teor).
+
+a) obter os meta-dados dos discursos
+
+Como guia para nossa subtarefa, vamos utilizar as Etapas anteriormente apresentadas:
+
+De uma só vez, conseguimos realizar as Etapas 1 e 2:
+
+Etapa 1. Conhecer detalhadamente o caminho para acesso aos dados: conhecendo exatamente como deve ser a chamada (o endereço que dá acesso aos dados), podemos simplesmente passar os parâmetros. No nosso exemplo, temos como parâmetros a data inicial (`dataInicial`) e a data final (`dataFinal`) de busca pelos discursos. Sendo nosso objetivo obter os discursos proferidos num mesmo dia, usamos como parâmetros "11/09/2001".
+
+Etapa 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa: nesse exemplo, trata-se de apenas um endereço que armazenamos no objeto `link`.
+
+
+```{r, results = 'asis', eval = FALSE}
+# carregando pacotes -----------------------------------------------------------
+if(require(httr) == F) install.packages('httr'); require(httr);
+if(require(XML) == F) install.packages('XML'); require(XML);
+if(require(xml2) == F) install.packages('xml2'); require(xml2);
+if(require(RCurl) == F) install.packages('RCurl')
+
+#################################################################################
+# ETAPA 1. Conhecer detalhadamente o caminho para acesso aos dados
+# ETAPA 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa
+dataInicial <- "11/09/2001" 
+dataFinal <- "11/09/2001"
+
+link <- paste("http://www.camara.gov.br/sitcamaraws/SessoesReunioes.asmx/Listar
+              DiscursosPlenario?",
+                "dataIni=", dataInicial,
+                "&dataFim=", dataFinal, 
+                "&codigoSessao=&parteNomeParlamentar=&siglaPartido=&siglaUF=",
+                sep = "")
+```
+
+Etapa 3. Obter os dados: para essa etapa, basta fazer uso da função `GET`. No código abaixo, armazenamos os resultados no objeto `response`.
+
+```{r, results = 'asis', eval = FALSE}
+
+#################################################################################
+# ETAPA 3. Obter os dados
+response <- GET(link)
+```
+
+Etapa 4. Processar os dados obtidos: organizar o resultado da função `GET` num formato de matriz de dados (`data.frame`) é simples. Primeiro, tansformamos o resultado numa lista, na qual cada elemento será uma das sessões legislativas realizadas naquela data. Em segundo lugar, de forma iterativa, usando a função `for`, alocamos os campos desejados num objeto `data.frame`^[Para uma referência de como transformar objetos `xml` em `data.frame` ver: i) (https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame); ii) (https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file)].
+
+```{r, results = 'asis', eval = FALSE}
+#################################################################################
+# ETAPA 4. Processar os dados obtidos 
+data <- xmlParse(response, encoding = "UTF-8")
+ls <- xmlToList(data)
+
+bd <- data.frame()  # data frame que recebera dados dos pronunciamentos
+
+for (i in 1:length(ls)){
+    # obtendo quantidade de pronunciamentos de uma respectiva sessao
+    quantPronunciamentos <- length(ls[i]$sessao$fasesSessao$faseSessao$discursos)
+    
+    sumario <- vector("character")
+    numInsercao <- vector("character")
+    numQuarto <- vector("character")
+    indexacao <- vector("character")
+    hora <- vector("character")
+    uf <- vector("character")
+    numOrador <- vector("character")
+    nomeOrador <- vector("character")
+    partido <- vector("character")
+    
+    for(j in 1:quantPronunciamentos){
+      # obtendo todos os dados do pronunciamento
+      # sumario
+      sumario[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$sumario)
+      # insercao
+      numInsercao[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$numeroInsercao)
+      # quarto
+      numQuarto[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$numeroQuarto)
+      # indexacao
+      indexacao[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$txtIndexacao)
+      # hora
+      hora[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$horaInicioDiscurso)
+      # uf orador
+      uf[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$orador$uf)
+      # numero orador
+      numOrador[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$orador$numero)
+      # nome orador
+      nomeOrador[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$orador$nome)
+      # partido orador
+      partido[j] <- 
+        str_trim(ls[i]$sessao$fasesSessao$faseSessao$discursos[[j]]$orador$partido)
+    }
+    
+    # obtendo todos os dados da fase
+    # codigo
+    codigoFase <- str_trim(ls[i]$sessao$fasesSessao$faseSessao$codigo)
+    # descricao
+    descricaoFase <- str_trim(ls[i]$sessao$fasesSessao$faseSessao$descricao)
+    # obtendo todos os dados da sessao
+    # codigo
+    codigoSessao <- str_trim(ls[i]$sessao$codigo)
+    # data
+    dataSessao <- str_trim(ls[i]$sessao$data)
+    # numero
+    numSessao <- str_trim(ls[i]$sessao$numero)
+    # tipo
+    tipoSessao <- str_trim(ls[i]$sessao$tipo)
+    
+    bdTemp <- data.frame(codigoSessao = rep(codigoSessao, length(nomeOrador)),
+                         dataSessao = rep(dataSessao, length(nomeOrador)),
+                         numSessao = rep(numSessao, length(nomeOrador)),
+                         tipoSessao = rep(tipoSessao, length(nomeOrador)),
+                         codigoFase = rep(codigoFase, length(nomeOrador)),
+                         descricaoFase = rep(descricaoFase, length(nomeOrador)),
+                         numInsercao = numInsercao,
+                         numQuarto = numQuarto,
+                         hora = hora,
+                         numOrador = numOrador,
+                         nomeOrador = nomeOrador,
+                         uf = uf,
+                         partido = partido, 
+                         indexacao = indexacao,
+                         sumario = sumario)
+    
+    bd <- rbind(bd, bdTemp)
+    
+  }
+
+head(bd)
+
+```
+
+Com o objeto `bd` acima, concluímos a primeira subetapa e podemos seguir para a segunda.
+
+Segunda subetapa:
+
+# parei aqui!!!
+
+```{r, results = 'asis', eval = FALSE}
+
+#################################################################################
+# Obtendo inteiro teor dos discursos --------------------------------------------
+#################################################################################
+# ETAPA 1. Conhecer detalhadamente o caminho para acesso aos dados
+# ETAPA 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa
+
+bdDados <- bd
+
+bd <- data.frame()  # data frame que recebera os pronunciamentos
+  
+for( i in 1:dim(bdDados)[1]){
+    link <- paste("http://www.camara.gov.br/SitCamaraWS/SessoesReunioes.asmx/
+                  obterInteiroTeorDiscursosPlenario?",
+                  "codSessao=", bdDados$codigoSessao[i],
+                  "&numOrador=", bdDados$numOrador[i], 
+                  "&numQuarto=", bdDados$numQuarto[i],
+                  "&numInsercao=", bdDados$numInsercao[i],
+                  sep = "")
+    print(link)
+    response <- GET(link)
+    data <- xmlParse(response, encoding = "UTF-8")
+    ls <- xmlToList(data)
+    
+    bdTemp <- data.frame(nome = ls$nome,
+                         partido = ls$partido,
+                         uf = ls$uf,
+                         horaInicioDiscurso = ls$horaInicioDiscurso,
+                         discursoRTFBase64 = ls$discursoRTFBase64)
+    bd <- rbind(bd, bdTemp)
+    Sys.sleep(.5)
+  }
+
+```
+
+##### Atividade prática
+
+Utilizando o codigo acima, obtenha as falas proferidas do dia da autorização do processo de  impeachement da Presidenta Dilma Vana Rousseff na Câmara dos Deputados, ocorrido em 17 de abril de 2016. Salve os dados em formato `.RData`.
+
+
+## Download de arquvos `.pdf`
+
+Além do conteúdo diretamente publicado numa página web, pode ser de interesse fazer o download de
+arquivos disponíveis. Em especial, no caso brasileiro, muitos órgãos públicos publicam relatórios em formato `.pdf`. O obstáculo proporcionado pelo formato do arquivo e o modo como o conteúdo é disponibilizado pode ser superado com o uso da linguagem `R`.
+
+#### Download de arquvos - Exemplo prático:
+
+Como exemplo, vamos conferir o caso do [Tribunal de Contas do Estado de Pernambuco](https://www.tce.pe.gov.br/internet/), que anualmente disponibiliza relatórios de gestão.
+
+```{r fig.width=5, fig.height=50, fig.align="center", echo=FALSE}
+library(png)
+library(grid)
+ img <- readPNG("./images/tce.png")
+ grid.raster(img)
+```
+
+Mais uma vez, vamos utilizar as Etapas anteriormente apresentadas:
+
+Etapa 1. Conhecer detalhadamente o caminho para acesso aos dados: A [página do TCE-PE]("https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2") apresenta os relatórios publicados anualmente.
+
+```{r, echo = TRUE, warning = F, message = F}
+#################################################################################
+# ETAPA 1. Conhecer detalhadamente o caminho para acesso aos dados
+link <- "https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2"
+```
+
+Etapa 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa: aqui selecionamos exatamente os endereços de download de cada um dos arquivos publicados.
+
+```{r, echo = TRUE, warning = F, message = F}
+#################################################################################
+# ETAPA 2. Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa
+link_relatorios <- link %>% read_html %>% html_nodes("a") %>% html_attr('href')
+link_relatorios <- link_relatorios[grep("rdg", link_relatorios)]
+```
+
+Etapa 3. Obter os dados: a obtenção dos dados se refere justamente ao download do material para armazenamento local. Para tanto, definimos o diretório onde os arquivos serão salvos e fazemos uso da função `download.file`. 
+
+```{r, echo = TRUE, warning = F, message = F}
+#################################################################################
+# ETAPA 3. Obter os dados
+setwd("defina_seu_diretorio")
+download.file(link_relatorios[1], paste0(as.character(2017)[1], ".pdf")
+```
+
+Etapa 4. Processar os dados obtidos: antes de achar que os dados de um arquivo `.pdf` são um obstáculo para a abordagem do texto como dado, diferentes estratégias podem ser adotadas para sua obtenção e processamento. Abaixo, vemos uma delas, com o uso do pacote `pdftools` de forma simples pode-se transformar o conteúdo do arquivo `.pdf` num arquivo `.txt`.
+
+```{r, echo = TRUE, warning = F, message = F}
+#################################################################################
+# ETAPA 4. Processar os dados obtidos 
+# pacotes
+if(require(pdftools) == F) install.packages('pdftools')); require(pdftools)
+
+# diretorio
+setwd("defina_seu_diretorio")
+
+# .pdf para txt
+txt <- pdf_text("meu_arquivo.pdf")
+
+# salvando .txt
+writeLines(txt, "meu_arquivo.txt")
+
+```
+
 
 ## Twitter
 
+EM CONSTRUÇÃO...
+
 ## Áudio Transcrição
+
+EM CONSTRUÇÃO...
 
 ## Imagens

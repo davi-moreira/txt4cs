@@ -79,6 +79,7 @@ install.packages("tidyverse")
 install.packages("stringr")
 install.packages("quanteda")
 install.packages("readtext")
+install.packages("stringi")
 install.packages("tm")
 ```
 

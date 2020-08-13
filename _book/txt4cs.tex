@@ -1,0 +1,640 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={Text as Data para Ciências Sociais},
+            pdfauthor={Davi Moreira},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{\emph{Text as Data} para Ciências Sociais}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \subtitle{guia prático com aplicações}
+  \author{Davi Moreira}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2019-10-04}
+
+\usepackage{booktabs}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{prefuxe1cio}{%
+\chapter*{Prefácio}\label{prefuxe1cio}}
+\addcontentsline{toc}{chapter}{Prefácio}
+
+\begin{center}\includegraphics{txt4cs_files/figure-latex/unnamed-chunk-1-1} \end{center}
+
+A partir da produção de material para o curso \emph{Text as Data}: análise automatizada de conteúdo que ministrei no \href{http://www.fafich.ufmg.br/~mq/}{MQ-UFMG} em 2019 e no artigo que publiquei em coautoria com \href{http://lattes.cnpq.br/2546701843557096}{Maurício Izumi} \citep{izumi_o_2018}, esse livro tem como propósito difundir nas ciências sociais e humanidades técnicas e métodos de análise automatizada de conteúdo usando a linguagem \texttt{R}.
+
+\hypertarget{objetivo}{%
+\section*{Objetivo}\label{objetivo}}
+\addcontentsline{toc}{section}{Objetivo}
+
+O principal objetivo do livro é ser tutorial prático de uso e aplicação de técnicas e métodos de análise automatizada de conteúdo na língua portuguesa através da linguagem \texttt{R} .
+
+\hypertarget{sobre-o-autororganizador}{%
+\section*{Sobre o autor/organizador}\label{sobre-o-autororganizador}}
+\addcontentsline{toc}{section}{Sobre o autor/organizador}
+
+Davi Moreira é Professor Visitante do departamento de Ciência Política da Universidade Federal de Pernambuco (UFPE). Ph.D.~em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atuo nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
+
+Para mais informações:
+
+\begin{itemize}
+\item
+  \href{https://davimoreira.com/}{Página pessoal}.
+\item
+  \href{http://lattes.cnpq.br/7406586493977047}{Currículo Lattes}.
+\item
+  \href{https://scholar.google.com.br/citations?hl=pt-BR\&user=dS9bbdMAAAAJ}{Google Scholar}.
+\end{itemize}
+
+\hypertarget{licenuxe7a}{%
+\section*{Licença}\label{licenuxe7a}}
+\addcontentsline{toc}{section}{Licença}
+
+Este livro é distribuído de acordo com a licença Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (\href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}).
+
+\hypertarget{agradecimentos}{%
+\section*{Agradecimentos}\label{agradecimentos}}
+\addcontentsline{toc}{section}{Agradecimentos}
+
+Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos Manoel Galdino, Rafael Magalhães, Lincon Ribeiro e Umberto Mignozetti pelo apoio e incentivo ao longo de toda minha trajetória como cientista.
+
+Este livro é escrito com o uso do pacote \textbf{bookdown} \citep{R-bookdown}, através do \texttt{R\ Markdown} e \textbf{knitr} \citep{xie2015}.
+
+\hypertarget{intro}{%
+\chapter{Introdução}\label{intro}}
+
+\hypertarget{o-r-e-o-rstudio}{%
+\section{\texorpdfstring{O \texttt{R} e o \texttt{RStudio}}{O R e o RStudio}}\label{o-r-e-o-rstudio}}
+
+Com o objetivo de ser um tutorial prático de uso e aplicação de técnicas e métodos de análise automatizada de conteúdo para ciências sociais e humanidades este livro fará uso da linguagem \texttt{R}.
+
+\texttt{R} é uma linguagem de programação e também um ambiente de desenvolvimento integrado
+para cálculos estatísticos e gráficos. Ele pode ser facilmente instalado através do link: \url{https://cran.r-project.org/}.
+
+Para auxiliar no desenvolvimento das análises, este livro incentiva o uso do \href{https://www.rstudio.com/}{RStudio}. Trata-se de um software livre de ambiente de desenvolvimento integrado (IDE) para o \texttt{R}\footnote{IDE, do inglês \emph{Integrated Development Environment}, é um programa de computador que reúne características e ferramentas de apoio ao desenvolvimento de software com o objetivo de agilizar este processo.}.
+
+De forma ilustrativa, o \texttt{R} e o \texttt{RStudio} operam como a figura abaixo:
+
+\begin{center}\includegraphics{txt4cs_files/figure-latex/fig:rrstudio-1} \end{center}
+
+Com o \texttt{RStudio}, você estará diante do seguinte dashboard:
+
+\begin{center}\includegraphics{txt4cs_files/figure-latex/fig:rstudio-1} \end{center}
+
+Se está começando a usar o \texttt{R} para análise de dados, recomendo o seguinte material:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://r4ds.had.co.nz/}{R for Data Science};
+\item
+  \href{https://moderndive.com/index.html}{Modern Dive - Statistical Inference via Data Science};
+\item
+  \href{http://material.curso-r.com/rbase/}{Curso R};
+\item
+  \href{http://electionsbr.com/livro/}{Usando R: Um Guia para Cientistas Políticos};
+\end{enumerate}
+
+Em caso de dúvidas, use e abuse de fóruns como o \href{https://stackoverflow.com/}{Stackoverflow}. Para aprimorar seu código e otimizar o desenvolvimento de suas análises, os guias de estilo do \href{https://google.github.io/styleguide/Rguide.xml}{Google} e do \href{http://adv-r.had.co.nz/Style.html}{RStudio} são ótimas referências.
+
+\hypertarget{o-pacote-txt4cs-e-outros}{%
+\section{\texorpdfstring{O Pacote \texttt{txt4cs} e outros}{O Pacote txt4cs e outros}}\label{o-pacote-txt4cs-e-outros}}
+
+\begin{center}\includegraphics{txt4cs_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+Este livro conta com o pacote \texttt{txt4cs}. Ele traz consigo funções específicas e bases de dados utilizadas nos exemplos apresentados. Um dos acervos de exemplo se refere ao conteúdo proferido em 17 de abril de 2016, dia de aprovação do impeachment da então Presidenta Dilma Rousseff na Câmara dos Deputados.
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-3-1} 
+
+}
+
+\caption{Fonte: Empresa Brasil de Comunicação - EBC}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+Para instalação, use os comandos abaixo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\KeywordTok{require}\NormalTok{(devtools) }\OperatorTok{==}\StringTok{ }\NormalTok{F) }\KeywordTok{install.packages}\NormalTok{(}\StringTok{'devtools'}\NormalTok{); }\KeywordTok{require}\NormalTok{(devtools);}
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"davi-moreira/txt4cs-pkg"}\NormalTok{)}
+\KeywordTok{require}\NormalTok{(txt4cs)}
+\end{Highlighting}
+\end{Shaded}
+
+Ademais, os seguintes pacotes são essenciais para o desenvolvimento da análise automatizada de conteúdo com o \texttt{R}. Conforme forem necessários, serão apresentados no livro.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"stringr"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"quanteda"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"readtext"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"stringi"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tm"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{material-de-apoio}{%
+\section{Material de apoio}\label{material-de-apoio}}
+
+Este livro não é feito do zero e resulta de inspiração em diferentes fontes. As principais são:
+
+\hypertarget{referuxeancias-para-processamento-de-sequuxeancias-de-caracteres-com-o-r}{%
+\subsection{\texorpdfstring{Referências para processamento de sequências de caracteres com o \texttt{R}}{Referências para processamento de sequências de caracteres com o R}}\label{referuxeancias-para-processamento-de-sequuxeancias-de-caracteres-com-o-r}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://www.gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf}{Handling and Processing Strings in R} e \href{https://www.gastonsanchez.com/r4strings/}{Handling Strings with R}
+\item
+  \href{http://en.wikibooks.org/wiki/R_Programming/Text_Processing}{R Wikibook: Programming and Text Processing}
+\item
+  \href{https://journal.r-project.org/archive/2010-2/RJournal_2010-2_Wickham.pdf}{stringr: modern, consistent string
+  processing}
+\end{enumerate}
+
+\hypertarget{referuxeancias-em-anuxe1lise-de-conteuxfado-com-o-r}{%
+\subsection{\texorpdfstring{Referências em análise de conteúdo com o \texttt{R}:}{Referências em análise de conteúdo com o R:}}\label{referuxeancias-em-anuxe1lise-de-conteuxfado-com-o-r}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://tutorials.quanteda.io/}{Quanteta Tutorials}
+\item
+  \href{https://www.tidytextmining.com/}{Text Mining with R}
+\end{enumerate}
+
+\hypertarget{tada}{%
+\chapter{Text as data: o texto como dado}\label{tada}}
+
+\hypertarget{panorama-da-uxe1rea}{%
+\section{Panorama da área}\label{panorama-da-uxe1rea}}
+
+A análise de conteúdo possui grande relevância para as ciências sociais. Contudo, sua abordagem manual sempre limitou o volume de documentos sob análise. São raros os projetos como o \href{https://manifestoproject.wzb.eu/}{\emph{Manifesto Research Group}} que, desde os anos 1970, analisa a ênfase temática de manifestos partidários ou o \href{http://www.comparativeagendas.net/}{\emph{Comparative Agendas Project}}, que coleta e analisa dados sobre agendas de políticas públicas em diferentes países.
+
+O avanço tecnológico e científico permitiu que técnicas automatizadas de análise do conteúdo fossem desenvolvidas e aplicadas de forma simples a grandes acervos. Este avanço não foi realizado sem a contribuição das ciências sociais. Só a \href{https://www.cambridge.org/core/journals/political-analysis}{\emph{Political Analysis}}, principal revista de métodos em ciência política, possui dois \emph{special issues} dedicados ao tema (\href{https://www.cambridge.org/core/journals/political-analysis/article/introduction-to-the-special-issue-the-statistical-analysis-of-political-text/E3D4575845083A506B2177F3F1152100}{\emph{Special Issue}}, \href{https://www.cambridge.org/core/journals/political-analysis/issue/FF88EF06ABD5D421202E8284F67DE2F7}{\emph{Virtual Issue}}).
+
+\hypertarget{oportunidades}{%
+\section{Oportunidades}\label{oportunidades}}
+
+Com o desenvolvimento de métodos para análise automatizada de conteúdo, hoje o leque de oportunidades as ciências sociais é diverso e promissor. Agora, é possível:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Analisar grandes acervos} de forma ágil e barata, otimizando o trabalho do pesquisador.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-5-1} 
+
+}
+
+\caption{Biblioteca Florestan Fernandes - FFLCH - USP}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Pesquisar novos acervos} para inferir o conteúdo presente e assim guiar pesquisas através de atalhos informacionais.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-6-1} 
+
+}
+
+\caption{Acervo da CIA: <https://www.cia.gov/library/readingroom/advanced-search-view>}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Analisar processos políticos contemporâneos.}
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-7-1} 
+
+}
+
+\caption{Trecho de fala do Deputado Federal Glauber Braga (PSOL-RJ) durante seu voto no processo de impeachment da então Presidenta da República Dilma Rousseff em 2016.}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Redes sociais.}
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-8-1} 
+
+}
+
+\caption{Foto de Pedro Ladeira, Folha de São Paulo, maio de 2019.}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Fake news!}
+\end{itemize}
+
+\begin{center}\includegraphics{txt4cs_files/figure-latex/unnamed-chunk-9-1} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Olhar o passado com as lentes do presente}. Questões que antes não podiam ser enunciadas agora podem ser respondidas! Processos políticos conhecidos podem ganhar novas interpretações através do uso de métodos e técnicas contemporâneas de análise automatizada de conteúdo.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-10-1} 
+
+}
+
+\caption{Liberdade Guiando o Povo - Eugène Delacroix - 1830}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Contribuir socialmente:} \href{http://retorica.labhackercd.leg.br/}{Retórica Parlamentar} - Projeto experimental desenvolvido no primeiro Hackathon da Câmara dos Deputados em 2013 por Davi Moreira, Manoel Galdino e Luis Carli. Posteriormente incubado pelo Laboratório Hacker da Câmara dos Deputados.
+\end{itemize}
+
+\begin{center}\includegraphics{txt4cs_files/figure-latex/unnamed-chunk-11-1} \end{center}
+
+\hypertarget{quadro-geral-de-metodologias}{%
+\section{Quadro geral de metodologias}\label{quadro-geral-de-metodologias}}
+
+Dada a complexidade da linguagem, o processo de geração, produção e seleção de dados que resultam na comunicação humana é ainda um mistério para a ciência \citep{izumi_o_2018, grimmer_text_2013}. Logo, modelos estatísticos desenvolvidos falham na tarefa de prover um relato preciso do processo de geração de dados utilizados na produção de conteúdo e, principalmente, em seu significado.
+
+Os modelos de análise de conteúdo, portanto, não devem ser avaliados pelo quanto explicam do processo de geração dos dados. Transformar palavras em números não substitui a leitura cuidadosa e atenta de documentos. Reconhecendo que ``métodos de análise automatizada de conteúdo são modelos incorretos de linguagem'' \citep[p.~2]{grimmer_text_2013}, a performance de qualquer método automatizado não é garantida sem a consideração de ao menos quatro princípios:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Todos os modelos quantitativos de análise de conteúdo estão errados, mas alguns são úteis;
+\item
+  Métodos quantitativos de análise de conteúdo amplificam a capacidade humana, mas não a substitui;
+\item
+  Não há um método global para a análise automatizada de conteúdo;
+\item
+  Validar, validar, validar.
+\end{enumerate}
+
+A escolha do modelo, da família de modelos ou de eventuais combinações a serem utilizadas é resultado dos objetivos almejados. Há uma variedade de modelos disponíveis e nenhum deles se sobrepõe aos demais.
+
+Além de estatísticas e outras informações que podem ser obtidas através da mineração do texto enquanto dados, nesse livro será dado foco aos métodods de escalonamento e classificação de conteúdo. Assim, como indicado pelo quadro de Grimmer e Stewart \citeyearpar{grimmer_text_2013} métodos de análise supervisionada e não supervisionada serão abordados.
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-12-1} 
+
+}
+
+\caption{Quadro geral de metodologias para análise automatizada de conteúdo (Grimmer e Stewart, 2013)}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+\hypertarget{o-processo-de-anuxe1lise-do-texto-como-dado}{%
+\section{O processo de análise do texto como dado}\label{o-processo-de-anuxe1lise-do-texto-como-dado}}
+
+O processo de trabalho para análise quantitativa de texto é muito similar a qualquer tipo de fluxo de trabalho para análise de dados em geral. Como indicado no livro \href{https://www.tidytextmining.com/topicmodeling.html}{Text Mining with R: a tidy approach} \citep{silge_text_2017}, o seguinte fluxograma será adotado nesse livro:
+
+\begin{figure}
+
+{\centering \includegraphics{txt4cs_files/figure-latex/unnamed-chunk-13-1} 
+
+}
+
+\caption{Fonte: Text Mining with R}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+\hypertarget{regex}{%
+\chapter{R e o Processamento de Linguagem Natural}\label{regex}}
+
+O \href{https://en.wikipedia.org/wiki/Natural_language_processing}{processamento de linguagem natural (NLP)} é um subcampo da ciência da computação relacionado às interações entre computadores e a linguagem humana. O \texttt{R} dispõe de uma \href{https://cran.r-project.org/web/views/NaturalLanguageProcessing.html}{série de pacotes} dedicados a essa área e apresenta grande potencial ao conectar o processamento de linguagem natural a todo seu arcabouço de pacotes estatísticos\footnote{Este capítulo tem inspiração nesse \href{https://en.wikibooks.org/wiki/R_Programming/Text_Processing}{Wikibook}.}.
+
+\hypertarget{encoding---codificauxe7uxe3o-de-caracteres}{%
+\section{Encoding - Codificação de caracteres}\label{encoding---codificauxe7uxe3o-de-caracteres}}
+
+Um repertório de caracteres é representado por algum tipo de sistema de codificação ( \href{https://en.wikipedia.org/wiki/Character_encoding\#cite_note-1}{Wiki} ). Exemplo comum de sistema de codificação é o código Morse que codifica as letras do alfabeto latino e os numerais como sequências de pulsos elétricos de longa e curta duração. Outro exemplo é o sistema de codificação \href{https://en.wikipedia.org/wiki/UTF-8}{UTF-8}, capaz de codificar todos os 1.112.064 pontos de código válidos em Unicode usando até 8 bits.
+
+O \texttt{R} fornece funções para lidar com diferentes sistemas de codificação. Isso é útil se você lida com arquivos de texto que foram criados com outro sistema operacional e especialmente se o idioma não for o inglês e tiver muitos acentos e caracteres específicos. Por exemplo, o esquema de codificação padrão no Linux é \href{https://en.wikipedia.org/wiki/UTF-8}{UTF-8}, enquanto o esquema de codificação padrão no Windows é \href{https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)}{Latin1}.
+
+A função \texttt{Encoding()} retorna a codificação de uma sequência de caracteres. Por sua vez, a função \texttt{iconv()} é usado para converter a codificação. Vejamos um exemplo de identificação do encoding de uma sequência de caracteres:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{chr <-}\StringTok{ "olê, olê, olê, olá, Lula, Lula"}
+\KeywordTok{Encoding}\NormalTok{(chr) <-}\StringTok{ "UTF-8"}
+\KeywordTok{Encoding}\NormalTok{(chr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "UTF-8"
+\end{verbatim}
+
+Utilizando o resultado do código do bloco acima, vamos agora converter o sistema de codificação para \href{https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)}{Latin1}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{chr <-}\StringTok{ }\KeywordTok{iconv}\NormalTok{(chr, }\DataTypeTok{from =} \StringTok{"UTF-8"}\NormalTok{, }\DataTypeTok{to =} \StringTok{"latin1"}\NormalTok{)}
+\KeywordTok{Encoding}\NormalTok{(chr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "latin1"
+\end{verbatim}
+
+Para conhecer a lista de sistemas de codificação de seu computador, use a função \texttt{iconvlist()}.
+
+\hypertarget{encoding-para-remover-acentos}{%
+\section{Encoding para remover acentos}\label{encoding-para-remover-acentos}}
+
+Conhecer o sistema de codificação e como utilizá-lo é útil se você lida com arquivos de texto criados com outro sistema operacional e/ou em idiomas que utilizam acentos e caracteres específicos. A depender da análise que deseja fazer, pode ser do seu interesse remover os acentos de uma sequência de caracteres. Nesse caso, vejamos um exemplo com o uso do pacote \texttt{stringi}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(stringi)}
+\NormalTok{chr <-}\StringTok{ "olê, olê, olê, olá, Lula, Lula"}
+\KeywordTok{stri_trans_general}\NormalTok{(chr, }\StringTok{"Latin-ASCII"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "ole, ole, ole, ola, Lula, Lula"
+\end{verbatim}
+
+No exemplo acima, removemos os acentos da sequência de caracteres utilizando o
+American Standard Code for Information Interchange - \href{https://en.wikipedia.org/wiki/ASCII}{ASCII}.
+
+Se desejar uma solução caseira, o pacote \texttt{txt4cs}, que acompanha o livro, possui a função \texttt{remove\_accent()}. Vejamos sua aplicação:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(txt4cs)}
+\NormalTok{chr <-}\StringTok{ "olê, olê, olê, olá, Lula, Lula"}
+\KeywordTok{remove_accent}\NormalTok{(chr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "ole, ole, ole, ola, Lula, Lula"
+\end{verbatim}
+
+\hypertarget{stringR}{%
+\chapter{\texorpdfstring{Strings no \texttt{R}}{Strings no R}}\label{stringR}}
+
+EM CONSTRUÇÃO\ldots{}
+
+\hypertarget{strings}{%
+\section{Strings}\label{strings}}
+
+\hypertarget{o-pacote-stringr}{%
+\section{\texorpdfstring{O pacote \texttt{stringr}}{O pacote stringr}}\label{o-pacote-stringr}}
+
+\hypertarget{regular-expressions-no-r}{%
+\section{\texorpdfstring{Regular Expressions no \texttt{R}}{Regular Expressions no R}}\label{regular-expressions-no-r}}
+
+\hypertarget{scrape}{%
+\chapter{Obtenção de conteúdo}\label{scrape}}
+
+EM CONSTRUÇÃO\ldots{}
+
+\hypertarget{webscraping}{%
+\section{Webscraping}\label{webscraping}}
+
+\hypertarget{arquvos-.pdf}{%
+\section{\texorpdfstring{Arquvos \texttt{.pdf}}{Arquvos .pdf}}\label{arquvos-.pdf}}
+
+\hypertarget{twitter}{%
+\section{Twitter}\label{twitter}}
+
+\hypertarget{uxe1udio-transcriuxe7uxe3o}{%
+\section{Áudio Transcrição}\label{uxe1udio-transcriuxe7uxe3o}}
+
+\hypertarget{imagens}{%
+\section{Imagens}\label{imagens}}
+
+\hypertarget{processamento}{%
+\chapter{Processamento dos dados}\label{processamento}}
+
+EM CONSTRUÇÃO\ldots{}
+
+\hypertarget{tokens}{%
+\section{Tokens}\label{tokens}}
+
+\hypertarget{corpus}{%
+\section{Corpus}\label{corpus}}
+
+\hypertarget{tokens-e-corpus}{%
+\section{Tokens e Corpus}\label{tokens-e-corpus}}
+
+\hypertarget{dfm-matriz-de-documentos-e-termos}{%
+\section{DFM: Matriz de documentos e termos}\label{dfm-matriz-de-documentos-e-termos}}
+
+\hypertarget{stemming}{%
+\section{Stemming}\label{stemming}}
+
+\hypertarget{fcm-matriz-de-co-ocorruxeancia-de-termos}{%
+\section{FCM: Matriz de co-ocorrência de termos}\label{fcm-matriz-de-co-ocorruxeancia-de-termos}}
+
+\hypertarget{stat}{%
+\chapter{Mineração e estatísticas básicas}\label{stat}}
+
+EM CONSTRUÇÃO\ldots{}
+
+\hypertarget{anuxe1lise-de-frequuxeancia}{%
+\section{Análise de frequência}\label{anuxe1lise-de-frequuxeancia}}
+
+\hypertarget{nuvem-de-palavras}{%
+\section{Nuvem de palavras}\label{nuvem-de-palavras}}
+
+\hypertarget{tf-idf}{%
+\section{tf-idf}\label{tf-idf}}
+
+\hypertarget{rede-de-n-grams}{%
+\section{Rede de n-grams}\label{rede-de-n-grams}}
+
+\hypertarget{correlauxe7uxe3o-pareada}{%
+\section{Correlação pareada}\label{correlauxe7uxe3o-pareada}}
+
+\hypertarget{diversidade-lexical}{%
+\section{Diversidade lexical}\label{diversidade-lexical}}
+
+\hypertarget{similaridade-entre-documentostermos}{%
+\section{Similaridade entre documentos/termos}\label{similaridade-entre-documentostermos}}
+
+\hypertarget{keyness-anuxe1lise-de-frequuxeancia-relativa}{%
+\section{KEYNESS: Análise de Frequência Relativa}\label{keyness-anuxe1lise-de-frequuxeancia-relativa}}
+
+\hypertarget{scalling}{%
+\chapter{Escalonamento}\label{scalling}}
+
+EM CONSTRUÇÃO\ldots{}
+
+\hypertarget{wordscore}{%
+\section{Wordscore}\label{wordscore}}
+
+\hypertarget{wordfish}{%
+\section{Wordfish}\label{wordfish}}
+
+\hypertarget{classificacao}{%
+\chapter{Classificação}\label{classificacao}}
+
+EM CONSTRUÇÃO\ldots{}
+
+\hypertarget{muxe9todo-de-dicionuxe1rio-anuxe1lise-de-sentimento}{%
+\section{Método de dicionário: Análise de sentimento}\label{muxe9todo-de-dicionuxe1rio-anuxe1lise-de-sentimento}}
+
+\hypertarget{naive-bayes}{%
+\section{Naive Bayes}\label{naive-bayes}}
+
+\hypertarget{lda-latent-dirichlet-allocation}{%
+\section{LDA: Latent Dirichlet Allocation}\label{lda-latent-dirichlet-allocation}}
+
+\hypertarget{stm-structed-topic-model}{%
+\section{STM: Structed Topic Model}\label{stm-structed-topic-model}}
+
+\bibliography{biblioteca.bib,book.bib,packages.bib}
+
+
+\end{document}
