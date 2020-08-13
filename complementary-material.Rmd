@@ -1,0 +1,16 @@
+---
+title: "teste"
+author: "monimazz"
+date: "13/08/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Git
+
+- https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67
+- https://dev.acquia.com/blog/getting-started-collaborative-development-git
+- https://happygitwithr.com/
