@@ -1,3 +1,102 @@
+--- 
+knit: 'bookdown::publish_book(render = "local")'
+title: "_Text as Data_ para Ciências Sociais"
+subtitle: 'guia prático com aplicações'
+author: "Davi Moreira"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [biblioteca.bib, book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Compilação de métodos e técnicas para análise automatizada de conteúdo"
+urlcolor: blue  
+---
+
+# Prefácio {-}
+
+Placeholder
+
+
+## Objetivo {-}
+## Sobre o autor/organizador {-}
+## Licença {-}
+## Agradecimentos {-}
+
+<!--chapter:end:index.Rmd-->
+
+
+# Introdução {#intro}
+
+Placeholder
+
+
+## O `R` e o `RStudio`
+## O Pacote `txt4cs` e outros
+## Material de apoio
+### Referências para processamento de sequências de caracteres com o `R`
+### Referências em análise de conteúdo com o `R`:
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# Text as data: o texto como dado {#tada}
+
+Placeholder
+
+
+## Panorama da área
+## Oportunidades
+## Quadro geral de metodologias
+## O processo de análise do texto como dado
+
+<!--chapter:end:02-tada.Rmd-->
+
+
+# R e o Processamento de Linguagem Natural {#regex}
+
+Placeholder
+
+
+## Encoding - Codificação de caracteres
+## Encoding para remover acentos
+
+<!--chapter:end:03-regex.Rmd-->
+
+
+# Strings no `R` {#stringR}
+
+Placeholder
+
+
+## Strings e vetores
+### O `R` é case sensitive
+### Sequências de caracteres
+### Operações básicas com vetores de strings
+#### Atenção
+### Caracteres e outros tipos de dados
+## Strings e matrizes
+## Strings e data.frames
+## Strings e listas
+## Processamento básico
+### Contando caracteres
+### `toupper()`, `tolower()`
+#### Recortando strings:  `substr()`, `substring()`.  
+#### União, Intersecção, Diferença, Igualdade
+#### Elemento contido em
+#### Ordenação
+## O pacote `stringr` 
+### Verificando o tamanho de uma string^[Assim como fizemos anteriormente com a função `nchar()`.]
+### Identificando caracter numa posição específica.
+### Incluindo caracter ou string numa posicao específica.
+### Recortando uma string para obter parte da sequência de caracteres.
+## Regular Expressions no `R`
+### Identificação e Extração de padrão
+### Substituição
+### Âncoras
+
+<!--chapter:end:04-string-R.Rmd-->
+
 # Obtenção de conteúdo {#scrape}
 
 Uma das tarefas mais importantes para a análise de conteúdo consiste na sua própria busca e aquisição. O `R` nos ajuda nessa tarefa a partir de distintas estratégias. A seguir apresento aquelas nas quais o uso de técnicas computacionais e programação potencializa o alcance e escala de acervos a serem utilizados para pesquisas.
@@ -469,3 +568,103 @@ cat(text)
 ## Áudio Transcrição
 
 EM CONSTRUÇÃO...........
+
+<!--chapter:end:05-obtencao-conteudo.Rmd-->
+
+# Processamento dos dados {#processamento}
+
+EM CONSTRUÇÃO...
+
+## Tokens
+
+## Corpus
+
+## Tokens e Corpus
+
+## DFM: Matriz de documentos e termos
+
+## Stemming
+
+## FCM: Matriz de co-ocorrência de termos
+
+<!--chapter:end:06-wrangling.Rmd-->
+
+# Mineração e estatísticas básicas {#stat}
+
+EM CONSTRUÇÃO...
+
+## Análise de frequência
+
+## Nuvem de palavras
+
+## tf-idf
+
+## Rede de n-grams
+
+## Correlação pareada
+
+## Diversidade lexical
+
+## Similaridade entre documentos/termos
+
+## KEYNESS: Análise de Frequência Relativa
+
+<!--chapter:end:07-statistics.Rmd-->
+
+# Escalonamento {#scalling}
+
+EM CONSTRUÇÃO...
+
+## Wordscore
+
+## Wordfish
+
+
+<!--chapter:end:08-escalonamento.Rmd-->
+
+# Classificação {#classificacao}
+
+EM CONSTRUÇÃO...
+
+## Método de dicionário: Análise de sentimento
+
+## Naive Bayes
+
+## LDA: Latent Dirichlet Allocation 
+
+## STM: Structed Topic Model
+
+<!--chapter:end:09-classificacao.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# Referências {-}
+'`
+
+<!--chapter:end:99-references.Rmd-->
+
+---
+title: "teste"
+author: "monimazz"
+date: "13/08/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Git
+
+- https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67
+- https://dev.acquia.com/blog/getting-started-collaborative-development-git
+- https://happygitwithr.com/
+
+<!--chapter:end:complementary-material.Rmd-->
+
+
+
+## R Markdown
+## Including Plots
+
+<!--chapter:end:dddd.Rmd-->
+
