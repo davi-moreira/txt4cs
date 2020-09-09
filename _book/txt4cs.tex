@@ -1,3 +1,7 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
 \documentclass[]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -6,34 +10,36 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage{microtype}
+\usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{xcolor}
 \usepackage{hyperref}
-\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
-\hypersetup{unicode=true,
+\hypersetup{
             pdftitle={Text as Data para Ciências Sociais},
             pdfauthor={Davi Moreira},
             colorlinks=true,
             linkcolor=Maroon,
+            filecolor=Maroon,
             citecolor=Blue,
             urlcolor=blue,
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{apalike}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -75,6 +81,8 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -84,12 +92,6 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -104,40 +106,32 @@
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{\emph{Text as Data} para Ciências Sociais}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-  \subtitle{guia prático com aplicações}
-  \author{Davi Moreira}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-      \predate{\centering\large\emph}
-  \postdate{\par}
-    \date{2019-10-04}
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 
 \usepackage{booktabs}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{\emph{Text as Data} para Ciências Sociais}
+\providecommand{\subtitle}[1]{}
+\subtitle{guia prático com aplicações}
+\author{Davi Moreira}
+\date{Criado em 02-08-2019. Atualizado em: 2020-09-08}
 
 \begin{document}
 \maketitle
 
 {
-\hypersetup{linkcolor=black}
+\hypersetup{linkcolor=}
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
@@ -159,7 +153,7 @@ O principal objetivo do livro é ser tutorial prático de uso e aplicação de t
 \section*{Sobre o autor/organizador}\label{sobre-o-autororganizador}}
 \addcontentsline{toc}{section}{Sobre o autor/organizador}
 
-Davi Moreira é Professor Visitante do departamento de Ciência Política da Universidade Federal de Pernambuco (UFPE). Ph.D.~em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atuo nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
+Davi Moreira é Professor Adjunto da Escola de Relações Internacionais da Fundação Getulio Vargas. Ph.D.~em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atua nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
 
 Para mais informações:
 
@@ -167,7 +161,7 @@ Para mais informações:
 \item
   \href{https://davimoreira.com/}{Página pessoal}.
 \item
-  \href{http://lattes.cnpq.br/7406586493977047}{Currículo Lattes}.
+  \href{https://github.com/davi-moreira}{GitHub}
 \item
   \href{https://scholar.google.com.br/citations?hl=pt-BR\&user=dS9bbdMAAAAJ}{Google Scholar}.
 \end{itemize}
@@ -182,7 +176,7 @@ Este livro é distribuído de acordo com a licença Creative Commons Attribution
 \section*{Agradecimentos}\label{agradecimentos}}
 \addcontentsline{toc}{section}{Agradecimentos}
 
-Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos Manoel Galdino, Rafael Magalhães, Lincon Ribeiro e Umberto Mignozetti pelo apoio e incentivo ao longo de toda minha trajetória como cientista.
+Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos \href{https://sites.google.com/site/galdinomcz/}{Manoel Galdino}, \href{http://lattes.cnpq.br/8040086656965973}{Rafael Magalhães}, Lincon Ribeiro e \href{https://umbertomig.com/}{Umberto Mignozzetti} pelo apoio e incentivo ao longo de toda minha trajetória como cientista. Por fim, agradeço à fantástica cientista de dados Mônica Rocabado, sem a qual esse projeto continuaria na gaveta.
 
 Este livro é escrito com o uso do pacote \textbf{bookdown} \citep{R-bookdown}, através do \texttt{R\ Markdown} e \textbf{knitr} \citep{xie2015}.
 
@@ -506,53 +500,1550 @@ Conhecer o sistema de codificação e como utilizá-lo é útil se você lida co
 No exemplo acima, removemos os acentos da sequência de caracteres utilizando o
 American Standard Code for Information Interchange - \href{https://en.wikipedia.org/wiki/ASCII}{ASCII}.
 
-Se desejar uma solução caseira, o pacote \texttt{txt4cs}, que acompanha o livro, possui a função \texttt{remove\_accent()}. Vejamos sua aplicação:
+Se desejar uma solução caseira, o pacote \texttt{txt4cs}, que acompanha o livro, possui a função \texttt{remove\_accent()}. Abaixo a sua aplicação:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{require}\NormalTok{(txt4cs)}
+\KeywordTok{library}\NormalTok{(txt4cs)}
 \NormalTok{chr <-}\StringTok{ "olê, olê, olê, olá, Lula, Lula"}
 \KeywordTok{remove_accent}\NormalTok{(chr)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [1] "ole, ole, ole, ola, Lula, Lula"
-\end{verbatim}
-
 \hypertarget{stringR}{%
 \chapter{\texorpdfstring{Strings no \texttt{R}}{Strings no R}}\label{stringR}}
 
-EM CONSTRUÇÃO\ldots{}
+Na ciência da computação chamamos uma sequência de caracteres de \texttt{string}. Para
+o desenvolvimento de análises automatizadas de conteúdo, é necessário saber como processar esse tipo especial de dado (o texto como dado)\footnote{Esse capítulo do material é inspirado no livro \href{https://www.gastonsanchez.com/r4strings/}{Handling Strings with R}}. Nesse sentido, três coisas são importantes de serem lembradas aqui:
 
-\hypertarget{strings}{%
-\section{Strings}\label{strings}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Computadores não interpretam letras. No limite, todos os caracteres são transformados em sequências compostas por zeros e uns. Logo, é através de padrões que caracteres são interpretados e os computadores armazenam os dados que retornam a nossos olhos.
+\item
+  Programar é escrever! Não é à toa que chamamos as formas de escrita em programação de linguagens de programação. Nesse livro, por exemplo, usamos a linguagem \texttt{R}. Sabendo disso, o desafio de se trabalhar com o texto como dado é o desafio de fazer com que o computador diferencie \texttt{código\ escrito} do \texttt{"texto\ como\ dado"} que ele precisará processar de acordo com os interesses do analista.
+\item
+  Como nós brasileiros lemos, o código e texto é processado pelo computador no seguinte sentido: da esquerda para a direita e de cima para baixo. Logo, ao desenvolver seu \texttt{script} é importante ter atenção em relação à ordem de escrita para que o computador possa desempenhar corretamente suas tarefas.
+\end{enumerate}
+
+É possível utilizar toda a versatilidade de estruturas de dados no \texttt{R} (vetores, matrizes, listas, data.frame, etc.) para processar sequências de caracteres. Como trabalhar com \texttt{strings} no \texttt{R}, portanto?
+
+\hypertarget{strings-e-vetores}{%
+\section{Strings e vetores}\label{strings-e-vetores}}
+
+Para declarar uma string, utilizamos aspas simples \texttt{\textquotesingle{}} ou aspas dupla ""``. Vejamos o caso dos dois vetores abaixo, ambos recebendo a letra''a".
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Vetores de caracteres }
+\NormalTok{caracter1 <-}\StringTok{ "a"}
+\NormalTok{caracter2 <-}\StringTok{ 'A'}
+
+\KeywordTok{class}\NormalTok{(caracter1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(caracter2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+Ambos são da classe \texttt{character}.
+
+\hypertarget{o-r-uxe9-case-sensitive}{%
+\subsection{\texorpdfstring{O \texttt{R} é case sensitive}{O R é case sensitive}}\label{o-r-uxe9-case-sensitive}}
+
+O \texttt{R} diferencia letras maiúsculas de letras minúsculas. Se compararmos os dois objetos criados acima, temos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{caracter1 }\OperatorTok{==}\StringTok{ }\NormalTok{caracter2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\hypertarget{sequuxeancias-de-caracteres}{%
+\subsection{Sequências de caracteres}\label{sequuxeancias-de-caracteres}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# string}
+\NormalTok{txt <-}\StringTok{ "uma string é uma sequência de caracteres"}
+\NormalTok{txt <-}\StringTok{ 'também pode ser utilizada com aspas simples'}
+
+\NormalTok{txt <-}\StringTok{ "no caso de aspas dupla, usa-se 'aspas simples' na string"}
+\NormalTok{txt <-}\StringTok{ 'no caso de aspas simples, usa-se "aspas dupla" na string'}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ "para usar }\CharTok{\textbackslash{}"}\StringTok{aspas dupla}\CharTok{\textbackslash{}"}\StringTok{ na string é necessário usar }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{"}
+\KeywordTok{cat}\NormalTok{(txt) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## para usar "aspas dupla" na string é necessário usar \
+\end{verbatim}
+
+O \texttt{R} armazena a sequência de caracteres conforme ela é apresentada. Porém, é possível fazer uso de caracteres especiais para que o computador interprete e apresente o texto de forma adequada. Como vimos acima, o objeto \texttt{txt} armazena a string conforme foi redigida, mas com o uso da função \texttt{cat()} podemos apresentá-lo de forma adequada. Perceba a diferença entre o resultado e a sequência de caracteres que, de fato, foi armazenada no objeto \texttt{txt}.
+
+\hypertarget{operauxe7uxf5es-buxe1sicas-com-vetores-de-strings}{%
+\subsection{Operações básicas com vetores de strings}\label{operauxe7uxf5es-buxe1sicas-com-vetores-de-strings}}
+
+É possível declarar um vetor de caracteres vazio.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# vetor de caracteres com 5 strings vazias}
+\NormalTok{palmeiras <-}\StringTok{ }\KeywordTok{character}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\NormalTok{palmeiras}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "" "" "" "" ""
+\end{verbatim}
+
+Vejamos seu tamanho:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{length}\NormalTok{(palmeiras)  }\CommentTok{# verificando o tamanho do vetor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+Vemos que o objeto \texttt{palmeiras} possui 5 elementos, todos sem qualquer conteúdo, mas da classe \texttt{character}.
+
+Será que é possível inserir conteúdo em elementos específicos do vetor? Vejamos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# incluindo string no primeiro e terceiro elementos do vetor}
+\NormalTok{palmeiras[}\DecValTok{1}\NormalTok{] <-}\StringTok{ "Quando surge o alviverde imponente"}
+\NormalTok{palmeiras[}\DecValTok{3}\NormalTok{] <-}\StringTok{ "Sabe bem o que vem pela frente"}
+\NormalTok{palmeiras}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Quando surge o alviverde imponente" ""                                   "Sabe bem o que vem pela frente"     ""                                  
+## [5] ""
+\end{verbatim}
+
+Ótimo! Significa que podemos ter um vetor no com o \href{http://www.palmeiras.com.br/historia/hino}{Hino do Palmeiras}, sendo cada um de seus elementos um verso dessa bela poesia.
+
+E seria possível ter um vetor cujos elementos fossem os hinos (sequências de caracteres/strings) de todos os times do país? Sim!
+
+\hypertarget{atenuxe7uxe3o}{%
+\subsubsection{Atenção}\label{atenuxe7uxe3o}}
+
+Um vetor com uma string vazia é diferente de um vetor sem strings
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Atenção:}
+\NormalTok{str_vazia <-}\StringTok{ ""}  \CommentTok{# string vazia}
+\NormalTok{char_vazio <-}\StringTok{ }\KeywordTok{character}\NormalTok{(}\DecValTok{0}\NormalTok{)  }\CommentTok{# caracter vazio}
+
+\KeywordTok{length}\NormalTok{(str_vazia)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{length}\NormalTok{(char_vazio)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\hypertarget{caracteres-e-outros-tipos-de-dados}{%
+\subsection{Caracteres e outros tipos de dados}\label{caracteres-e-outros-tipos-de-dados}}
+
+É importante saber como o \texttt{R} processa o texto como dado (\texttt{character}) em conjunto com outros formatos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frase <-}\StringTok{ "Campeonatos Brasileiros vencidos pelo Palmeiras."}
+\KeywordTok{is.numeric}\NormalTok{(frase)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.character}\NormalTok{(frase)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Acima verificamos que a classe do objeto \texttt{frase} é de tipo \texttt{character}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{quantidade <-}\StringTok{ }\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{5}
+\NormalTok{quantidade}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.numeric}\NormalTok{(quantidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.character}\NormalTok{(quantidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+Acima verificamos que a classe do objeto \texttt{quantidade} é de tipo \texttt{numeric}. Seria possível converter de um tipo para outro?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# convertendo quantidade}
+\NormalTok{quantidade <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(quantidade)}
+\NormalTok{quantidade}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "10"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{is.character}\NormalTok{(quantidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Sim! Veja que agora o valor 10 aparece entre aspas, pois o objeto \texttt{quantidade} foi convertido para a classe \texttt{character}.
+
+E se um vetor possuir números e caracteres em diferentes elementos, como o \texttt{R} interpreta a classe desse vetor?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# vetor com números e strings}
+\NormalTok{brasileiros <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\StringTok{"Campeonatos Brasileiros vencidos pelo Palmeiras."}\NormalTok{)}
+\NormalTok{brasileiros}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "10"                                               "Campeonatos Brasileiros vencidos pelo Palmeiras."
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(brasileiros)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+Perceba que o vetor é declarado com o número 10 no primeiro elemento e uma string no segundo elemento. Contudo, o \texttt{R} adota um critério de coerção de dados para que o vetor seja da classe \texttt{character}. Por isso, o número 10 é automaticamente convertido como caracter.
+
+O R segue duas regras básicas de coerção de tipos de dados:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Se uma cadeia de caracteres estiver presente em um vetor, todo o resto do vetor será convertido em cadeias de caracteres.
+\item
+  Se um vetor tiver apenas elementos lógicos e números, os elementos lógicos serão convertidos em números; Valores TRUE se tornam 1 e os valores FALSE se tornam 0.
+\end{enumerate}
+
+\hypertarget{strings-e-matrizes}{%
+\section{Strings e matrizes}\label{strings-e-matrizes}}
+
+No \texttt{R} matrizes são estruturas de dados que suportam apenas um tipo de classe de dados. Logo, assim como no caso do vetor visto anteriormente, ao constatar a presenção de alguma entrada de classe \texttt{character} automaticamente todos os elementos da matriz são convertidos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Matrizes ----}
+\NormalTok{m <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{), letters[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{])}
+\NormalTok{m}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,] "1"  "2"  "3"  "4"  "5" 
+## [2,] "a"  "b"  "c"  "d"  "e"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(m)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "matrix"
+\end{verbatim}
+
+\hypertarget{strings-e-data.frames}{%
+\section{Strings e data.frames}\label{strings-e-data.frames}}
+
+\texttt{data.frames} são as estruturas de dados mais utilizadas no \texttt{R}. Sua versatilidade permite ter no mesmo objeto dados de classes diferentes num formato de matriz (matriz de dados). Vejamos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Data Frames  ----}
+\NormalTok{df1 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{numeros =} \DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\DataTypeTok{letras =}\NormalTok{ letters[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{])}
+\KeywordTok{str}\NormalTok{(df1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':	5 obs. of  2 variables:
+##  $ numeros: int  1 2 3 4 5
+##  $ letras : Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
+\end{verbatim}
+
+Como padrão da função \texttt{data.frame()} strings são transformadas em fatores. Para manter strings como caracteres deve-se usar o argumento: \texttt{stringsAsFactors\ =\ FALSE}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df1 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{numeros =} \DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\DataTypeTok{letras =}\NormalTok{ letters[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{], }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{str}\NormalTok{(df1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':	5 obs. of  2 variables:
+##  $ numeros: int  1 2 3 4 5
+##  $ letras : chr  "a" "b" "c" "d" ...
+\end{verbatim}
+
+\hypertarget{strings-e-listas}{%
+\section{Strings e listas}\label{strings-e-listas}}
+
+Das estruturas de objetos mais populares no \texttt{R}, listas são as mais complexas. Sua grande vantagem em relação às demais estruturas é permitir uma organização hierárquica dos dados independente de sua classe e tamanho. Vejamos um exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Listas ----}
+\CommentTok{# listas contemplam qualquer tipo de estrutura de dados}
+\NormalTok{ls <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{, letters[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{], }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{5}\NormalTok{), m)}
+\NormalTok{ls}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+##  [1]  1  2  3  4  5  6  7  8  9 10
+## 
+## [[2]]
+## [1] "a" "b" "c" "d" "e"
+## 
+## [[3]]
+## [1]  0.4728142 -0.4306677  1.7726640  0.3668268 -2.3917102
+## 
+## [[4]]
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,] "1"  "2"  "3"  "4"  "5" 
+## [2,] "a"  "b"  "c"  "d"  "e"
+\end{verbatim}
+
+No exemplo acima, o objeto \texttt{ls} é composto por quatro elementos que contêm, cada um, diferentes tamanhos e diferentes estruturas de dados.
+
+\hypertarget{processamento-buxe1sico}{%
+\section{Processamento básico}\label{processamento-buxe1sico}}
+
+\hypertarget{contando-caracteres}{%
+\subsection{Contando caracteres}\label{contando-caracteres}}
+
+A função \texttt{nchar()} é um forma ágil e fácil de se obter o número de caracteres de uma string ou de strings de um vetor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{nchar}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"Quantos"}\NormalTok{, }\StringTok{"caracteres?"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  7 11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{nchar}\NormalTok{(}\StringTok{"Quantos caracteres?"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 19
+\end{verbatim}
+
+No exemplo acima, perceba que a função contabiliza o espaço entre palavras como caracter. Por isso, a soma do total de caracteres do primeiro caso (\(7 + 11 = 18\) caracteres) não é igual ao total de caracteres do segundo (\(19\) caracteres).
+
+\hypertarget{toupper-tolower}{%
+\subsection{\texorpdfstring{\texttt{toupper()}, \texttt{tolower()}}{toupper(), tolower()}}\label{toupper-tolower}}
+
+Sendo o \texttt{R} \emph{case sensitive}, para o processamento do texto como dado, pode ser de interesse do pesquisador harmonizar o conteúdo sob análise com o objetivo de ter todos os caracteres em formato maiúsculo ou minúsculo. As funções \texttt{toupper()} e \texttt{tolower()} desempenham bem esse papel.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tolower}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"TUdo eM MinúsCuLA", "}\NormalTok{ABCDE}\StringTok{"))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "tudo em minúscula" "abcde"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{toupper}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"TUdo eM mAiúsCula", "}\NormalTok{ABCDE}\StringTok{"))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "TUDO EM MAIÚSCULA" "ABCDE"
+\end{verbatim}
+
+\hypertarget{recortando-strings-substr-substring.}{%
+\subsubsection{\texorpdfstring{Recortando strings: \texttt{substr()}, \texttt{substring()}.}{Recortando strings: substr(), substring().}}\label{recortando-strings-substr-substring.}}
+
+Para o processamento do texto como dado, também pode ser de interesse do pesquisador a seleção de trechos de uma sequência de caracteres. Isso pode ser facilmente feito com as funções \texttt{substr()} e \texttt{substring()} indicando como parâmetros a posição nas quais a string deve ser recortada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{substr}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada, o Palmeiras é o time do amor."}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "O Palmeiras é o time da virada"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{substring}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada, o Palmeiras é o time do amor."}\NormalTok{, }\DecValTok{33}\NormalTok{, }\DecValTok{60}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "o Palmeiras é o time do amor"
+\end{verbatim}
+
+\hypertarget{uniuxe3o-intersecuxe7uxe3o-diferenuxe7a-igualdade}{%
+\subsubsection{União, Intersecção, Diferença, Igualdade}\label{uniuxe3o-intersecuxe7uxe3o-diferenuxe7a-igualdade}}
+
+Operações com vetores de forma geral podem ser aplicadas a vetores com strings. Podemos, por exemplo, unir diferentes vetores.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# União }
+\NormalTok{vec1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"algumas"}\NormalTok{, }\StringTok{"palavras"}\NormalTok{, }\StringTok{"aleatória", "}\NormalTok{aqui}\StringTok{")}
+\StringTok{vec2 <- c("}\NormalTok{e}\StringTok{", "}\NormalTok{algumas}\StringTok{", "}\NormalTok{palavras}\StringTok{", "}\NormalTok{ali}\StringTok{")}
+\StringTok{union(vec1, vec2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "algumas"   "palavras"  "aleatória" "aqui"      "e"         "ali"
+\end{verbatim}
+
+Verificar a intersecção entre dois vetores.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Intersecção }
+\KeywordTok{intersect}\NormalTok{(vec1, vec2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "algumas"  "palavras"
+\end{verbatim}
+
+Verificar a diferença entre dois vetores.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Diferença }
+\KeywordTok{setdiff}\NormalTok{(vec1, vec2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "aleatória" "aqui"
+\end{verbatim}
+
+E a igualdade de elementos entre dois vetores. No caso, entre o vetor \texttt{vec1} e ele mesmo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Igualdade }
+\KeywordTok{identical}\NormalTok{(vec1, vec1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\hypertarget{elemento-contido-em}{%
+\subsubsection{Elemento contido em}\label{elemento-contido-em}}
+
+Outra operação básica de interesse é a verificação se um elemento (no caso, uma sequência de caracteres) está contido num objeto. Vamos verificar abaixo se a sequência ``aqui'' está contida no vetor \texttt{vec1} através do operador \texttt{\%in\%}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Elemento contido em ----}
+\NormalTok{elem <-}\StringTok{ "aqui"}
+\NormalTok{elem }\OperatorTok{%in%}\StringTok{ }\NormalTok{vec1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+É importante destacar que o exemplo acima é uma operação básica de vetores no \texttt{R} e não exclusiva para sequência de caracteres. Nesse sentido, ela apenas checa se no vetor \texttt{vec1} há algum elemento idêntico ao padrão ``aqui''. Mais adiante verificaremos como identificar a presença de sequências de caracteres no interior de outras strings sem que tenham de ser idênticas.
+
+\hypertarget{ordenauxe7uxe3o}{%
+\subsubsection{Ordenação}\label{ordenauxe7uxe3o}}
+
+É possível ordenar um vetor de strings em ordem alfabética ou em sentido oposto como no exemplo abaixo. Tal versatilidade pode ser útil para o ordenamento de uma matriz de dados completa com base numa variável de nomes, por exemplo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Ordenando ----}
+\KeywordTok{sort}\NormalTok{(vec1, }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "palavras"  "aqui"      "algumas"   "aleatória"
+\end{verbatim}
 
 \hypertarget{o-pacote-stringr}{%
 \section{\texorpdfstring{O pacote \texttt{stringr}}{O pacote stringr}}\label{o-pacote-stringr}}
 
+\href{https://stringr.tidyverse.org/}{O pacote \texttt{stringr}} integra uma coleção de pacotes projetados para a ciência de dados, o \href{https://www.tidyverse.org/}{\texttt{tidyverse}}. Combinado ao \href{https://cran.r-project.org/web/packages/stringi/index.html}{pacote \texttt{stringi}}, você terá acesso a praticamente todas as possíveis funções necessárias para o processamento de strings em mais alto nível.
+
+Existem quatro famílias principais de funções no \texttt{stringr}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Manipulação de caracteres: essas funções permitem que você manipule caracteres individuais dentro de sequências de caracteres.
+\item
+  Ferramentas de espaço em branco para adicionar, remover e manipular espaços.
+\item
+  Operações sensíveis à localização geográfica, cujas operações irão variar de local para local.
+\item
+  Funções de correspondência de padrões, sendo o mais comum as expressões regulares.
+\end{enumerate}
+
+Além do que veremos neste material, é altamente recomendável a consulta ao \href{https://r4ds.had.co.nz/strings.html}{capítulo sobre strings do R for Data Science}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# carregando pacote ----}
+\KeywordTok{library}\NormalTok{(stringr)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{verificando-o-tamanho-de-uma-string}{%
+\subsection[Verificando o tamanho de uma string]{\texorpdfstring{Verificando o tamanho de uma string\footnote{Assim como fizemos anteriormente com a função \texttt{nchar()}.}}{Verificando o tamanho de uma string}}\label{verificando-o-tamanho-de-uma-string}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_length}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada, o Palmeiras é o time do amor."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 61
+\end{verbatim}
+
+\hypertarget{identificando-caracter-numa-posiuxe7uxe3o-especuxedfica.}{%
+\subsection{Identificando caracter numa posição específica.}\label{identificando-caracter-numa-posiuxe7uxe3o-especuxedfica.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# vetor de strings}
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada"}\NormalTok{, }\StringTok{"o Palmeiras é o time do amor."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Selecionando o terceiro caracter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# identificando terceira letra}
+\KeywordTok{str_sub}\NormalTok{(txt, }\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "P" "P"
+\end{verbatim}
+
+Selecionando do segundo caracter de trás pra frente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_sub}\NormalTok{(txt, }\DecValTok{2}\NormalTok{, }\DecValTok{-2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] " Palmeiras é o time da virad" " Palmeiras é o time do amor"
+\end{verbatim}
+
+\hypertarget{incluindo-caracter-ou-string-numa-posicao-especuxedfica.}{%
+\subsection{Incluindo caracter ou string numa posicao específica.}\label{incluindo-caracter-ou-string-numa-posicao-especuxedfica.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_sub}\NormalTok{(txt, }\DecValTok{3}\NormalTok{, }\DecValTok{11}\NormalTok{) <-}\StringTok{ "PALMEIRAS"}
+\NormalTok{txt}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "O PALMEIRAS é o time da virada" "o PALMEIRAS é o time do amor."
+\end{verbatim}
+
+Preencher uma string em tamanho fixo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_pad}\NormalTok{(txt, }\DecValTok{50}\NormalTok{) }\CommentTok{# por padrão: left}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "                    O PALMEIRAS é o time da virada" "                     o PALMEIRAS é o time do amor."
+\end{verbatim}
+
+Remove espaço extra.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{str_pad}\NormalTok{(txt, }\DecValTok{50}\NormalTok{) }\CommentTok{# por padrão: left}
+\KeywordTok{str_trim}\NormalTok{(txt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "O PALMEIRAS é o time da virada" "o PALMEIRAS é o time do amor."
+\end{verbatim}
+
+\hypertarget{recortando-uma-string-para-obter-parte-da-sequuxeancia-de-caracteres.}{%
+\subsection{Recortando uma string para obter parte da sequência de caracteres.}\label{recortando-uma-string-para-obter-parte-da-sequuxeancia-de-caracteres.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_sub}\NormalTok{(txt, }\DataTypeTok{start =} \DecValTok{3}\NormalTok{, }\DataTypeTok{end =} \DecValTok{11}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "         " "         "
+\end{verbatim}
+
+É possível fazer o recorte usando índices de trás pra frente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_sub}\NormalTok{(txt, }\DataTypeTok{start =} \DecValTok{-14}\NormalTok{, }\DataTypeTok{end =} \DecValTok{-1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "time da virada" " time do amor."
+\end{verbatim}
+
+Extração de palavras.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{word}\NormalTok{(txt, }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "" ""
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{word}\NormalTok{(txt, }\DecValTok{-1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "virada" "amor."
+\end{verbatim}
+
 \hypertarget{regular-expressions-no-r}{%
 \section{\texorpdfstring{Regular Expressions no \texttt{R}}{Regular Expressions no R}}\label{regular-expressions-no-r}}
+
+Até aqui você viu funções básicas e intermediárias para o processamento de sequências de caracteres no \texttt{R}. Para avançar, é necessário aprender o uso de expressões regulares ( \emph{Regular Expressions} ).
+
+Como definido no livro \href{https://www.gastonsanchez.com/r4strings/regex1.html}{Handling Strings with R}, uma expressão regular é um conjunto de símbolos que descreve um padrão de texto. Mais formalmente, uma expressão regular é um padrão que descreve um conjunto de cadeias de caracteres. Como o termo ``expressão regular'' é bastante longo, a maioria das pessoas usa a palavra \textbf{regex} para se referir à área.
+
+Entre outras tarefas, o uso de expressões regulares pode ajudá-lo a \citep{wickham_r_2017}:
+
+\begin{itemize}
+\tightlist
+\item
+  Determinar cadeias de caracteres correspondentes a um padrão.
+\item
+  Encontrar as posições de padrões correspondentes.
+\item
+  Extrair o conteúdo de padrões correspondentes.
+\item
+  Substituir o padrão correspondente por novos valores.
+\item
+  Dividir uma sequência com base na correspondência de um padrão determinado.
+\end{itemize}
+
+No entanto, é preciso ter atenção, pois o uso de expressões regulares pode se tornar uma tarefa realmente complexa. Veja \href{https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression/201378\#201378}{esta discussão do StackOverflow} a respeito de seu uso para identificação de endereços de e-mail, por exemplo.
+
+Dada a complexidade que a área pode assumir, vamos verificar o uso das \emph{regex} em algumas funções do pacote \texttt{stringr} com base \href{https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html}{nesse tutorial}. Junto a ele, é recomendável que a leitura atenta do \texttt{?regex} no \texttt{R}.
+
+\hypertarget{identificauxe7uxe3o-e-extrauxe7uxe3o-de-padruxe3o}{%
+\subsection{Identificação e Extração de padrão}\label{identificauxe7uxe3o-e-extrauxe7uxe3o-de-padruxe3o}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada"}\NormalTok{, }\StringTok{"o Palmeiras é o time do amor."}\NormalTok{)}
+\KeywordTok{str_extract}\NormalTok{(txt, }\StringTok{"amor"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA     "amor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_detect}\NormalTok{(txt, }\StringTok{"amor"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE  TRUE
+\end{verbatim}
+
+Utilizando o operador \texttt{\textbar{}} (``OU''):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_detect}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"presidente"}\NormalTok{, }\StringTok{"presidencialismo"}\NormalTok{, }\StringTok{"presidencialista"}\NormalTok{, }\StringTok{"parlamentarismo"}\NormalTok{), }\StringTok{"ente|ismo"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE FALSE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_extract}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"presidente"}\NormalTok{, }\StringTok{"presidencialismo"}\NormalTok{, }\StringTok{"presidencialista"}\NormalTok{, }\StringTok{"parlamentarismo"}\NormalTok{), }\StringTok{"ente|ismo"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "ente" "ismo" NA     "ismo"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_extract}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"presidente"}\NormalTok{, }\StringTok{"presidencialismo"}\NormalTok{, }\StringTok{"presidencialista"}\NormalTok{, }\StringTok{"parlamentarismo"}\NormalTok{), }\StringTok{"(presidencial|parlamentar)ismo"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA                 "presidencialismo" NA                 "parlamentarismo"
+\end{verbatim}
+
+Usar o ``.'' corresponde a qualquer caracter exceto uma nova linha:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"presidente"}\NormalTok{, }\StringTok{"presidencialismo"}\NormalTok{, }\StringTok{"presidencialista"}\NormalTok{, }\StringTok{"parlamentarismo"}\NormalTok{)}
+\KeywordTok{str_extract}\NormalTok{(txt, }\StringTok{"..a....."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA         "cialismo" "cialista" "rlamenta"
+\end{verbatim}
+
+Para identificar o ``.'' de fato, usamos ``\textbackslash{}.''. Para poder usar a ``\textbackslash{}'', adicionamos mais uma e temos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada"}\NormalTok{, }\StringTok{"o Palmeiras é o time do amor."}\NormalTok{)}
+\KeywordTok{str_detect}\NormalTok{(txt, }\StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE  TRUE
+\end{verbatim}
+
+Para identificar a ``\textbackslash{}'' de fato, usamos ``\textbackslash{}\textbackslash{}'':
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{ o Palmeiras é o time do amor."}\NormalTok{)}
+\KeywordTok{writeLines}\NormalTok{(txt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## O Palmeiras é o time da virada \ o Palmeiras é o time do amor.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_detect}\NormalTok{(txt, }\StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\hypertarget{substituiuxe7uxe3o}{%
+\subsection{Substituição}\label{substituiuxe7uxe3o}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada"}\NormalTok{, }\StringTok{"o Palmeiras é o time do amor."}\NormalTok{)}
+\KeywordTok{str_replace}\NormalTok{(txt, }\StringTok{"Palmeiras"}\NormalTok{, }\StringTok{"PALMEIRAS"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "O PALMEIRAS é o time da virada" "o PALMEIRAS é o time do amor."
+\end{verbatim}
+
+\hypertarget{uxe2ncoras}{%
+\subsection{Âncoras}\label{uxe2ncoras}}
+
+Por padrão, expressões regulares buscam por correspondência em qualquer parte de uma sequência de caracteres. Porém, é extremamente útil poder ancorar a busca pela correspondência no início ou no final de uma string. Podemos usar:
+
+\begin{itemize}
+\tightlist
+\item
+  ``\^{}'' para coincidir com o início da string.
+\item
+  ``\$'' para coincidir com o final da string.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"O Palmeiras é o time da virada"}\NormalTok{, }\StringTok{"o Palmeiras é o time do amor."}\NormalTok{)}
+\KeywordTok{str_detect}\NormalTok{(txt, }\StringTok{"^O"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_detect}\NormalTok{(txt, }\StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.$"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE  TRUE
+\end{verbatim}
 
 \hypertarget{scrape}{%
 \chapter{Obtenção de conteúdo}\label{scrape}}
 
-EM CONSTRUÇÃO\ldots{}
+Uma das tarefas mais importantes para a análise de conteúdo consiste na sua própria
+busca e aquisição. O \texttt{R} nos ajuda nessa tarefa a partir de distintas estratégias.
+A seguir apresento aquelas nas quais o uso de técnicas computacionais e programação
+potencializa o alcance e escala de acervos a serem utilizados para pesquisas.
+
+\hypertarget{word-excel-ou-.pdf}{%
+\section{\texorpdfstring{word, excel ou \texttt{.pdf}}{word, excel ou .pdf}}\label{word-excel-ou-.pdf}}
+
+Caso tenha realizado surveys com perguntas abertas ou possua conteúdo de texto
+organizado em formato de documento ou tabulado é possível utilizar o \texttt{R} para
+analisá-las. Para arquivos em formato excel pode-se usar o pacote \texttt{readxl} com a
+função \texttt{read\_excel}, funciona de forma similar ao exemplo em de leitura de arquivos
+em \texttt{.csv}. Para leitura de arquivos \texttt{.txt}, \texttt{.csv}, entre outros, recomenda-se
+utilizar o pacote \texttt{readr}. Vejamos um exemplo:
+
+\hypertarget{xlsx}{%
+\subsection{\texorpdfstring{\texttt{.xlsx}}{.xlsx}}\label{xlsx}}
+
+\begin{figure}
+\centering
+\includegraphics[width=7.29167in,height=\textheight]{images/SPLegisRelatorios.jpg}
+\caption{SPLegis}
+\end{figure}
+
+A Câmara dos Vereadores de São Paulo publica dados de sua atividade no portal
+\href{http://app-splegisreport-prd.azurewebsites.net/default.aspx}{SPLegis}. Entre as
+informações disponíveis, é possível obter \href{http://app-splegisreport-prd.azurewebsites.net/Report/VIEW_REL_EMENDA/List.aspx}{relatórios dos projetos}
+com o conteúdo de todas as ementas através do download de um arquivo em formato \texttt{.xlsx}!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(readxl)}
+
+\NormalTok{arquivo_excel <-}\StringTok{ }\KeywordTok{read_excel}\NormalTok{(}\StringTok{"Emendas Apresentadas.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{pdf-e-.doc}{%
+\subsection{\texorpdfstring{\texttt{.pdf} e \texttt{.doc}}{.pdf e .doc}}\label{pdf-e-.doc}}
+
+Antes de achar que os dados de um arquivo \texttt{.pdf} ou \texttt{.doc} são um obstáculo para
+a abordagem do texto como dado, diferentes estratégias podem ser adotadas para sua
+obtenção e processamento. Com o uso do pacote \texttt{textreadr}, por exemplo, de forma
+simples pode-se transformar o conteúdo do arquivo \texttt{.pdf} num arquivo \texttt{.txt}. Vejamos o
+conteúdo do \href{http://www.biblioteca.presidencia.gov.br/presidencia/ex-presidentes/luiz-inacio-lula-da-silva/discursos/1o-mandato/2003/01-01-pronunciamento-a-nacao-do-presidente-da-republica-luiz-inacio-lula-da-silva-apos-a-cerimonia-de-posse.pdf/view}{discurso de posse do ex-presidente Luis Inácio Lula da Silva realizado em
+01 de janeiro de 2003 no Congresso Nacional}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(textreadr)}
+
+\CommentTok{# lendo arquivo .pdf}
+\NormalTok{txt <-}\StringTok{ }\KeywordTok{read_document}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/lula-pronunciamento-posse-cd-2003.pdf"}\NormalTok{)}
+
+\CommentTok{# salvando como .txt}
+\KeywordTok{writeLines}\NormalTok{(txt, }\StringTok{"lula-pronunciamento-posse-cd-2003.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{webscraping}{%
 \section{Webscraping}\label{webscraping}}
 
-\hypertarget{arquvos-.pdf}{%
-\section{\texorpdfstring{Arquvos \texttt{.pdf}}{Arquvos .pdf}}\label{arquvos-.pdf}}
+O \emph{Webscraping} consiste na possibilidade de uso de programação para raspagem de
+dados da web, ou seja a obtenção de conteúdo presente na web. Nesse sentido, suponha
+que ao invés de montar uma equipe que irá acessar páginas na web para coletar seu
+conteúdo, você desenvolverá um programa específico para realizar essa tarefa com
+foco sobre os objetivos de sua pesquisa.
+
+\hypertarget{pacotes-para-raspagem-de-dados}{%
+\subsection{Pacotes para raspagem de dados}\label{pacotes-para-raspagem-de-dados}}
+
+Há diversos pacotes para raspagem de dados com o \texttt{R}. Abaixo segue um lista com os
+principais. Para referências sobre seu uso, consulte os links indicados,
+\href{https://www.datacamp.com/community/tutorials/r-web-scraping-rvest}{este tutorial sobre o \texttt{rvest}} e
+\href{http://material.curso-r.com/scrape/}{este capitulo sobre web scraping}.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html}{\texttt{httr}}
+\item
+  \href{https://cran.r-project.org/web/packages/xml2/xml2.pdf}{\texttt{xml2}}
+\item
+  \href{https://blog.rstudio.com/2014/11/24/rvest-easy-web-scraping-with-r/}{\texttt{rvest}}
+\end{itemize}
+
+Como o site \href{http://material.curso-r.com/scrape/}{Curso-R} destaca, esses pacotes
+não são suficientes para acessar todo tipo de conteúdo da web. Páginas com conteúdo
+produzido na linguagem \texttt{javascript}, por exemplo, precisam de outras ferramentas para
+acesso a seu conteúdo. Nesses casos, é necessário ``simular'' um navegador que acessa
+a página web e realiza consultas. Uma das melhores ferramentas para isso é o
+\texttt{selenium}, abaixo indicado.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://ropensci.org/tutorials/rselenium_tutorial/}{\texttt{RSelenium}}
+\end{itemize}
+
+\hypertarget{etapas-para-raspagem-de-dados-na-web}{%
+\subsection{Etapas para raspagem de dados na web}\label{etapas-para-raspagem-de-dados-na-web}}
+
+O processo de raspagem dos dados consiste nas seguintes etapas:
+
+\begin{itemize}
+\item
+  \textbf{Etapa 1:} Conhecer detalhadamente o caminho para acesso aos dados
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Qual o caminho que um usuário necessita realizar para obter os dados?
+  \item
+    É necessário preencher um formulário ou assinalar um Recapctha?
+  \end{itemize}
+\item
+  \textbf{Etapa 2:} Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Caso exista um caminho para obter esse dado, deve ser registrado
+  \item
+    Não é necessário realizar esse procedimento em todos as páginas que for realizar, mas é desejável.
+  \end{itemize}
+\item
+  \textbf{Etapa 3:} Obter os dados: raspagem de fato
+\item
+  \textbf{Etapa 4:} Processar os dados obtidos
+\end{itemize}
+
+\hypertarget{cuxf3digo-fonte}{%
+\subsection{Código fonte}\label{cuxf3digo-fonte}}
+
+Toda página na internet possui um código-fonte - muitas vezes em \texttt{html} - que indica
+e cria o conteúdo de forma visual para página. Ao clicar na página desejada com o
+botão direito do mouse e selecionar ``código fonte'' ou digitar \texttt{CRTL\ +\ U}, pode-se
+visualizá-lo. Vejamos um exemplo:
+
+\begin{figure}
+\centering
+\includegraphics[width=7.29167in,height=\textheight]{images/deputados.png}
+\caption{Câmara dos Deputados}
+\end{figure}
+
+Ao acessar o código fonte dessa \href{https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5\&nuSessao=174.4.53.O\&nuQuarto=56\&nuOrador=2\&nuInsercao=0\&dtHorarioQuarto=11:46\&sgFaseSessao=BC\&Data=17/08/2010\&txApelido=JAIR\%20BOLSONARO,\%20PP-RJ\&txFaseSessao=Breves\%20Comunica\%C3\%A7\%C3\%B5es\&txTipoSessao=Extraordin\%C3\%A1ria\%20-\%20CD\&dtHoraQuarto=11:46\&txEtapa=}{página do portal da Câmara dos Deputados}, você consegue visualizar o código \texttt{.html} que produz toda visualização,
+incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010\footnote{Conteúdo publicado sem revisão do autor.}.
+
+\hypertarget{obtenuxe7uxe3o-de-cuxf3digo-fonte---exemplo}{%
+\subsection{Obtenção de Código Fonte - Exemplo:}\label{obtenuxe7uxe3o-de-cuxf3digo-fonte---exemplo}}
+
+Se é possível visualizar o conteúdo, é possível obtê-lo de forma automatizada. Vamos, portanto,
+obter \href{https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5\&nuSessao=174.4.53.O\&nuQuarto=56\&nuOrador=2\&nuInsercao=0\&dtHorarioQuarto=11:46\&sgFaseSessao=BC\&Data=17/08/2010\&txApelido=JAIR\%20BOLSONARO,\%20PP-RJ\&txFaseSessao=Breves\%20Comunica\%C3\%A7\%C3\%B5es\&txTipoSessao=Extraordin\%C3\%A1ria\%20-\%20CD\&dtHoraQuarto=11:46\&txEtapa=}{o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro} em 17 de Agosto de 2010\footnote{Conteúdo publicado sem revisão do autor.}.
+
+Vamos utilizar as Etapas anteriormente apresentadas:
+
+De uma só vez, conseguimos cumprir as Etapas 1 e 2 com o código abaixo:
+
+\textbf{Etapa 1: Conhecer detalhadamente o caminho para acesso aos dados:} no nosso exemplo, o código
+fonte do endereço virtual que apresenta o discurso também nos apresenta o conteúdo publicado.
+
+\textbf{Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:} nesse exemplo,
+trata-se de apenas um endereço que armazenamos no objeto \texttt{link}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# carregando pacotes ----}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(rvest)}
+\KeywordTok{library}\NormalTok{(httr)}
+\KeywordTok{library}\NormalTok{(xml2)}
+
+\CommentTok{# definindo o endereço da web}
+\NormalTok{link <-}\StringTok{ "https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&nuSessao=174.4.53.O&nuQuarto=56&nuOrador=2&nuInsercao=0&dtHorarioQuarto=11:46&sgFaseSessao=BC&Data=17/08/2010&txApelido=JAIR%20BOLSONARO,%20PP-RJ&txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&txTipoSessao=Extraordin%C3%A1ria%20-%20CD&dtHoraQuarto=11:46&txEtapa="}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Etapa 3: Obter os dados:} Podemos facilmente obter o código fonte de um endereço
+na internet com o uso da função \texttt{readLines}. Aplicamos, portanto, a função no
+objeto \texttt{link} e atribuímos seu resultado ao objeto \texttt{conteudo}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# obtem o codigo fonte}
+\NormalTok{conteudo <-}\StringTok{ }\KeywordTok{readLines}\NormalTok{(link)  }
+\end{Highlighting}
+\end{Shaded}
+
+Veja que o objeto \texttt{conteudo} é um vetor cujos elementos são cada uma das linhas
+presentes no código fonte da página. Isso significa que não precisamos mais do
+acesso à internet ou do próprio endereço para processar o conteúdo obtido uma vez
+que já está retido no seu ambiente de trabalho no \texttt{R}. Nessa etapa, pode ser
+conveniente salvar o objeto \texttt{conteudo} em seu formato bruto para posterior
+tratamento.
+
+\textbf{Etapa 4: Processar os dados obtidos:}
+
+Para finalizar nossa tarefa, uma rápida análise do objeto \texttt{conteudo} (código fonte
+da página que publicou o discurso), nos mostra que o elemento \texttt{328} do vetor apresenta
+o conteúdo de interesse. Veja que, nesse caso, a análise do próprio código fonte da
+página da Câmara dos Deputados apresenta o conteúdo do discurso na linha 328 do código \texttt{html}.
+
+Para processar os dados obtidos, vamos selecionar apenas o elemento 328 e assim concluímos nossa missão.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{conteudo <-}\StringTok{ }\NormalTok{conteudo[}\DecValTok{328}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{atividade-pruxe1tica}{%
+\subsubsection{Atividade prática}\label{atividade-pruxe1tica}}
+
+Com base no exemplo acima, obtenha o código fonte da página do \href{https://pt.wikipedia.org/wiki/Chico_Buarque}{Chico Buarque na Wikipédia}.
+
+\hypertarget{web-services}{%
+\section{Web Services}\label{web-services}}
+
+Os \href{https://pt.wikipedia.org/wiki/Web_service}{Web services} são utilizados para
+disponibilizar serviços interativos na Web, podendo ser acessados por outras
+aplicações. O objetivo dos Web Services é a comunicação de aplicações através da Internet.
+Um dos motivos que tornam os Web Services atrativos para a obtenção de dados e conteúdo é
+o fato deste serviço ser desenvolvido com base em tecnologias \emph{standards}, em particular
+\texttt{XML} e \texttt{HTTP} (Hypertext Transfer Protocol).
+
+\hypertarget{obtenuxe7uxe3o-de-conteuxfado-via-ws---exemplo}{%
+\subsection{Obtenção de conteúdo via WS - Exemplo:}\label{obtenuxe7uxe3o-de-conteuxfado-via-ws---exemplo}}
+
+A Câmara dos Deputados do Brasil possui um excelente serviço de transparência.
+Estimulado pela iniciativa do \href{http://labhackercd.leg.br/}{Laboratório Hacker}, foi desenvolvido
+o \href{http://www2.camara.leg.br/transparencia/dados-abertos/dados-abertos-legislativo/webservices}{Web service da Câmara dos Deputados}.
+
+Após a realização da Primeira Maratona Hacker da Câmara dos Deputados em 2013, quando fora
+desenvolvido o \href{http://retorica.labhackercd.leg.br/}{Projeto Retórica Parlamentar}, o Web Service
+da CD passou a disponibilizar os discursos proferidos pelos deputados federais em plenário.
+
+\begin{figure}
+\centering
+\includegraphics[width=4.16667in,height=\textheight]{images/september-11th.png}
+\caption{September 11th - The Washington Post}
+\end{figure}
+
+Os \href{https://pt.wikipedia.org/wiki/Ataques_de_11_de_setembro_de_2001}{ataques terroistas de 11 de setembro de 2001}
+chocaram o mundo e os deputados federais brasileiros não ficaram em silêncio diante de
+fato tão relevante. Nossa tarefa será a de obter os dados e o conteúdo dos discursos proferidos nesse dia terrível.
+Em virtude da estrutura de disponibilização dos dados no WebService da Câmara dos Deputados, nossa tarefa será dividida em duas subtarefas:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  obter os meta-dados dos discursos;
+\item
+  obter o conteúdo dos discursos (inteiror teor).
+\end{enumerate}
+
+\hypertarget{a-obter-os-meta-dados-dos-discursos}{%
+\subsection{a) obter os meta-dados dos discursos}\label{a-obter-os-meta-dados-dos-discursos}}
+
+Vamos utilizar as Etapas anteriormente apresentadas:
+
+De uma só vez, conseguimos realizar as Etapas 1 e 2:
+
+\textbf{Etapa 1: Conhecer detalhadamente o caminho para acesso aos dados:}
+
+Conhecendo exatamente como deve ser a chamada (o endereço que dá acesso aos dados),
+podemos simplesmente passar os parâmetros. Os parâmetros podem ser encontrados no guia do \href{https://www2.camara.leg.br/transparencia/dados-abertos/dados-abertos-legislativo/webservices/sessoesreunioes-2/listardiscursosplenario}{WebService}.
+No nosso exemplo, temos como parâmetros a data inicial (\texttt{dataInicial}) e a data
+final (\texttt{dataFinal}) de busca pelos discursos. Sendo nosso objetivo obter os
+discursos proferidos num mesmo dia, usamos como parâmetros ``11/09/2001''.
+
+\textbf{Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:}
+
+Nesse exemplo, trata-se de apenas um endereço que armazenamos no objeto \texttt{link}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# pacotes }
+\KeywordTok{library}\NormalTok{(httr)}
+\KeywordTok{library}\NormalTok{(XML)}
+\KeywordTok{library}\NormalTok{(xml2)}
+\KeywordTok{library}\NormalTok{(RCurl)}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(stringr)}
+
+\CommentTok{# definindo parametros da chamada}
+\NormalTok{dataInicial <-}\StringTok{ "11/09/2001"} 
+\NormalTok{dataFinal <-}\StringTok{ "11/09/2001"}
+
+\CommentTok{# alocando enderenço a objeto link}
+\NormalTok{link <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"https://www.camara.leg.br/sitcamaraws/SessoesReunioes.asmx/ListarDiscursosPlenario?"}\NormalTok{,}
+                \StringTok{"dataIni="}\NormalTok{, dataInicial,}
+                \StringTok{"&dataFim="}\NormalTok{, dataFinal, }
+                \StringTok{"&codigoSessao=&parteNomeParlamentar=&siglaPartido=&siglaUF="}\NormalTok{,}
+                \DataTypeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Etapa 3: Obter os dados:}
+
+Para essa etapa, basta fazer uso da função \texttt{GET}. No código abaixo, armazenamos os resultados no objeto \texttt{response}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{response <-}\StringTok{ }\KeywordTok{GET}\NormalTok{(link)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Etapa 4: Processar os dados obtidos:}
+
+Organizar o resultado da função \texttt{GET} num formato de matriz de dados (\texttt{data.frame}) é
+simples. Primeiro, transformamos o resultado numa lista, na qual cada elemento será
+uma das sessões legislativas realizadas naquela data. Em segundo lugar, de forma
+interativa, usando a função \texttt{for}, alocamos os campos desejados num objeto \texttt{data.frame}\footnote{Para uma referência de como transformar objetos \texttt{xml} em \texttt{data.frame} ver: i) (\url{https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame}); ii) (\url{https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file})}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# analisa um arquivo XML ou HTML e gera uma estrutura no R.}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{xmlParse}\NormalTok{(response, }\DataTypeTok{encoding =} \StringTok{"UTF-8"}\NormalTok{) }
+
+\CommentTok{# transforma um XML nó em lista. Importante pois permite você reconhecer o caminho para obtenção dos dados. Exemplo: "$sessao$fasesSessao$faseSessao$discursos$discurso$sumario"}
+\NormalTok{ls <-}\StringTok{ }\KeywordTok{xmlToList}\NormalTok{(data) }
+
+\CommentTok{# data frame que recebera dados dos pronunciamentos}
+\NormalTok{bd <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{()  }
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(ls))\{}
+    \CommentTok{# obtendo quantidade de pronunciamentos de uma respectiva sessao}
+\NormalTok{    quantPronunciamentos <-}\StringTok{ }\KeywordTok{length}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos)}
+    
+\NormalTok{    sumario <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    numInsercao <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    numQuarto <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    indexacao <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    hora <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    uf <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    numOrador <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    nomeOrador <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+\NormalTok{    partido <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"character"}\NormalTok{)}
+    
+    \ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{quantPronunciamentos)\{}
+      \CommentTok{# obtendo todos os dados do pronunciamento}
+      \CommentTok{# sumario}
+\NormalTok{      sumario[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{sumario)}
+      \CommentTok{# insercao}
+\NormalTok{      numInsercao[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{numeroInsercao)}
+      \CommentTok{# quarto}
+\NormalTok{      numQuarto[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{numeroQuarto)}
+      \CommentTok{# indexacao}
+\NormalTok{      indexacao[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{txtIndexacao)}
+      \CommentTok{# hora}
+\NormalTok{      hora[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{horaInicioDiscurso)}
+      \CommentTok{# uf orador}
+\NormalTok{      uf[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{orador}\OperatorTok{$}\NormalTok{uf)}
+      \CommentTok{# numero orador}
+\NormalTok{      numOrador[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{orador}\OperatorTok{$}\NormalTok{numero)}
+      \CommentTok{# nome orador}
+\NormalTok{      nomeOrador[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{orador}\OperatorTok{$}\NormalTok{nome)}
+      \CommentTok{# partido orador}
+\NormalTok{      partido[j] <-}\StringTok{ }
+\StringTok{        }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{discursos[[j]]}\OperatorTok{$}\NormalTok{orador}\OperatorTok{$}\NormalTok{partido)}
+\NormalTok{    \}}
+    
+    \CommentTok{# obtendo todos os dados da fase}
+    \CommentTok{# codigo}
+\NormalTok{    codigoFase <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{codigo)}
+    \CommentTok{# descricao}
+\NormalTok{    descricaoFase <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{fasesSessao}\OperatorTok{$}\NormalTok{faseSessao}\OperatorTok{$}\NormalTok{descricao)}
+    \CommentTok{# obtendo todos os dados da sessao}
+    \CommentTok{# codigo}
+\NormalTok{    codigoSessao <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{codigo)}
+    \CommentTok{# data}
+\NormalTok{    dataSessao <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{data)}
+    \CommentTok{# numero}
+\NormalTok{    numSessao <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{numero)}
+    \CommentTok{# tipo}
+\NormalTok{    tipoSessao <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(ls[i]}\OperatorTok{$}\NormalTok{sessao}\OperatorTok{$}\NormalTok{tipo)}
+    
+\NormalTok{    bdTemp <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{codigoSessao =} \KeywordTok{rep}\NormalTok{(codigoSessao, }\KeywordTok{length}\NormalTok{(nomeOrador)),}
+                         \DataTypeTok{dataSessao =} \KeywordTok{rep}\NormalTok{(dataSessao, }\KeywordTok{length}\NormalTok{(nomeOrador)),}
+                         \DataTypeTok{numSessao =} \KeywordTok{rep}\NormalTok{(numSessao, }\KeywordTok{length}\NormalTok{(nomeOrador)),}
+                         \DataTypeTok{tipoSessao =} \KeywordTok{rep}\NormalTok{(tipoSessao, }\KeywordTok{length}\NormalTok{(nomeOrador)),}
+                         \DataTypeTok{codigoFase =} \KeywordTok{rep}\NormalTok{(codigoFase, }\KeywordTok{length}\NormalTok{(nomeOrador)),}
+                         \DataTypeTok{descricaoFase =} \KeywordTok{rep}\NormalTok{(descricaoFase, }\KeywordTok{length}\NormalTok{(nomeOrador)),}
+                         \DataTypeTok{numInsercao =}\NormalTok{ numInsercao,}
+                         \DataTypeTok{numQuarto =}\NormalTok{ numQuarto,}
+                         \DataTypeTok{hora =}\NormalTok{ hora,}
+                         \DataTypeTok{numOrador =}\NormalTok{ numOrador,}
+                         \DataTypeTok{nomeOrador =}\NormalTok{ nomeOrador,}
+                         \DataTypeTok{uf =}\NormalTok{ uf,}
+                         \DataTypeTok{partido =}\NormalTok{ partido, }
+                         \DataTypeTok{indexacao =}\NormalTok{ indexacao,}
+                         \DataTypeTok{sumario =}\NormalTok{ sumario)}
+    
+\NormalTok{    bd <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(bd, bdTemp)}
+\NormalTok{  \}}
+\end{Highlighting}
+\end{Shaded}
+
+Com o objeto \texttt{bd} acima, concluímos a primeira subetapa e podemos seguir para a segunda.
+
+\hypertarget{b-obter-o-conteuxfado-dos-discursos-inteiror-teor.}{%
+\subsection{b) obter o conteúdo dos discursos (inteiror teor).**}\label{b-obter-o-conteuxfado-dos-discursos-inteiror-teor.}}
+
+Importante ressaltar que essa etapa só é possível tendo realizado o método acima de \texttt{ListarDiscursosPlenário}, devido exigência do próprio WebService.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bdDados <-}\StringTok{ }\NormalTok{bd}
+
+\NormalTok{bd <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{()  }\CommentTok{# data frame que recebera os pronunciamentos}
+  
+\ControlFlowTok{for}\NormalTok{( i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{dim}\NormalTok{(bdDados)[}\DecValTok{1}\NormalTok{])\{}
+\NormalTok{    link <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"https://www.camara.leg.br/SitCamaraWS/SessoesReunioes.asmx/obterInteiroTeorDiscursosPlenario?"}\NormalTok{,}
+                  \StringTok{"codSessao="}\NormalTok{, bdDados}\OperatorTok{$}\NormalTok{codigoSessao[i],}
+                  \StringTok{"&numOrador="}\NormalTok{, bdDados}\OperatorTok{$}\NormalTok{numOrador[i], }
+                  \StringTok{"&numQuarto="}\NormalTok{, bdDados}\OperatorTok{$}\NormalTok{numQuarto[i],}
+                  \StringTok{"&numInsercao="}\NormalTok{, bdDados}\OperatorTok{$}\NormalTok{numInsercao[i],}
+                  \DataTypeTok{sep =} \StringTok{""}\NormalTok{)}
+    \KeywordTok{print}\NormalTok{(link)}
+\NormalTok{    response <-}\StringTok{ }\KeywordTok{GET}\NormalTok{(link)}
+\NormalTok{    data <-}\StringTok{ }\KeywordTok{xmlParse}\NormalTok{(response, }\DataTypeTok{encoding =} \StringTok{"UTF-8"}\NormalTok{)}
+\NormalTok{    ls <-}\StringTok{ }\KeywordTok{xmlToList}\NormalTok{(data)}
+    
+\NormalTok{    bdTemp <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{nome =}\NormalTok{ ls}\OperatorTok{$}\NormalTok{nome,}
+                         \DataTypeTok{partido =}\NormalTok{ ls}\OperatorTok{$}\NormalTok{partido,}
+                         \DataTypeTok{uf =}\NormalTok{ ls}\OperatorTok{$}\NormalTok{uf,}
+                         \DataTypeTok{horaInicioDiscurso =}\NormalTok{ ls}\OperatorTok{$}\NormalTok{horaInicioDiscurso,}
+                         \DataTypeTok{discursoRTFBase64 =}\NormalTok{ ls}\OperatorTok{$}\NormalTok{discursoRTFBase64)}
+\NormalTok{    bd <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(bd, bdTemp)}
+    \KeywordTok{Sys.sleep}\NormalTok{(.}\DecValTok{5}\NormalTok{)}
+\NormalTok{  \}}
+\end{Highlighting}
+\end{Shaded}
+
+Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato
+RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para
+possibilitar sua leitura:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bd}\OperatorTok{$}\NormalTok{discursoRTFBase64 <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(bd}\OperatorTok{$}\NormalTok{discursoRTFBase64)}
+
+\NormalTok{bd}\OperatorTok{$}\NormalTok{discursoPlainTxt <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\DataTypeTok{mode =} \StringTok{"character"}\NormalTok{, }
+                                           \DataTypeTok{length =} \KeywordTok{dim}\NormalTok{(bd)[}\DecValTok{1}\NormalTok{])}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{dim}\NormalTok{(bd)[}\DecValTok{1}\NormalTok{])\{}
+\NormalTok{  bd}\OperatorTok{$}\NormalTok{discursoPlainTxt[i] <-}\StringTok{ }\KeywordTok{decode_rtf}\NormalTok{(bd}\OperatorTok{$}\NormalTok{discursoRTFBase64[i])}
+  \KeywordTok{print}\NormalTok{( bd}\OperatorTok{$}\NormalTok{discursoPlainTxt)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{atividade-pruxe1tica-1}{%
+\subsubsection{Atividade prática}\label{atividade-pruxe1tica-1}}
+
+Utilizando o código acima, obtenha as falas proferidas do dia da autorização do
+processo de impeachement da Presidenta Dilma Vana Rousseff na Câmara dos Deputados,
+ocorrido em 17 de abril de 2016. Salve os dados em formato \texttt{.rda}.
+
+\hypertarget{download-de-arquivos-da-web}{%
+\section{Download de arquivos da web}\label{download-de-arquivos-da-web}}
+
+Além do conteúdo diretamente publicado numa página web, pode ser de interesse
+fazer o download de arquivos disponíveis. Em especial, no caso brasileiro, muitos
+órgãos públicos publicam relatórios em formato \texttt{.pdf}. O obstáculo proporcionado
+pelo formato do arquivo e o modo como o conteúdo é disponibilizado pode ser superado
+com o uso da linguagem \texttt{R}.
+
+Como exemplo, vamos conferir o caso do \href{https://www.tce.pe.gov.br/internet/}{Tribunal de Contas do Estado de Pernambuco},
+que anualmente disponibiliza relatórios de gestão.
+
+\begin{figure}
+\centering
+\includegraphics[width=7.29167in,height=\textheight]{images/tce.png}
+\caption{TCE-PE}
+\end{figure}
+
+Para atingir nosso objetivo, vamos utilizar as Etapas anteriormente apresentadas:
+
+\textbf{Etapa 1: Conhecer detalhadamente o caminho para acesso aos dados:}
+
+A \href{\%22https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2\%22}{página do TCE-PE} apresenta os relatórios publicados anualmente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(rvest)}
+\KeywordTok{library}\NormalTok{(XML)}
+\KeywordTok{library}\NormalTok{(xml2)}
+
+\NormalTok{link_tce <-}\StringTok{ "https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2"}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:}
+
+Aqui selecionamos exatamente os endereços de download de cada um dos arquivos publicados.
+Todos os \texttt{.pdf} são um link dentro do código fonte da página, iremos, portanto, obter os
+links desses relatórios.
+
+Para tanto, podemos observar que o código fonte possui um padrão que identifica os
+Relatórios de Desempenho anual: \texttt{rdg}. Iremos utilizá-lo para obter somente os documentos
+que possuam esse padrão.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{link_relatorios <-}\StringTok{ }\NormalTok{link_tce }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{read_html }\OperatorTok{%>%}\StringTok{  }\CommentTok{# função que irá ler o código fonte escrito em html}
+\StringTok{  }\KeywordTok{html_nodes}\NormalTok{(}\StringTok{"a"}\NormalTok{) }\OperatorTok{%>%}\StringTok{  }\CommentTok{# nó presente no código fonte antes do pdf}
+\StringTok{  }\KeywordTok{html_attr}\NormalTok{(}\StringTok{"href"}\NormalTok{) }\CommentTok{# atributro do nó}
+
+\CommentTok{# obtenção dos links do relatório através do padrão `rgd`}
+\NormalTok{link_relatorios <-}\StringTok{ }\NormalTok{link_relatorios[}\KeywordTok{grep}\NormalTok{(}\StringTok{"rdg"}\NormalTok{, link_relatorios)] }
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Etapa 3: Obter os dados:}
+
+A obtenção dos dados se refere justamente ao download do material para armazenamento
+local. Logo, definimos o diretório onde os arquivos serão salvos e fazemos uso da
+função \texttt{download.file}. Como obtivemos mais de um link, para mais de um relatório,
+no código abaixo apresentamos como obter o primeiro arquivo \texttt{.pdf} presente em \texttt{link\_relatorios{[}1{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{download.file}\NormalTok{(link_relatorios[}\DecValTok{1}\NormalTok{], }\DataTypeTok{destfile =} \StringTok{"seu_diretorio/nome_do_arquivo.pdf"}\NormalTok{, }\DataTypeTok{mode =} \StringTok{"wb"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Etapa 4: Processar os dados obtidos:}
+
+O processo é similar à leitura de conteúdo em arquivo \texttt{.pdf} explicada na seção \ref{pdf}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# pacotes}
+\KeywordTok{library}\NormalTok{(textreadr)}
+\KeywordTok{library}\NormalTok{(here)}
+
+\CommentTok{# # lendo arquivo .pdf}
+\NormalTok{rdg2018 <-}\StringTok{ }\KeywordTok{read_document}\NormalTok{(}\StringTok{"nome_arquivo.pdf"}\NormalTok{)}
+
+\CommentTok{# salvando como .txt}
+\KeywordTok{writeLines}\NormalTok{(rdg2018, }\StringTok{"meu_arquivo.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{twitter}{%
 \section{Twitter}\label{twitter}}
 
-\hypertarget{uxe1udio-transcriuxe7uxe3o}{%
-\section{Áudio Transcrição}\label{uxe1udio-transcriuxe7uxe3o}}
+Existem diversos pacotes que possibilitam a captura de informação do Twitter, sendo
+possível obter tweets ou timelines somente de usuários públicos, ou seja que não possuem
+um perfil privado. Como exemplo, vamos utilizar o pacote \href{https://github.com/ropensci/rtweet}{\texttt{rtweet}}
+para obter dados dos tweets da timeline da \href{https://www.camara.leg.br/deputados/204534}{Deputada Federal Tabata Amaral}.
+Vale ressaltar que o Twitter exige que para obtenção dos dados você possua uma conta
+no Twitter e autorize o app \texttt{rstats2twitter} no popup que surgirá no seu browser
+ao utilizar alguma das funções no console do \texttt{R}, isso ocorrerá somente na primeira
+vez de uso, criando um token que será salvo para próximas sessões.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(rtweet)}
+
+\NormalTok{tabata_timeline <-}\StringTok{ }\KeywordTok{get_timeline}\NormalTok{( }\DataTypeTok{user =} \StringTok{"tabataamaralsp"}\NormalTok{, }\DataTypeTok{n =} \DecValTok{30}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Além do uso de obtenção de hashtags é possível buscar termos que estão sendo tweetados
+ou hashtags através do \texttt{search\_tweets} que segue lógica similar ao \texttt{get\_timeline}.
 
 \hypertarget{imagens}{%
 \section{Imagens}\label{imagens}}
+
+No caso de textos em imagem é possível utilizar o \emph{optical character recognition} (OCR). OCR
+é o processo de encontrar e reconhecer texto dentro de imagens, por exemplo, de uma captura
+de tela, texto digitalizado, etc. A imagem abaixo tem um texto de exemplo:
+
+\begin{figure}
+\centering
+\includegraphics[width=4.16667in,height=\textheight]{images/testocr.png}
+\caption{ocr}
+\end{figure}
+
+Com o pacote \href{https://cran.r-project.org/web/packages/tesseract/vignettes/intro.html}{\texttt{Tesseract}} e
+o uso da \href{https://cloud.google.com/vision/}{Interface de Programação de Aplicativos (API) do Google} é
+possível capturar seu conteúdo, podendo ser uma imagem presente no seu computador ou da
+web. Para realizá-lo em português é necessário instalar o acervo de treinamento em português
+com o seguinte comando \texttt{tesseract\_download(\textquotesingle{}por\textquotesingle{})}. No caso, vamos utilizar a imagem do Tweet Fake
+atribuído ao Presidente Bolsonaro para obter seu conteúdo:
+
+\begin{figure}
+\centering
+\includegraphics[width=4.16667in,height=\textheight]{images/tweet_bolsonaro_cp.png}
+\caption{FAKE NEWS!}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tesseract)}
+
+\CommentTok{# obtendo treinamento na ligua portuguesa}
+\KeywordTok{tesseract_download}\NormalTok{(}\StringTok{'por'}\NormalTok{)}
+\NormalTok{por <-}\StringTok{ }\KeywordTok{tesseract}\NormalTok{(}\StringTok{"por"}\NormalTok{) }\CommentTok{# alocando treinamento na ligua portuguesa}
+
+\CommentTok{# obtendo texto da imagem}
+\NormalTok{text <-}\StringTok{ }\NormalTok{tesseract}\OperatorTok{::}\KeywordTok{ocr}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/davi-moreira/txt4cs/master/images/tweet_bolsonaro_cp.png"}\NormalTok{, }\DataTypeTok{engine =}\NormalTok{ por)}
+
+\CommentTok{# resultado}
+\KeywordTok{cat}\NormalTok{(text)}
+\end{Highlighting}
+\end{Shaded}
+
+Segue o resultado:
+
+\begin{verbatim}
+## Jair M. Bolsonaro & 8 a Qjairbolsonaro Vie . S O que é ciência política? 09:26 - 06/03/2019 - Twitter for iPhone
+\end{verbatim}
+
+\hypertarget{uxe1udio-transcriuxe7uxe3o}{%
+\section{Áudio Transcrição}\label{uxe1udio-transcriuxe7uxe3o}}
+
+EM CONSTRUÇÃO\ldots{}\ldots{}\ldots{}..
 
 \hypertarget{processamento}{%
 \chapter{Processamento dos dados}\label{processamento}}
@@ -635,6 +2126,5 @@ EM CONSTRUÇÃO\ldots{}
 \section{STM: Structed Topic Model}\label{stm-structed-topic-model}}
 
 \bibliography{biblioteca.bib,book.bib,packages.bib}
-
 
 \end{document}

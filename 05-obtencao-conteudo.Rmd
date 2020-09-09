@@ -605,8 +605,8 @@ Nos últimos anos, diversas aplicações comerciais passaram a ofertar a possibi
 
 - Pacote [`aws.transcribe`](https://cran.r-project.org/web/packages/aws.transcribe/index.html): nesse caso a transcrição é feita com o uso do AWS API da Amazon [README](https://cran.r-project.org/web/packages/aws.transcribe/README.html), [Git do projeto](https://github.com/cloudyr/aws.transcribe)). 
 
-Sys.setenv("AWS_ACCESS_KEY_ID" = "AKIAJ6ZJ5UB2SIOZNC3A",
-           "AWS_SECRET_ACCESS_KEY" = "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",
+Sys.setenv("AWS_ACCESS_KEY_ID" = "key_id",
+           "AWS_SECRET_ACCESS_KEY" = "access_key",
            "AWS_DEFAULT_REGION" = "",
            "AWS_SESSION_TOKEN" = "mytoken")
 --->

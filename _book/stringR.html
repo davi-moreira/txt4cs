@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 4 Strings no R | Text as Data para Ciências Sociais</title>
   <meta name="description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
-  <meta name="generator" content="bookdown 0.14.1 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 4 Strings no R | Text as Data para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,6 @@
 <meta name="author" content="Davi Moreira" />
 
 
-<meta name="date" content="2019-10-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,11 +181,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="scrape.html"><a href="scrape.html"><i class="fa fa-check"></i><b>5</b> Obtenção de conteúdo</a><ul>
-<li class="chapter" data-level="5.1" data-path="scrape.html"><a href="scrape.html#webscraping"><i class="fa fa-check"></i><b>5.1</b> Webscraping</a></li>
-<li class="chapter" data-level="5.2" data-path="scrape.html"><a href="scrape.html#arquvos-.pdf"><i class="fa fa-check"></i><b>5.2</b> Arquvos <code>.pdf</code></a></li>
-<li class="chapter" data-level="5.3" data-path="scrape.html"><a href="scrape.html#twitter"><i class="fa fa-check"></i><b>5.3</b> Twitter</a></li>
-<li class="chapter" data-level="5.4" data-path="scrape.html"><a href="scrape.html#áudio-transcrição"><i class="fa fa-check"></i><b>5.4</b> Áudio Transcrição</a></li>
-<li class="chapter" data-level="5.5" data-path="scrape.html"><a href="scrape.html#imagens"><i class="fa fa-check"></i><b>5.5</b> Imagens</a></li>
+<li class="chapter" data-level="5.1" data-path="scrape.html"><a href="scrape.html#word-excel-ou-.pdf"><i class="fa fa-check"></i><b>5.1</b> word, excel ou <code id="pdf">.pdf</code></a><ul>
+<li class="chapter" data-level="5.1.1" data-path="scrape.html"><a href="scrape.html#xlsx"><i class="fa fa-check"></i><b>5.1.1</b> <code>.xlsx</code></a></li>
+<li class="chapter" data-level="5.1.2" data-path="scrape.html"><a href="scrape.html#pdf-e-.doc"><i class="fa fa-check"></i><b>5.1.2</b> <code>.pdf</code> e <code>.doc</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="scrape.html"><a href="scrape.html#webscraping"><i class="fa fa-check"></i><b>5.2</b> Webscraping</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="scrape.html"><a href="scrape.html#pacotes-para-raspagem-de-dados"><i class="fa fa-check"></i><b>5.2.1</b> Pacotes para raspagem de dados</a></li>
+<li class="chapter" data-level="5.2.2" data-path="scrape.html"><a href="scrape.html#etapas-para-raspagem-de-dados-na-web"><i class="fa fa-check"></i><b>5.2.2</b> Etapas para raspagem de dados na web</a></li>
+<li class="chapter" data-level="5.2.3" data-path="scrape.html"><a href="scrape.html#código-fonte"><i class="fa fa-check"></i><b>5.2.3</b> Código fonte</a></li>
+<li class="chapter" data-level="5.2.4" data-path="scrape.html"><a href="scrape.html#obtenção-de-código-fonte---exemplo"><i class="fa fa-check"></i><b>5.2.4</b> Obtenção de Código Fonte - Exemplo:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="scrape.html"><a href="scrape.html#web-services"><i class="fa fa-check"></i><b>5.3</b> Web Services</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="scrape.html"><a href="scrape.html#obtenção-de-conteúdo-via-ws---exemplo"><i class="fa fa-check"></i><b>5.3.1</b> Obtenção de conteúdo via WS - Exemplo:</a></li>
+<li class="chapter" data-level="5.3.2" data-path="scrape.html"><a href="scrape.html#a-obter-os-meta-dados-dos-discursos"><i class="fa fa-check"></i><b>5.3.2</b> a) obter os meta-dados dos discursos</a></li>
+<li class="chapter" data-level="5.3.3" data-path="scrape.html"><a href="scrape.html#b-obter-o-conteúdo-dos-discursos-inteiror-teor."><i class="fa fa-check"></i><b>5.3.3</b> b) obter o conteúdo dos discursos (inteiror teor).**</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="scrape.html"><a href="scrape.html#download-de-arquivos-da-web"><i class="fa fa-check"></i><b>5.4</b> Download de arquivos da web</a></li>
+<li class="chapter" data-level="5.5" data-path="scrape.html"><a href="scrape.html#twitter"><i class="fa fa-check"></i><b>5.5</b> Twitter</a></li>
+<li class="chapter" data-level="5.6" data-path="scrape.html"><a href="scrape.html#imagens"><i class="fa fa-check"></i><b>5.6</b> Imagens</a></li>
+<li class="chapter" data-level="5.7" data-path="scrape.html"><a href="scrape.html#áudio-transcrição"><i class="fa fa-check"></i><b>5.7</b> Áudio Transcrição</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="processamento.html"><a href="processamento.html"><i class="fa fa-check"></i><b>6</b> Processamento dos dados</a><ul>
 <li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.1</b> Tokens</a></li>
@@ -240,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="stringR" class="section level1">
 <h1><span class="header-section-number">Capítulo 4</span> Strings no <code>R</code></h1>
 <p>Na ciência da computação chamamos uma sequência de caracteres de <code>string</code>. Para
-o desenvolvimento de análises automatizadas de conteúdo, é necessário saber como processar esse tipo especial de dado (o texto como dado)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Nesse sentido, três coisas são importantes de serem lembradas aqui:</p>
+o desenvolvimento de análises automatizadas de conteúdo, é necessário saber como processar esse tipo especial de dado (o texto como dado)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Nesse sentido, três coisas são importantes de serem lembradas aqui:</p>
 <ol style="list-style-type: decimal">
 <li><p>Computadores não interpretam letras. No limite, todos os caracteres são transformados em sequências compostas por zeros e uns. Logo, é através de padrões que caracteres são interpretados e os computadores armazenam os dados que retornam a nossos olhos.</p></li>
 <li><p>Programar é escrever! Não é à toa que chamamos as formas de escrita em programação de linguagens de programação. Nesse livro, por exemplo, usamos a linguagem <code>R</code>. Sabendo disso, o desafio de se trabalhar com o texto como dado é o desafio de fazer com que o computador diferencie <code>código escrito</code> do <code>&quot;texto como dado&quot;</code> que ele precisará processar de acordo com os interesses do analista.</p></li>
@@ -250,101 +263,97 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <div id="strings-e-vetores" class="section level2">
 <h2><span class="header-section-number">4.1</span> Strings e vetores</h2>
 <p>Para declarar uma string, utilizamos aspas simples <code>'</code> ou aspas dupla &quot;&quot;“. Vejamos o caso dos dois vetores abaixo, ambos recebendo a letra”a&quot;.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Vetores de caracteres </span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">caracter1 &lt;-<span class="st"> &quot;a&quot;</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">caracter2 &lt;-<span class="st"> &#39;A&#39;</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">class</span>(caracter1)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Vetores de caracteres </span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">caracter1 &lt;-<span class="st"> &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">caracter2 &lt;-<span class="st"> &#39;A&#39;</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="kw">class</span>(caracter1)</a></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">class</span>(caracter2)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">class</span>(caracter2)</a></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Ambos são da classe <code>character</code>.</p>
 <div id="o-r-é-case-sensitive" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> O <code>R</code> é case sensitive</h3>
 <p>O <code>R</code> diferencia letras maiúsculas de letras minúsculas. Se compararmos os dois objetos criados acima, temos:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">caracter1 <span class="op">==</span><span class="st"> </span>caracter2</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">caracter1 <span class="op">==</span><span class="st"> </span>caracter2</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 </div>
 <div id="sequências-de-caracteres" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Sequências de caracteres</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># string</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">txt &lt;-<span class="st"> &quot;uma string é uma sequência de caracteres&quot;</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">txt &lt;-<span class="st"> &#39;também pode ser utilizada com aspas simples&#39;</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">txt &lt;-<span class="st"> &quot;no caso de aspas dupla, usa-se &#39;aspas simples&#39; na string&quot;</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6">txt &lt;-<span class="st"> &#39;no caso de aspas simples, usa-se &quot;aspas dupla&quot; na string&#39;</span></a></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">txt &lt;-<span class="st"> &quot;para usar </span><span class="ch">\&quot;</span><span class="st">aspas dupla</span><span class="ch">\&quot;</span><span class="st"> na string é necessário usar </span><span class="ch">\\</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">cat</span>(txt) </a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># string</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">txt &lt;-<span class="st"> &quot;uma string é uma sequência de caracteres&quot;</span></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">txt &lt;-<span class="st"> &#39;também pode ser utilizada com aspas simples&#39;</span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5">txt &lt;-<span class="st"> &quot;no caso de aspas dupla, usa-se &#39;aspas simples&#39; na string&quot;</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6">txt &lt;-<span class="st"> &#39;no caso de aspas simples, usa-se &quot;aspas dupla&quot; na string&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">txt &lt;-<span class="st"> &quot;para usar </span><span class="ch">\&quot;</span><span class="st">aspas dupla</span><span class="ch">\&quot;</span><span class="st"> na string é necessário usar </span><span class="ch">\\</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">cat</span>(txt) </a></code></pre></div>
 <pre><code>## para usar &quot;aspas dupla&quot; na string é necessário usar \</code></pre>
 <p>O <code>R</code> armazena a sequência de caracteres conforme ela é apresentada. Porém, é possível fazer uso de caracteres especiais para que o computador interprete e apresente o texto de forma adequada. Como vimos acima, o objeto <code>txt</code> armazena a string conforme foi redigida, mas com o uso da função <code>cat()</code> podemos apresentá-lo de forma adequada. Perceba a diferença entre o resultado e a sequência de caracteres que, de fato, foi armazenada no objeto <code>txt</code>.</p>
 </div>
 <div id="operações-básicas-com-vetores-de-strings" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Operações básicas com vetores de strings</h3>
 <p>É possível declarar um vetor de caracteres vazio.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># vetor de caracteres com 5 strings vazias</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">palmeiras &lt;-<span class="st"> </span><span class="kw">character</span>(<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">palmeiras</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="co"># vetor de caracteres com 5 strings vazias</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">palmeiras &lt;-<span class="st"> </span><span class="kw">character</span>(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">palmeiras</a></code></pre></div>
 <pre><code>## [1] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;</code></pre>
 <p>Vejamos seu tamanho:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">length</span>(palmeiras)  <span class="co"># verificando o tamanho do vetor</span></a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">length</span>(palmeiras)  <span class="co"># verificando o tamanho do vetor</span></a></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <p>Vemos que o objeto <code>palmeiras</code> possui 5 elementos, todos sem qualquer conteúdo, mas da classe <code>character</code>.</p>
 <p>Será que é possível inserir conteúdo em elementos específicos do vetor? Vejamos:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># incluindo string no primeiro e terceiro elementos do vetor</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">palmeiras[<span class="dv">1</span>] &lt;-<span class="st"> &quot;Quando surge o alviverde imponente&quot;</span></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">palmeiras[<span class="dv">3</span>] &lt;-<span class="st"> &quot;Sabe bem o que vem pela frente&quot;</span></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">palmeiras</a></code></pre></div>
-<pre><code>## [1] &quot;Quando surge o alviverde imponente&quot;
-## [2] &quot;&quot;                                  
-## [3] &quot;Sabe bem o que vem pela frente&quot;    
-## [4] &quot;&quot;                                  
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="co"># incluindo string no primeiro e terceiro elementos do vetor</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">palmeiras[<span class="dv">1</span>] &lt;-<span class="st"> &quot;Quando surge o alviverde imponente&quot;</span></a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">palmeiras[<span class="dv">3</span>] &lt;-<span class="st"> &quot;Sabe bem o que vem pela frente&quot;</span></a>
+<a class="sourceLine" id="cb23-4" data-line-number="4">palmeiras</a></code></pre></div>
+<pre><code>## [1] &quot;Quando surge o alviverde imponente&quot; &quot;&quot;                                   &quot;Sabe bem o que vem pela frente&quot;     &quot;&quot;                                  
 ## [5] &quot;&quot;</code></pre>
 <p>Ótimo! Significa que podemos ter um vetor no com o <a href="http://www.palmeiras.com.br/historia/hino">Hino do Palmeiras</a>, sendo cada um de seus elementos um verso dessa bela poesia.</p>
 <p>E seria possível ter um vetor cujos elementos fossem os hinos (sequências de caracteres/strings) de todos os times do país? Sim!</p>
 <div id="atenção" class="section level4">
 <h4><span class="header-section-number">4.1.3.1</span> Atenção</h4>
 <p>Um vetor com uma string vazia é diferente de um vetor sem strings</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># Atenção:</span></a>
-<a class="sourceLine" id="cb16-2" data-line-number="2">str_vazia &lt;-<span class="st"> &quot;&quot;</span>  <span class="co"># string vazia</span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3">char_vazio &lt;-<span class="st"> </span><span class="kw">character</span>(<span class="dv">0</span>)  <span class="co"># caracter vazio</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">length</span>(str_vazia)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co"># Atenção:</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">str_vazia &lt;-<span class="st"> &quot;&quot;</span>  <span class="co"># string vazia</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">char_vazio &lt;-<span class="st"> </span><span class="kw">character</span>(<span class="dv">0</span>)  <span class="co"># caracter vazio</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="kw">length</span>(str_vazia)</a></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">length</span>(char_vazio)</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">length</span>(char_vazio)</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 </div>
 </div>
 <div id="caracteres-e-outros-tipos-de-dados" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> Caracteres e outros tipos de dados</h3>
 <p>É importante saber como o <code>R</code> processa o texto como dado (<code>character</code>) em conjunto com outros formatos.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">frase &lt;-<span class="st"> &quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</span></a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="kw">is.numeric</span>(frase)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">frase &lt;-<span class="st"> &quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw">is.numeric</span>(frase)</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">is.character</span>(frase)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">is.character</span>(frase)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Acima verificamos que a classe do objeto <code>frase</code> é de tipo <code>character</code>.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">quantidade &lt;-<span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb24-2" data-line-number="2">quantidade</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">quantidade &lt;-<span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">quantidade</a></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">is.numeric</span>(quantidade)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">is.numeric</span>(quantidade)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">is.character</span>(quantidade)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">is.character</span>(quantidade)</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Acima verificamos que a classe do objeto <code>quantidade</code> é de tipo <code>numeric</code>. Seria possível converter de um tipo para outro?</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co"># convertendo quantidade</span></a>
-<a class="sourceLine" id="cb30-2" data-line-number="2">quantidade &lt;-<span class="st"> </span><span class="kw">as.character</span>(quantidade)</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3">quantidade</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="co"># convertendo quantidade</span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">quantidade &lt;-<span class="st"> </span><span class="kw">as.character</span>(quantidade)</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">quantidade</a></code></pre></div>
 <pre><code>## [1] &quot;10&quot;</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">is.character</span>(quantidade)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">is.character</span>(quantidade)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Sim! Veja que agora o valor 10 aparece entre aspas, pois o objeto <code>quantidade</code> foi convertido para a classe <code>character</code>.</p>
 <p>E se um vetor possuir números e caracteres em diferentes elementos, como o <code>R</code> interpreta a classe desse vetor?</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="co"># vetor com números e strings</span></a>
-<a class="sourceLine" id="cb34-2" data-line-number="2">brasileiros &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="st">&quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</span>)</a>
-<a class="sourceLine" id="cb34-3" data-line-number="3">brasileiros</a></code></pre></div>
-<pre><code>## [1] &quot;10&quot;                                              
-## [2] &quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">class</span>(brasileiros)</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co"># vetor com números e strings</span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2">brasileiros &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="st">&quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</span>)</a>
+<a class="sourceLine" id="cb43-3" data-line-number="3">brasileiros</a></code></pre></div>
+<pre><code>## [1] &quot;10&quot;                                               &quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">class</span>(brasileiros)</a></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Perceba que o vetor é declarado com o número 10 no primeiro elemento e uma string no segundo elemento. Contudo, o <code>R</code> adota um critério de coerção de dados para que o vetor seja da classe <code>character</code>. Por isso, o número 10 é automaticamente convertido como caracter.</p>
 <p>O R segue duas regras básicas de coerção de tipos de dados:</p>
@@ -357,38 +366,38 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <div id="strings-e-matrizes" class="section level2">
 <h2><span class="header-section-number">4.2</span> Strings e matrizes</h2>
 <p>No <code>R</code> matrizes são estruturas de dados que suportam apenas um tipo de classe de dados. Logo, assim como no caso do vetor visto anteriormente, ao constatar a presenção de alguma entrada de classe <code>character</code> automaticamente todos os elementos da matriz são convertidos.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="co"># Matrizes ----</span></a>
-<a class="sourceLine" id="cb38-2" data-line-number="2">m &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>), letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])</a>
-<a class="sourceLine" id="cb38-3" data-line-number="3">m</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="co"># Matrizes ----</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">m &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>), letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])</a>
+<a class="sourceLine" id="cb47-3" data-line-number="3">m</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot; 
 ## [2,] &quot;a&quot;  &quot;b&quot;  &quot;c&quot;  &quot;d&quot;  &quot;e&quot;</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">class</span>(m)</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">class</span>(m)</a></code></pre></div>
 <pre><code>## [1] &quot;matrix&quot;</code></pre>
 </div>
 <div id="strings-e-data.frames" class="section level2">
 <h2><span class="header-section-number">4.3</span> Strings e data.frames</h2>
 <p><code>data.frames</code> são as estruturas de dados mais utilizadas no <code>R</code>. Sua versatilidade permite ter no mesmo objeto dados de classes diferentes num formato de matriz (matriz de dados). Vejamos:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co"># Data Frames  ----</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2">df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">numeros =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letras =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])</a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="kw">str</span>(df1)</a></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    5 obs. of  2 variables:
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="co"># Data Frames  ----</span></a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">numeros =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letras =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"><span class="kw">str</span>(df1)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:	5 obs. of  2 variables:
 ##  $ numeros: int  1 2 3 4 5
 ##  $ letras : Factor w/ 5 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,..: 1 2 3 4 5</code></pre>
 <p>Como padrão da função <code>data.frame()</code> strings são transformadas em fatores. Para manter strings como caracteres deve-se usar o argumento: <code>stringsAsFactors = FALSE</code>.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1">df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">numeros =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letras =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="kw">str</span>(df1)</a></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    5 obs. of  2 variables:
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">numeros =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letras =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="kw">str</span>(df1)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:	5 obs. of  2 variables:
 ##  $ numeros: int  1 2 3 4 5
 ##  $ letras : chr  &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; ...</code></pre>
 </div>
 <div id="strings-e-listas" class="section level2">
 <h2><span class="header-section-number">4.4</span> Strings e listas</h2>
 <p>Das estruturas de objetos mais populares no <code>R</code>, listas são as mais complexas. Sua grande vantagem em relação às demais estruturas é permitir uma organização hierárquica dos dados independente de sua classe e tamanho. Vejamos um exemplo:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co"># Listas ----</span></a>
-<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="co"># listas contemplam qualquer tipo de estrutura de dados</span></a>
-<a class="sourceLine" id="cb46-3" data-line-number="3">ls &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="kw">rnorm</span>(<span class="dv">5</span>), m)</a>
-<a class="sourceLine" id="cb46-4" data-line-number="4">ls</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="co"># Listas ----</span></a>
+<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="co"># listas contemplam qualquer tipo de estrutura de dados</span></a>
+<a class="sourceLine" id="cb55-3" data-line-number="3">ls &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="kw">rnorm</span>(<span class="dv">5</span>), m)</a>
+<a class="sourceLine" id="cb55-4" data-line-number="4">ls</a></code></pre></div>
 <pre><code>## [[1]]
 ##  [1]  1  2  3  4  5  6  7  8  9 10
 ## 
@@ -396,7 +405,7 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;
 ## 
 ## [[3]]
-## [1] -1.0445030  0.9238059  0.8893427  0.8624952 -1.8164621
+## [1] -0.7762420  0.8063132 -1.0591975  1.0291449 -0.7192448
 ## 
 ## [[4]]
 ##      [,1] [,2] [,3] [,4] [,5]
@@ -409,62 +418,62 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <div id="contando-caracteres" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Contando caracteres</h3>
 <p>A função <code>nchar()</code> é um forma ágil e fácil de se obter o número de caracteres de uma string ou de strings de um vetor.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">nchar</span>(<span class="kw">c</span>(<span class="st">&quot;Quantos&quot;</span>, <span class="st">&quot;caracteres?&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="kw">nchar</span>(<span class="kw">c</span>(<span class="st">&quot;Quantos&quot;</span>, <span class="st">&quot;caracteres?&quot;</span>))</a></code></pre></div>
 <pre><code>## [1]  7 11</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">nchar</span>(<span class="st">&quot;Quantos caracteres?&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">nchar</span>(<span class="st">&quot;Quantos caracteres?&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] 19</code></pre>
 <p>No exemplo acima, perceba que a função contabiliza o espaço entre palavras como caracter. Por isso, a soma do total de caracteres do primeiro caso (<span class="math inline">\(7 + 11 = 18\)</span> caracteres) não é igual ao total de caracteres do segundo (<span class="math inline">\(19\)</span> caracteres).</p>
 </div>
 <div id="toupper-tolower" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> <code>toupper()</code>, <code>tolower()</code></h3>
 <p>Sendo o <code>R</code> <em>case sensitive</em>, para o processamento do texto como dado, pode ser de interesse do pesquisador harmonizar o conteúdo sob análise com o objetivo de ter todos os caracteres em formato maiúsculo ou minúsculo. As funções <code>toupper()</code> e <code>tolower()</code> desempenham bem esse papel.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">tolower</span>(<span class="kw">c</span>(<span class="st">&quot;TUdo eM MinúsCuLA&quot;, &quot;</span>ABCDE<span class="st">&quot;))</span></a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">tolower</span>(<span class="kw">c</span>(<span class="st">&quot;TUdo eM MinúsCuLA&quot;, &quot;</span>ABCDE<span class="st">&quot;))</span></a></code></pre></div>
 <pre><code>## [1] &quot;tudo em minúscula&quot; &quot;abcde&quot;</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">toupper</span>(<span class="kw">c</span>(<span class="st">&quot;TUdo eM mAiúsCula&quot;, &quot;</span>ABCDE<span class="st">&quot;))</span></a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">toupper</span>(<span class="kw">c</span>(<span class="st">&quot;TUdo eM mAiúsCula&quot;, &quot;</span>ABCDE<span class="st">&quot;))</span></a></code></pre></div>
 <pre><code>## [1] &quot;TUDO EM MAIÚSCULA&quot; &quot;ABCDE&quot;</code></pre>
 <div id="recortando-strings-substr-substring." class="section level4">
 <h4><span class="header-section-number">4.5.2.1</span> Recortando strings: <code>substr()</code>, <code>substring()</code>.</h4>
 <p>Para o processamento do texto como dado, também pode ser de interesse do pesquisador a seleção de trechos de uma sequência de caracteres. Isso pode ser facilmente feito com as funções <code>substr()</code> e <code>substring()</code> indicando como parâmetros a posição nas quais a string deve ser recortada.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">substr</span>(<span class="st">&quot;O Palmeiras é o time da virada, o Palmeiras é o time do amor.&quot;</span>, <span class="dv">1</span>, <span class="dv">30</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">substr</span>(<span class="st">&quot;O Palmeiras é o time da virada, o Palmeiras é o time do amor.&quot;</span>, <span class="dv">1</span>, <span class="dv">30</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;O Palmeiras é o time da virada&quot;</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">substring</span>(<span class="st">&quot;O Palmeiras é o time da virada, o Palmeiras é o time do amor.&quot;</span>, <span class="dv">33</span>, <span class="dv">60</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="kw">substring</span>(<span class="st">&quot;O Palmeiras é o time da virada, o Palmeiras é o time do amor.&quot;</span>, <span class="dv">33</span>, <span class="dv">60</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;o Palmeiras é o time do amor&quot;</code></pre>
 </div>
 <div id="união-intersecção-diferença-igualdade" class="section level4">
 <h4><span class="header-section-number">4.5.2.2</span> União, Intersecção, Diferença, Igualdade</h4>
 <p>Operações com vetores de forma geral podem ser aplicadas a vetores com strings. Podemos, por exemplo, unir diferentes vetores.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="co"># União </span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2">vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;algumas&quot;</span>, <span class="st">&quot;palavras&quot;</span>, <span class="st">&quot;aleatória&quot;, &quot;</span>aqui<span class="st">&quot;)</span></a>
-<a class="sourceLine" id="cb60-3" data-line-number="3"><span class="st">vec2 &lt;- c(&quot;</span>e<span class="st">&quot;, &quot;</span>algumas<span class="st">&quot;, &quot;</span>palavras<span class="st">&quot;, &quot;</span>ali<span class="st">&quot;)</span></a>
-<a class="sourceLine" id="cb60-4" data-line-number="4"><span class="st">union(vec1, vec2)</span></a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="co"># União </span></a>
+<a class="sourceLine" id="cb69-2" data-line-number="2">vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;algumas&quot;</span>, <span class="st">&quot;palavras&quot;</span>, <span class="st">&quot;aleatória&quot;, &quot;</span>aqui<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb69-3" data-line-number="3"><span class="st">vec2 &lt;- c(&quot;</span>e<span class="st">&quot;, &quot;</span>algumas<span class="st">&quot;, &quot;</span>palavras<span class="st">&quot;, &quot;</span>ali<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb69-4" data-line-number="4"><span class="st">union(vec1, vec2)</span></a></code></pre></div>
 <pre><code>## [1] &quot;algumas&quot;   &quot;palavras&quot;  &quot;aleatória&quot; &quot;aqui&quot;      &quot;e&quot;         &quot;ali&quot;</code></pre>
 <p>Verificar a intersecção entre dois vetores.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="co"># Intersecção </span></a>
-<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="kw">intersect</span>(vec1, vec2)</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="co"># Intersecção </span></a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">intersect</span>(vec1, vec2)</a></code></pre></div>
 <pre><code>## [1] &quot;algumas&quot;  &quot;palavras&quot;</code></pre>
 <p>Verificar a diferença entre dois vetores.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="co"># Diferença </span></a>
-<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="kw">setdiff</span>(vec1, vec2)</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="co"># Diferença </span></a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">setdiff</span>(vec1, vec2)</a></code></pre></div>
 <pre><code>## [1] &quot;aleatória&quot; &quot;aqui&quot;</code></pre>
 <p>E a igualdade de elementos entre dois vetores. No caso, entre o vetor <code>vec1</code> e ele mesmo.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co"># Igualdade </span></a>
-<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">identical</span>(vec1, vec1)</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="co"># Igualdade </span></a>
+<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="kw">identical</span>(vec1, vec1)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="elemento-contido-em" class="section level4">
 <h4><span class="header-section-number">4.5.2.3</span> Elemento contido em</h4>
 <p>Outra operação básica de interesse é a verificação se um elemento (no caso, uma sequência de caracteres) está contido num objeto. Vamos verificar abaixo se a sequência “aqui” está contida no vetor <code>vec1</code> através do operador <code>%in%</code>.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="co"># Elemento contido em ----</span></a>
-<a class="sourceLine" id="cb68-2" data-line-number="2">elem &lt;-<span class="st"> &quot;aqui&quot;</span></a>
-<a class="sourceLine" id="cb68-3" data-line-number="3">elem <span class="op">%in%</span><span class="st"> </span>vec1</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="co"># Elemento contido em ----</span></a>
+<a class="sourceLine" id="cb77-2" data-line-number="2">elem &lt;-<span class="st"> &quot;aqui&quot;</span></a>
+<a class="sourceLine" id="cb77-3" data-line-number="3">elem <span class="op">%in%</span><span class="st"> </span>vec1</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>É importante destacar que o exemplo acima é uma operação básica de vetores no <code>R</code> e não exclusiva para sequência de caracteres. Nesse sentido, ela apenas checa se no vetor <code>vec1</code> há algum elemento idêntico ao padrão “aqui”. Mais adiante verificaremos como identificar a presença de sequências de caracteres no interior de outras strings sem que tenham de ser idênticas.</p>
 </div>
 <div id="ordenação" class="section level4">
 <h4><span class="header-section-number">4.5.2.4</span> Ordenação</h4>
 <p>É possível ordenar um vetor de strings em ordem alfabética ou em sentido oposto como no exemplo abaixo. Tal versatilidade pode ser útil para o ordenamento de uma matriz de dados completa com base numa variável de nomes, por exemplo.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="co"># Ordenando ----</span></a>
-<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">sort</span>(vec1, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="co"># Ordenando ----</span></a>
+<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="kw">sort</span>(vec1, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;palavras&quot;  &quot;aqui&quot;      &quot;algumas&quot;   &quot;aleatória&quot;</code></pre>
 </div>
 </div>
@@ -480,50 +489,49 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <li><p>Funções de correspondência de padrões, sendo o mais comum as expressões regulares.</p></li>
 </ol>
 <p>Além do que veremos neste material, é altamente recomendável a consulta ao <a href="https://r4ds.had.co.nz/strings.html">capítulo sobre strings do R for Data Science</a>.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="co"># carregando pacote ----</span></a>
-<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="kw">library</span>(stringr)</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="co"># carregando pacote ----</span></a>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="kw">library</span>(stringr)</a></code></pre></div>
 <div id="verificando-o-tamanho-de-uma-string" class="section level3">
-<h3><span class="header-section-number">4.6.1</span> Verificando o tamanho de uma string<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></h3>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="kw">str_length</span>(<span class="st">&quot;O Palmeiras é o time da virada, o Palmeiras é o time do amor.&quot;</span>)</a></code></pre></div>
+<h3><span class="header-section-number">4.6.1</span> Verificando o tamanho de uma string<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></h3>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">str_length</span>(<span class="st">&quot;O Palmeiras é o time da virada, o Palmeiras é o time do amor.&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] 61</code></pre>
 </div>
 <div id="identificando-caracter-numa-posição-específica." class="section level3">
 <h3><span class="header-section-number">4.6.2</span> Identificando caracter numa posição específica.</h3>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="co"># vetor de strings</span></a>
-<a class="sourceLine" id="cb75-2" data-line-number="2">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="co"># vetor de strings</span></a>
+<a class="sourceLine" id="cb84-2" data-line-number="2">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a></code></pre></div>
 <p>Selecionando o terceiro caracter.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="co"># identificando terceira letra</span></a>
-<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="kw">str_sub</span>(txt, <span class="dv">3</span>, <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="co"># identificando terceira letra</span></a>
+<a class="sourceLine" id="cb85-2" data-line-number="2"><span class="kw">str_sub</span>(txt, <span class="dv">3</span>, <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;P&quot; &quot;P&quot;</code></pre>
 <p>Selecionando do segundo caracter de trás pra frente.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dv">2</span>, <span class="dv">-2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dv">2</span>, <span class="dv">-2</span>)</a></code></pre></div>
 <pre><code>## [1] &quot; Palmeiras é o time da virad&quot; &quot; Palmeiras é o time do amor&quot;</code></pre>
 </div>
 <div id="incluindo-caracter-ou-string-numa-posicao-específica." class="section level3">
 <h3><span class="header-section-number">4.6.3</span> Incluindo caracter ou string numa posicao específica.</h3>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dv">3</span>, <span class="dv">11</span>) &lt;-<span class="st"> &quot;PALMEIRAS&quot;</span></a>
-<a class="sourceLine" id="cb80-2" data-line-number="2">txt</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dv">3</span>, <span class="dv">11</span>) &lt;-<span class="st"> &quot;PALMEIRAS&quot;</span></a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">txt</a></code></pre></div>
 <pre><code>## [1] &quot;O PALMEIRAS é o time da virada&quot; &quot;o PALMEIRAS é o time do amor.&quot;</code></pre>
 <p>Preencher uma string em tamanho fixo.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">str_pad</span>(txt, <span class="dv">50</span>) <span class="co"># por padrão: left</span></a></code></pre></div>
-<pre><code>## [1] &quot;                    O PALMEIRAS é o time da virada&quot;
-## [2] &quot;                     o PALMEIRAS é o time do amor.&quot;</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="kw">str_pad</span>(txt, <span class="dv">50</span>) <span class="co"># por padrão: left</span></a></code></pre></div>
+<pre><code>## [1] &quot;                    O PALMEIRAS é o time da virada&quot; &quot;                     o PALMEIRAS é o time do amor.&quot;</code></pre>
 <p>Remove espaço extra.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">str_pad</span>(txt, <span class="dv">50</span>) <span class="co"># por padrão: left</span></a>
-<a class="sourceLine" id="cb84-2" data-line-number="2"><span class="kw">str_trim</span>(txt)</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">str_pad</span>(txt, <span class="dv">50</span>) <span class="co"># por padrão: left</span></a>
+<a class="sourceLine" id="cb93-2" data-line-number="2"><span class="kw">str_trim</span>(txt)</a></code></pre></div>
 <pre><code>## [1] &quot;O PALMEIRAS é o time da virada&quot; &quot;o PALMEIRAS é o time do amor.&quot;</code></pre>
 </div>
 <div id="recortando-uma-string-para-obter-parte-da-sequência-de-caracteres." class="section level3">
 <h3><span class="header-section-number">4.6.4</span> Recortando uma string para obter parte da sequência de caracteres.</h3>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dt">start =</span> <span class="dv">3</span>, <span class="dt">end =</span> <span class="dv">11</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dt">start =</span> <span class="dv">3</span>, <span class="dt">end =</span> <span class="dv">11</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;         &quot; &quot;         &quot;</code></pre>
 <p>É possível fazer o recorte usando índices de trás pra frente.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dt">start =</span> <span class="dv">-14</span>, <span class="dt">end =</span> <span class="dv">-1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="kw">str_sub</span>(txt, <span class="dt">start =</span> <span class="dv">-14</span>, <span class="dt">end =</span> <span class="dv">-1</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;time da virada&quot; &quot; time do amor.&quot;</code></pre>
 <p>Extração de palavras.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="kw">word</span>(txt, <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">word</span>(txt, <span class="dv">2</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;&quot; &quot;&quot;</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="kw">word</span>(txt, <span class="dv">-1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">word</span>(txt, <span class="dv">-1</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;virada&quot; &quot;amor.&quot;</code></pre>
 </div>
 </div>
@@ -531,7 +539,7 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <h2><span class="header-section-number">4.7</span> Regular Expressions no <code>R</code></h2>
 <p>Até aqui você viu funções básicas e intermediárias para o processamento de sequências de caracteres no <code>R</code>. Para avançar, é necessário aprender o uso de expressões regulares ( <em>Regular Expressions</em> ).</p>
 <p>Como definido no livro <a href="https://www.gastonsanchez.com/r4strings/regex1.html">Handling Strings with R</a>, uma expressão regular é um conjunto de símbolos que descreve um padrão de texto. Mais formalmente, uma expressão regular é um padrão que descreve um conjunto de cadeias de caracteres. Como o termo “expressão regular” é bastante longo, a maioria das pessoas usa a palavra <strong>regex</strong> para se referir à área.</p>
-<p>Entre outras tarefas, o uso de expressões regulares pode ajudá-lo a <span class="citation">(Grolemund and Wickham <a href="#ref-grolemund_r_nodate-1">n.d.</a>)</span>:</p>
+<p>Entre outras tarefas, o uso de expressões regulares pode ajudá-lo a <span class="citation">(Wickham and Grolemund <a href="#ref-wickham_r_2017">2017</a>)</span>:</p>
 <ul>
 <li>Determinar cadeias de caracteres correspondentes a um padrão.</li>
 <li>Encontrar as posições de padrões correspondentes.</li>
@@ -543,38 +551,37 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <p>Dada a complexidade que a área pode assumir, vamos verificar o uso das <em>regex</em> em algumas funções do pacote <code>stringr</code> com base <a href="https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html">nesse tutorial</a>. Junto a ele, é recomendável que a leitura atenta do <code>?regex</code> no <code>R</code>.</p>
 <div id="identificação-e-extração-de-padrão" class="section level3">
 <h3><span class="header-section-number">4.7.1</span> Identificação e Extração de padrão</h3>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
-<a class="sourceLine" id="cb94-2" data-line-number="2"><span class="kw">str_extract</span>(txt, <span class="st">&quot;amor&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
+<a class="sourceLine" id="cb103-2" data-line-number="2"><span class="kw">str_extract</span>(txt, <span class="st">&quot;amor&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] NA     &quot;amor&quot;</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="kw">str_detect</span>(txt, <span class="st">&quot;amor&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="kw">str_detect</span>(txt, <span class="st">&quot;amor&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] FALSE  TRUE</code></pre>
 <p>Utilizando o operador <code>|</code> (“OU”):</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="kw">str_detect</span>(<span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>), <span class="st">&quot;ente|ismo&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="kw">str_detect</span>(<span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>), <span class="st">&quot;ente|ismo&quot;</span>)</a></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="kw">str_extract</span>(<span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>), <span class="st">&quot;ente|ismo&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">str_extract</span>(<span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>), <span class="st">&quot;ente|ismo&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;ente&quot; &quot;ismo&quot; NA     &quot;ismo&quot;</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">str_extract</span>(<span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>), <span class="st">&quot;(presidencial|parlamentar)ismo&quot;</span>)</a></code></pre></div>
-<pre><code>## [1] NA                 &quot;presidencialismo&quot; NA                
-## [4] &quot;parlamentarismo&quot;</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">str_extract</span>(<span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>), <span class="st">&quot;(presidencial|parlamentar)ismo&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] NA                 &quot;presidencialismo&quot; NA                 &quot;parlamentarismo&quot;</code></pre>
 <p>Usar o “.” corresponde a qualquer caracter exceto uma nova linha:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>)</a>
-<a class="sourceLine" id="cb104-2" data-line-number="2"><span class="kw">str_extract</span>(txt, <span class="st">&quot;..a.....&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;presidencialismo&quot;</span>, <span class="st">&quot;presidencialista&quot;</span>, <span class="st">&quot;parlamentarismo&quot;</span>)</a>
+<a class="sourceLine" id="cb113-2" data-line-number="2"><span class="kw">str_extract</span>(txt, <span class="st">&quot;..a.....&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] NA         &quot;cialismo&quot; &quot;cialista&quot; &quot;rlamenta&quot;</code></pre>
 <p>Para identificar o “.” de fato, usamos “\.”. Para poder usar a “\”, adicionamos mais uma e temos:</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
-<a class="sourceLine" id="cb106-2" data-line-number="2"><span class="kw">str_detect</span>(txt, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
+<a class="sourceLine" id="cb115-2" data-line-number="2"><span class="kw">str_detect</span>(txt, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] FALSE  TRUE</code></pre>
 <p>Para identificar a “\” de fato, usamos “\\”:</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada </span><span class="ch">\\</span><span class="st"> o Palmeiras é o time do amor.&quot;</span>)</a>
-<a class="sourceLine" id="cb108-2" data-line-number="2"><span class="kw">writeLines</span>(txt)</a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada </span><span class="ch">\\</span><span class="st"> o Palmeiras é o time do amor.&quot;</span>)</a>
+<a class="sourceLine" id="cb117-2" data-line-number="2"><span class="kw">writeLines</span>(txt)</a></code></pre></div>
 <pre><code>## O Palmeiras é o time da virada \ o Palmeiras é o time do amor.</code></pre>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="kw">str_detect</span>(txt, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="kw">str_detect</span>(txt, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="substituição" class="section level3">
 <h3><span class="header-section-number">4.7.2</span> Substituição</h3>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
-<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="kw">str_replace</span>(txt, <span class="st">&quot;Palmeiras&quot;</span>, <span class="st">&quot;PALMEIRAS&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
+<a class="sourceLine" id="cb121-2" data-line-number="2"><span class="kw">str_replace</span>(txt, <span class="st">&quot;Palmeiras&quot;</span>, <span class="st">&quot;PALMEIRAS&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;O PALMEIRAS é o time da virada&quot; &quot;o PALMEIRAS é o time do amor.&quot;</code></pre>
 </div>
 <div id="âncoras" class="section level3">
@@ -584,10 +591,10 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <li>“^” para coincidir com o início da string.</li>
 <li>“$” para coincidir com o final da string.</li>
 </ul>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
-<a class="sourceLine" id="cb114-2" data-line-number="2"><span class="kw">str_detect</span>(txt, <span class="st">&quot;^O&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;O Palmeiras é o time da virada&quot;</span>, <span class="st">&quot;o Palmeiras é o time do amor.&quot;</span>)</a>
+<a class="sourceLine" id="cb123-2" data-line-number="2"><span class="kw">str_detect</span>(txt, <span class="st">&quot;^O&quot;</span>)</a></code></pre></div>
 <pre><code>## [1]  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="kw">str_detect</span>(txt, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.$&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="kw">str_detect</span>(txt, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.$&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] FALSE  TRUE</code></pre>
 
 </div>
@@ -595,15 +602,15 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 </div>
 <h3>Referências</h3>
 <div id="refs" class="references">
-<div id="ref-grolemund_r_nodate-1">
-<p>Grolemund, Garrett, and Hadley Wickham. n.d. <em>R for Data Science</em>. Accessed August 15, 2019. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.</p>
+<div id="ref-wickham_r_2017">
+<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1 edition. Sebastopol, CA: O’Reilly Media.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Esse capítulo do material é inspirado no livro <a href="https://www.gastonsanchez.com/r4strings/">Handling Strings with R</a><a href="stringR.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Assim como fizemos anteriormente com a função <code>nchar()</code>.<a href="stringR.html#fnref2" class="footnote-back">↩</a></p></li>
+<ol start="3">
+<li id="fn3"><p>Esse capítulo do material é inspirado no livro <a href="https://www.gastonsanchez.com/r4strings/">Handling Strings with R</a><a href="stringR.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Assim como fizemos anteriormente com a função <code>nchar()</code>.<a href="stringR.html#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -631,12 +638,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -648,6 +654,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
