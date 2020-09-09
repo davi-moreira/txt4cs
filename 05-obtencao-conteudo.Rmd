@@ -1,3 +1,9 @@
+---
+author: 
+  - "Davi Moreira"
+  - "Mônica Rocabado"
+---
+
 # Obtenção de conteúdo {#scrape}
 
 <!--- preview_chapter("05-obtencao-conteudo.Rmd") --->
@@ -122,12 +128,12 @@ knitr::include_url("https://www.camara.leg.br")
 ```
 
 Ao acessar o código fonte dessa [página do portal da Câmara dos Deputados](https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&nuSessao=174.4.53.O&nuQuarto=56&nuOrador=2&nuInsercao=0&dtHorarioQuarto=11:46&sgFaseSessao=BC&Data=17/08/2010&txApelido=JAIR%20BOLSONARO,%20PP-RJ&txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&txTipoSessao=Extraordin%C3%A1ria%20-%20CD&dtHoraQuarto=11:46&txEtapa=), você consegue visualizar o código `.html` que produz toda visualização, 
-incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010^[Conteúdo publicado sem revisão do autor.].
+incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010^[Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.].
 
 ### Obtenção de Código Fonte - Exemplo:
 
 Se é possível visualizar o conteúdo, é possível obtê-lo de forma automatizada. Vamos, portanto, 
-obter [o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro](https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&nuSessao=174.4.53.O&nuQuarto=56&nuOrador=2&nuInsercao=0&dtHorarioQuarto=11:46&sgFaseSessao=BC&Data=17/08/2010&txApelido=JAIR%20BOLSONARO,%20PP-RJ&txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&txTipoSessao=Extraordin%C3%A1ria%20-%20CD&dtHoraQuarto=11:46&txEtapa=)  em 17 de Agosto de 2010^[Conteúdo publicado sem revisão do autor.].
+obter [o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro](https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&nuSessao=174.4.53.O&nuQuarto=56&nuOrador=2&nuInsercao=0&dtHorarioQuarto=11:46&sgFaseSessao=BC&Data=17/08/2010&txApelido=JAIR%20BOLSONARO,%20PP-RJ&txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&txTipoSessao=Extraordin%C3%A1ria%20-%20CD&dtHoraQuarto=11:46&txEtapa=)  em 17 de Agosto de 2010^[Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.].
 
 Vamos utilizar as Etapas anteriormente apresentadas:
 

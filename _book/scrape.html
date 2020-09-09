@@ -181,9 +181,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="scrape.html"><a href="scrape.html"><i class="fa fa-check"></i><b>5</b> Obtenção de conteúdo</a><ul>
-<li class="chapter" data-level="5.1" data-path="scrape.html"><a href="scrape.html#word-excel-ou-.pdf"><i class="fa fa-check"></i><b>5.1</b> word, excel ou <code>.pdf</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="scrape.html"><a href="scrape.html#word-excel-ou-.pdf"><i class="fa fa-check"></i><b>5.1</b> word, excel ou <code id="pdf">.pdf</code></a><ul>
 <li class="chapter" data-level="5.1.1" data-path="scrape.html"><a href="scrape.html#xlsx"><i class="fa fa-check"></i><b>5.1.1</b> <code>.xlsx</code></a></li>
-<li class="chapter" data-level="5.1.2" data-path="scrape.html"><a href="scrape.html#pdf-e-.doc"><i class="fa fa-check"></i><b>5.1.2</b> <code>.pdf</code> e <code id="pdf">.doc</code></a></li>
+<li class="chapter" data-level="5.1.2" data-path="scrape.html"><a href="scrape.html#pdf-e-.doc"><i class="fa fa-check"></i><b>5.1.2</b> <code>.pdf</code> e <code>.doc</code></a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="scrape.html"><a href="scrape.html#webscraping"><i class="fa fa-check"></i><b>5.2</b> Webscraping</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="scrape.html"><a href="scrape.html#pacotes-para-raspagem-de-dados"><i class="fa fa-check"></i><b>5.2.1</b> Pacotes para raspagem de dados</a></li>
@@ -258,7 +258,7 @@ busca e aquisição. O <code>R</code> nos ajuda nessa tarefa a partir de distint
 A seguir apresento aquelas nas quais o uso de técnicas computacionais e programação
 potencializa o alcance e escala de acervos a serem utilizados para pesquisas.</p>
 <div id="word-excel-ou-.pdf" class="section level2">
-<h2><span class="header-section-number">5.1</span> word, excel ou <code>.pdf</code></h2>
+<h2><span class="header-section-number">5.1</span> word, excel ou <code id="pdf">.pdf</code></h2>
 <p>Caso tenha realizado surveys com perguntas abertas ou possua conteúdo de texto
 organizado em formato de documento ou tabulado é possível utilizar o <code>R</code> para
 analisá-las. Para arquivos em formato excel pode-se usar o pacote <code>readxl</code> com a
@@ -282,7 +282,7 @@ com o conteúdo de todas as ementas através do download de um arquivo em format
 <a class="sourceLine" id="cb1-3" data-line-number="3">arquivo_excel &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;Emendas Apresentadas.xlsx&quot;</span>)</a></code></pre></div>
 </div>
 <div id="pdf-e-.doc" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> <code>.pdf</code> e <code id="pdf">.doc</code></h3>
+<h3><span class="header-section-number">5.1.2</span> <code>.pdf</code> e <code>.doc</code></h3>
 <p>Antes de achar que os dados de um arquivo <code>.pdf</code> ou <code>.doc</code> são um obstáculo para
 a abordagem do texto como dado, diferentes estratégias podem ser adotadas para sua
 obtenção e processamento. Com o uso do pacote <code>textreadr</code>, por exemplo, de forma
@@ -714,11 +714,8 @@ atribuído ao Presidente Bolsonaro para obter seu conteúdo:</p>
 <a class="sourceLine" id="cb16-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co"># resultado</span></a>
 <a class="sourceLine" id="cb16-11" data-line-number="11"><span class="kw">cat</span>(text)</a></code></pre></div>
-<pre><code>## Jair M. Bolsonaro &amp; 8
-## a Qjairbolsonaro Vie
-## . S
-## O que é ciência política?
-## 09:26 - 06/03/2019 - Twitter for iPhone</code></pre>
+<p>Segue o resultado:</p>
+<pre><code>## Jair M. Bolsonaro &amp; 8 a Qjairbolsonaro Vie . S O que é ciência política? 09:26 - 06/03/2019 - Twitter for iPhone</code></pre>
 </div>
 <div id="áudio-transcrição" class="section level2">
 <h2><span class="header-section-number">5.7</span> Áudio Transcrição</h2>
