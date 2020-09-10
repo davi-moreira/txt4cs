@@ -125,7 +125,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{guia prático com aplicações}
 \author{Davi Moreira}
-\date{Criado em 02-08-2019. Atualizado em: 2020-09-08}
+\date{Criado em 02-08-2019. Atualizado em: 09-09-2020}
 
 \begin{document}
 \maketitle
@@ -176,7 +176,7 @@ Este livro é distribuído de acordo com a licença Creative Commons Attribution
 \section*{Agradecimentos}\label{agradecimentos}}
 \addcontentsline{toc}{section}{Agradecimentos}
 
-Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos \href{https://sites.google.com/site/galdinomcz/}{Manoel Galdino}, \href{http://lattes.cnpq.br/8040086656965973}{Rafael Magalhães}, Lincon Ribeiro e \href{https://umbertomig.com/}{Umberto Mignozzetti} pelo apoio e incentivo ao longo de toda minha trajetória como cientista. Por fim, agradeço à fantástica cientista de dados Mônica Rocabado, sem a qual esse projeto continuaria na gaveta.
+Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos \href{https://sites.google.com/site/galdinomcz/}{Manoel Galdino}, \href{http://lattes.cnpq.br/8040086656965973}{Rafael Magalhães}, Lincon Ribeiro e \href{https://umbertomig.com/}{Umberto Mignozzetti} pelo apoio e incentivo ao longo de toda minha trajetória como cientista. Por fim, agradeço à fantástica cientista de dados \href{https://rdados.netlify.app/}{Mônica Rocabado}, sem a qual esse projeto continuaria na gaveta.
 
 Este livro é escrito com o uso do pacote \textbf{bookdown} \citep{R-bookdown}, através do \texttt{R\ Markdown} e \textbf{knitr} \citep{xie2015}.
 
@@ -644,7 +644,8 @@ Será que é possível inserir conteúdo em elementos específicos do vetor? Vej
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "Quando surge o alviverde imponente" ""                                   "Sabe bem o que vem pela frente"     ""                                  
+## [1] "Quando surge o alviverde imponente" ""                                  
+## [3] "Sabe bem o que vem pela frente"     ""                                  
 ## [5] ""
 \end{verbatim}
 
@@ -777,7 +778,8 @@ E se um vetor possuir números e caracteres em diferentes elementos, como o \tex
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "10"                                               "Campeonatos Brasileiros vencidos pelo Palmeiras."
+## [1] "10"                                              
+## [2] "Campeonatos Brasileiros vencidos pelo Palmeiras."
 \end{verbatim}
 
 \begin{Shaded}
@@ -887,7 +889,7 @@ Das estruturas de objetos mais populares no \texttt{R}, listas são as mais comp
 ## [1] "a" "b" "c" "d" "e"
 ## 
 ## [[3]]
-## [1]  0.4728142 -0.4306677  1.7726640  0.3668268 -2.3917102
+## [1] -0.8921771 -1.5965511  0.2751271 -1.5293649 -0.2948023
 ## 
 ## [[4]]
 ##      [,1] [,2] [,3] [,4] [,5]
@@ -1168,7 +1170,8 @@ Preencher uma string em tamanho fixo.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "                    O PALMEIRAS é o time da virada" "                     o PALMEIRAS é o time do amor."
+## [1] "                    O PALMEIRAS é o time da virada"
+## [2] "                     o PALMEIRAS é o time do amor."
 \end{verbatim}
 
 Remove espaço extra.
@@ -1414,6 +1417,10 @@ Por padrão, expressões regulares buscam por correspondência em qualquer parte
 \hypertarget{scrape}{%
 \chapter{Obtenção de conteúdo}\label{scrape}}
 
+\emph{Davi Moreira, Mônica Rocabado}
+
+\(~\)
+
 Uma das tarefas mais importantes para a análise de conteúdo consiste na sua própria
 busca e aquisição. O \texttt{R} nos ajuda nessa tarefa a partir de distintas estratégias.
 A seguir apresento aquelas nas quais o uso de técnicas computacionais e programação
@@ -1560,13 +1567,13 @@ visualizá-lo. Vejamos um exemplo:
 \end{figure}
 
 Ao acessar o código fonte dessa \href{https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5\&nuSessao=174.4.53.O\&nuQuarto=56\&nuOrador=2\&nuInsercao=0\&dtHorarioQuarto=11:46\&sgFaseSessao=BC\&Data=17/08/2010\&txApelido=JAIR\%20BOLSONARO,\%20PP-RJ\&txFaseSessao=Breves\%20Comunica\%C3\%A7\%C3\%B5es\&txTipoSessao=Extraordin\%C3\%A1ria\%20-\%20CD\&dtHoraQuarto=11:46\&txEtapa=}{página do portal da Câmara dos Deputados}, você consegue visualizar o código \texttt{.html} que produz toda visualização,
-incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010\footnote{Conteúdo publicado sem revisão do autor.}.
+incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010\footnote{Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.}.
 
 \hypertarget{obtenuxe7uxe3o-de-cuxf3digo-fonte---exemplo}{%
 \subsection{Obtenção de Código Fonte - Exemplo:}\label{obtenuxe7uxe3o-de-cuxf3digo-fonte---exemplo}}
 
 Se é possível visualizar o conteúdo, é possível obtê-lo de forma automatizada. Vamos, portanto,
-obter \href{https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5\&nuSessao=174.4.53.O\&nuQuarto=56\&nuOrador=2\&nuInsercao=0\&dtHorarioQuarto=11:46\&sgFaseSessao=BC\&Data=17/08/2010\&txApelido=JAIR\%20BOLSONARO,\%20PP-RJ\&txFaseSessao=Breves\%20Comunica\%C3\%A7\%C3\%B5es\&txTipoSessao=Extraordin\%C3\%A1ria\%20-\%20CD\&dtHoraQuarto=11:46\&txEtapa=}{o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro} em 17 de Agosto de 2010\footnote{Conteúdo publicado sem revisão do autor.}.
+obter \href{https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5\&nuSessao=174.4.53.O\&nuQuarto=56\&nuOrador=2\&nuInsercao=0\&dtHorarioQuarto=11:46\&sgFaseSessao=BC\&Data=17/08/2010\&txApelido=JAIR\%20BOLSONARO,\%20PP-RJ\&txFaseSessao=Breves\%20Comunica\%C3\%A7\%C3\%B5es\&txTipoSessao=Extraordin\%C3\%A1ria\%20-\%20CD\&dtHoraQuarto=11:46\&txEtapa=}{o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro} em 17 de Agosto de 2010\footnote{Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.}.
 
 Vamos utilizar as Etapas anteriormente apresentadas:
 

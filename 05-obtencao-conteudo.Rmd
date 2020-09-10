@@ -1,12 +1,10 @@
----
-author: 
-  - "Davi Moreira"
-  - "Mônica Rocabado"
----
-
 # Obtenção de conteúdo {#scrape}
 
 <!--- preview_chapter("05-obtencao-conteudo.Rmd") --->
+
+_Davi Moreira, Mônica Rocabado_
+
+$~$ <!--- add line space --->
 
 Uma das tarefas mais importantes para a análise de conteúdo consiste na sua própria 
 busca e aquisição. O `R` nos ajuda nessa tarefa a partir de distintas estratégias. 
@@ -44,6 +42,13 @@ arquivo_excel <- read_excel("Emendas Apresentadas.xlsx")
 ```
 
 ### `.pdf` e `.doc`
+
+<center>
+
+![Chico PDF](images/chico_pdf.jpg){width=500px}
+
+</center>
+
 
 Antes de achar que os dados de um arquivo `.pdf` ou `.doc` são um obstáculo para 
 a abordagem do texto como dado, diferentes estratégias podem ser adotadas para sua 
@@ -564,7 +569,7 @@ tesseract_download('por')
 por <- tesseract("por") # alocando treinamento na ligua portuguesa
 
 # obtendo texto da imagem
-text <- tesseract::ocr("https://raw.githubusercontent.com/davi-moreira/txt4cs/master/images/tweet_bolsonaro_cp.png", engine = por)
+text <- tesseract::ocr("https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tweet_bolsonaro_cp.png", engine = por)
 
 # resultado
 cat(text)
@@ -584,35 +589,109 @@ cat(text)
 
 ## Áudio Transcrição
 
-EM CONSTRUÇÃO...........
+Nos últimos anos, diversas aplicações comerciais passaram a ofertar a possibilidade 
+de transcrição de áudios e vídeos. Acompanhando esse processo, iniciativas foram 
+implementadas na liguagem `R`, dentre elas o pacote  [`googleLanguageR`](https://cran.r-project.org/web/packages/googleLanguageR/index.html), 
+da Google e o pacote [`aws.transcribe`](https://cran.r-project.org/web/packages/aws.transcribe/index.html), da Amazon. 
+De forma geral, esses pacotes utilizam APIs dessas grandes companhias de tecnologia 
+com alguma limitação para uso gratuito, sendo necessário cadastro em sua plataforma e 
+credenciamento de cartão de crédito. 
 
-<!---
-* consegui o pacote e API do google cloud, mas estou tendo problema no audio mp3
-> som <- gl_speech("dilma-defesa.mp3", encoding = "LINEAR16",languageCode = "pt-BR")
-i 2020-08-27 15:51:43 > Request Status Code:  400
-Erro: API returned: Specify MP3 encoding to match audio file.
+Para se ter um exemplo, vamos explorar o uso do pacote `googleLanguageR`.
 
-O transcribeR o API não está funcionando mais, não é possível usar então o pacote.
+```{r eval=F, echo=T, message=FALSE, warning=FALSE, cache=T}
+install.packages("googleLanguageR")
+```  
 
-Amazon não consigo fazer a chave funcionar!
+Para obter uma chave de API que vai possibilitar o uso do pacote você precisa criar 
+um conta no [Google cloud](https://cloud.google.com/) e habilitá-la com o seu 
+cartão de crédito. Vale ressaltar que é uma assinatura gratuita, mas caso ultrapasse 
+o limite da cota gratuita você será cobrado.
+
+Após criar sua conta há uma diversidade de APIs que podem ser ativadas. O pacote 
+`googleLanguageR` foi pensando para três funcionalidades principais:
+
+1. Transcrição de áudio para texto: Google Cloud Speech API
+2. Tradução de texto: Google Cloud Translation API
+3. Processamento de linguagem natural permitindo a identificação de sentimento, 
+estrutura e significado: Google Natural Language API
+
+Nosso foco aqui é na transcrição de áudio para texto^[Para mais informações sobre as 
+possibilidades do pacote veja essa [**vinheta de introdução**](https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html)]. 
+Para usar a API você precisa estar logado na sua conta, entrar no console, acessar 
+a página do [Google Cloud Speech API](https://console.cloud.google.com/apis/api/speech.googleapis.com/overview) e 
+habilitá-la.
+
+Com a API já habilitada, é necessário criar uma credencial do serviço. Para isso, 
+na página da API do Google Speech já habilitada vá na opção "credenciais". em seguida em 
+"criar credenciais". Após concluída essa etapa, é necessário criar uma ["chave de conta de serviço"](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) e baixar o arquivo JSON. 
+
+O arquivo JSON contém a chave que permite o uso da aplicação. Para prosseguir é necessário carregá-lo com a função `gl_auth`, conforme abaixo:
+
+```{r eval=F, echo=T, message=FALSE, warning=FALSE, cache=T}
+library(googleLanguageR)
+
+gl_auth("arquivo.json")
+
+```
+
+No nosso exemplo, vamos utilizar o áudio da propaganda de campanha do então candidato 
+a Deputado Federal pelo PR, o candidato Tirirca.
+
+<center>
+
+![Tiririca - 2222](images/santinho-tiririca.jpg){width=600px}
+
+</center>
 
 
-Nos últimos anos, diversas aplicações comerciais passaram a ofertar a possibilidade de transcrição de áudios e vídeos. Acompanhando esse processo, iniciativas foram implementadas na liguagem `R`. Abaixo são apresentadas três delas. De forma geral, utilizam APIs de grandes companhias de tecnologia com alguma limitação para uso gratuito:
+```{r eval=T, echo=F, message=FALSE, warning=FALSE, cache=T}
+library(embedr)
 
-- Pacote [`googleLanguageR`](https://cran.r-project.org/web/packages/googleLanguageR/index.html): Permite o uso de diferentes ferramentas de aprendizagem computacional do Google ([Tutorial](https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html)). No caso de transcrição a API recomendada é a [Google Could Speech API](https://cran.r-project.org/web/packages/googleLanguageR/vignettes/speech.html).
+audio <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav"
 
-- Pacote [`transcribeR`](https://cran.r-project.org/web/packages/transcribeR/index.html): a transcrição é feita com o uso do HP IDOL API [Tutorial](https://cran.r-project.org/web/packages/transcribeR/vignettes/Transcribing_audio_with_transcribeR.html#introduction)). 
+```
 
-- Pacote [`aws.transcribe`](https://cran.r-project.org/web/packages/aws.transcribe/index.html): nesse caso a transcrição é feita com o uso do AWS API da Amazon [README](https://cran.r-project.org/web/packages/aws.transcribe/README.html), [Git do projeto](https://github.com/cloudyr/aws.transcribe)). 
+O áudio que vamos usar é o que segue: `r embed_audio("audio")`.
 
-Sys.setenv("AWS_ACCESS_KEY_ID" = "key_id",
-           "AWS_SECRET_ACCESS_KEY" = "access_key",
-           "AWS_DEFAULT_REGION" = "",
-           "AWS_SESSION_TOKEN" = "mytoken")
---->
+Antes do uso da função para transcrição, recomenda-se realizar a etapa abaixo para 
+unir os canais do som em um formato `mono` através do pacote `tuneR` e salvar a leitura 
+do áudio em formato `.csv`.
 
- 
+```{r eval=F, echo=T, message=FALSE, warning=FALSE, cache=T}
+library(tuneR)
 
+audio <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav"
 
+audio_load <- readWave(audio)
 
+audio_load <- mono(audio_load, which = c("left", "right", "both"))
 
+writeWave(audio_load, "tiririca_campanha.csv", extensible = F)
+
+```
+
+Em seguida, selecione o arquivo que deseja transcrever. Lembre-se que a cota 
+gratuita é de 60 minutos por mês e o formato de áudio padrão é `wav`. 
+
+A transcrição 
+do áudio é realizada com a função `gl_speech`, identificando o código da língua e a 
+frequência em Hertz^[Para mais detalhes consulte a vinheta [Google Could Speech API](https://cran.r-project.org/web/packages/googleLanguageR/vignettes/speech.html)].
+
+```{r eval=F, echo=F, message=FALSE, warning=FALSE, cache=T}
+
+audio_csv <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.csv"
+
+transcricao <- gl_speech(audio_csv, sampleRateHertz = 44100L, languageCode = "pt-BR")
+
+```  
+
+O função `gl_speech` retorna uma lista com dois elementos: `transcript` e `timings`. 
+O primeiro com a transcrição e o segunda mostrando as palavras por segundo em seu 
+início e fim. Abaixo vemos o resultado da transcrição:
+
+```{r eval=T, echo=F, message=FALSE, warning=FALSE, cache=T}
+
+transcricao$transcript$transcript
+
+```

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.7.30)  8 SEP 2020 22:54
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.7.30)  9 SEP 2020 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1355,62 +1355,47 @@ Underfull \vbox (badness 2245) has occurred while \output is active []
 
 [21
 
-] [22]
-Overfull \hbox (285.0pt too wide) in paragraph at lines 649--649
-[]\TU/lmtt/m/n/10 ## [1] "Quando surge o alviverde imponente" ""               
-                    "Sabe bem o que vem pela frente"     ""[] 
- []
-
-[23] [24]
-Overfull \hbox (222.0pt too wide) in paragraph at lines 781--781
-[]\TU/lmtt/m/n/10 ## [1] "10"                                               "Ca
-mpeonatos Brasileiros vencidos pelo Palmeiras."[] 
- []
+] [22] [23] [24]
+Underfull \vbox (badness 2351) has occurred while \output is active []
 
 [25]
-Underfull \hbox (badness 1122) in paragraph at lines 853--854
+Underfull \hbox (badness 1122) in paragraph at lines 855--856
 \TU/lmr/m/n/10 tores. Para manter strings como caracteres deve-se usar o argume
 nto:
  []
 
 [26] [27]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 996--996
+Overfull \hbox (33.0pt too wide) in paragraph at lines 998--998
 []\TU/lmtt/m/n/10 ## [1] "algumas"   "palavras"  "aleatória" "aqui"      "e"   
       "ali"[] 
  []
 
 [28] [29]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 1146--1146
+Overfull \hbox (6.75pt too wide) in paragraph at lines 1148--1148
 []\TU/lmtt/m/n/10 ## [1] " Palmeiras é o time da virad" " Palmeiras é o time do
  amor"[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1160--1160
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1162--1162
 []\TU/lmtt/m/n/10 ## [1] "O PALMEIRAS é o time da virada" "o PALMEIRAS é o time
  do amor."[] 
  []
 
 
-Overfull \hbox (243.0pt too wide) in paragraph at lines 1172--1172
-[]\TU/lmtt/m/n/10 ## [1] "                    O PALMEIRAS é o time da virada" "
-                     o PALMEIRAS é o time do amor."[] 
- []
-
-
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1185--1185
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1188--1188
 []\TU/lmtt/m/n/10 ## [1] "O PALMEIRAS é o time da virada" "o PALMEIRAS é o time
  do amor."[] 
  []
 
 [30] [31]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1315--1315
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1318--1318
 []\TU/lmtt/m/n/10 ## [1] NA                 "presidencialismo" NA              
    "parlamentarismo"[] 
  []
 
 [32]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1378--1378
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1381--1381
 []\TU/lmtt/m/n/10 ## [1] "O PALMEIRAS é o time da virada" "o PALMEIRAS é o time
  do amor."[] 
  []
@@ -1422,47 +1407,53 @@ Chapter 5.
 File: images/SPLegisRelatorios.jpg Graphic file (type bmp)
 <images/SPLegisRelatorios.jpg>
 
-Overfull \hbox (182.03307pt too wide) in paragraph at lines 1437--1438
+Overfull \hbox (182.03307pt too wide) in paragraph at lines 1444--1445
  [][] 
  []
 
-[35] [36]
+[35]
+Underfull \vbox (badness 1776) has occurred while \output is active []
+
+[36]
 File: images/deputados.png Graphic file (type bmp)
 <images/deputados.png>
 
-Overfull \hbox (181.99348pt too wide) in paragraph at lines 1558--1559
+Overfull \hbox (181.99348pt too wide) in paragraph at lines 1565--1566
  [][] 
  []
 
-[37] [38]
+[37] [38] [39]
 File: images/september-11th.png Graphic file (type bmp)
 <images/september-11th.png>
-[39] [40] [41]
-Underfull \hbox (badness 1721) in paragraph at lines 1730--1730
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[40]
+Underfull \hbox (badness 1721) in paragraph at lines 1737--1737
 [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][][][][] [] [][][][][][
 ][][] [] [][][] [][] [][] [][] [][][][][] [][] [][][] [][] [][] [][] [] [][] []
 [][][] [][] [][][][][]$[][]\TU/lmr/m/n/8 ); ii) ([][]$[][][][][] [] [] []
  []
 
-[42]
-Underfull \vbox (badness 10000) detected at line 1822
+[41] [42]
+Underfull \vbox (badness 10000) detected at line 1829
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1822
+Underfull \vbox (badness 10000) detected at line 1829
  []
 
 [43] [44]
 File: images/tce.png Graphic file (type bmp)
 <images/tce.png>
 
-Overfull \hbox (181.9983pt too wide) in paragraph at lines 1899--1900
+Overfull \hbox (181.9983pt too wide) in paragraph at lines 1906--1907
  [][] 
  []
 
 [45]
 
-LaTeX Warning: Reference `pdf' on page 46 undefined on input line 1956.
+LaTeX Warning: Reference `pdf' on page 46 undefined on input line 1963.
 
 [46]
 File: images/testocr.png Graphic file (type bmp)
@@ -1470,7 +1461,7 @@ File: images/testocr.png Graphic file (type bmp)
 File: images/tweet_bolsonaro_cp.png Graphic file (type bmp)
 <images/tweet_bolsonaro_cp.png>
 [47] [48]
-Overfull \hbox (258.75pt too wide) in paragraph at lines 2041--2041
+Overfull \hbox (258.75pt too wide) in paragraph at lines 2048--2048
 []\TU/lmtt/m/n/10 ## Jair M. Bolsonaro & 8 a Qjairbolsonaro Vie . S O que é ciê
 ncia política? 09:26 - 06/03/2019 - Twitter for iPhone[] 
  []
@@ -1494,24 +1485,24 @@ Chapter 9.
 (./txt4cs.bbl [57] [58
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2130.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2137.
 [59]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2130.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2137.
 (./txt4cs.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2130.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2130.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2137.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2137.
 
 Package rerunfilecheck Info: File `txt4cs.out' has not changed.
 (rerunfilecheck)             Checksum: 132FCDBEAAE258E0BEDE9CEF26B919BB.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2130.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2137.
  ) 
 Here is how much of TeX's memory you used:
  26359 strings out of 492970
  482437 string characters out of 6133938
- 728564 words of memory out of 5000000
+ 727564 words of memory out of 5000000
  30073 multiletter control sequences out of 15000+600000
  537664 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

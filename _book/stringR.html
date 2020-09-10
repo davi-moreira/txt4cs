@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
-  
+  <meta name="github-repo" content="https://github.com/davi-moreira/txt4cs" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 4 Strings no R | Text as Data para Ciências Sociais" />
@@ -307,7 +307,8 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <a class="sourceLine" id="cb23-2" data-line-number="2">palmeiras[<span class="dv">1</span>] &lt;-<span class="st"> &quot;Quando surge o alviverde imponente&quot;</span></a>
 <a class="sourceLine" id="cb23-3" data-line-number="3">palmeiras[<span class="dv">3</span>] &lt;-<span class="st"> &quot;Sabe bem o que vem pela frente&quot;</span></a>
 <a class="sourceLine" id="cb23-4" data-line-number="4">palmeiras</a></code></pre></div>
-<pre><code>## [1] &quot;Quando surge o alviverde imponente&quot; &quot;&quot;                                   &quot;Sabe bem o que vem pela frente&quot;     &quot;&quot;                                  
+<pre><code>## [1] &quot;Quando surge o alviverde imponente&quot; &quot;&quot;                                  
+## [3] &quot;Sabe bem o que vem pela frente&quot;     &quot;&quot;                                  
 ## [5] &quot;&quot;</code></pre>
 <p>Ótimo! Significa que podemos ter um vetor no com o <a href="http://www.palmeiras.com.br/historia/hino">Hino do Palmeiras</a>, sendo cada um de seus elementos um verso dessa bela poesia.</p>
 <p>E seria possível ter um vetor cujos elementos fossem os hinos (sequências de caracteres/strings) de todos os times do país? Sim!</p>
@@ -352,7 +353,8 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co"># vetor com números e strings</span></a>
 <a class="sourceLine" id="cb43-2" data-line-number="2">brasileiros &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="st">&quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</span>)</a>
 <a class="sourceLine" id="cb43-3" data-line-number="3">brasileiros</a></code></pre></div>
-<pre><code>## [1] &quot;10&quot;                                               &quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</code></pre>
+<pre><code>## [1] &quot;10&quot;                                              
+## [2] &quot;Campeonatos Brasileiros vencidos pelo Palmeiras.&quot;</code></pre>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">class</span>(brasileiros)</a></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Perceba que o vetor é declarado com o número 10 no primeiro elemento e uma string no segundo elemento. Contudo, o <code>R</code> adota um critério de coerção de dados para que o vetor seja da classe <code>character</code>. Por isso, o número 10 é automaticamente convertido como caracter.</p>
@@ -405,7 +407,7 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;
 ## 
 ## [[3]]
-## [1] -0.7762420  0.8063132 -1.0591975  1.0291449 -0.7192448
+## [1]  1.6761413  0.8539556 -0.3075357  0.9296786 -1.6628656
 ## 
 ## [[4]]
 ##      [,1] [,2] [,3] [,4] [,5]
@@ -515,7 +517,8 @@ o desenvolvimento de análises automatizadas de conteúdo, é necessário saber 
 <pre><code>## [1] &quot;O PALMEIRAS é o time da virada&quot; &quot;o PALMEIRAS é o time do amor.&quot;</code></pre>
 <p>Preencher uma string em tamanho fixo.</p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="kw">str_pad</span>(txt, <span class="dv">50</span>) <span class="co"># por padrão: left</span></a></code></pre></div>
-<pre><code>## [1] &quot;                    O PALMEIRAS é o time da virada&quot; &quot;                     o PALMEIRAS é o time do amor.&quot;</code></pre>
+<pre><code>## [1] &quot;                    O PALMEIRAS é o time da virada&quot;
+## [2] &quot;                     o PALMEIRAS é o time do amor.&quot;</code></pre>
 <p>Remove espaço extra.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">txt &lt;-<span class="st"> </span><span class="kw">str_pad</span>(txt, <span class="dv">50</span>) <span class="co"># por padrão: left</span></a>
 <a class="sourceLine" id="cb93-2" data-line-number="2"><span class="kw">str_trim</span>(txt)</a></code></pre></div>
