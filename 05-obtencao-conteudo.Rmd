@@ -45,7 +45,7 @@ arquivo_excel <- read_excel("Emendas Apresentadas.xlsx")
 
 <center>
 
-![Chico PDF](images/chico_pdf.jpg){width=500px}
+![Chico PDF](images/chico_pdf.jpg){width=400px}
 
 </center>
 
@@ -70,7 +70,22 @@ writeLines(txt, "lula-pronunciamento-posse-cd-2003.txt")
 
 <!--- BRAPRSpeech --->
 
+:::: {.infobox .note data-latex="note"}
+
+Em breve, o **Projeto BRAPRSpeech** disponibilizará conteúdo e meta-dados de quase 7 mil 
+discursos proferidos pelos presidentes brasileiros da Nova República classificados em áreas temáticas. Divulgaremos! 
+
+::::
+
+
 ## Webscraping
+
+<center>
+
+![Webscraping](images/matrix.jpg){width=400px}
+
+</center>
+
 
 O *Webscraping* consiste na possibilidade de uso de programação para raspagem de 
 dados da web, ou seja a obtenção de conteúdo presente na web. Nesse sentido, suponha 
@@ -227,7 +242,12 @@ Em virtude da estrutura de disponibilização dos dados no WebService da Câmara
 a) obter os meta-dados dos discursos; 
 b) obter o conteúdo dos discursos (inteiror teor).
 
-<!--- BRAParlSpeech --->
+:::: {.infobox .note data-latex="note"}
+
+Em breve, o **Projeto BRAParlSpeech** disponibilizará conteúdo e meta-dados de quase 300 mil 
+discursos de parlamentares brasileiros classificados em áreas temáticas. Divulgaremos! 
+
+::::
 
 ### a) obter os meta-dados dos discursos
 
@@ -516,6 +536,15 @@ writeLines(rdg2018, "meu_arquivo.txt")
 
 ## Twitter
 
+
+<center>
+
+![Twitter](images/twiteer.png){width=200px}
+
+</center>
+
+
+
 Existem diversos pacotes que possibilitam a captura de informação do Twitter, sendo 
 possível obter tweets ou timelines somente de usuários públicos, ou seja que não possuem 
 um perfil privado. Como exemplo, vamos utilizar o pacote [`rtweet`](https://github.com/ropensci/rtweet) 
@@ -638,21 +667,22 @@ gl_auth("arquivo.json")
 No nosso exemplo, vamos utilizar o áudio da propaganda de campanha do então candidato 
 a Deputado Federal pelo PR, o candidato Tirirca.
 
-<center>
-
-![Tiririca - 2222](images/santinho-tiririca.jpg){width=600px}
-
-</center>
-
-
 ```{r eval=T, echo=F, message=FALSE, warning=FALSE, cache=T}
+# git do pacote: https://github.com/mccarthy-m-g/embedr
 library(embedr)
 
 audio <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav"
 
 ```
 
-O áudio que vamos usar é o que segue: `r embed_audio("audio")`.
+
+<center>
+
+![Tiririca - 2222](images/santinho-tiririca.jpg){width=300px}
+
+`r embed_audio(audio)`
+
+</center>
 
 Antes do uso da função para transcrição, recomenda-se realizar a etapa abaixo para 
 unir os canais do som em um formato `mono` através do pacote `tuneR` e salvar a leitura 
@@ -678,11 +708,11 @@ A transcrição
 do áudio é realizada com a função `gl_speech`, identificando o código da língua e a 
 frequência em Hertz^[Para mais detalhes consulte a vinheta [Google Could Speech API](https://cran.r-project.org/web/packages/googleLanguageR/vignettes/speech.html)].
 
-```{r eval=F, echo=F, message=FALSE, warning=FALSE, cache=T}
+```{r eval=F, echo=T, message=FALSE, warning=FALSE, cache=T}
 
-audio_csv <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.csv"
+audio_load <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.csv"
 
-transcricao <- gl_speech(audio_csv, sampleRateHertz = 44100L, languageCode = "pt-BR")
+transcricao <- gl_speech(audio_load, sampleRateHertz = 44100L, languageCode = "pt-BR")
 
 ```  
 
@@ -690,7 +720,7 @@ O função `gl_speech` retorna uma lista com dois elementos: `transcript` e `tim
 O primeiro com a transcrição e o segunda mostrando as palavras por segundo em seu 
 início e fim. Abaixo vemos o resultado da transcrição:
 
-```{r eval=T, echo=F, message=FALSE, warning=FALSE, cache=T}
+```{r eval=T, echo=T, message=FALSE, warning=FALSE, cache=T}
 
 transcricao$transcript$transcript
 
