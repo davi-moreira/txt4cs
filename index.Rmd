@@ -3,15 +3,20 @@ knit: 'bookdown::publish_book(render = "local")'
 title: "_Text as Data_ para Ciências Sociais"
 subtitle: 'guia prático com aplicações'
 author: "Davi Moreira"
-date: "`r Sys.Date()`"
+date: "Criado em 02-08-2019. Atualizado em: `r format(Sys.Date(), '%d-%m-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [biblioteca.bib, book.bib, packages.bib]
 biblio-style: apalike
+github-repo: https://github.com/davi-moreira/txt4cs
 link-citations: yes
 description: "Compilação de métodos e técnicas para análise automatizada de conteúdo"
 urlcolor: blue  
 ---
+
+<!---```{r setup,include=FALSE}
+source("_setup.R",echo=FALSE)
+```--->
 
 # Prefácio {-}
 ```{r fig.width=2, fig.height=1.5, fig.align="center", echo=FALSE, message=FALSE, warning=F}
@@ -31,13 +36,13 @@ O principal objetivo do livro é ser tutorial prático de uso e aplicação de t
 
 ## Sobre o autor/organizador {-}
 
-Davi Moreira é Professor Visitante do departamento de Ciência Política da Universidade Federal de Pernambuco (UFPE). Ph.D. em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atuo nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
+Davi Moreira é Professor Adjunto da Escola de Relações Internacionais da Fundação Getulio Vargas. Ph.D. em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atua nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
 
 Para mais informações:
 
 - [Página pessoal](https://davimoreira.com/). 
 
-- [Currículo Lattes](http://lattes.cnpq.br/7406586493977047).
+- [GitHub](https://github.com/davi-moreira) 
 
 - [Google Scholar](https://scholar.google.com.br/citations?hl=pt-BR&user=dS9bbdMAAAAJ).
 
@@ -47,7 +52,7 @@ Este livro é distribuído de acordo com a licença  Creative Commons Attributio
 
 ## Agradecimentos {-}
 
-Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos Manoel Galdino, Rafael Magalhães, Lincon Ribeiro e Umberto Mignozetti pelo apoio e incentivo ao longo de toda minha trajetória como cientista. 
+Agradeço aos organizadores do MQ-UFMG 2019 pela oportunidade de ministrar o curso e assim me estimular a empreender esse projeto. Também agradeço aos amigos [Manoel Galdino](https://sites.google.com/site/galdinomcz/), [Rafael Magalhães](http://lattes.cnpq.br/8040086656965973), Lincon Ribeiro e [Umberto Mignozzetti](https://umbertomig.com/) pelo apoio e incentivo ao longo de toda minha trajetória como cientista. Por fim, agradeço à fantástica cientista de dados [Mônica Rocabado](https://rdados.netlify.app/), sem a qual esse projeto continuaria na gaveta.
 
 Este livro é escrito com o uso do pacote **bookdown** [@R-bookdown], através do  `R Markdown` e **knitr** [@xie2015].
 
