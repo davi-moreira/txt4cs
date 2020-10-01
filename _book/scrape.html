@@ -279,9 +279,9 @@ utilizar o pacote <code>readr</code>. Vejamos um exemplo:</p>
 <a href="http://app-splegisreport-prd.azurewebsites.net/default.aspx">SPLegis</a>. Entre as
 informações disponíveis, é possível obter <a href="http://app-splegisreport-prd.azurewebsites.net/Report/VIEW_REL_EMENDA/List.aspx">relatórios dos projetos</a>
 com o conteúdo de todas as ementas através do download de um arquivo em formato <code>.xlsx</code>!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(readxl)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">arquivo_excel &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;Emendas Apresentadas.xlsx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="kw">library</span>(readxl)</a>
+<a class="sourceLine" id="cb127-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb127-3" data-line-number="3">arquivo_excel &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;Emendas Apresentadas.xlsx&quot;</span>)</a></code></pre></div>
 </div>
 <div id="pdf-e-.doc" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> <code>.pdf</code> e <code>.doc</code></h3>
@@ -297,13 +297,13 @@ obtenção e processamento. Com o uso do pacote <code>textreadr</code>, por exem
 simples pode-se transformar o conteúdo do arquivo <code>.pdf</code> num arquivo <code>.txt</code>. Vejamos o
 conteúdo do <a href="http://www.biblioteca.presidencia.gov.br/presidencia/ex-presidentes/luiz-inacio-lula-da-silva/discursos/1o-mandato/2003/01-01-pronunciamento-a-nacao-do-presidente-da-republica-luiz-inacio-lula-da-silva-apos-a-cerimonia-de-posse.pdf/view">discurso de posse do ex-presidente Luis Inácio Lula da Silva realizado em
 01 de janeiro de 2003 no Congresso Nacional</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(textreadr)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co"># lendo arquivo .pdf</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">txt &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/lula-pronunciamento-posse-cd-2003.pdf&quot;</span>)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co"># salvando como .txt</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">writeLines</span>(txt, <span class="st">&quot;lula-pronunciamento-posse-cd-2003.txt&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="kw">library</span>(textreadr)</a>
+<a class="sourceLine" id="cb128-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb128-3" data-line-number="3"><span class="co"># lendo arquivo .pdf</span></a>
+<a class="sourceLine" id="cb128-4" data-line-number="4">txt &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/lula-pronunciamento-posse-cd-2003.pdf&quot;</span>)</a>
+<a class="sourceLine" id="cb128-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb128-6" data-line-number="6"><span class="co"># salvando como .txt</span></a>
+<a class="sourceLine" id="cb128-7" data-line-number="7"><span class="kw">writeLines</span>(txt, <span class="st">&quot;lula-pronunciamento-posse-cd-2003.txt&quot;</span>)</a></code></pre></div>
 <!--- BRAPRSpeech --->
 <div class="infobox note">
 <p>Em breve, o <strong>Projeto BRAPRSpeech</strong> disponibilizará conteúdo e meta-dados de quase 7 mil
@@ -377,31 +377,31 @@ visualizá-lo. Vejamos um exemplo:</p>
 </center>
 <!--- o codigo abaixo permite deixar uma pagina embeded no livro --->
 <p>Ao acessar o código fonte dessa <a href="https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=">página do portal da Câmara dos Deputados</a>, você consegue visualizar o código <code>.html</code> que produz toda visualização,
-incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
 </div>
 <div id="obtenção-de-código-fonte---exemplo" class="section level3">
 <h3><span class="header-section-number">5.2.4</span> Obtenção de Código Fonte - Exemplo:</h3>
 <p>Se é possível visualizar o conteúdo, é possível obtê-lo de forma automatizada. Vamos, portanto,
-obter <a href="https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=">o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro</a> em 17 de Agosto de 2010<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+obter <a href="https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=">o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro</a> em 17 de Agosto de 2010<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
 <p>Vamos utilizar as Etapas anteriormente apresentadas:</p>
 <p>De uma só vez, conseguimos cumprir as Etapas 1 e 2 com o código abaixo:</p>
 <p><strong>Etapa 1: Conhecer detalhadamente o caminho para acesso aos dados:</strong> no nosso exemplo, o código
 fonte do endereço virtual que apresenta o discurso também nos apresenta o conteúdo publicado.</p>
 <p><strong>Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:</strong> nesse exemplo,
 trata-se de apenas um endereço que armazenamos no objeto <code>link</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">library</span>(rvest)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw">library</span>(httr)</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="kw">library</span>(xml2)</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co"># definindo o endereço da web</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">link &lt;-<span class="st"> &quot;https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
+<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb129-3" data-line-number="3"><span class="kw">library</span>(rvest)</a>
+<a class="sourceLine" id="cb129-4" data-line-number="4"><span class="kw">library</span>(httr)</a>
+<a class="sourceLine" id="cb129-5" data-line-number="5"><span class="kw">library</span>(xml2)</a>
+<a class="sourceLine" id="cb129-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb129-7" data-line-number="7"><span class="co"># definindo o endereço da web</span></a>
+<a class="sourceLine" id="cb129-8" data-line-number="8">link &lt;-<span class="st"> &quot;https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=&quot;</span></a></code></pre></div>
 <p><strong>Etapa 3: Obter os dados:</strong> Podemos facilmente obter o código fonte de um endereço
 na internet com o uso da função <code>readLines</code>. Aplicamos, portanto, a função no
 objeto <code>link</code> e atribuímos seu resultado ao objeto <code>conteudo</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># obtem o codigo fonte</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">conteudo &lt;-<span class="st"> </span><span class="kw">readLines</span>(link)  </a></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="co"># obtem o codigo fonte</span></a>
+<a class="sourceLine" id="cb130-2" data-line-number="2">conteudo &lt;-<span class="st"> </span><span class="kw">readLines</span>(link)  </a></code></pre></div>
 <p>Veja que o objeto <code>conteudo</code> é um vetor cujos elementos são cada uma das linhas
 presentes no código fonte da página. Isso significa que não precisamos mais do
 acesso à internet ou do próprio endereço para processar o conteúdo obtido uma vez
@@ -414,7 +414,7 @@ da página que publicou o discurso), nos mostra que o elemento <code>328</code> 
 o conteúdo de interesse. Veja que, nesse caso, a análise do próprio código fonte da
 página da Câmara dos Deputados apresenta o conteúdo do discurso na linha 328 do código <code>html</code>.</p>
 <p>Para processar os dados obtidos, vamos selecionar apenas o elemento 328 e assim concluímos nossa missão.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">conteudo &lt;-<span class="st"> </span>conteudo[<span class="dv">328</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">conteudo &lt;-<span class="st"> </span>conteudo[<span class="dv">328</span>]</a></code></pre></div>
 <div id="atividade-prática" class="section level4">
 <h4><span class="header-section-number">5.2.4.1</span> Atividade prática</h4>
 <p>Com base no exemplo acima, obtenha o código fonte da página do <a href="https://pt.wikipedia.org/wiki/Chico_Buarque">Chico Buarque na Wikipédia</a>.</p>
@@ -468,160 +468,160 @@ final (<code>dataFinal</code>) de busca pelos discursos. Sendo nosso objetivo ob
 discursos proferidos num mesmo dia, usamos como parâmetros “11/09/2001”.</p>
 <p><strong>Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:</strong></p>
 <p>Nesse exemplo, trata-se de apenas um endereço que armazenamos no objeto <code>link</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># pacotes </span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">library</span>(httr)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">library</span>(XML)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">library</span>(xml2)</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">library</span>(RCurl)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co"># definindo parametros da chamada</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">dataInicial &lt;-<span class="st"> &quot;11/09/2001&quot;</span> </a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">dataFinal &lt;-<span class="st"> &quot;11/09/2001&quot;</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co"># alocando enderenço a objeto link</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/sitcamaraws/SessoesReunioes.asmx/ListarDiscursosPlenario?&quot;</span>,</a>
-<a class="sourceLine" id="cb6-15" data-line-number="15">                <span class="st">&quot;dataIni=&quot;</span>, dataInicial,</a>
-<a class="sourceLine" id="cb6-16" data-line-number="16">                <span class="st">&quot;&amp;dataFim=&quot;</span>, dataFinal, </a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">                <span class="st">&quot;&amp;codigoSessao=&amp;parteNomeParlamentar=&amp;siglaPartido=&amp;siglaUF=&quot;</span>,</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18">                <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="co"># pacotes </span></a>
+<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="kw">library</span>(httr)</a>
+<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="kw">library</span>(XML)</a>
+<a class="sourceLine" id="cb132-4" data-line-number="4"><span class="kw">library</span>(xml2)</a>
+<a class="sourceLine" id="cb132-5" data-line-number="5"><span class="kw">library</span>(RCurl)</a>
+<a class="sourceLine" id="cb132-6" data-line-number="6"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb132-7" data-line-number="7"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb132-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb132-9" data-line-number="9"><span class="co"># definindo parametros da chamada</span></a>
+<a class="sourceLine" id="cb132-10" data-line-number="10">dataInicial &lt;-<span class="st"> &quot;11/09/2001&quot;</span> </a>
+<a class="sourceLine" id="cb132-11" data-line-number="11">dataFinal &lt;-<span class="st"> &quot;11/09/2001&quot;</span></a>
+<a class="sourceLine" id="cb132-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb132-13" data-line-number="13"><span class="co"># alocando enderenço a objeto link</span></a>
+<a class="sourceLine" id="cb132-14" data-line-number="14">link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/sitcamaraws/SessoesReunioes.asmx/ListarDiscursosPlenario?&quot;</span>,</a>
+<a class="sourceLine" id="cb132-15" data-line-number="15">                <span class="st">&quot;dataIni=&quot;</span>, dataInicial,</a>
+<a class="sourceLine" id="cb132-16" data-line-number="16">                <span class="st">&quot;&amp;dataFim=&quot;</span>, dataFinal, </a>
+<a class="sourceLine" id="cb132-17" data-line-number="17">                <span class="st">&quot;&amp;codigoSessao=&amp;parteNomeParlamentar=&amp;siglaPartido=&amp;siglaUF=&quot;</span>,</a>
+<a class="sourceLine" id="cb132-18" data-line-number="18">                <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
 <p><strong>Etapa 3: Obter os dados:</strong></p>
 <p>Para essa etapa, basta fazer uso da função <code>GET</code>. No código abaixo, armazenamos os resultados no objeto <code>response</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1">response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a></code></pre></div>
 <p><strong>Etapa 4: Processar os dados obtidos:</strong></p>
 <p>Organizar o resultado da função <code>GET</code> num formato de matriz de dados (<code>data.frame</code>) é
 simples. Primeiro, transformamos o resultado numa lista, na qual cada elemento será
 uma das sessões legislativas realizadas naquela data. Em segundo lugar, de forma
-interativa, usando a função <code>for</code>, alocamos os campos desejados num objeto <code>data.frame</code><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># analisa um arquivo XML ou HTML e gera uma estrutura no R.</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>) </a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co"># transforma um XML nó em lista. Importante pois permite você reconhecer o caminho para obtenção dos dados. Exemplo: &quot;$sessao$fasesSessao$faseSessao$discursos$discurso$sumario&quot;</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data) </a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co"># data frame que recebera dados dos pronunciamentos</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  </a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(ls)){</a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">    <span class="co"># obtendo quantidade de pronunciamentos de uma respectiva sessao</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12">    quantPronunciamentos &lt;-<span class="st"> </span><span class="kw">length</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos)</a>
-<a class="sourceLine" id="cb8-13" data-line-number="13">    </a>
-<a class="sourceLine" id="cb8-14" data-line-number="14">    sumario &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-15" data-line-number="15">    numInsercao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-16" data-line-number="16">    numQuarto &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-17" data-line-number="17">    indexacao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-18" data-line-number="18">    hora &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-19" data-line-number="19">    uf &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-20" data-line-number="20">    numOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-21" data-line-number="21">    nomeOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-22" data-line-number="22">    partido &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-23" data-line-number="23">    </a>
-<a class="sourceLine" id="cb8-24" data-line-number="24">    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>quantPronunciamentos){</a>
-<a class="sourceLine" id="cb8-25" data-line-number="25">      <span class="co"># obtendo todos os dados do pronunciamento</span></a>
-<a class="sourceLine" id="cb8-26" data-line-number="26">      <span class="co"># sumario</span></a>
-<a class="sourceLine" id="cb8-27" data-line-number="27">      sumario[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-28" data-line-number="28"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>sumario)</a>
-<a class="sourceLine" id="cb8-29" data-line-number="29">      <span class="co"># insercao</span></a>
-<a class="sourceLine" id="cb8-30" data-line-number="30">      numInsercao[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-31" data-line-number="31"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroInsercao)</a>
-<a class="sourceLine" id="cb8-32" data-line-number="32">      <span class="co"># quarto</span></a>
-<a class="sourceLine" id="cb8-33" data-line-number="33">      numQuarto[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-34" data-line-number="34"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroQuarto)</a>
-<a class="sourceLine" id="cb8-35" data-line-number="35">      <span class="co"># indexacao</span></a>
-<a class="sourceLine" id="cb8-36" data-line-number="36">      indexacao[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-37" data-line-number="37"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>txtIndexacao)</a>
-<a class="sourceLine" id="cb8-38" data-line-number="38">      <span class="co"># hora</span></a>
-<a class="sourceLine" id="cb8-39" data-line-number="39">      hora[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-40" data-line-number="40"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>horaInicioDiscurso)</a>
-<a class="sourceLine" id="cb8-41" data-line-number="41">      <span class="co"># uf orador</span></a>
-<a class="sourceLine" id="cb8-42" data-line-number="42">      uf[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-43" data-line-number="43"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>uf)</a>
-<a class="sourceLine" id="cb8-44" data-line-number="44">      <span class="co"># numero orador</span></a>
-<a class="sourceLine" id="cb8-45" data-line-number="45">      numOrador[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-46" data-line-number="46"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>numero)</a>
-<a class="sourceLine" id="cb8-47" data-line-number="47">      <span class="co"># nome orador</span></a>
-<a class="sourceLine" id="cb8-48" data-line-number="48">      nomeOrador[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-49" data-line-number="49"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>nome)</a>
-<a class="sourceLine" id="cb8-50" data-line-number="50">      <span class="co"># partido orador</span></a>
-<a class="sourceLine" id="cb8-51" data-line-number="51">      partido[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-52" data-line-number="52"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>partido)</a>
-<a class="sourceLine" id="cb8-53" data-line-number="53">    }</a>
-<a class="sourceLine" id="cb8-54" data-line-number="54">    </a>
-<a class="sourceLine" id="cb8-55" data-line-number="55">    <span class="co"># obtendo todos os dados da fase</span></a>
-<a class="sourceLine" id="cb8-56" data-line-number="56">    <span class="co"># codigo</span></a>
-<a class="sourceLine" id="cb8-57" data-line-number="57">    codigoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>codigo)</a>
-<a class="sourceLine" id="cb8-58" data-line-number="58">    <span class="co"># descricao</span></a>
-<a class="sourceLine" id="cb8-59" data-line-number="59">    descricaoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>descricao)</a>
-<a class="sourceLine" id="cb8-60" data-line-number="60">    <span class="co"># obtendo todos os dados da sessao</span></a>
-<a class="sourceLine" id="cb8-61" data-line-number="61">    <span class="co"># codigo</span></a>
-<a class="sourceLine" id="cb8-62" data-line-number="62">    codigoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>codigo)</a>
-<a class="sourceLine" id="cb8-63" data-line-number="63">    <span class="co"># data</span></a>
-<a class="sourceLine" id="cb8-64" data-line-number="64">    dataSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>data)</a>
-<a class="sourceLine" id="cb8-65" data-line-number="65">    <span class="co"># numero</span></a>
-<a class="sourceLine" id="cb8-66" data-line-number="66">    numSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>numero)</a>
-<a class="sourceLine" id="cb8-67" data-line-number="67">    <span class="co"># tipo</span></a>
-<a class="sourceLine" id="cb8-68" data-line-number="68">    tipoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>tipo)</a>
-<a class="sourceLine" id="cb8-69" data-line-number="69">    </a>
-<a class="sourceLine" id="cb8-70" data-line-number="70">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">codigoSessao =</span> <span class="kw">rep</span>(codigoSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-71" data-line-number="71">                         <span class="dt">dataSessao =</span> <span class="kw">rep</span>(dataSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-72" data-line-number="72">                         <span class="dt">numSessao =</span> <span class="kw">rep</span>(numSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-73" data-line-number="73">                         <span class="dt">tipoSessao =</span> <span class="kw">rep</span>(tipoSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-74" data-line-number="74">                         <span class="dt">codigoFase =</span> <span class="kw">rep</span>(codigoFase, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-75" data-line-number="75">                         <span class="dt">descricaoFase =</span> <span class="kw">rep</span>(descricaoFase, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-76" data-line-number="76">                         <span class="dt">numInsercao =</span> numInsercao,</a>
-<a class="sourceLine" id="cb8-77" data-line-number="77">                         <span class="dt">numQuarto =</span> numQuarto,</a>
-<a class="sourceLine" id="cb8-78" data-line-number="78">                         <span class="dt">hora =</span> hora,</a>
-<a class="sourceLine" id="cb8-79" data-line-number="79">                         <span class="dt">numOrador =</span> numOrador,</a>
-<a class="sourceLine" id="cb8-80" data-line-number="80">                         <span class="dt">nomeOrador =</span> nomeOrador,</a>
-<a class="sourceLine" id="cb8-81" data-line-number="81">                         <span class="dt">uf =</span> uf,</a>
-<a class="sourceLine" id="cb8-82" data-line-number="82">                         <span class="dt">partido =</span> partido, </a>
-<a class="sourceLine" id="cb8-83" data-line-number="83">                         <span class="dt">indexacao =</span> indexacao,</a>
-<a class="sourceLine" id="cb8-84" data-line-number="84">                         <span class="dt">sumario =</span> sumario)</a>
-<a class="sourceLine" id="cb8-85" data-line-number="85">    </a>
-<a class="sourceLine" id="cb8-86" data-line-number="86">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
-<a class="sourceLine" id="cb8-87" data-line-number="87">  }</a></code></pre></div>
+interativa, usando a função <code>for</code>, alocamos os campos desejados num objeto <code>data.frame</code><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="co"># analisa um arquivo XML ou HTML e gera uma estrutura no R.</span></a>
+<a class="sourceLine" id="cb134-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>) </a>
+<a class="sourceLine" id="cb134-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb134-4" data-line-number="4"><span class="co"># transforma um XML nó em lista. Importante pois permite você reconhecer o caminho para obtenção dos dados. Exemplo: &quot;$sessao$fasesSessao$faseSessao$discursos$discurso$sumario&quot;</span></a>
+<a class="sourceLine" id="cb134-5" data-line-number="5">ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data) </a>
+<a class="sourceLine" id="cb134-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb134-7" data-line-number="7"><span class="co"># data frame que recebera dados dos pronunciamentos</span></a>
+<a class="sourceLine" id="cb134-8" data-line-number="8">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  </a>
+<a class="sourceLine" id="cb134-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb134-10" data-line-number="10"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(ls)){</a>
+<a class="sourceLine" id="cb134-11" data-line-number="11">    <span class="co"># obtendo quantidade de pronunciamentos de uma respectiva sessao</span></a>
+<a class="sourceLine" id="cb134-12" data-line-number="12">    quantPronunciamentos &lt;-<span class="st"> </span><span class="kw">length</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos)</a>
+<a class="sourceLine" id="cb134-13" data-line-number="13">    </a>
+<a class="sourceLine" id="cb134-14" data-line-number="14">    sumario &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-15" data-line-number="15">    numInsercao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-16" data-line-number="16">    numQuarto &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-17" data-line-number="17">    indexacao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-18" data-line-number="18">    hora &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-19" data-line-number="19">    uf &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-20" data-line-number="20">    numOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-21" data-line-number="21">    nomeOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-22" data-line-number="22">    partido &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-23" data-line-number="23">    </a>
+<a class="sourceLine" id="cb134-24" data-line-number="24">    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>quantPronunciamentos){</a>
+<a class="sourceLine" id="cb134-25" data-line-number="25">      <span class="co"># obtendo todos os dados do pronunciamento</span></a>
+<a class="sourceLine" id="cb134-26" data-line-number="26">      <span class="co"># sumario</span></a>
+<a class="sourceLine" id="cb134-27" data-line-number="27">      sumario[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-28" data-line-number="28"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>sumario)</a>
+<a class="sourceLine" id="cb134-29" data-line-number="29">      <span class="co"># insercao</span></a>
+<a class="sourceLine" id="cb134-30" data-line-number="30">      numInsercao[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-31" data-line-number="31"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroInsercao)</a>
+<a class="sourceLine" id="cb134-32" data-line-number="32">      <span class="co"># quarto</span></a>
+<a class="sourceLine" id="cb134-33" data-line-number="33">      numQuarto[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-34" data-line-number="34"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroQuarto)</a>
+<a class="sourceLine" id="cb134-35" data-line-number="35">      <span class="co"># indexacao</span></a>
+<a class="sourceLine" id="cb134-36" data-line-number="36">      indexacao[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-37" data-line-number="37"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>txtIndexacao)</a>
+<a class="sourceLine" id="cb134-38" data-line-number="38">      <span class="co"># hora</span></a>
+<a class="sourceLine" id="cb134-39" data-line-number="39">      hora[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-40" data-line-number="40"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>horaInicioDiscurso)</a>
+<a class="sourceLine" id="cb134-41" data-line-number="41">      <span class="co"># uf orador</span></a>
+<a class="sourceLine" id="cb134-42" data-line-number="42">      uf[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-43" data-line-number="43"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>uf)</a>
+<a class="sourceLine" id="cb134-44" data-line-number="44">      <span class="co"># numero orador</span></a>
+<a class="sourceLine" id="cb134-45" data-line-number="45">      numOrador[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-46" data-line-number="46"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>numero)</a>
+<a class="sourceLine" id="cb134-47" data-line-number="47">      <span class="co"># nome orador</span></a>
+<a class="sourceLine" id="cb134-48" data-line-number="48">      nomeOrador[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-49" data-line-number="49"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>nome)</a>
+<a class="sourceLine" id="cb134-50" data-line-number="50">      <span class="co"># partido orador</span></a>
+<a class="sourceLine" id="cb134-51" data-line-number="51">      partido[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-52" data-line-number="52"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>partido)</a>
+<a class="sourceLine" id="cb134-53" data-line-number="53">    }</a>
+<a class="sourceLine" id="cb134-54" data-line-number="54">    </a>
+<a class="sourceLine" id="cb134-55" data-line-number="55">    <span class="co"># obtendo todos os dados da fase</span></a>
+<a class="sourceLine" id="cb134-56" data-line-number="56">    <span class="co"># codigo</span></a>
+<a class="sourceLine" id="cb134-57" data-line-number="57">    codigoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>codigo)</a>
+<a class="sourceLine" id="cb134-58" data-line-number="58">    <span class="co"># descricao</span></a>
+<a class="sourceLine" id="cb134-59" data-line-number="59">    descricaoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>descricao)</a>
+<a class="sourceLine" id="cb134-60" data-line-number="60">    <span class="co"># obtendo todos os dados da sessao</span></a>
+<a class="sourceLine" id="cb134-61" data-line-number="61">    <span class="co"># codigo</span></a>
+<a class="sourceLine" id="cb134-62" data-line-number="62">    codigoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>codigo)</a>
+<a class="sourceLine" id="cb134-63" data-line-number="63">    <span class="co"># data</span></a>
+<a class="sourceLine" id="cb134-64" data-line-number="64">    dataSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>data)</a>
+<a class="sourceLine" id="cb134-65" data-line-number="65">    <span class="co"># numero</span></a>
+<a class="sourceLine" id="cb134-66" data-line-number="66">    numSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>numero)</a>
+<a class="sourceLine" id="cb134-67" data-line-number="67">    <span class="co"># tipo</span></a>
+<a class="sourceLine" id="cb134-68" data-line-number="68">    tipoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>tipo)</a>
+<a class="sourceLine" id="cb134-69" data-line-number="69">    </a>
+<a class="sourceLine" id="cb134-70" data-line-number="70">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">codigoSessao =</span> <span class="kw">rep</span>(codigoSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-71" data-line-number="71">                         <span class="dt">dataSessao =</span> <span class="kw">rep</span>(dataSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-72" data-line-number="72">                         <span class="dt">numSessao =</span> <span class="kw">rep</span>(numSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-73" data-line-number="73">                         <span class="dt">tipoSessao =</span> <span class="kw">rep</span>(tipoSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-74" data-line-number="74">                         <span class="dt">codigoFase =</span> <span class="kw">rep</span>(codigoFase, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-75" data-line-number="75">                         <span class="dt">descricaoFase =</span> <span class="kw">rep</span>(descricaoFase, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-76" data-line-number="76">                         <span class="dt">numInsercao =</span> numInsercao,</a>
+<a class="sourceLine" id="cb134-77" data-line-number="77">                         <span class="dt">numQuarto =</span> numQuarto,</a>
+<a class="sourceLine" id="cb134-78" data-line-number="78">                         <span class="dt">hora =</span> hora,</a>
+<a class="sourceLine" id="cb134-79" data-line-number="79">                         <span class="dt">numOrador =</span> numOrador,</a>
+<a class="sourceLine" id="cb134-80" data-line-number="80">                         <span class="dt">nomeOrador =</span> nomeOrador,</a>
+<a class="sourceLine" id="cb134-81" data-line-number="81">                         <span class="dt">uf =</span> uf,</a>
+<a class="sourceLine" id="cb134-82" data-line-number="82">                         <span class="dt">partido =</span> partido, </a>
+<a class="sourceLine" id="cb134-83" data-line-number="83">                         <span class="dt">indexacao =</span> indexacao,</a>
+<a class="sourceLine" id="cb134-84" data-line-number="84">                         <span class="dt">sumario =</span> sumario)</a>
+<a class="sourceLine" id="cb134-85" data-line-number="85">    </a>
+<a class="sourceLine" id="cb134-86" data-line-number="86">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
+<a class="sourceLine" id="cb134-87" data-line-number="87">  }</a></code></pre></div>
 <p>Com o objeto <code>bd</code> acima, concluímos a primeira subetapa e podemos seguir para a segunda.</p>
 </div>
 <div id="b-obter-o-conteúdo-dos-discursos-inteiror-teor." class="section level3">
 <h3><span class="header-section-number">5.3.3</span> b) obter o conteúdo dos discursos (inteiror teor).**</h3>
 <p>Importante ressaltar que essa etapa só é possível tendo realizado o método acima de <code>ListarDiscursosPlenário</code>, devido exigência do próprio WebService.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">bdDados &lt;-<span class="st"> </span>bd</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  <span class="co"># data frame que recebera os pronunciamentos</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">  </a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bdDados)[<span class="dv">1</span>]){</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6">    link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/SitCamaraWS/SessoesReunioes.asmx/obterInteiroTeorDiscursosPlenario?&quot;</span>,</a>
-<a class="sourceLine" id="cb9-7" data-line-number="7">                  <span class="st">&quot;codSessao=&quot;</span>, bdDados<span class="op">$</span>codigoSessao[i],</a>
-<a class="sourceLine" id="cb9-8" data-line-number="8">                  <span class="st">&quot;&amp;numOrador=&quot;</span>, bdDados<span class="op">$</span>numOrador[i], </a>
-<a class="sourceLine" id="cb9-9" data-line-number="9">                  <span class="st">&quot;&amp;numQuarto=&quot;</span>, bdDados<span class="op">$</span>numQuarto[i],</a>
-<a class="sourceLine" id="cb9-10" data-line-number="10">                  <span class="st">&quot;&amp;numInsercao=&quot;</span>, bdDados<span class="op">$</span>numInsercao[i],</a>
-<a class="sourceLine" id="cb9-11" data-line-number="11">                  <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a>
-<a class="sourceLine" id="cb9-12" data-line-number="12">    <span class="kw">print</span>(link)</a>
-<a class="sourceLine" id="cb9-13" data-line-number="13">    response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a>
-<a class="sourceLine" id="cb9-14" data-line-number="14">    data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</a>
-<a class="sourceLine" id="cb9-15" data-line-number="15">    ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data)</a>
-<a class="sourceLine" id="cb9-16" data-line-number="16">    </a>
-<a class="sourceLine" id="cb9-17" data-line-number="17">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nome =</span> ls<span class="op">$</span>nome,</a>
-<a class="sourceLine" id="cb9-18" data-line-number="18">                         <span class="dt">partido =</span> ls<span class="op">$</span>partido,</a>
-<a class="sourceLine" id="cb9-19" data-line-number="19">                         <span class="dt">uf =</span> ls<span class="op">$</span>uf,</a>
-<a class="sourceLine" id="cb9-20" data-line-number="20">                         <span class="dt">horaInicioDiscurso =</span> ls<span class="op">$</span>horaInicioDiscurso,</a>
-<a class="sourceLine" id="cb9-21" data-line-number="21">                         <span class="dt">discursoRTFBase64 =</span> ls<span class="op">$</span>discursoRTFBase64)</a>
-<a class="sourceLine" id="cb9-22" data-line-number="22">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
-<a class="sourceLine" id="cb9-23" data-line-number="23">    <span class="kw">Sys.sleep</span>(.<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb9-24" data-line-number="24">  }</a></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">bdDados &lt;-<span class="st"> </span>bd</a>
+<a class="sourceLine" id="cb135-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb135-3" data-line-number="3">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  <span class="co"># data frame que recebera os pronunciamentos</span></a>
+<a class="sourceLine" id="cb135-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb135-5" data-line-number="5"><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bdDados)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb135-6" data-line-number="6">    link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/SitCamaraWS/SessoesReunioes.asmx/obterInteiroTeorDiscursosPlenario?&quot;</span>,</a>
+<a class="sourceLine" id="cb135-7" data-line-number="7">                  <span class="st">&quot;codSessao=&quot;</span>, bdDados<span class="op">$</span>codigoSessao[i],</a>
+<a class="sourceLine" id="cb135-8" data-line-number="8">                  <span class="st">&quot;&amp;numOrador=&quot;</span>, bdDados<span class="op">$</span>numOrador[i], </a>
+<a class="sourceLine" id="cb135-9" data-line-number="9">                  <span class="st">&quot;&amp;numQuarto=&quot;</span>, bdDados<span class="op">$</span>numQuarto[i],</a>
+<a class="sourceLine" id="cb135-10" data-line-number="10">                  <span class="st">&quot;&amp;numInsercao=&quot;</span>, bdDados<span class="op">$</span>numInsercao[i],</a>
+<a class="sourceLine" id="cb135-11" data-line-number="11">                  <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb135-12" data-line-number="12">    <span class="kw">print</span>(link)</a>
+<a class="sourceLine" id="cb135-13" data-line-number="13">    response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a>
+<a class="sourceLine" id="cb135-14" data-line-number="14">    data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</a>
+<a class="sourceLine" id="cb135-15" data-line-number="15">    ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data)</a>
+<a class="sourceLine" id="cb135-16" data-line-number="16">    </a>
+<a class="sourceLine" id="cb135-17" data-line-number="17">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nome =</span> ls<span class="op">$</span>nome,</a>
+<a class="sourceLine" id="cb135-18" data-line-number="18">                         <span class="dt">partido =</span> ls<span class="op">$</span>partido,</a>
+<a class="sourceLine" id="cb135-19" data-line-number="19">                         <span class="dt">uf =</span> ls<span class="op">$</span>uf,</a>
+<a class="sourceLine" id="cb135-20" data-line-number="20">                         <span class="dt">horaInicioDiscurso =</span> ls<span class="op">$</span>horaInicioDiscurso,</a>
+<a class="sourceLine" id="cb135-21" data-line-number="21">                         <span class="dt">discursoRTFBase64 =</span> ls<span class="op">$</span>discursoRTFBase64)</a>
+<a class="sourceLine" id="cb135-22" data-line-number="22">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
+<a class="sourceLine" id="cb135-23" data-line-number="23">    <span class="kw">Sys.sleep</span>(.<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb135-24" data-line-number="24">  }</a></code></pre></div>
 <p>Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato
 RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para
 possibilitar sua leitura:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">bd<span class="op">$</span>discursoRTFBase64 &lt;-<span class="st"> </span><span class="kw">as.character</span>(bd<span class="op">$</span>discursoRTFBase64)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">bd<span class="op">$</span>discursoPlainTxt &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;character&quot;</span>, </a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">                                           <span class="dt">length =</span> <span class="kw">dim</span>(bd)[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bd)[<span class="dv">1</span>]){</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">  bd<span class="op">$</span>discursoPlainTxt[i] &lt;-<span class="st"> </span><span class="kw">decode_rtf</span>(bd<span class="op">$</span>discursoRTFBase64[i])</a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">  <span class="kw">print</span>( bd<span class="op">$</span>discursoPlainTxt)</a>
-<a class="sourceLine" id="cb10-9" data-line-number="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1">bd<span class="op">$</span>discursoRTFBase64 &lt;-<span class="st"> </span><span class="kw">as.character</span>(bd<span class="op">$</span>discursoRTFBase64)</a>
+<a class="sourceLine" id="cb136-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb136-3" data-line-number="3">bd<span class="op">$</span>discursoPlainTxt &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;character&quot;</span>, </a>
+<a class="sourceLine" id="cb136-4" data-line-number="4">                                           <span class="dt">length =</span> <span class="kw">dim</span>(bd)[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb136-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb136-6" data-line-number="6"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bd)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb136-7" data-line-number="7">  bd<span class="op">$</span>discursoPlainTxt[i] &lt;-<span class="st"> </span><span class="kw">decode_rtf</span>(bd<span class="op">$</span>discursoRTFBase64[i])</a>
+<a class="sourceLine" id="cb136-8" data-line-number="8">  <span class="kw">print</span>( bd<span class="op">$</span>discursoPlainTxt)</a>
+<a class="sourceLine" id="cb136-9" data-line-number="9">}</a></code></pre></div>
 <div id="atividade-prática-1" class="section level4">
 <h4><span class="header-section-number">5.3.3.1</span> Atividade prática</h4>
 <p>Utilizando o código acima, obtenha as falas proferidas do dia da autorização do
@@ -648,11 +648,11 @@ que anualmente disponibiliza relatórios de gestão.</p>
 <p>Para atingir nosso objetivo, vamos utilizar as Etapas anteriormente apresentadas:</p>
 <p><strong>Etapa 1: Conhecer detalhadamente o caminho para acesso aos dados:</strong></p>
 <p>A <a href="%22https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2%22">página do TCE-PE</a> apresenta os relatórios publicados anualmente.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">library</span>(rvest)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">library</span>(XML)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw">library</span>(xml2)</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">link_tce &lt;-<span class="st"> &quot;https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="kw">library</span>(rvest)</a>
+<a class="sourceLine" id="cb137-2" data-line-number="2"><span class="kw">library</span>(XML)</a>
+<a class="sourceLine" id="cb137-3" data-line-number="3"><span class="kw">library</span>(xml2)</a>
+<a class="sourceLine" id="cb137-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb137-5" data-line-number="5">link_tce &lt;-<span class="st"> &quot;https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2&quot;</span></a></code></pre></div>
 <p><strong>Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:</strong></p>
 <p>Aqui selecionamos exatamente os endereços de download de cada um dos arquivos publicados.
 Todos os <code>.pdf</code> são um link dentro do código fonte da página, iremos, portanto, obter os
@@ -660,36 +660,36 @@ links desses relatórios.</p>
 <p>Para tanto, podemos observar que o código fonte possui um padrão que identifica os
 Relatórios de Desempenho anual: <code>rdg</code>. Iremos utilizá-lo para obter somente os documentos
 que possuam esse padrão.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">link_relatorios &lt;-<span class="st"> </span>link_tce <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span>read_html <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># função que irá ler o código fonte escrito em html</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;a&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># nó presente no código fonte antes do pdf</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw">html_attr</span>(<span class="st">&quot;href&quot;</span>) <span class="co"># atributro do nó</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co"># obtenção dos links do relatório através do padrão `rgd`</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7">link_relatorios &lt;-<span class="st"> </span>link_relatorios[<span class="kw">grep</span>(<span class="st">&quot;rdg&quot;</span>, link_relatorios)] </a></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1">link_relatorios &lt;-<span class="st"> </span>link_tce <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb138-2" data-line-number="2"><span class="st">  </span>read_html <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># função que irá ler o código fonte escrito em html</span></a>
+<a class="sourceLine" id="cb138-3" data-line-number="3"><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;a&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># nó presente no código fonte antes do pdf</span></a>
+<a class="sourceLine" id="cb138-4" data-line-number="4"><span class="st">  </span><span class="kw">html_attr</span>(<span class="st">&quot;href&quot;</span>) <span class="co"># atributro do nó</span></a>
+<a class="sourceLine" id="cb138-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb138-6" data-line-number="6"><span class="co"># obtenção dos links do relatório através do padrão `rgd`</span></a>
+<a class="sourceLine" id="cb138-7" data-line-number="7">link_relatorios &lt;-<span class="st"> </span>link_relatorios[<span class="kw">grep</span>(<span class="st">&quot;rdg&quot;</span>, link_relatorios)] </a></code></pre></div>
 <p><strong>Etapa 3: Obter os dados:</strong></p>
 <p>A obtenção dos dados se refere justamente ao download do material para armazenamento
 local. Logo, definimos o diretório onde os arquivos serão salvos e fazemos uso da
 função <code>download.file</code>. Como obtivemos mais de um link, para mais de um relatório,
 no código abaixo apresentamos como obter o primeiro arquivo <code>.pdf</code> presente em <code>link_relatorios[1]</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">download.file</span>(link_relatorios[<span class="dv">1</span>], <span class="dt">destfile =</span> <span class="st">&quot;seu_diretorio/nome_do_arquivo.pdf&quot;</span>, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="kw">download.file</span>(link_relatorios[<span class="dv">1</span>], <span class="dt">destfile =</span> <span class="st">&quot;seu_diretorio/nome_do_arquivo.pdf&quot;</span>, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a></code></pre></div>
 <p><strong>Etapa 4: Processar os dados obtidos:</strong></p>
 <p>O processo é similar à leitura de conteúdo em arquivo <code>.pdf</code> explicada na seção <a href="scrape.html#pdf"><strong>??</strong></a>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># pacotes</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">library</span>(textreadr)</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="kw">library</span>(here)</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co"># # lendo arquivo .pdf</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">rdg2018 &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;nome_arquivo.pdf&quot;</span>)</a>
-<a class="sourceLine" id="cb14-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co"># salvando como .txt</span></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="kw">writeLines</span>(rdg2018, <span class="st">&quot;meu_arquivo.txt&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1"><span class="co"># pacotes</span></a>
+<a class="sourceLine" id="cb140-2" data-line-number="2"><span class="kw">library</span>(textreadr)</a>
+<a class="sourceLine" id="cb140-3" data-line-number="3"><span class="kw">library</span>(here)</a>
+<a class="sourceLine" id="cb140-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb140-5" data-line-number="5"><span class="co"># # lendo arquivo .pdf</span></a>
+<a class="sourceLine" id="cb140-6" data-line-number="6">rdg2018 &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;nome_arquivo.pdf&quot;</span>)</a>
+<a class="sourceLine" id="cb140-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb140-8" data-line-number="8"><span class="co"># salvando como .txt</span></a>
+<a class="sourceLine" id="cb140-9" data-line-number="9"><span class="kw">writeLines</span>(rdg2018, <span class="st">&quot;meu_arquivo.txt&quot;</span>)</a></code></pre></div>
 </div>
 <div id="twitter" class="section level2">
 <h2><span class="header-section-number">5.5</span> Twitter</h2>
 <center>
 <div class="figure">
-<img src="images/twiteer.png" alt="Twitter" width="300" />
+<img src="images/twiteer.png" alt="Twitter" width="200" />
 <p class="caption">Twitter</p>
 </div>
 </center>
@@ -701,9 +701,9 @@ Vale ressaltar que o Twitter exige que para obtenção dos dados você possua um
 no Twitter e autorize o app <code>rstats2twitter</code> no popup que surgirá no seu browser
 ao utilizar alguma das funções no console do <code>R</code>, isso ocorrerá somente na primeira
 vez de uso, criando um token que será salvo para próximas sessões.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">library</span>(rtweet)</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">tabata_timeline &lt;-<span class="st"> </span><span class="kw">get_timeline</span>( <span class="dt">user =</span> <span class="st">&quot;tabataamaralsp&quot;</span>, <span class="dt">n =</span> <span class="dv">30</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="kw">library</span>(rtweet)</a>
+<a class="sourceLine" id="cb141-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb141-3" data-line-number="3">tabata_timeline &lt;-<span class="st"> </span><span class="kw">get_timeline</span>( <span class="dt">user =</span> <span class="st">&quot;tabataamaralsp&quot;</span>, <span class="dt">n =</span> <span class="dv">30</span>)</a></code></pre></div>
 <p>Além do uso de obtenção de hashtags é possível buscar termos que estão sendo tweetados
 ou hashtags através do <code>search_tweets</code> que segue lógica similar ao <code>get_timeline</code>.</p>
 </div>
@@ -730,17 +730,17 @@ atribuído ao Presidente Bolsonaro para obter seu conteúdo:</p>
 <p class="caption">FAKE NEWS!</p>
 </div>
 </center>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">library</span>(tesseract)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co"># obtendo treinamento na ligua portuguesa</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="kw">tesseract_download</span>(<span class="st">&#39;por&#39;</span>)</a>
-<a class="sourceLine" id="cb16-5" data-line-number="5">por &lt;-<span class="st"> </span><span class="kw">tesseract</span>(<span class="st">&quot;por&quot;</span>) <span class="co"># alocando treinamento na ligua portuguesa</span></a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co"># obtendo texto da imagem</span></a>
-<a class="sourceLine" id="cb16-8" data-line-number="8">text &lt;-<span class="st"> </span>tesseract<span class="op">::</span><span class="kw">ocr</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tweet_bolsonaro_cp.png&quot;</span>, <span class="dt">engine =</span> por)</a>
-<a class="sourceLine" id="cb16-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co"># resultado</span></a>
-<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="kw">cat</span>(text)</a></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="kw">library</span>(tesseract)</a>
+<a class="sourceLine" id="cb142-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb142-3" data-line-number="3"><span class="co"># obtendo treinamento na ligua portuguesa</span></a>
+<a class="sourceLine" id="cb142-4" data-line-number="4"><span class="kw">tesseract_download</span>(<span class="st">&#39;por&#39;</span>)</a>
+<a class="sourceLine" id="cb142-5" data-line-number="5">por &lt;-<span class="st"> </span><span class="kw">tesseract</span>(<span class="st">&quot;por&quot;</span>) <span class="co"># alocando treinamento na ligua portuguesa</span></a>
+<a class="sourceLine" id="cb142-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb142-7" data-line-number="7"><span class="co"># obtendo texto da imagem</span></a>
+<a class="sourceLine" id="cb142-8" data-line-number="8">text &lt;-<span class="st"> </span>tesseract<span class="op">::</span><span class="kw">ocr</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tweet_bolsonaro_cp.png&quot;</span>, <span class="dt">engine =</span> por)</a>
+<a class="sourceLine" id="cb142-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb142-10" data-line-number="10"><span class="co"># resultado</span></a>
+<a class="sourceLine" id="cb142-11" data-line-number="11"><span class="kw">cat</span>(text)</a></code></pre></div>
 <p>Segue o resultado:</p>
 <pre><code>## Jair M. Bolsonaro &amp; 8 a Qjairbolsonaro Vie . S O que é ciência política? 09:26 - 06/03/2019 - Twitter for iPhone</code></pre>
 </div>
@@ -754,7 +754,7 @@ De forma geral, esses pacotes utilizam APIs dessas grandes companhias de tecnolo
 com alguma limitação para uso gratuito, sendo necessário cadastro em sua plataforma e
 credenciamento de cartão de crédito.</p>
 <p>Para se ter um exemplo, vamos explorar o uso do pacote <code>googleLanguageR</code>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;googleLanguageR&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;googleLanguageR&quot;</span>)</a></code></pre></div>
 <p>Para obter uma chave de API que vai possibilitar o uso do pacote você precisa criar
 um conta no <a href="https://cloud.google.com/">Google cloud</a> e habilitá-la com o seu
 cartão de crédito. Vale ressaltar que é uma assinatura gratuita, mas caso ultrapasse
@@ -767,7 +767,7 @@ o limite da cota gratuita você será cobrado.</p>
 <li>Processamento de linguagem natural permitindo a identificação de sentimento,
 estrutura e significado: Google Natural Language API</li>
 </ol>
-<p>Nosso foco aqui é na transcrição de áudio para texto<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.
+<p>Nosso foco aqui é na transcrição de áudio para texto<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.
 Para usar a API você precisa estar logado na sua conta, entrar no console, acessar
 a página do <a href="https://console.cloud.google.com/apis/api/speech.googleapis.com/overview">Google Cloud Speech API</a> e
 habilitá-la.</p>
@@ -775,9 +775,9 @@ habilitá-la.</p>
 na página da API do Google Speech já habilitada vá na opção “credenciais”. em seguida em
 “criar credenciais”. Após concluída essa etapa, é necessário criar uma <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">“chave de conta de serviço”</a> e baixar o arquivo JSON.</p>
 <p>O arquivo JSON contém a chave que permite o uso da aplicação. Para prosseguir é necessário carregá-lo com a função <code>gl_auth</code>, conforme abaixo:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">library</span>(googleLanguageR)</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="kw">gl_auth</span>(<span class="st">&quot;arquivo.json&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">library</span>(googleLanguageR)</a>
+<a class="sourceLine" id="cb145-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb145-3" data-line-number="3"><span class="kw">gl_auth</span>(<span class="st">&quot;arquivo.json&quot;</span>)</a></code></pre></div>
 <p>No nosso exemplo, vamos utilizar o áudio da propaganda de campanha do então candidato
 a Deputado Federal pelo PR, o candidato Tirirca.</p>
 <center>
@@ -790,40 +790,40 @@ a Deputado Federal pelo PR, o candidato Tirirca.</p>
 <p>Antes do uso da função para transcrição, recomenda-se realizar a etapa abaixo para
 unir os canais do som em um formato <code>mono</code> através do pacote <code>tuneR</code> e salvar a leitura
 do áudio em formato <code>.csv</code>.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">library</span>(tuneR)</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb20-3" data-line-number="3">audio &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav&quot;</span></a>
-<a class="sourceLine" id="cb20-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb20-5" data-line-number="5">audio_load &lt;-<span class="st"> </span><span class="kw">readWave</span>(audio)</a>
-<a class="sourceLine" id="cb20-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb20-7" data-line-number="7">audio_load &lt;-<span class="st"> </span><span class="kw">mono</span>(audio_load, <span class="dt">which =</span> <span class="kw">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;both&quot;</span>))</a>
-<a class="sourceLine" id="cb20-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb20-9" data-line-number="9"><span class="kw">writeWave</span>(audio_load, <span class="st">&quot;tiririca_campanha.csv&quot;</span>, <span class="dt">extensible =</span> F)</a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="kw">library</span>(tuneR)</a>
+<a class="sourceLine" id="cb146-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb146-3" data-line-number="3">audio &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav&quot;</span></a>
+<a class="sourceLine" id="cb146-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb146-5" data-line-number="5">audio_load &lt;-<span class="st"> </span><span class="kw">readWave</span>(audio)</a>
+<a class="sourceLine" id="cb146-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb146-7" data-line-number="7">audio_load &lt;-<span class="st"> </span><span class="kw">mono</span>(audio_load, <span class="dt">which =</span> <span class="kw">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;both&quot;</span>))</a>
+<a class="sourceLine" id="cb146-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb146-9" data-line-number="9"><span class="kw">writeWave</span>(audio_load, <span class="st">&quot;tiririca_campanha.csv&quot;</span>, <span class="dt">extensible =</span> F)</a></code></pre></div>
 <p>Em seguida, selecione o arquivo que deseja transcrever. Lembre-se que a cota
 gratuita é de 60 minutos por mês e o formato de áudio padrão é <code>wav</code>.</p>
 <p>A transcrição
 do áudio é realizada com a função <code>gl_speech</code>, identificando o código da língua e a
-frequência em Hertz<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">audio_load &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.csv&quot;</span></a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb21-3" data-line-number="3">transcricao &lt;-<span class="st"> </span><span class="kw">gl_speech</span>(audio_load, <span class="dt">sampleRateHertz =</span> 44100L, <span class="dt">languageCode =</span> <span class="st">&quot;pt-BR&quot;</span>)</a></code></pre></div>
+frequência em Hertz<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1">audio_load &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.csv&quot;</span></a>
+<a class="sourceLine" id="cb147-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb147-3" data-line-number="3">transcricao &lt;-<span class="st"> </span><span class="kw">gl_speech</span>(audio_load, <span class="dt">sampleRateHertz =</span> 44100L, <span class="dt">languageCode =</span> <span class="st">&quot;pt-BR&quot;</span>)</a></code></pre></div>
 <p>O função <code>gl_speech</code> retorna uma lista com dois elementos: <code>transcript</code> e <code>timings</code>.
 O primeiro com a transcrição e o segunda mostrando as palavras por segundo em seu
 início e fim. Abaixo vemos o resultado da transcrição:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">transcricao<span class="op">$</span>transcript<span class="op">$</span>transcript</a></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1">transcricao<span class="op">$</span>transcript<span class="op">$</span>transcript</a></code></pre></div>
 <pre><code>## [1] &quot;Adivinha quem está falando do vídeo você já te enviar Joel o Tiririca candidato a deputado federal Não esquece peguei vocês enganei vocês vocês pessoal fosse outra pessoa sou eu agastado 2222&quot;</code></pre>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Para uma referência de como transformar objetos <code>xml</code> em <code>data.frame</code> ver: i) (<a href="https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame" class="uri">https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame</a>); ii) (<a href="https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file" class="uri">https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file</a>)<a href="scrape.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Para mais informações sobre as
-possibilidades do pacote veja essa <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html"><strong>vinheta de introdução</strong></a><a href="scrape.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>Para mais detalhes consulte a vinheta <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/speech.html">Google Could Speech API</a><a href="scrape.html#fnref6" class="footnote-back">↩</a></p></li>
+<ol start="5">
+<li id="fn5"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Para uma referência de como transformar objetos <code>xml</code> em <code>data.frame</code> ver: i) (<a href="https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame" class="uri">https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame</a>); ii) (<a href="https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file" class="uri">https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file</a>)<a href="scrape.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Para mais informações sobre as
+possibilidades do pacote veja essa <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html"><strong>vinheta de introdução</strong></a><a href="scrape.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Para mais detalhes consulte a vinheta <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/speech.html">Google Could Speech API</a><a href="scrape.html#fnref9" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

@@ -680,7 +680,7 @@ audio <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiri
 
 ![Tiririca - 2222](images/santinho-tiririca.jpg){width=300px}
 
-`r embed_audio(audio)`
+`r library(embedr); embed_audio(audio)`
 
 </center>
 
@@ -720,8 +720,16 @@ O função `gl_speech` retorna uma lista com dois elementos: `transcript` e `tim
 O primeiro com a transcrição e o segunda mostrando as palavras por segundo em seu 
 início e fim. Abaixo vemos o resultado da transcrição:
 
-```{r eval=T, echo=T, message=FALSE, warning=FALSE, cache=T}
+
+```{r eval=F, echo=T, message=FALSE, warning=FALSE, cache=T}
 
 transcricao$transcript$transcript
 
+```
+
+```{r eval=T, echo=F, message=FALSE, warning=FALSE, cache=T}
+library(here)
+load(here("data/tiririca_campanha.rda"))
+
+transcricao$transcript$transcript
 ```
