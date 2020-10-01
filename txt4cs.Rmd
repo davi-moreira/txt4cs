@@ -1,3 +1,130 @@
+--- 
+knit: 'bookdown::publish_book(render = "local")'
+title: "_Text as Data_ para Ciências Sociais"
+subtitle: 'guia prático com aplicações'
+author: "Davi Moreira"
+date: "Criado em 02-08-2019. Atualizado em: `r format(Sys.Date(), '%d-%m-%Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [biblioteca.bib, book.bib, packages.bib]
+biblio-style: apalike
+github-repo: https://github.com/davi-moreira/txt4cs
+link-citations: yes
+description: "Compilação de métodos e técnicas para análise automatizada de conteúdo"
+urlcolor: blue  
+---
+
+# Prefácio {-}
+
+Placeholder
+
+
+## Objetivo {-}
+## Sobre o autor/organizador {-}
+## Licença {-}
+## Agradecimentos {-}
+
+<!--chapter:end:index.Rmd-->
+
+
+# Introdução {#intro}
+
+Placeholder
+
+
+## O `R` e o `RStudio`
+## O Pacote `txt4cs` e outros
+## Material de apoio
+### Referências para processamento de sequências de caracteres com o `R`
+### Referências em análise de conteúdo com o `R`:
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# Text as data: o texto como dado {#tada}
+
+Placeholder
+
+
+## Panorama da área
+## Oportunidades
+## Quadro geral de metodologias
+## O processo de análise do texto como dado
+
+<!--chapter:end:02-tada.Rmd-->
+
+
+# R e o Processamento de Linguagem Natural {#regex}
+
+Placeholder
+
+
+## Encoding - Codificação de caracteres
+## Encoding para remover acentos
+
+<!--chapter:end:03-regex.Rmd-->
+
+
+# Strings no `R` {#stringR}
+
+Placeholder
+
+
+## Strings e vetores
+### O `R` é case sensitive
+### Sequências de caracteres
+### Operações básicas com vetores de strings
+#### Atenção
+### Caracteres e outros tipos de dados
+## Strings e matrizes
+## Strings e data.frames
+## Strings e listas
+## Processamento básico
+### Contando caracteres
+### `toupper()`, `tolower()`
+#### Recortando strings:  `substr()`, `substring()`.  
+#### União, Intersecção, Diferença, Igualdade
+#### Elemento contido em
+#### Ordenação
+## O pacote `stringr` 
+### Verificando o tamanho de uma string^[Assim como fizemos anteriormente com a função `nchar()`.]
+### Identificando caracter numa posição específica.
+### Incluindo caracter ou string numa posicao específica.
+### Recortando uma string para obter parte da sequência de caracteres.
+## Regular Expressions no `R`
+### Identificação e Extração de padrão
+### Substituição
+### Âncoras
+
+<!--chapter:end:04-string-R.Rmd-->
+
+
+# Obtenção de conteúdo {#scrape}
+
+Placeholder
+
+
+## word, excel ou `.pdf`{#pdf}
+### `.xlsx` 
+### `.pdf` e `.doc`
+## Webscraping
+### Pacotes para raspagem de dados
+### Etapas para raspagem de dados na web
+### Código fonte 
+### Obtenção de Código Fonte - Exemplo:
+#### Atividade prática
+## Web Services
+### Obtenção de conteúdo via WS - Exemplo:
+### a) obter os meta-dados dos discursos
+### b) obter o conteúdo dos discursos (inteiror teor).**
+#### Atividade prática
+## Download de arquivos da web
+## Twitter
+## Imagens
+## Áudio Transcrição
+
+<!--chapter:end:05-obtencao-conteudo.Rmd-->
+
 # Processamento dos dados {#processamento}
 
 A análise de conteúdo só é possível através da transformação do texto bruto em estruturas de dados convenientes para o uso em pacotes. Esta etapa é fundamental e caso feita de forma errada pode levar a erros ou a impossibilidade da análise.
@@ -71,7 +198,6 @@ text_token <- text_df %>%
 
 ```
 
-
 ```{r, echo=FALSE}
 knitr::kable(text_token)
 ```
@@ -79,7 +205,7 @@ knitr::kable(text_token)
 
 ### Tidying a aprovação do impeachment da Presidenta Dilma Rousseff {#tidyDilma}
 
-```{r, include=FALSE}
+```{r include=FALSE}
 
 load("~/R/txt4cs/data/impeachment-dilma-dados-filter.rda")
 ```
@@ -247,13 +373,12 @@ cor.test(data = frequency[frequency$author == "PSDB",],
 ```
 
 ## Corpus
-O pacote `tidyverse` não possui uma função que gera um corpus, assim iremos utilizar o pacote `quanteda` que permite trabalhar com Tokens, Corpus e DFMs. Um ponto positivo em relação ao tidyverse é a possibilidade de gerar corpus e demais análises estas estando relacionadas ao documento que a originou. 
-
-O uso do quanteda, segue o seguinte fluxograma:
+O pacote `tidyverse` não possui uma função que gera corpus, assim iremos utilizar o pacote `quanteda` que permite trabalhar com Tokens, Corpus e DFMs através do seguinte fluxograma:
 
 <center>
 ![quanteda_flow](images/quanteda-workflow.png){width=500px}
 </center>
+
 
 É possível criar um *corpus* a partir de diferentes fontes de dados:
 
@@ -321,219 +446,301 @@ corp_documents[2]
 ## Tokens e Corpus
 ### Obtendo Tokens a partir de um Corpus: `tokens()`
 
-A função `tokens()`, é similar a função `unnest_tokens` do pacote `tidyverse`, ambas segmentam o texto, sua principal diferença é que ele não estrutura em forma de data frame com linhas e colunas o objeto tokenizado. Usaremos o corp gerado do item anterior. Esta função somente remove espaços em branco e demais separadores de texto automáticamente, para remoção de pontuação e números é necessário escrever no código. 
+A função `tokens()`, é similar a função `unnest_tokens` do pacote `tidyverse`, sua principal diferença é blablablablabla, ambas segmentam o texto. Usaremos o corp do item anterior.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 
 toks <- tokens(corp, remove_punct = TRUE) #tokenizando e removendo a pontuação
-
 head(toks[[1]], 50)
 ````
 
 ### Palavras-chave e seu contexto: `kwic()`
 
-Através dessa função presente no pacote `quanteda` é possível identificar o contexto imediato de um termo ou conjunto de palavras-chaves. No exemplo abaixo estamos buscando o contexto de palavras relacionadas a "golpe":
- 
+[EXPLICAR O QUE É ISSO]
+
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
+# caso de uma palavra-chave ----
 kw <- kwic(toks, pattern =  'golp*')
+head(kw, 30)
 ````
 
-```{r, echo=FALSE}
-knitr::kable(head(kw, 5))
-```
 
-Também é possível buscar mais de um termo por linha de código, assim como selecionar a quantidade de caracteres que apareçam com o termo procurado.
+Caso queira ler algum trecho ou os trechos que contenham a frase, você pode utilizar blablabalbalabalbala [ARRUMAR AQUI]
 
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-kw <- kwic(toks, pattern =  c("pela", "pelo"), window = 7)
+````{r}
+texts(corp)[6]
 ````
 
-```{r, echo=FALSE}
-knitr::kable(head(kw, 5))
-```
-
-Caso queira identificar o contexto de frases, você deve dentro de `phrase` escrever uma frase respeitando os espaçoes em branco. 
-
+PARA UMA FRASE INTEIRA BLABLABALBAAL
 ````{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 # caso de uma frase inteira ----
-kw_frase <- kwic(toks, pattern =  phrase('não vai ter golp*'))
+kw <- kwic(toks, pattern =  phrase('não vai ter golp*'))
+head(kw, 30)
 ```
-
-```{r, echo=FALSE}
-knitr::kable(kw_frase)
-```
-
 
 ### Selecionando tokens
-Como já colocado, `tokens` por padrão apenas remove separadores de texto e outros caracteres não textuais, estes se expressados no código. Para retirada de stopwords pode se fazer uso das funções `tokens_select` e `tokens_remove`, que são equivalentes. Novamente utilizaremos o corpus previamente construído.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-#Construção de tokens sem pontuações
 toks <- tokens(corp, remove_punct = T, remove_numbers = T)
+toks_nostop <- tokens_select(toks, pattern = stopwords('pt'), selection = 'remove')
+head(toks_nostop[[1]], 50)
 
-# Temovendo as stopwords
-#opção 1
-toks_nostop <- tokens_select(toks, pattern = stopwords('pt'),
-                             selection = 'remove')
-
-#opção 2 
 toks_nostop <- tokens_remove(toks_nostop, pattern = c('SR', 'PRESIDENTE', 
                                                       'Esclarecimentos'))
 head(toks_nostop[[1]], 50)
 
 ```
 
-Com a função `tokens_select` também é possível selecionar palavras-chaves para análise e construindo um novo objeto. Por exemplo, para analisar palavras que aparecem junto de termos determinados, e sua posição original no texto, se pode utilizar respectivamente `window` e `padding` ao escrever o código:
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-
-toks_voto <- tokens_select(toks, pattern = c("votaç*", "voto"), padding = TRUE, window = 5)
-```
-
-```{r, echo=FALSE}
-head(toks_voto, 1)
-```
-## Stemming
-Até aqui, mesmo que os procedimentos adotados tenham diminuído a dimensionalidade do acervo de documentos ao transformá-lo em uma sacola de palavras (*bag of words*), ainda é necessária a adoção de procedimentos que possam reduzir a complexidade do conteúdo a ser analisado.
-
-Com esse objetivo, como apontado por Izumi e Moreira (2018) podemos pensar que determinado documento tenha em sua composição as seguintes palavras únicas: trabalho, trabalhador, trabalhista. Apesar de seus diferentes signficados, cada uma dessas palavras pode ser reduzida ao seu radical, _trabalh_, dando ao pequisador informações suficientes para sua análise e, assim reduzindo, o _n_ de três palavras únicas para uma palavra que tem a soma das frequências anteriores. Para garantir que palavras que variam apenas na flexão, número ou conjugação sejam consideradas iguais, reduzindo o número de dimensões contido no acervo, por meio da adaptação do algoritmo de Porter (1980) para o português já desenvolvida por diferentes projetos ([Snowball](http://snowball.tartarus.org/) e [NILC-USP](https://bit.ly/2OXkVS6)),podem ser obtidos os _stems_ das palavras restantes^[O processo de stemming é uma aproximação do processo de lematização, que reduz palavras às suas formas básicas.]. 
-
-Chamamos esse procedimento de **Stemming**, o pacote `quanteda` possui a opção de stemming em português que usa o projeto Snowball através da função `tokens_wordstem()`, abaixo vamos utilizar o token já produzido no item acima.
-                                  
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-
-token_stem <- tokens_wordstem(toks,language = "pt")
-
-````
-
-```{r, echo=FALSE}
-head(token_stem, 1)
-```
-
 ### Gerando n-grams
 
-O método de tokenização apresentado nos itens acima se chama bag-of-words, ou BOW, e como observado nas análises realizadas, não respeita a ordem em que as palavras foram escritas. 
-
-Para algumas análises essa ordem é necessária e para realizá-la pode-se utilizar o método N-grams, gerando assim tokens de qualquer tamanho e respeitando a ordem em que aparecem no texto. Através da função `tokens_ngrams()` é possível utilizar esse método. 
-
-Com `tokens_ngram()` você pode definir o tamanho que deseja que seus tokens sejam criados, tanto especificando um n-gram único, ou estabelecendo um limite de tamanho de n-grams que o próprio R irá identificar no texto.
-
+Com a função `tokens_ngrams()` é possível gerar tokens com qualquer tamanho.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-
 toks <- tokens(corp, remove_punct = T, remove_numbers = T)
-
-#criando n-grams
 toks_ngram <- tokens_ngrams(toks, n = 2:4)
+head(toks_ngram[[1]], 50)
+tail(toks_ngram[[1]], 50)
 
-head(toks_ngram[[1]], 20)
-```
-
-O `tokens_compound` realiza processo similiar, mas com a diferença de gerar n-grams de forma seletiva, especificando o termo de análise desejada. Após a seleção, para análise do resultado, você deve filtrar pelo termo com `tokens_select`
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-#Gerar n-grams específicas
+# combinações específicas ----
 toks_neg_bigram <- tokens_compound(toks, pattern = phrase('não *'))
-
-#Selecionar as n-grams geradas
+head(toks_neg_bigram[[1]], 50)
 toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase('não_*'))
-
-#Resultado
 head(toks_neg_bigram_select[[6]], 50)
+
 ```
+
+
+Retirando as stop words
+```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
+toks <- tokens(corp, remove_punct = T, remove_numbers = T)
+toks_nostop <- tokens_select(toks, pattern = stopwords('pt'), selection = 'remove')
+head(toks_nostop[[1]], 50)
+
+toks_nostop <- tokens_remove(toks_nostop, pattern = c('SR', 'PRESIDENTE', 
+                                                      'Esclarecimentos'))
+head(toks_nostop[[1]], 50)
+
+```
+
+
 
 ## DFM: Matriz de documentos e termos
-A função `dfm()` constrói uma matriz de documentos e termos/palavras/stems/tokens (DFM) a partir de um objeto de tokens. Relembrando que um DFM é uma vetorização do texto, em que cada linha representa um documento e cada coluna um termo.
+A função `dfm()` constrói uma matriz de documentos e termos/palavras/stems/tokens (DFM) a partir de um objeto de tokens.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-
-#Construindo um corpus e removendo stopwords
 toks <- tokens(corp, remove_punct = TRUE, remove_numbers = T)
 toks <- tokens_select(toks, pattern = stopwords('pt'), selection = 'remove')
 
-#Construindo um DFM
 dfmat <- dfm(toks)
-```
 
-Você pode obter a quantidade de documento e features utilizando `ndoc` e `nfeat`
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 ndoc(dfmat)  # numero de documentos
-```
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 nfeat(dfmat)  # numero de features
-```
-
-Também obter o nome dos documentos e das features com `docnames` e `featnames` e quais as features mais frequentes com `topfeatures`
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 head(docnames(dfmat), 20)  # ids dos documentos
-```
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 head(featnames(dfmat), 20)  # algumas features
-```
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 topfeatures(dfmat, 10)  # features mais frequentes
-```
 
+```
 
 ### Refinando a seleção de features
 
-Você pode selecionar as features que tiveram uma frequência desejada para analisar através de `dfm_trim`. No caso, documentos com menos de 1% de frequência por features serão removidas, assim de 6320 features ficamos com 769 features.
-
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
+
+# selecionando tokes que aparecem numa proporção específica de documentos ----
 dfmat_docfreq <- dfm_trim(dfmat, min_docfreq = 0.01, docfreq_type = "prop")
 
+nfeat(dfmat)
 nfeat(dfmat_docfreq)
 ```
 
-
 ### Agrupando documentos numa DFM
 
-Para agrupar os documentos em uma DFM, você pode utilizar a função `dfm_group`, que irá uni-los baseado em um argumento. No entanto, para simplificar o seu código, você pode agrupar baseado em um argumento no momento de gerar um dfm, como será mostrado nos exemplos abaixo.
-
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-# Por autor
+head(docvars(dfmat_docfreq))
+
+# por autor ----
 dfmat_autor <- dfm(dfmat_docfreq, groups = "nomeOrador")
-
 ndoc(dfmat_autor)
-````
+head(docvars(dfmat_autor))
 
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-# Por partido ----
+# por partido ----
 dfmat_party <- dfm(dfmat_docfreq, groups = "partido")
-
 ndoc(dfmat_party)
+docvars(dfmat_party)
 ```
 
+## Stemming
+Até aqui, mesmo que os procedimentos adotados tenham diminuído a dimensionalidade do acervo de documentos ao transformá-lo em uma sacola de palavras (*bag of words*), ainda é necessária a adoção de procedimentos que possam reduzir a complexidade do conteúdo a ser analisado.
+
+Com esse objetivo, como apontado por Izumi e Moreira (2018) podemos pensar que determinado documento tenha em sua composição as seguintes palavras únicas: trabalho, trabalhador, trabalhista. Apesar de seus diferentes signficados, cada uma dessas palavras pode
+ser reduzida ao seu radical, _trabalh_, dando ao pequisador informações suficientes para sua
+análise e, assim reduzindo, o _n_ de três palavras únicas para uma palavra que tem a soma das frequências anteriores. Para garantir que palavras que variam apenas na flexão, número ou conjugação sejam consideradas iguais, reduzindo o número de dimensões contido no acervo, por meio da adaptação do algoritmo de Porter (1980) para o português já desenvolvida por diferentes projetos ([\textcolor{blue}{Snowball}](http://snowball.tartarus.org/) e 
+[\textcolor{blue}{NILC-USP}](https://bit.ly/2OXkVS6)),podem ser obtidos os _stems_ das palavras restantes^[O processo de stemming é uma aproximação do processo de lematização, que reduz palavras às suas formas básicas.]. 
+
+O pacote `quanteda` possui a opção de stemming da DFM em português que usa o projeto Snowball através da função `dfm_wordstem()`. Contudo obtive erro ao implementá-la. Desse modo, vamos aplicar outro processo e, posteriormente, retornar para a estrutura do pacote.
+
+```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
+# funções ----
+remove_acento <- function(vec, Toupper=F) {
+  # Função desenvolvida por Manoel Galdino e aprimorada por Davi Moreira
+  # Recebe um vetor com strings e remove os acentos com caracteres em letras 
+  # minúsculas por padrão
+  vec <- tolower(vec)
+  vec <- gsub('á', 'a', vec) 
+  vec <- gsub('à', 'a', vec)
+  vec <- gsub('â', 'a', vec)
+  vec <- gsub('ã', 'a', vec)
+  vec <- gsub('â', 'a', vec)
+  vec <- gsub('é', 'e', vec) 
+  vec <- gsub('è', 'e', vec)
+  vec <- gsub('ê', 'e', vec)
+  vec <- gsub('í', 'i', vec)
+  vec <- gsub('õ', 'o', vec) 
+  vec <- gsub('ó', 'o', vec)
+  vec <- gsub('ô', 'o', vec)
+  vec <- gsub('ò', 'o', vec)
+  vec <- gsub('ú', 'u', vec)
+  vec <- gsub('ç', 'c', vec)
+  vec <- gsub('\'', '', vec)
+  if ( Toupper==T) vec <- toupper(vec)
+  return(vec)
+}
+# pacotes ----
+if(require(tm) == F) install.packages('tm'); require(tm);
+
+# processando dados ----
+load("./dados/impeachment-dilma-dados-completo.RData")
+disc <- bdDados$discursoPlainTxt  # vetor de strings
+# removendo acento
+disc <- remove_acento(disc, Toupper = F)  
+# head(disc)
+# removendo stop words - lista pessoal
+load("./dados/stopWordsPTBRA.RData")  # lista pessoal
+disc <- strsplit(disc, " ", fixed = T, perl = F, useBytes = FALSE)  
+disc <- lapply(disc, function(x) paste(" ", x, " ", sep = ""))  # 
+disc <- lapply(disc, function(x) ifelse(x %in% stopW, "", x))  # fast gsub
+disc <- lapply(disc, paste, collapse = " ")
+disc <- unlist(disc)  
+# head(disc)
+
+# transformando vetor de documentos em corpus
+disc <- Corpus(VectorSource(disc), 
+                            readerControl = list(language = "portuguese"))
+# stemming
+disc <- tm_map(disc, stemDocument, 
+                            language = "portuguese") # obtendo stem
+
+# retomando vetor de strings
+disc <- data.frame(text = unlist(disc), 
+                    stringsAsFactors=F)
+disc <- disc$text[-length(disc$text)]
+# disc[1]
+
+# adicionando nova coluna na base de dados
+bdDados$text <- disc
+
+# doc_id
+bdDados$doc_id <- c(1:dim(bdDados)[1])
+
+# partidos
+names(bdDados) <- ifelse(names(bdDados) == "paritdo", "partido", names(bdDados))
+
+# criando corpus pacote quanteda ----
+corp <- corpus(bdDados)
+summary(corp, 5)
+
+dfm <- corp %>% 
+  tokens(remove_punct = TRUE, remove_numbers = T) %>% 
+  tokens_remove(pattern = c("sr", "sras", "srs", "deput", "total", "vot", "votos", 
+                            "bet", "bloco", "mansur", "president", "presidente", 
+                            "palmas", "plenario", "aqu", "estad")) %>% 
+  dfm() %>% 
+  dfm_select(min_nchar = 2) %>%
+  dfm_trim(min_docfreq = 0.01, docfreq_type = "prop") # %>%
+  # dfm_wordstem(language = quanteda_options("portuguese"))
+
+topfeatures(dfm, 10)
+docnames(dfm)
+featnames(dfm)
+  
+```
+
+
+
 ## FCM: Matriz de co-ocorrência de termos
-É possível construir uma FCM a partir de uma DFM ou um objeto de tokens usando a função `fcm()`, assim demonstrando o número de co-ocorrências de um feature, seu comportamento é similiar a uma DFM.
+É possível construir uma FCM a partir de uma DFM ou um objeto de tokens usando a função `fcm()`. `topfeatures()` retorna as palavras que ocorrem mais freqüentemente. A FCM pode ser usado para visualizar rede semântica com a função `textplot_network()`, por exemplo.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-fcmat <- fcm(dfmat)
+# carregando pacotes ----
+if(require(text2vec) == F) install.packages('text2vec'); require(text2vec);
+
+fcmat <- fcm(dfm)
 dim(fcmat)
-````
 
-
-Por meio de um FCT é possível retornar as palavras que ocorrem mais frequentemente com `topfeatures()`, assim como visualizar uma rede semântica com a função `textplot_network()`, por exemplo.
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
-
-feat <- names(topfeatures(fcmat, 100))
+feat <- names(topfeatures(fcmat, 50))
 fcmat_select <- fcm_select(fcmat, pattern = feat)
 dim(fcmat_select)
-````
 
-Estabelecemos o tamanho da rede selecionando o DFM segundo as topfeatures criadas no objeto acima. Para plotar o gráfico das principais features utilizamos `textplot_network`, estabelecendo uma frequência mínima.
-
-```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 size <- log(colSums(dfm_select(dfmat, feat)))
 set.seed(144)
-textplot_network(fcmat_select, min_freq = 0.2, 
+textplot_network(fcmat_select, #min_freq = 0.2, 
                  vertex_size = size / max(size) * 3)
 
 ```
 
+
+
+<!--chapter:end:06-wrangling.Rmd-->
+
+# Mineração e estatísticas básicas {#stat}
+
+EM CONSTRUÇÃO...
+
+## Análise de frequência
+
+## Nuvem de palavras
+
+## tf-idf
+
+## Rede de n-grams
+
+## Correlação pareada
+
+## Diversidade lexical
+
+## Similaridade entre documentos/termos
+
+## KEYNESS: Análise de Frequência Relativa
+
+<!--chapter:end:07-statistics.Rmd-->
+
+# Escalonamento {#scalling}
+
+EM CONSTRUÇÃO...
+
+## Wordscore
+
+## Wordfish
+
+
+<!--chapter:end:08-escalonamento.Rmd-->
+
+# Classificação {#classificacao}
+
+EM CONSTRUÇÃO...
+
+## Método de dicionário: Análise de sentimento
+
+## Naive Bayes
+
+## LDA: Latent Dirichlet Allocation 
+
+## STM: Structed Topic Model
+
+<!--chapter:end:09-classificacao.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# Referências {-}
+'`
+
+<!--chapter:end:99-references.Rmd-->
 

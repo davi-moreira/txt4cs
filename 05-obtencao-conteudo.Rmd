@@ -428,22 +428,29 @@ for( i in 1:dim(bdDados)[1]){
 
 ```
 
-Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato 
-RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para 
-possibilitar sua leitura:
+Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para possibilitar sua leitura. Para tal vamos utilizar o pacote `txt4cs` que possui a função `decode_rtfPTBRA`.
 
 ```{r, echo = TRUE, eval = F, warning = F, message = F}
+
+devtools::install_github("davi-moreira/txt4cs-pkg")
+library(txt4cs)
+
 bd$discursoRTFBase64 <- as.character(bd$discursoRTFBase64)
 
 bd$discursoPlainTxt <- vector(mode = "character", 
                                            length = dim(bd)[1])
 
 for (i in 1:dim(bd)[1]){
-  bd$discursoPlainTxt[i] <- decode_rtf(bd$discursoRTFBase64[i])
+  bd$discursoPlainTxt[i] <- decode_rtfPTBRA(bd$discursoRTFBase64[i])
   print( bd$discursoPlainTxt)
 }
 
 ```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+knitr::kable(bd)
+```
+
 
 #### Atividade prática
 
@@ -664,8 +671,7 @@ gl_auth("arquivo.json")
 
 ```
 
-No nosso exemplo, vamos utilizar o áudio da propaganda de campanha do então candidato 
-a Deputado Federal pelo PR, o candidato Tirirca.
+No nosso exemplo, vamos utilizar o áudio da propaganda de campanha do então candidato a Deputado Federal pelo PR, o candidato Tiririca.
 
 ```{r eval=T, echo=F, message=FALSE, warning=FALSE, cache=T}
 # git do pacote: https://github.com/mccarthy-m-g/embedr
@@ -691,9 +697,11 @@ do áudio em formato `.csv`.
 ```{r eval=F, echo=T, message=FALSE, warning=FALSE, cache=T}
 library(tuneR)
 
+# Baixe o som:
 audio <- "https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav"
 
-audio_load <- readWave(audio)
+#Leitura do som:
+audio_load <- readWave("audio")
 
 audio_load <- mono(audio_load, which = c("left", "right", "both"))
 
