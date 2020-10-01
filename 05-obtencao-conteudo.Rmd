@@ -430,7 +430,7 @@ for( i in 1:dim(bdDados)[1]){
 
 Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para possibilitar sua leitura. Para tal vamos utilizar o pacote `txt4cs` que possui a função `decode_rtfPTBRA`.
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = T, warning = F, message = F}
 
 devtools::install_github("davi-moreira/txt4cs-pkg")
 library(txt4cs)
