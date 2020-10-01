@@ -1,6 +1,6 @@
 # Processamento dos dados {#processamento}
 
-<!--- preview_chapter("05-obtencao-conteudo.Rmd") --->
+<!--- preview_chapter("06-wrangling.Rmd") --->
 
 _Davi Moreira, Mônica Rocabado_
 
