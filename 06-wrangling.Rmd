@@ -87,10 +87,12 @@ knitr::kable(text_token)
 
 ```{r, include=FALSE}
 
-load("~/R/txt4cs/data/impeachment-dilma-dados-filter.rda")
+load(here("data/impeachment-dilma-dados-filter.rda"))
 ```
 
-Vamos utilizar como exemplo os discursos proferidos pelos parlamentares da Câmara dos Deputados na sessão de Impeachment da Presidenta Dilma Rousseff em Abril de 2016. Cada linha contém um discurso por parlamentar, podendo haver mais de um discurso por deputado. Para obter estes dados você precisa utilizar o pacote `txt4cs` 
+Vamos utilizar como exemplo os discursos proferidos pelos parlamentares da Câmara dos Deputados na sessão de Impeachment da Presidenta Dilma Rousseff em Abril de 2016. Cada linha contém um discurso por parlamentar, podendo haver mais de um discurso por deputado. Para obter estes dados você precisa utilizar o pacote `txt4cs` que acompanha o livro.
+
+<!--- revisar texto e colocar base de dados no pacote do livro --->
 
 ```{r, results = 'hide', echo = TRUE, eval = TRUE, warning = F, message = F}
 # carregando pacotes ----
@@ -174,6 +176,7 @@ tidy_impeachment %>%
 
 Avançando um pouco mais, já seria possível comparar o uso de palavras por diferentes deputados. Vamos comparar os deputados do PT, PSOL e do PSDB. Dessa forma, como o exemplo acima indica, já possuímos os dados em formato tidy, vamos selecionar os termos por partido.
 
+<!--- recortar chunk abaixo e explicar o passo a passo --->
                                   
 ```{r, results = 'hide', echo = FALSE, eval = TRUE, warning = F, message = F}
 
@@ -242,7 +245,6 @@ ggplot(frequency, aes(x = proportion, y = `PT`,
 
 ```
 
-
 Podemos quantificar quão diferente é o vocabulário através de um simples teste de correlação.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
@@ -253,6 +255,9 @@ cor.test(data = frequency[frequency$author == "PSDB",],
 ```
 
 ## Corpus
+
+<!--- no paragrafo abaixo, indicar a referencia do link: https://quanteda.io/articles/pkgdown/comparison.html --->
+
 O pacote `tidyverse` não possui uma função que gera um corpus, assim iremos utilizar o pacote `quanteda` que permite trabalhar com Tokens, Corpus e DFMs. Um ponto positivo em relação ao tidyverse é a possibilidade de gerar corpus e demais análises estas estando relacionadas ao documento que a originou. 
 
 O uso do quanteda, segue o seguinte fluxograma:
@@ -271,14 +276,14 @@ O uso do quanteda, segue o seguinte fluxograma:
 
 4. Um objeto de palavras-chave no contexto construído por `kwic()`;
 
-Utilizando a base de dados com as falas proferidas no dia da aprovação do impeachment da Presidenta Dilma Rousseff pela Câmara dos Deputados, nesta seção focaremos em como construir um corpus a partir de uma matriz de dados. A base de dados é a mesma utiliada no item anterior, podendo ser carregada através do pacote `text4cs`
+Utilizando a base de dados com as falas proferidas no dia da aprovação do impeachment da Presidenta Dilma Rousseff pela Câmara dos Deputados, nesta seção focaremos em como construir um corpus a partir de uma matriz de dados. A base de dados é a mesma utiliada no item anterior, podendo ser carregada através do pacote `txt4cs`
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 # carregando pacotes ----
 library(quanteda)
 library(readtext)
 library(stringr)
-library(text4cs)
+library(txt4cs)
 
 impeachment_dilma <- txt4cs::impeachment_dilma
 ````
@@ -327,7 +332,9 @@ corp_documents[2]
 ## Tokens e Corpus
 ### Obtendo Tokens a partir de um Corpus: `tokens()`
 
-A função `tokens()`, é similar a função `unnest_tokens` do pacote `tidyverse`, ambas segmentam o texto, sua principal diferença é que ele não estrutura em forma de data frame com linhas e colunas o objeto tokenizado. Usaremos o corp gerado do item anterior. Esta função somente remove espaços em branco e demais separadores de texto automáticamente, para remoção de pontuação e números é necessário escrever no código. 
+<!--- ao inves de comparar as funcoes dos pacotes, só falar da tokens() --->
+
+A função `tokens()`, é similar a função `unnest_tokens` do pacote `tidytext`. Ambas segmentam o texto, sua principal diferença é que ele não estrutura em forma de data frame com linhas e colunas o objeto tokenizado. Usaremos o corpus gerado do item anterior. Esta função somente remove espaços em branco e demais separadores de texto automáticamente, para remoção de pontuação e números é necessário escrever no código. 
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 
@@ -358,7 +365,7 @@ kw <- kwic(toks, pattern =  c("pela", "pelo"), window = 7)
 knitr::kable(head(kw, 5))
 ```
 
-Caso queira identificar o contexto de frases, você deve dentro de `phrase` escrever uma frase respeitando os espaçoes em branco. 
+Caso queira identificar o contexto de frases, você deve dentro de `phrase` escrever uma frase respeitando os espaços em branco. 
 
 ````{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 # caso de uma frase inteira ----
@@ -371,13 +378,14 @@ knitr::kable(kw_frase)
 
 
 ### Selecionando tokens
+
 Como já colocado, `tokens` por padrão apenas remove separadores de texto e outros caracteres não textuais, estes se expressados no código. Para retirada de stopwords pode se fazer uso das funções `tokens_select` e `tokens_remove`, que são equivalentes. Novamente utilizaremos o corpus previamente construído.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
 #Construção de tokens sem pontuações
 toks <- tokens(corp, remove_punct = T, remove_numbers = T)
 
-# Temovendo as stopwords
+# Removendo as stopwords
 #opção 1
 toks_nostop <- tokens_select(toks, pattern = stopwords('pt'),
                              selection = 'remove')
@@ -399,7 +407,9 @@ toks_voto <- tokens_select(toks, pattern = c("votaç*", "voto"), padding = TRUE,
 ```{r, echo=FALSE}
 head(toks_voto, 1)
 ```
+
 ## Stemming
+
 Até aqui, mesmo que os procedimentos adotados tenham diminuído a dimensionalidade do acervo de documentos ao transformá-lo em uma sacola de palavras (*bag of words*), ainda é necessária a adoção de procedimentos que possam reduzir a complexidade do conteúdo a ser analisado.
 
 Com esse objetivo, como apontado por Izumi e Moreira (2018) podemos pensar que determinado documento tenha em sua composição as seguintes palavras únicas: trabalho, trabalhador, trabalhista. Apesar de seus diferentes signficados, cada uma dessas palavras pode ser reduzida ao seu radical, _trabalh_, dando ao pequisador informações suficientes para sua análise e, assim reduzindo, o _n_ de três palavras únicas para uma palavra que tem a soma das frequências anteriores. Para garantir que palavras que variam apenas na flexão, número ou conjugação sejam consideradas iguais, reduzindo o número de dimensões contido no acervo, por meio da adaptação do algoritmo de Porter (1980) para o português já desenvolvida por diferentes projetos ([Snowball](http://snowball.tartarus.org/) e [NILC-USP](https://bit.ly/2OXkVS6)),podem ser obtidos os _stems_ das palavras restantes^[O processo de stemming é uma aproximação do processo de lematização, que reduz palavras às suas formas básicas.]. 
@@ -413,7 +423,9 @@ token_stem <- tokens_wordstem(toks,language = "pt")
 ````
 
 ```{r, echo=FALSE}
+
 head(token_stem, 1)
+
 ```
 
 ### Gerando n-grams
@@ -449,6 +461,7 @@ head(toks_neg_bigram_select[[6]], 50)
 ```
 
 ## DFM: Matriz de documentos e termos
+
 A função `dfm()` constrói uma matriz de documentos e termos/palavras/stems/tokens (DFM) a partir de um objeto de tokens. Relembrando que um DFM é uma vetorização do texto, em que cada linha representa um documento e cada coluna um termo.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
@@ -495,6 +508,7 @@ dfmat_docfreq <- dfm_trim(dfmat, min_docfreq = 0.01, docfreq_type = "prop")
 nfeat(dfmat_docfreq)
 ```
 
+<!--- inserir subsecao de dfm + stems --->
 
 ### Agrupando documentos numa DFM
 
@@ -515,13 +529,15 @@ ndoc(dfmat_party)
 ```
 
 ## FCM: Matriz de co-ocorrência de termos
+
 É possível construir uma FCM a partir de uma DFM ou um objeto de tokens usando a função `fcm()`, assim demonstrando o número de co-ocorrências de um feature, seu comportamento é similiar a uma DFM.
 
 ```{r, results = 'hide', echo = TRUE, eval = F, warning = F, message = F}
+
 fcmat <- fcm(dfmat)
 dim(fcmat)
-````
 
+````
 
 Por meio de um FCT é possível retornar as palavras que ocorrem mais frequentemente com `topfeatures()`, assim como visualizar uma rede semântica com a função `textplot_network()`, por exemplo.
 
@@ -542,4 +558,5 @@ textplot_network(fcmat_select, min_freq = 0.2,
 
 ```
 
-
+<!--- Explicar melhor a transição entre um pacote e outro
+- mostrar que os pacotes preservam a estrutura do documento --->
