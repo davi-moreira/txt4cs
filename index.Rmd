@@ -11,7 +11,7 @@ biblio-style: apalike
 github-repo: https://github.com/davi-moreira/txt4cs
 link-citations: yes
 description: "Compilação de métodos e técnicas para análise automatizada de conteúdo"
-urlcolor: blue  
+urlcolor: blue
 ---
 
 <!---```{r setup,include=FALSE}
