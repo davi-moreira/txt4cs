@@ -4,9 +4,9 @@ username: davi_moreira
 account: davi_moreira
 server: bookdown.org
 hostUrl: https://bookdown.org/__api__
-appId: 2814
-bundleId: 27785
+appId: 5435
+bundleId: 27872
 url: https://bookdown.org/davi_moreira/txt4cs/
-when: 1599681720.75491
+when: 1599790282.33756
 asMultiple: FALSE
-asStatic: FALSE
+asStatic: TRUE
