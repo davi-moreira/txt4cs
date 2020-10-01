@@ -1,5 +1,11 @@
 # Processamento dos dados {#processamento}
 
+<!--- preview_chapter("05-obtencao-conteudo.Rmd") --->
+
+_Davi Moreira, Mônica Rocabado_
+
+$~$ <!--- add line space --->
+
 A análise de conteúdo só é possível através da transformação do texto bruto em estruturas de dados convenientes para o uso em pacotes. Esta etapa é fundamental e caso feita de forma errada pode levar a erros ou a impossibilidade da análise.
 Temos basicamente quatro estruturas:
 
