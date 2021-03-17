@@ -36,7 +36,7 @@ O principal objetivo do livro é ser tutorial prático de uso e aplicação de t
 
 ## Sobre o autor/organizador {-}
 
-Davi Moreira é Professor Adjunto da Escola de Relações Internacionais da Fundação Getulio Vargas. Ph.D. em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atua nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
+Davi Moreira é Doutor em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atua nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.
 
 Para mais informações:
 
