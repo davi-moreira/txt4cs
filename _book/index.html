@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Text as Data para Ciências Sociais</title>
+  <title>Texto como Dado para Ciências Sociais</title>
   <meta name="description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Text as Data para Ciências Sociais" />
+  <meta property="og:title" content="Texto como Dado para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/davi-moreira/txt4cs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Text as Data para Ciências Sociais" />
+  <meta name="twitter:title" content="Texto como Dado para Ciências Sociais" />
   
   <meta name="twitter:description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
   
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -202,12 +203,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="scrape.html"><a href="scrape.html#áudio-transcrição"><i class="fa fa-check"></i><b>5.7</b> Áudio Transcrição</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="processamento.html"><a href="processamento.html"><i class="fa fa-check"></i><b>6</b> Processamento dos dados</a><ul>
-<li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.1</b> Tokens</a></li>
-<li class="chapter" data-level="6.2" data-path="processamento.html"><a href="processamento.html#corpus"><i class="fa fa-check"></i><b>6.2</b> Corpus</a></li>
-<li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.3</b> Tokens e Corpus</a></li>
-<li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.4</b> DFM: Matriz de documentos e termos</a></li>
-<li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a></li>
-<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrência-de-termos"><i class="fa fa-check"></i><b>6.6</b> FCM: Matriz de co-ocorrência de termos</a></li>
+<li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#os-pacotes"><i class="fa fa-check"></i><b>6.1</b> Os pacotes</a></li>
+<li class="chapter" data-level="6.2" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.2</b> Tokens</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="processamento.html"><a href="processamento.html#o-formato-tidy-text-texto-arrumado"><i class="fa fa-check"></i><b>6.2.1</b> O formato tidy text (texto arrumado)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="processamento.html"><a href="processamento.html#função-unnest_tokens"><i class="fa fa-check"></i><b>6.2.2</b> Função <code>unnest_tokens</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="processamento.html"><a href="processamento.html#tidyDilma"><i class="fa fa-check"></i><b>6.2.3</b> Tidying a aprovação do impeachment da Presidenta Dilma Rousseff</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#corpus"><i class="fa fa-check"></i><b>6.3</b> Corpus</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="processamento.html"><a href="processamento.html#filtrando-corpus-corpus_subset"><i class="fa fa-check"></i><b>6.3.1</b> Filtrando corpus: <code>corpus_subset()</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="processamento.html"><a href="processamento.html#trocando-a-unidade-de-texto-no-corpus-corpus_reshape"><i class="fa fa-check"></i><b>6.3.2</b> Trocando a unidade de texto no corpus: <code>corpus_reshape()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.4</b> Tokens e Corpus</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="processamento.html"><a href="processamento.html#obtendo-tokens-a-partir-de-um-corpus-tokens"><i class="fa fa-check"></i><b>6.4.1</b> Obtendo Tokens a partir de um Corpus: <code>tokens()</code></a></li>
+<li class="chapter" data-level="6.4.2" data-path="processamento.html"><a href="processamento.html#palavras-chave-e-seu-contexto-kwic"><i class="fa fa-check"></i><b>6.4.2</b> Palavras-chave e seu contexto: <code>kwic()</code></a></li>
+<li class="chapter" data-level="6.4.3" data-path="processamento.html"><a href="processamento.html#selecionando-tokens"><i class="fa fa-check"></i><b>6.4.3</b> Selecionando tokens</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="processamento.html"><a href="processamento.html#gerando-n-grams"><i class="fa fa-check"></i><b>6.5.1</b> Gerando n-grams</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.6</b> DFM: Matriz de documentos e termos</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="processamento.html"><a href="processamento.html#refinando-a-seleção-de-features"><i class="fa fa-check"></i><b>6.6.1</b> Refinando a seleção de features</a></li>
+<li class="chapter" data-level="6.6.2" data-path="processamento.html"><a href="processamento.html#realizando-steam-numa-dfm"><i class="fa fa-check"></i><b>6.6.2</b> Realizando Steam numa DFM</a></li>
+<li class="chapter" data-level="6.6.3" data-path="processamento.html"><a href="processamento.html#agrupando-documentos-numa-dfm"><i class="fa fa-check"></i><b>6.6.3</b> Agrupando documentos numa DFM</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrência-de-termos"><i class="fa fa-check"></i><b>6.7</b> FCM: Matriz de co-ocorrência de termos</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stat.html"><a href="stat.html"><i class="fa fa-check"></i><b>7</b> Mineração e estatísticas básicas</a><ul>
 <li class="chapter" data-level="7.1" data-path="stat.html"><a href="stat.html#análise-de-frequência"><i class="fa fa-check"></i><b>7.1</b> Análise de frequência</a></li>
@@ -242,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><em>Text as Data</em> para Ciências Sociais</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><em>Texto como Dado</em> para Ciências Sociais</a>
           </h1>
         </div>
 
@@ -251,10 +270,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title"><em>Text as Data</em> para Ciências Sociais</h1>
+<h1 class="title"><em>Texto como Dado</em> para Ciências Sociais</h1>
 <h2 class="subtitle"><em>guia prático com aplicações</em></h2>
 <p class="author"><em>Davi Moreira</em></p>
-<p class="date"><em>Criado em 02-08-2019. Atualizado em: 10-09-2020</em></p>
+<p class="date"><em>Criado em 02-08-2019. Atualizado em: 16-03-2021</em></p>
 </div>
 <div id="prefácio" class="section level1 unnumbered">
 <h1>Prefácio</h1>
@@ -266,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="sobre-o-autororganizador" class="section level2 unnumbered">
 <h2>Sobre o autor/organizador</h2>
-<p>Davi Moreira é Professor Adjunto da Escola de Relações Internacionais da Fundação Getulio Vargas. Ph.D. em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atua nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.</p>
+<p>Davi Moreira é Doutor em Ciência Política pela Universidade de São Paulo (USP) e vencedor do Prêmio CAPES de tese 2017 na área de Ciência Política e Relações Internacionais. Atua nas seguintes áreas: políticas públicas, estudos legislativos, métodos quantitativos em ciências sociais e análise automatizada de conteúdo.</p>
 <p>Para mais informações:</p>
 <ul>
 <li><p><a href="https://davimoreira.com/">Página pessoal</a>.</p></li>

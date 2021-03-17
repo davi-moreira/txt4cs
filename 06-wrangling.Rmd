@@ -4,21 +4,22 @@
 
 _Davi Moreira, Mônica Rocabado_
 
-$~$ <!--- add line space --->
+&nbsp;
 
-A análise de conteúdo só é possível através da transformação do texto bruto em estruturas de dados convenientes para o uso em pacotes, ou seja, transformamos o texto em dado analisável. Esta etapa é fundamental e caso feita de forma errada pode levar a erros ou a impossibilidade da análise.
-Temos basicamente quatro estruturas:
+<!--- $~$  add line space --->
+
+A análise de conteúdo só é possível através da transformação do texto bruto em estruturas de dados convenientes para análise. Esta etapa é fundamental e deve ser feita com cuidado para evitar erros futuros.
+Temos basicamente três estruturas num texto:
 
 - *Tokens*: O texto pode ser armazenado em *n-grams* ou cadeias de caracteres (*strings*), por exemplo a frase "projeto de lei", em n-gram de tamanho 1, ou seja unigram, se torna "projeto" "de" "lei".
-- *Corpus*: Esses tipos de objetos geralmente contêm strings brutas com metadados e detalhes adicionais. Também pode ser descrito como uma coleção de documentos.
-- *Matriz de documentos e termos (DFM ou DTM)*: é uma matriz esparsa que descreve uma coleção (ou seja, um corpus) de documentos com uma linha para cada documento e uma coluna para cada termo. O valor na matriz é tipicamente contagem de palavras.
+- *Corpus*: Esses tipos de objetos geralmente contêm strings brutas com metadados sobre os documentos. Também pode ser descrito como uma coleção de documentos.
+- *Matriz de documentos e termos (DFM ou DTM)*: é uma matriz esparsa que descreve uma coleção (ou seja, um corpus) de documentos com uma linha para cada documento e uma coluna para cada termo. Em geral, as células de uma DTM são preenchidas pela frequência de palavras.
 
-A análise do conteúdo do texto como dado exige versatilidade na transformação entre estruturas. Os pacotes vistos neste curso permitem essa versatilidade.
-
+A análise do conteúdo do texto como dado exige versatilidade na transformação entre estruturas. Os pacotes que veremos permitem essa versatilidade.
 
 ## Os pacotes
-Para este capítulo utilizaremos o pacote `tidytext` e `quanteda`, ambos estruturais para análise de conteúdo. Inicialmente trabalharemos com o pacote `tidytext`, sendo utilizado muitas vezes como etapa de introdução ao conteúdo, devido sua convergência com o pacote `tidyverse` em estrutura. Em seguida utilizaremos o pacote `quanteda`, que possui mais funcionalidades de [análise](https://quanteda.io/articles/pkgdown/comparison.html). Trabalharemos com os dois pacotes por serem a base essencial no processo de análise, ambos possuindo suas complementariedades.
 
+Para este capítulo utilizaremos o pacote `tidytext` e `quanteda`, ambos estruturais para análise de conteúdo. Inicialmente trabalharemos com o pacote `tidytext`, devido sua convergência com o pacote `tidyverse`. Em seguida, utilizaremos o pacote `quanteda`, que possui mais funcionalidades de [análise](https://quanteda.io/articles/pkgdown/comparison.html). 
 
 ## Tokens
 
