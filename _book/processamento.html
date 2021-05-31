@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 6 Processamento dos dados | Text as Data para Ciências Sociais</title>
+  <title>Capítulo 6 Processamento dos dados | Texto como Dado para Ciências Sociais</title>
   <meta name="description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 6 Processamento dos dados | Text as Data para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo 6 Processamento dos dados | Texto como Dado para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/davi-moreira/txt4cs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 6 Processamento dos dados | Text as Data para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo 6 Processamento dos dados | Texto como Dado para Ciências Sociais" />
   
   <meta name="twitter:description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
   
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -202,12 +203,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="scrape.html"><a href="scrape.html#áudio-transcrição"><i class="fa fa-check"></i><b>5.7</b> Áudio Transcrição</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="processamento.html"><a href="processamento.html"><i class="fa fa-check"></i><b>6</b> Processamento dos dados</a><ul>
-<li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.1</b> Tokens</a></li>
-<li class="chapter" data-level="6.2" data-path="processamento.html"><a href="processamento.html#corpus"><i class="fa fa-check"></i><b>6.2</b> Corpus</a></li>
-<li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.3</b> Tokens e Corpus</a></li>
-<li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.4</b> DFM: Matriz de documentos e termos</a></li>
-<li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a></li>
-<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrência-de-termos"><i class="fa fa-check"></i><b>6.6</b> FCM: Matriz de co-ocorrência de termos</a></li>
+<li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#os-pacotes"><i class="fa fa-check"></i><b>6.1</b> Os pacotes</a></li>
+<li class="chapter" data-level="6.2" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.2</b> Tokens</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="processamento.html"><a href="processamento.html#o-formato-tidy-text-texto-arrumado"><i class="fa fa-check"></i><b>6.2.1</b> O formato tidy text (texto arrumado)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="processamento.html"><a href="processamento.html#função-unnest_tokens"><i class="fa fa-check"></i><b>6.2.2</b> Função <code>unnest_tokens</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="processamento.html"><a href="processamento.html#tidyDilma"><i class="fa fa-check"></i><b>6.2.3</b> Tidying a aprovação do impeachment da Presidenta Dilma Rousseff</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#corpus"><i class="fa fa-check"></i><b>6.3</b> Corpus</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="processamento.html"><a href="processamento.html#filtrando-corpus-corpus_subset"><i class="fa fa-check"></i><b>6.3.1</b> Filtrando corpus: <code>corpus_subset()</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="processamento.html"><a href="processamento.html#trocando-a-unidade-de-texto-no-corpus-corpus_reshape"><i class="fa fa-check"></i><b>6.3.2</b> Trocando a unidade de texto no corpus: <code>corpus_reshape()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.4</b> Tokens e Corpus</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="processamento.html"><a href="processamento.html#obtendo-tokens-a-partir-de-um-corpus-tokens"><i class="fa fa-check"></i><b>6.4.1</b> Obtendo Tokens a partir de um Corpus: <code>tokens()</code></a></li>
+<li class="chapter" data-level="6.4.2" data-path="processamento.html"><a href="processamento.html#palavras-chave-e-seu-contexto-kwic"><i class="fa fa-check"></i><b>6.4.2</b> Palavras-chave e seu contexto: <code>kwic()</code></a></li>
+<li class="chapter" data-level="6.4.3" data-path="processamento.html"><a href="processamento.html#selecionando-tokens"><i class="fa fa-check"></i><b>6.4.3</b> Selecionando tokens</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="processamento.html"><a href="processamento.html#gerando-n-grams"><i class="fa fa-check"></i><b>6.5.1</b> Gerando n-grams</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.6</b> DFM: Matriz de documentos e termos</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="processamento.html"><a href="processamento.html#refinando-a-seleção-de-features"><i class="fa fa-check"></i><b>6.6.1</b> Refinando a seleção de features</a></li>
+<li class="chapter" data-level="6.6.2" data-path="processamento.html"><a href="processamento.html#realizando-steam-numa-dfm"><i class="fa fa-check"></i><b>6.6.2</b> Realizando Steam numa DFM</a></li>
+<li class="chapter" data-level="6.6.3" data-path="processamento.html"><a href="processamento.html#agrupando-documentos-numa-dfm"><i class="fa fa-check"></i><b>6.6.3</b> Agrupando documentos numa DFM</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrência-de-termos"><i class="fa fa-check"></i><b>6.7</b> FCM: Matriz de co-ocorrência de termos</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stat.html"><a href="stat.html"><i class="fa fa-check"></i><b>7</b> Mineração e estatísticas básicas</a><ul>
 <li class="chapter" data-level="7.1" data-path="stat.html"><a href="stat.html#análise-de-frequência"><i class="fa fa-check"></i><b>7.1</b> Análise de frequência</a></li>
@@ -242,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><em>Text as Data</em> para Ciências Sociais</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><em>Texto como Dado</em> para Ciências Sociais</a>
           </h1>
         </div>
 
@@ -252,26 +271,396 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="processamento" class="section level1">
 <h1><span class="header-section-number">Capítulo 6</span> Processamento dos dados</h1>
-<p>EM CONSTRUÇÃO…</p>
+<!--- preview_chapter("06-wrangling.Rmd") --->
+<p><em>Davi Moreira, Mônica Rocabado</em></p>
+<p> </p>
+<!--- $~$  add line space --->
+<p>A análise de conteúdo só é possível através da transformação do texto bruto em estruturas de dados convenientes para análise. Esta etapa é fundamental e deve ser feita com cuidado para evitar erros futuros.
+Temos basicamente três estruturas num texto:</p>
+<ul>
+<li><em>Tokens</em>: O texto pode ser armazenado em <em>n-grams</em> ou cadeias de caracteres (<em>strings</em>), por exemplo a frase “projeto de lei”, em n-gram de tamanho 1, ou seja unigram, se torna “projeto” “de” “lei”.</li>
+<li><em>Corpus</em>: Esses tipos de objetos geralmente contêm strings brutas com metadados sobre os documentos. Também pode ser descrito como uma coleção de documentos.</li>
+<li><em>Matriz de documentos e termos (DFM ou DTM)</em>: é uma matriz esparsa que descreve uma coleção (ou seja, um corpus) de documentos com uma linha para cada documento e uma coluna para cada termo. Em geral, as células de uma DTM são preenchidas pela frequência de palavras.</li>
+</ul>
+<p>A análise do conteúdo do texto como dado exige versatilidade na transformação entre estruturas. Os pacotes que veremos permitem essa versatilidade.</p>
+<div id="os-pacotes" class="section level2">
+<h2><span class="header-section-number">6.1</span> Os pacotes</h2>
+<p>Para este capítulo utilizaremos o pacote <code>tidytext</code> e <code>quanteda</code>, ambos estruturais para análise de conteúdo. Inicialmente trabalharemos com o pacote <code>tidytext</code>, devido sua convergência com o pacote <code>tidyverse</code>. Em seguida, utilizaremos o pacote <code>quanteda</code>, que possui mais funcionalidades de <a href="https://quanteda.io/articles/pkgdown/comparison.html">análise</a>.</p>
+</div>
 <div id="tokens" class="section level2">
-<h2><span class="header-section-number">6.1</span> Tokens</h2>
+<h2><span class="header-section-number">6.2</span> Tokens</h2>
+<div id="o-formato-tidy-text-texto-arrumado" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> O formato tidy text (texto arrumado)<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></h3>
+<p>Usar os princípios do <em>tidy</em> <em>text</em> é uma maneira poderosa de tornar o processamento de dados mais ágil e eficaz. Conforme <a href="https://www.tidytextmining.com/tidytext.html#ref-tidydata">Wickham (2014)</a>, os dados organizados têm uma estrutura específica:</p>
+<ul>
+<li>Cada variável é uma coluna</li>
+<li>Cada observação é uma linha</li>
+<li>Cada tipo de unidade de observação é uma tabela</li>
+</ul>
+<center>
+<img src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" alt="O formato tidy" />
+</center>
+<p>Assim, o formato de “texto arrumado” segue a mesma estrutura apresentada, na qual cada linha/observação possui uma unidade de texto significativa, também chamado por <em>token</em>, estes organizados em uma coluna/variável. Reforçando, o <em>token</em> então é uma unidade de texto significativa, podendo ser uma única palavra, um conjunto de palavras, uma frase ou um parágrafo. Para obte-lo se deve realizar o processo de <em>tokenização</em>, em que se divide o texto em tokens, como veremos asseguir.</p>
+</div>
+<div id="função-unnest_tokens" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Função <code>unnest_tokens</code></h3>
+<p>Vejamos um trecho de “Canção do Exílio”, poesia romântica de Gonçalves Dias escrita em 1843. No caso, estamos criando um vetor.</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1">text &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minha terra tem palmeiras&quot;</span>, <span class="st">&quot;Onde canta o Sabiá&quot;</span>, </a>
+<a class="sourceLine" id="cb150-2" data-line-number="2">          <span class="st">&quot;As aves, que aqui, gorjeiam&quot;</span>, <span class="st">&quot;Não gorjeiam como lá&quot;</span>)</a>
+<a class="sourceLine" id="cb150-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb150-4" data-line-number="4">knitr<span class="op">::</span><span class="kw">kable</span>(text)</a></code></pre></div>
+<p>Para transformar o vetor de strings em formato tidy text dataset, precisamos, primeiro, criar um data.frame`, através da função tibble. Na função abaixo estamos declarando o nome das colunas e o valor contido nelas, por exemplo “line” indica o id ou número da linha, e “text” é a coluna que contém cada observação do vetor “text” que criamos anteriormente.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
+<a class="sourceLine" id="cb151-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb151-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb151-4" data-line-number="4">text_df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">line =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">text =</span> text)</a>
+<a class="sourceLine" id="cb151-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb151-6" data-line-number="6">knitr<span class="op">::</span><span class="kw">kable</span>(text_df)</a></code></pre></div>
+<p>Um objeto <code>tibble</code> é uma classe moderna de <code>data.frames</code> dentro do <code>R</code>, disponível nos pacotes <code>dplyr</code> e <code>tibble</code>, que possui um método de impressão conveniente, não converte strings em fatores e não usa nomes de linhas. Tibbles são ótimos para uso com funções, pacotes e ferramentas tidy.</p>
+<p>Contudo, nosso objeto <code>tibble</code> ainda não está coerente com a definição de tidy text que apresentamos. Para tanto, temos que converter nosso objeto em outro que atenda a condição <em>one-token-per-document-per-row</em>, logo cada token unigram, ou seja palavra, é um valor indicado por linha. A função <code>unnest_tokens</code> presente no pacote realiza este processo de tokenização. Abaixo estamos criando a coluna “word”, que irá conter uma palavra por linha através da coluna “text” que contém nosso texto.</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
+<a class="sourceLine" id="cb152-2" data-line-number="2"><span class="kw">library</span>(tidytext)</a>
+<a class="sourceLine" id="cb152-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb152-4" data-line-number="4">text_token &lt;-<span class="st"> </span>text_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb152-5" data-line-number="5"><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text)</a>
+<a class="sourceLine" id="cb152-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb152-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb152-8" data-line-number="8">knitr<span class="op">::</span><span class="kw">kable</span>(text_token)</a></code></pre></div>
+</div>
+<div id="tidyDilma" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Tidying a aprovação do impeachment da Presidenta Dilma Rousseff</h3>
+<p>Vamos utilizar como exemplo os discursos proferidos pelos parlamentares da Câmara dos Deputados na sessão de Impeachment da Presidenta Dilma Rousseff em Abril de 2016. Cada linha contém um discurso por parlamentar, podendo haver mais de um discurso por deputado. Para obter estes dados você precisa utilizar o pacote <code>txt4cs</code> que acompanha o livro.</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
+<a class="sourceLine" id="cb153-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb153-3" data-line-number="3"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb153-4" data-line-number="4"><span class="kw">library</span>(tidytext)</a>
+<a class="sourceLine" id="cb153-5" data-line-number="5"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb153-6" data-line-number="6"><span class="kw">library</span>(forcats)</a>
+<a class="sourceLine" id="cb153-7" data-line-number="7">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;davi-moreira/txt4cs-pkg&quot;</span>)</a>
+<a class="sourceLine" id="cb153-8" data-line-number="8"><span class="kw">library</span>(txt4cs)</a>
+<a class="sourceLine" id="cb153-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb153-10" data-line-number="10">impeachment_dilma &lt;-<span class="st"> </span>txt4cs<span class="op">::</span>impeachment_dilma</a></code></pre></div>
+<p>Agora iremos <em>tokenizar</em> os discursos dentro do formato Tidy, permitido ainda a associação do token com demais dados correspondentes, no caso o nome do deputado e o partido que participa.
+A função <code>unnest_tokens</code>, como já colocado, permite a tokenização, no entanto deve-se indicar dois argumento principais para seu funcionamento: o nome da coluna que será criada, esta posta abaixo como <code>word</code> e indicar qual coluna se deseja realizar a tokenização, no caso <code>text</code>. O padrão da função é a divisão do texto por uma palavra, ou unigram, sendo possível sua alteração caso se queira um tamanho maior de n-grams.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1">tidy_impeachment &lt;-<span class="st"> </span>impeachment_dilma <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb154-2" data-line-number="2"><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text)</a>
+<a class="sourceLine" id="cb154-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb154-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb154-5" data-line-number="5"><span class="kw">head</span>(tidy_impeachment[,<span class="dv">5</span>], <span class="dv">30</span>)</a></code></pre></div>
+<p>Como é possível notar, há uma diversidade de conectores e termos que não agregram valor a nossa análise, estes são chamados de <code>stopwords</code>, que serão removidos da base. Percebe-se também que no texto o nome do partido aparece sempre seguido do nome do deputado, dessa forma também será filtrado da análise. Para remover essas palavras vamos utilizar a função <code>anti_join</code>, que irá remover os objetos que criamos que contém as <code>stopwords</code> e o nome dos partidos dos nossos tokens.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1"><span class="co">#stopwords</span></a>
+<a class="sourceLine" id="cb155-2" data-line-number="2"><span class="kw">library</span>(quanteda)</a>
+<a class="sourceLine" id="cb155-3" data-line-number="3">stop_w &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">word =</span> <span class="kw">stopwords</span>(<span class="dt">source =</span> <span class="st">&quot;stopwords-iso&quot;</span>, <span class="dt">language =</span> <span class="st">&quot;pt&quot;</span>))</a>
+<a class="sourceLine" id="cb155-4" data-line-number="4">stop_w &lt;-<span class="st"> </span>stop_w <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">add_row</span>(<span class="dt">word =</span> <span class="kw">c</span>(<span class="st">&quot;sr&quot;</span>, <span class="st">&quot;25&quot;</span>, <span class="st">&quot;voto&quot;</span>, <span class="st">&quot;presidente&quot;</span>, <span class="st">&quot;votos&quot;</span>, <span class="st">&quot;total&quot;</span>, <span class="st">&quot;deputado&quot;</span>))</a>
+<a class="sourceLine" id="cb155-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb155-6" data-line-number="6"><span class="co">#remover o nome do partido</span></a>
+<a class="sourceLine" id="cb155-7" data-line-number="7">partido &lt;-<span class="st"> </span>impeachment_dilma<span class="op">$</span>partido <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb155-8" data-line-number="8"><span class="st">  </span><span class="kw">tibble</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb155-9" data-line-number="9"><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb155-10" data-line-number="10"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;word&quot;</span> =<span class="st"> &quot;.&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb155-11" data-line-number="11"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">str_to_lower</span>(word))</a>
+<a class="sourceLine" id="cb155-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb155-13" data-line-number="13"><span class="co">#retirar do corpus as stopwords</span></a>
+<a class="sourceLine" id="cb155-14" data-line-number="14">tidy_impeachment &lt;-<span class="st"> </span>tidy_impeachment <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb155-15" data-line-number="15"><span class="st">  </span><span class="kw">anti_join</span>(stop_w) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb155-16" data-line-number="16"><span class="st">  </span><span class="kw">anti_join</span>(partido)</a>
+<a class="sourceLine" id="cb155-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb155-18" data-line-number="18"><span class="kw">head</span>(tidy_impeachment[,<span class="dv">5</span>], <span class="dv">30</span>)</a></code></pre></div>
+<p>Com a informação já no formato tidy já é possível iniciar algumas análises com os dados, como a frequência de palavras:</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">tidy_impeachment <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb156-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
+<p>Também pode-se visualizar as frequências geradas</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">tidy_impeachment <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb157-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb157-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">fct_reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb157-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">160</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb157-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb157-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb157-7" data-line-number="7"><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb157-8" data-line-number="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;&quot;</span>) </a></code></pre></div>
+<p>Com o dado em formato Tidy, é possível comparar as palavras mais utilizadas por partido:</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1">tidy_impeachment <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb158-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(word, partido, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb158-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">55</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb158-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">fct_reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb158-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> partido, <span class="dt">x =</span> word, <span class="dt">y=</span> n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb158-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb158-7" data-line-number="7"><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb158-8" data-line-number="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb158-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_fill_brewer</span>()</a></code></pre></div>
+<p>Avançando um pouco mais, já seria possível comparar o uso de palavras por diferentes deputados. Vamos comparar os deputados do PT, PSOL e do PSDB. Dessa forma, como o exemplo acima indica, já possuímos os dados em formato tidy, vamos selecionar os termos por partido.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1">impeachment_pt &lt;-<span class="st"> </span>impeachment_dilma <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb159-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(partido <span class="op">==</span><span class="st"> &quot;PT&quot;</span>)</a>
+<a class="sourceLine" id="cb159-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb159-4" data-line-number="4">impeachment_psdb &lt;-<span class="st"> </span>impeachment_dilma <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb159-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(partido <span class="op">==</span><span class="st"> &quot;PSDB&quot;</span>)</a>
+<a class="sourceLine" id="cb159-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb159-7" data-line-number="7">impeachment_psol &lt;-<span class="st"> </span>impeachment_dilma <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb159-8" data-line-number="8"><span class="st">  </span><span class="kw">filter</span>(partido <span class="op">==</span><span class="st"> &quot;PSOL&quot;</span>)</a></code></pre></div>
+<p>Com os dados filtrados, vamos transforma-los em um dataframe</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1">impeachment_pt &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">line =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(impeachment_pt),</a>
+<a class="sourceLine" id="cb160-2" data-line-number="2">                         <span class="dt">text =</span> impeachment_pt<span class="op">$</span>text)  </a>
+<a class="sourceLine" id="cb160-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb160-4" data-line-number="4">impeachment_psdb &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">line =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(impeachment_psdb), </a>
+<a class="sourceLine" id="cb160-5" data-line-number="5">                           <span class="dt">text =</span> impeachment_psdb<span class="op">$</span>text)  </a>
+<a class="sourceLine" id="cb160-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb160-7" data-line-number="7">impeachment_psol &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">line =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(impeachment_psol), </a>
+<a class="sourceLine" id="cb160-8" data-line-number="8">                           <span class="dt">text =</span> impeachment_psol<span class="op">$</span>text)  </a></code></pre></div>
+<p>Após esse processo de seleção do dado de texto por partido, vamos tokenizar a informação através da função <code>unnest_tokens</code>, do pacote <code>tidyverse</code> e retirar as stopwords por meio da função <code>anti_join</code> do pacote <code>dplyr</code>.</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1"><span class="co">#Tokenizando</span></a>
+<a class="sourceLine" id="cb161-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb161-3" data-line-number="3">tidy_impeachment_pt &lt;-<span class="st"> </span>impeachment_pt <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-4" data-line-number="4"><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-5" data-line-number="5"><span class="st">  </span><span class="kw">anti_join</span>(stop_w) </a>
+<a class="sourceLine" id="cb161-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb161-7" data-line-number="7">tidy_impeachment_psdb &lt;-<span class="st"> </span>impeachment_psdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-8" data-line-number="8"><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-9" data-line-number="9"><span class="st">  </span><span class="kw">anti_join</span>(stop_w) </a>
+<a class="sourceLine" id="cb161-10" data-line-number="10">  </a>
+<a class="sourceLine" id="cb161-11" data-line-number="11">tidy_impeachment_psol &lt;-<span class="st"> </span>impeachment_psol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-12" data-line-number="12"><span class="st">    </span><span class="kw">unnest_tokens</span>(word, text) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-13" data-line-number="13"><span class="st">    </span><span class="kw">anti_join</span>(stop_w) </a></code></pre></div>
+<p>Para termos um gráfico que compare a proporção de palavras utilizadas pelo PSOL e PSDB em relação ao PT, temos que:</p>
+<ul>
+<li>Unir as bases tratadas em uma única</li>
+<li>Medir a frequência dos termos utilizados por autor</li>
+<li>Criar uma coluna com os tokens</li>
+<li>Criar uma coluna com a frequência utilizada pelo PT</li>
+<li>Criar uma coluna outra contendo a frequência de uso dos termos pelo PSDB e PSOL</li>
+<li>Criar uma coluna que identifique o partido, entre PSDB e PSOL.</li>
+</ul>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1"><span class="co"># frequencia de palavras</span></a>
+<a class="sourceLine" id="cb162-2" data-line-number="2"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb162-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb162-4" data-line-number="4">frequency &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(<span class="kw">mutate</span>(tidy_impeachment_psol, <span class="dt">author =</span> <span class="st">&quot;PSOL&quot;</span>),</a>
+<a class="sourceLine" id="cb162-5" data-line-number="5">                       <span class="kw">mutate</span>(tidy_impeachment_psdb, <span class="dt">author =</span> <span class="st">&quot;PSDB&quot;</span>),</a>
+<a class="sourceLine" id="cb162-6" data-line-number="6">                       <span class="kw">mutate</span>(tidy_impeachment_pt, <span class="dt">author =</span> <span class="st">&quot;PT&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb162-7" data-line-number="7"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">str_extract</span>(word, <span class="st">&quot;[a-z&#39;]+&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb162-8" data-line-number="8"><span class="st">  </span><span class="kw">count</span>(author, word) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb162-9" data-line-number="9"><span class="st">  </span><span class="kw">group_by</span>(author) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb162-10" data-line-number="10"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">proportion =</span> n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb162-11" data-line-number="11"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>n) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb162-12" data-line-number="12"><span class="st">  </span><span class="kw">spread</span>(author, proportion) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb162-13" data-line-number="13"><span class="st">  </span><span class="kw">gather</span>(author, proportion, <span class="st">`</span><span class="dt">PSOL</span><span class="st">`</span><span class="op">:</span><span class="st">`</span><span class="dt">PSDB</span><span class="st">`</span>)</a>
+<a class="sourceLine" id="cb162-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb162-15" data-line-number="15">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(frequency,<span class="dv">5</span>))</a></code></pre></div>
+<p>Vamos produzir um gráfico que demonstre os termos mais relativamente utilizados pelo PT, PSDB e PSOL no contexto do discurso do impeachment. Para conseguirmos realizar o comparativo dos três partidos, vamos colocar os valores de PT como eixo <code>X</code> e <code>facet</code> pelos autores PSDB e PSOL. Dessa forma, no gráfico, quanto mais próximo um termo do eixo <code>y</code>, mais ele foi relativamente utilizado pelo PSDB ou PSOL e quanto mais próximo ao eixo x, mais ele foi utilizado por um deputado do PT.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="co"># gráfico</span></a>
+<a class="sourceLine" id="cb163-2" data-line-number="2"><span class="kw">ggplot</span>(frequency, <span class="kw">aes</span>(<span class="dt">x =</span> proportion, <span class="dt">y =</span> <span class="st">`</span><span class="dt">PT</span><span class="st">`</span>,</a>
+<a class="sourceLine" id="cb163-3" data-line-number="3">                      <span class="dt">color =</span> <span class="kw">abs</span>(<span class="st">`</span><span class="dt">PT</span><span class="st">`</span> <span class="op">-</span><span class="st"> </span>proportion))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_abline</span>(<span class="dt">color =</span> <span class="st">&quot;gray40&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">alpha =</span> <span class="fl">0.1</span>, <span class="dt">size =</span> <span class="fl">2.5</span>, <span class="dt">width =</span> <span class="fl">0.3</span>, <span class="dt">height =</span> <span class="fl">0.3</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> word), <span class="dt">check_overlap =</span> <span class="ot">TRUE</span>, <span class="dt">vjust =</span> <span class="fl">1.5</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span><span class="kw">percent_format</span>()) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span><span class="kw">percent_format</span>()) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_color_gradient</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.001</span>),</a>
+<a class="sourceLine" id="cb163-10" data-line-number="10">                       <span class="dt">low =</span> <span class="st">&quot;darkslategray4&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;gray7&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-11" data-line-number="11"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>author, <span class="dt">ncol =</span> <span class="dv">2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-12" data-line-number="12"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb163-13" data-line-number="13"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;PT&quot;</span>, <span class="dt">x =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<p>Podemos quantificar quão diferente é o vocabulário através de um simples teste de correlação.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="kw">cor.test</span>(<span class="dt">data =</span> frequency[frequency<span class="op">$</span>author <span class="op">==</span><span class="st"> &quot;PSDB&quot;</span>,],</a>
+<a class="sourceLine" id="cb164-2" data-line-number="2">         <span class="op">~</span><span class="st"> </span>proportion <span class="op">+</span><span class="st"> `</span><span class="dt">PT</span><span class="st">`</span>)</a></code></pre></div>
+</div>
 </div>
 <div id="corpus" class="section level2">
-<h2><span class="header-section-number">6.2</span> Corpus</h2>
+<h2><span class="header-section-number">6.3</span> Corpus</h2>
+<p>O pacote <code>tidyverse</code> não possui uma função que gera um corpus, assim iremos utilizar o pacote <code>quanteda</code> que permite trabalhar com Tokens, Corpus e DFMs. Um ponto positivo em relação ao tidyverse é a possibilidade de gerar corpus e demais análises estas estando relacionadas ao documento que a originou.</p>
+<p>O uso do quanteda, segue o seguinte fluxograma:</p>
+<center>
+<img src="images/quanteda-workflow.png" alt="quanteda_flow" width="500" />
+</center>
+<p>É possível criar um <em>corpus</em> a partir de diferentes fontes de dados:</p>
+<ol style="list-style-type: decimal">
+<li><p>Um vetor de caracteres que consista em um documento por elemento;</p></li>
+<li><p>Uma matriz de dados que consista em um vetor de caracteres para os documentos e vetores adicionais para variáveis no nível do documento;</p></li>
+<li><p>Um objeto de classe <code>VCorpus</code> ou <code>SimpleCorpus</code> criado pelo pacote <code>tm</code>;</p></li>
+<li><p>Um objeto de palavras-chave no contexto construído por <code>kwic()</code>;</p></li>
+</ol>
+<p>Utilizando a base de dados com as falas proferidas no dia da aprovação do impeachment da Presidenta Dilma Rousseff pela Câmara dos Deputados, nesta seção focaremos em como construir um corpus a partir de uma matriz de dados. A base de dados é a mesma utiliada no item anterior, podendo ser carregada através do pacote <code>txt4cs</code></p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
+<a class="sourceLine" id="cb165-2" data-line-number="2"><span class="kw">library</span>(quanteda)</a>
+<a class="sourceLine" id="cb165-3" data-line-number="3"><span class="kw">library</span>(readtext)</a>
+<a class="sourceLine" id="cb165-4" data-line-number="4"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb165-5" data-line-number="5"><span class="kw">library</span>(txt4cs)</a>
+<a class="sourceLine" id="cb165-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb165-7" data-line-number="7">impeachment_dilma &lt;-<span class="st"> </span>txt4cs<span class="op">::</span>impeachment_dilma</a></code></pre></div>
+<p>Inicialmente devemos transformar o data.frame em um corpus, utilizando a função <code>corpus()</code>do pacote <code>quanteda</code></p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1">corp &lt;-<span class="st"> </span><span class="kw">corpus</span>(impeachment_dilma)</a>
+<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">summary</span>(corp, <span class="dv">5</span>)</a></code></pre></div>
+<div id="filtrando-corpus-corpus_subset" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Filtrando corpus: <code>corpus_subset()</code></h3>
+<p>A função <code>corpus_subset()</code> permite selecionar documentos em um corpus com base em variáveis no nível do documento. No caso iremos selecionar o corpus referente ao PSDB e PT.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1">corp_ptpsdb &lt;-<span class="st"> </span><span class="kw">corpus_subset</span>(corp, partido <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;PT&#39;</span>, <span class="st">&#39;PSDB&#39;</span>))</a>
+<a class="sourceLine" id="cb167-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb167-3" data-line-number="3"><span class="kw">summary</span>(corp_ptpsdb, <span class="dv">5</span>)</a></code></pre></div>
+</div>
+<div id="trocando-a-unidade-de-texto-no-corpus-corpus_reshape" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Trocando a unidade de texto no corpus: <code>corpus_reshape()</code></h3>
+<p>A função <code>corpus_reshape()</code> permite alterar a unidade de textos entre documentos, parágrafos e frases. Os textos podem ser restaurados para a unidade original mesmo que o corpus seja modificado por outras funções.
+Dessa forma, nos exemplos abaixo podemos mudar o corpus para formato de sentenças. A sentença segundo a função termina no ponto final e dá início a outra sentença.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">corp_sent &lt;-<span class="st"> </span><span class="kw">corpus_reshape</span>(corp, <span class="dt">to =</span> <span class="st">&#39;sentences&#39;</span>)</a>
+<a class="sourceLine" id="cb168-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb168-3" data-line-number="3">corp_sent[<span class="dv">11</span><span class="op">:</span><span class="dv">12</span>]</a></code></pre></div>
+<p>Ou alterá-lo para um formato de documento, restaurando-os ao formato original:</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="co"># restaurando documentos originais ----</span></a>
+<a class="sourceLine" id="cb169-2" data-line-number="2">corp_documents &lt;-<span class="st"> </span><span class="kw">corpus_reshape</span>(corp_sent, <span class="dt">to =</span> <span class="st">&#39;documents&#39;</span>)</a>
+<a class="sourceLine" id="cb169-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb169-4" data-line-number="4">corp_documents[<span class="dv">2</span>]</a></code></pre></div>
+</div>
 </div>
 <div id="tokens-e-corpus" class="section level2">
-<h2><span class="header-section-number">6.3</span> Tokens e Corpus</h2>
+<h2><span class="header-section-number">6.4</span> Tokens e Corpus</h2>
+<div id="obtendo-tokens-a-partir-de-um-corpus-tokens" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Obtendo Tokens a partir de um Corpus: <code>tokens()</code></h3>
+<p>A função <code>tokens()</code>, como já vimos, segmenta o texto em unidades de textos significativas.Esta função no pacote <code>quanteda</code> já permite a remoção de espaços em branco e demais separadores de texto automaticamente, para isso é necessário escrever o argumento, como exemplificado abaixo na removação automática de pontuação. Usaremos o corpus gerado do item anterior.</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">toks &lt;-<span class="st"> </span><span class="kw">tokens</span>(corp, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>) <span class="co">#tokenizando e removendo a pontuação</span></a>
+<a class="sourceLine" id="cb170-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb170-3" data-line-number="3"><span class="kw">head</span>(toks[[<span class="dv">1</span>]], <span class="dv">50</span>)</a></code></pre></div>
 </div>
-<div id="dfm-matriz-de-documentos-e-termos" class="section level2">
-<h2><span class="header-section-number">6.4</span> DFM: Matriz de documentos e termos</h2>
+<div id="palavras-chave-e-seu-contexto-kwic" class="section level3">
+<h3><span class="header-section-number">6.4.2</span> Palavras-chave e seu contexto: <code>kwic()</code></h3>
+<p>Através dessa função presente no pacote <code>quanteda</code> é possível identificar o contexto imediato de um termo ou conjunto de palavras-chaves. No exemplo abaixo estamos buscando o contexto de palavras relacionadas a “golpe”:</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1">kw &lt;-<span class="st"> </span><span class="kw">kwic</span>(toks, <span class="dt">pattern =</span>  <span class="st">&#39;golp*&#39;</span>)</a>
+<a class="sourceLine" id="cb171-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb171-3" data-line-number="3">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(kw, <span class="dv">5</span>))</a></code></pre></div>
+<p>Também é possível buscar mais de um termo por linha de código, assim como selecionar a quantidade de caracteres que apareçam com o termo procurado.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">kw &lt;-<span class="st"> </span><span class="kw">kwic</span>(toks, <span class="dt">pattern =</span>  <span class="kw">c</span>(<span class="st">&quot;pela&quot;</span>, <span class="st">&quot;pelo&quot;</span>), <span class="dt">window =</span> <span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb172-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb172-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb172-4" data-line-number="4">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(kw, <span class="dv">5</span>))</a></code></pre></div>
+<p>Caso queira identificar o contexto de frases, você deve dentro de <code>phrase</code> escrever uma frase respeitando os espaços em branco.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="co"># caso de uma frase inteira ----</span></a>
+<a class="sourceLine" id="cb173-2" data-line-number="2">kw_frase &lt;-<span class="st"> </span><span class="kw">kwic</span>(toks, <span class="dt">pattern =</span>  <span class="kw">phrase</span>(<span class="st">&#39;não vai ter golp*&#39;</span>))</a>
+<a class="sourceLine" id="cb173-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb173-4" data-line-number="4">knitr<span class="op">::</span><span class="kw">kable</span>(kw_frase)</a></code></pre></div>
+</div>
+<div id="selecionando-tokens" class="section level3">
+<h3><span class="header-section-number">6.4.3</span> Selecionando tokens</h3>
+<p>Como já colocado, a função <code>tokens</code> no pacote <code>quanteda</code> apenas remove separadores de texto e outros caracteres não textuais automaticamente se expressados no código. Para retirada de stopwords pode se fazer uso das funções <code>tokens_select</code> e <code>tokens_remove</code>, que são equivalentes. Novamente utilizaremos o corpus previamente construído.</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="co">#Construção de tokens sem pontuações</span></a>
+<a class="sourceLine" id="cb174-2" data-line-number="2">toks &lt;-<span class="st"> </span><span class="kw">tokens</span>(corp, <span class="dt">remove_punct =</span> T, <span class="dt">remove_numbers =</span> T)</a>
+<a class="sourceLine" id="cb174-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb174-4" data-line-number="4"><span class="co"># Removendo as stopwords</span></a>
+<a class="sourceLine" id="cb174-5" data-line-number="5"><span class="co">#opção 1</span></a>
+<a class="sourceLine" id="cb174-6" data-line-number="6">toks_nostop &lt;-<span class="st"> </span><span class="kw">tokens_select</span>(toks, <span class="dt">pattern =</span> <span class="kw">stopwords</span>(<span class="st">&#39;pt&#39;</span>),</a>
+<a class="sourceLine" id="cb174-7" data-line-number="7">                             <span class="dt">selection =</span> <span class="st">&#39;remove&#39;</span>)</a>
+<a class="sourceLine" id="cb174-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb174-9" data-line-number="9"><span class="co">#opção 2 </span></a>
+<a class="sourceLine" id="cb174-10" data-line-number="10">toks_nostop &lt;-<span class="st"> </span><span class="kw">tokens_remove</span>(toks_nostop, <span class="dt">pattern =</span> <span class="kw">c</span>(<span class="st">&#39;SR&#39;</span>, <span class="st">&#39;PRESIDENTE&#39;</span>, </a>
+<a class="sourceLine" id="cb174-11" data-line-number="11">                                                      <span class="st">&#39;Esclarecimentos&#39;</span>))</a>
+<a class="sourceLine" id="cb174-12" data-line-number="12"><span class="kw">head</span>(toks_nostop[[<span class="dv">1</span>]], <span class="dv">50</span>)</a></code></pre></div>
+<p>Com a função <code>tokens_select</code> também é possível selecionar palavras-chaves para análise e construindo um novo objeto. Por exemplo, para analisar palavras que aparecem junto de termos determinados, e sua posição original no texto, se pode utilizar respectivamente <code>window</code> e <code>padding</code> ao escrever o código:</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" data-line-number="1">toks_voto &lt;-<span class="st"> </span><span class="kw">tokens_select</span>(toks, <span class="dt">pattern =</span> <span class="kw">c</span>(<span class="st">&quot;votaç*&quot;</span>, <span class="st">&quot;voto&quot;</span>), <span class="dt">padding =</span> <span class="ot">TRUE</span>, <span class="dt">window =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb175-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb175-3" data-line-number="3"><span class="kw">head</span>(toks_voto, <span class="dv">1</span>)</a></code></pre></div>
+</div>
 </div>
 <div id="stemming" class="section level2">
 <h2><span class="header-section-number">6.5</span> Stemming</h2>
+<p>Até aqui, mesmo que os procedimentos adotados tenham diminuído a dimensionalidade do acervo de documentos ao transformá-lo em uma sacola de palavras (<em>bag of words</em>), ainda é necessária a adoção de procedimentos que possam reduzir a complexidade do conteúdo a ser analisado.</p>
+<p>Com esse objetivo, como apontado por Izumi e Moreira (2018) podemos pensar que determinado documento tenha em sua composição as seguintes palavras únicas: trabalho, trabalhador, trabalhista. Apesar de seus diferentes signficados, cada uma dessas palavras pode ser reduzida ao seu radical, <em>trabalh</em>, dando ao pequisador informações suficientes para sua análise e, assim reduzindo, o <em>n</em> de três palavras únicas para uma palavra que tem a soma das frequências anteriores.
+Para garantir que palavras que variam apenas na flexão, número ou conjugação sejam consideradas iguais, reduzindo o número de dimensões contido no acervo, por meio da adaptação do algoritmo de Porter (1980) para o português já desenvolvida por diferentes projetos (<a href="http://snowball.tartarus.org/">Snowball</a> e <a href="https://bit.ly/2OXkVS6">NILC-USP</a>),podem ser obtidos os <em>stems</em> das palavras restantes<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.</p>
+<p>Chamamos esse procedimento de <strong>Stemming</strong>, o pacote <code>quanteda</code> possui a opção de stemming em português que usa o projeto Snowball através da função <code>tokens_wordstem()</code>, abaixo vamos utilizar o token já produzido no item acima.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1">token_stem &lt;-<span class="st"> </span><span class="kw">tokens_wordstem</span>(toks,<span class="dt">language =</span> <span class="st">&quot;pt&quot;</span>)</a>
+<a class="sourceLine" id="cb176-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb176-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb176-4" data-line-number="4"><span class="kw">head</span>(token_stem, <span class="dv">1</span>)</a></code></pre></div>
+<div id="gerando-n-grams" class="section level3">
+<h3><span class="header-section-number">6.5.1</span> Gerando n-grams</h3>
+<p>O método de tokenização apresentado nos itens acima se chama bag-of-words, ou BOW, e como observado nas análises realizadas, não respeita a ordem em que as palavras foram escritas.</p>
+<p>Para algumas análises essa ordem é necessária e para realizá-la pode-se utilizar o método N-grams, gerando assim tokens de qualquer tamanho e respeitando a ordem em que aparecem no texto. Através da função <code>tokens_ngrams()</code> é possível utilizar esse método.</p>
+<p>Com <code>tokens_ngram()</code> você pode definir o tamanho que deseja que seus tokens sejam criados, tanto especificando um n-gram único, ou estabelecendo um limite de tamanho de n-grams que o próprio R irá identificar no texto.</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1">toks &lt;-<span class="st"> </span><span class="kw">tokens</span>(corp, <span class="dt">remove_punct =</span> T, <span class="dt">remove_numbers =</span> T)</a>
+<a class="sourceLine" id="cb177-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb177-3" data-line-number="3"><span class="co">#criando n-grams</span></a>
+<a class="sourceLine" id="cb177-4" data-line-number="4">toks_ngram &lt;-<span class="st"> </span><span class="kw">tokens_ngrams</span>(toks, <span class="dt">n =</span> <span class="dv">2</span><span class="op">:</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb177-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb177-6" data-line-number="6"><span class="kw">head</span>(toks_ngram[[<span class="dv">1</span>]], <span class="dv">20</span>)</a></code></pre></div>
+<p>O <code>tokens_compound</code> realiza processo similiar, mas com a diferença de gerar n-grams de forma seletiva, especificando o termo de análise desejada. Após a seleção, para análise do resultado, você deve filtrar pelo termo com <code>tokens_select</code></p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="co">#Gerar n-grams específicas</span></a>
+<a class="sourceLine" id="cb178-2" data-line-number="2">toks_neg_bigram &lt;-<span class="st"> </span><span class="kw">tokens_compound</span>(toks, <span class="dt">pattern =</span> <span class="kw">phrase</span>(<span class="st">&#39;não *&#39;</span>))</a>
+<a class="sourceLine" id="cb178-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb178-4" data-line-number="4"><span class="co">#Selecionar as n-grams geradas</span></a>
+<a class="sourceLine" id="cb178-5" data-line-number="5">toks_neg_bigram_select &lt;-<span class="st"> </span><span class="kw">tokens_select</span>(toks_neg_bigram, <span class="dt">pattern =</span> <span class="kw">phrase</span>(<span class="st">&#39;não_*&#39;</span>))</a>
+<a class="sourceLine" id="cb178-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb178-7" data-line-number="7"><span class="co">#Resultado</span></a>
+<a class="sourceLine" id="cb178-8" data-line-number="8"><span class="kw">head</span>(toks_neg_bigram_select[[<span class="dv">6</span>]], <span class="dv">50</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="dfm-matriz-de-documentos-e-termos" class="section level2">
+<h2><span class="header-section-number">6.6</span> DFM: Matriz de documentos e termos</h2>
+<p>Vamos transformar nossos tokens em uma DFM (Document Feature Matrix), também chamada de DTM (Document Term Matrix). Relembrando que uma DFM é uma vetorização do texto, em que cada linha representa um documento e cada coluna um termo. Para isso iremos usar a função <code>dfm()</code>.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" data-line-number="1"><span class="co">#Construindo um corpus e removendo stopwords</span></a>
+<a class="sourceLine" id="cb179-2" data-line-number="2">toks &lt;-<span class="st"> </span><span class="kw">tokens</span>(corp, <span class="dt">remove_punct =</span> <span class="ot">TRUE</span>, <span class="dt">remove_numbers =</span> T)</a>
+<a class="sourceLine" id="cb179-3" data-line-number="3">toks &lt;-<span class="st"> </span><span class="kw">tokens_select</span>(toks, <span class="dt">pattern =</span> <span class="kw">stopwords</span>(<span class="st">&#39;pt&#39;</span>), <span class="dt">selection =</span> <span class="st">&#39;remove&#39;</span>)</a>
+<a class="sourceLine" id="cb179-4" data-line-number="4">toks &lt;-<span class="st"> </span><span class="kw">tokens_remove</span>(toks, <span class="dt">pattern =</span> <span class="kw">c</span>(<span class="st">&#39;sr&#39;</span>, <span class="st">&#39;presidente&#39;</span>, <span class="st">&#39;esclarecimentos&#39;</span>, <span class="st">&#39;quero&#39;</span>, <span class="st">&#39;ser&#39;</span>, <span class="st">&#39;srs&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;aqui&#39;</span>))</a>
+<a class="sourceLine" id="cb179-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb179-6" data-line-number="6"><span class="co">#Construindo um DFM</span></a>
+<a class="sourceLine" id="cb179-7" data-line-number="7">dfmat &lt;-<span class="st"> </span><span class="kw">dfm</span>(toks)</a></code></pre></div>
+<p>Você pode obter a quantidade de documentos e termos utilizando <code>ndoc</code> e <code>nfeat</code>
+Abaixo vemos que temos 555 documentos</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="kw">ndoc</span>(dfmat)  <span class="co"># numero de documentos</span></a></code></pre></div>
+<p>Observamos que temos 6395 termos, ou features.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" data-line-number="1"><span class="kw">nfeat</span>(dfmat)  <span class="co"># numero de features</span></a></code></pre></div>
+<p>Também é possível obter o nome dos documentos e das features com <code>docnames</code> e <code>featnames</code> e quais as features mais frequentes com <code>topfeatures</code></p>
+<p>Abaixo estamos combinando a função <code>head</code> com <code>docnames</code> para obtermos somente o nome dos 20 primeiros documentos.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1"><span class="kw">head</span>(<span class="kw">docnames</span>(dfmat), <span class="dv">20</span>)  <span class="co"># ids dos documentos</span></a></code></pre></div>
+<p>Abaixo estamos combinando a função <code>head</code> com <code>featnames</code> para obtermos somente o nome das 20 primeiras features.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" data-line-number="1"><span class="kw">head</span>(<span class="kw">featnames</span>(dfmat), <span class="dv">20</span>)  <span class="co"># algumas features</span></a></code></pre></div>
+<p>Para verificar as 10 features mais frequentes podemos somente utilizar a função <code>topfeatures</code> e indicar quantas features queremos que retorne.</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" data-line-number="1"><span class="kw">topfeatures</span>(dfmat, <span class="dv">10</span>)  <span class="co"># features mais frequentes</span></a></code></pre></div>
+<div id="refinando-a-seleção-de-features" class="section level3">
+<h3><span class="header-section-number">6.6.1</span> Refinando a seleção de features</h3>
+<p>Você pode selecionar as features que tiveram uma frequência desejada para analisar através de <code>dfm_trim</code>. No caso abaixo, documentos com menos de 1% de frequência por features serão removidas, assim de 6320 features ficamos com 769 features.</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" data-line-number="1">dfmat_docfreq &lt;-<span class="st"> </span><span class="kw">dfm_trim</span>(dfmat, <span class="dt">min_docfreq =</span> <span class="fl">0.01</span>, <span class="dt">docfreq_type =</span> <span class="st">&quot;prop&quot;</span>)</a>
+<a class="sourceLine" id="cb185-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb185-3" data-line-number="3"><span class="kw">nfeat</span>(dfmat_docfreq)</a></code></pre></div>
+</div>
+<div id="realizando-steam-numa-dfm" class="section level3">
+<h3><span class="header-section-number">6.6.2</span> Realizando Steam numa DFM</h3>
+<p>Caso não tenha realizado o stem através dos tokens e já possui uma dfm, é possível realizá-la também nesta etapa, através da função <code>dfm_wordstem</code></p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" data-line-number="1">dfmat_stem &lt;-<span class="st"> </span><span class="kw">dfm_wordstem</span>(dfmat)</a></code></pre></div>
+</div>
+<div id="agrupando-documentos-numa-dfm" class="section level3">
+<h3><span class="header-section-number">6.6.3</span> Agrupando documentos numa DFM</h3>
+<p>Para agrupar os documentos em uma DFM, você pode utilizar a função <code>dfm_group</code>, que irá uni-los baseado em um argumento. No entanto, para simplificar o seu código, você pode agrupar baseado em um argumento no momento de gerar um dfm.</p>
+<p>No exemplo abaixo estamos agrupando a dfm por nome do orador, retornando 512 documentos.</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" data-line-number="1"><span class="co"># Por autor</span></a>
+<a class="sourceLine" id="cb187-2" data-line-number="2">dfmat_autor &lt;-<span class="st"> </span><span class="kw">dfm</span>(dfmat_docfreq, <span class="dt">groups =</span> <span class="st">&quot;nomeOrador&quot;</span>)</a>
+<a class="sourceLine" id="cb187-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb187-4" data-line-number="4"><span class="kw">ndoc</span>(dfmat_autor)</a></code></pre></div>
+<p>No exemplo abaixo estamos agrupando a dfm por nome do partido, retornando 26 documentos.</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" data-line-number="1"><span class="co"># Por partido ----</span></a>
+<a class="sourceLine" id="cb188-2" data-line-number="2">dfmat_party &lt;-<span class="st"> </span><span class="kw">dfm</span>(dfmat_docfreq, <span class="dt">groups =</span> <span class="st">&quot;partido&quot;</span>)</a>
+<a class="sourceLine" id="cb188-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb188-4" data-line-number="4"><span class="kw">ndoc</span>(dfmat_party)</a></code></pre></div>
+</div>
 </div>
 <div id="fcm-matriz-de-co-ocorrência-de-termos" class="section level2">
-<h2><span class="header-section-number">6.6</span> FCM: Matriz de co-ocorrência de termos</h2>
+<h2><span class="header-section-number">6.7</span> FCM: Matriz de co-ocorrência de termos</h2>
+<p>Retomando, uma FCM (Feature Co-occurrence Matrix) é uma matriz de co-ocorrência de termos, ou seja, essa função mensura a co-ocorrencia de features dentro de um contexto definido previamente, retornando linhas e colunas com os termos e os valores a contagem de co-ocorrencia entre esses termos. O contexto pode ser um documento ou um conjunto de documentos.</p>
+<p>Pode-se construir uma FCM a partir de uma DFM ou um objeto de tokens usando a função <code>fcm()</code>, assim demonstrando o número de co-ocorrências de um feature, seu comportamento é similiar a uma DFM.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" data-line-number="1">fcmat &lt;-<span class="st"> </span><span class="kw">fcm</span>(dfmat)</a>
+<a class="sourceLine" id="cb189-2" data-line-number="2"><span class="kw">head</span>(fcmat, <span class="dv">5</span>)</a></code></pre></div>
+<p>Por meio de um FCM é possível retornar as palavras que ocorrem mais frequentemente com <code>topfeatures()</code>, assim como visualizar uma rede semântica com a função <code>textplot_network()</code>, por exemplo.</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" data-line-number="1">feat &lt;-<span class="st"> </span><span class="kw">names</span>(<span class="kw">topfeatures</span>(fcmat, <span class="dv">50</span>))</a>
+<a class="sourceLine" id="cb190-2" data-line-number="2">fcmat_select &lt;-<span class="st"> </span><span class="kw">fcm_select</span>(fcmat, <span class="dt">pattern =</span> feat, <span class="dt">selection =</span> <span class="st">&quot;keep&quot;</span>)</a>
+<a class="sourceLine" id="cb190-3" data-line-number="3"><span class="kw">head</span>(fcmat_select, <span class="dv">5</span>)</a></code></pre></div>
+<p>Estabelecemos o tamanho da rede selecionando o DFM segundo as topfeatures criadas no objeto acima. Para plotar o gráfico das principais features utilizamos <code>textplot_network</code>, estabelecendo uma frequência mínima.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" data-line-number="1">size &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="kw">colSums</span>(<span class="kw">dfm_select</span>(dfmat, feat, <span class="dt">selection =</span> <span class="st">&quot;keep&quot;</span>)))</a>
+<a class="sourceLine" id="cb191-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">144</span>)</a>
+<a class="sourceLine" id="cb191-3" data-line-number="3"><span class="kw">textplot_network</span>(fcmat_select, <span class="dt">min_freq =</span> <span class="fl">0.95</span>,</a>
+<a class="sourceLine" id="cb191-4" data-line-number="4">                 <span class="dt">vertex_size =</span> size <span class="op">/</span><span class="st"> </span><span class="kw">max</span>(size) <span class="op">*</span><span class="st"> </span><span class="dv">3</span>)</a></code></pre></div>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>Toda essa seção está baseada no livro <a href="https://www.tidytextmining.com/">Text Mining with R</a><a href="processamento.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>O processo de stemming é uma aproximação do processo de lematização, que reduz palavras às suas formas básicas.<a href="processamento.html#fnref11" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

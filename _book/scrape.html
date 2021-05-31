@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Obtenção de conteúdo | Text as Data para Ciências Sociais</title>
+  <title>Capítulo 5 Obtenção de conteúdo | Texto como Dado para Ciências Sociais</title>
   <meta name="description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Obtenção de conteúdo | Text as Data para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo 5 Obtenção de conteúdo | Texto como Dado para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/davi-moreira/txt4cs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Obtenção de conteúdo | Text as Data para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo 5 Obtenção de conteúdo | Texto como Dado para Ciências Sociais" />
   
   <meta name="twitter:description" content="Compilação de métodos e técnicas para análise automatizada de conteúdo" />
   
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -202,12 +203,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="scrape.html"><a href="scrape.html#áudio-transcrição"><i class="fa fa-check"></i><b>5.7</b> Áudio Transcrição</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="processamento.html"><a href="processamento.html"><i class="fa fa-check"></i><b>6</b> Processamento dos dados</a><ul>
-<li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.1</b> Tokens</a></li>
-<li class="chapter" data-level="6.2" data-path="processamento.html"><a href="processamento.html#corpus"><i class="fa fa-check"></i><b>6.2</b> Corpus</a></li>
-<li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.3</b> Tokens e Corpus</a></li>
-<li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.4</b> DFM: Matriz de documentos e termos</a></li>
-<li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a></li>
-<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrência-de-termos"><i class="fa fa-check"></i><b>6.6</b> FCM: Matriz de co-ocorrência de termos</a></li>
+<li class="chapter" data-level="6.1" data-path="processamento.html"><a href="processamento.html#os-pacotes"><i class="fa fa-check"></i><b>6.1</b> Os pacotes</a></li>
+<li class="chapter" data-level="6.2" data-path="processamento.html"><a href="processamento.html#tokens"><i class="fa fa-check"></i><b>6.2</b> Tokens</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="processamento.html"><a href="processamento.html#o-formato-tidy-text-texto-arrumado"><i class="fa fa-check"></i><b>6.2.1</b> O formato tidy text (texto arrumado)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="processamento.html"><a href="processamento.html#função-unnest_tokens"><i class="fa fa-check"></i><b>6.2.2</b> Função <code>unnest_tokens</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="processamento.html"><a href="processamento.html#tidyDilma"><i class="fa fa-check"></i><b>6.2.3</b> Tidying a aprovação do impeachment da Presidenta Dilma Rousseff</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="processamento.html"><a href="processamento.html#corpus"><i class="fa fa-check"></i><b>6.3</b> Corpus</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="processamento.html"><a href="processamento.html#filtrando-corpus-corpus_subset"><i class="fa fa-check"></i><b>6.3.1</b> Filtrando corpus: <code>corpus_subset()</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="processamento.html"><a href="processamento.html#trocando-a-unidade-de-texto-no-corpus-corpus_reshape"><i class="fa fa-check"></i><b>6.3.2</b> Trocando a unidade de texto no corpus: <code>corpus_reshape()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="processamento.html"><a href="processamento.html#tokens-e-corpus"><i class="fa fa-check"></i><b>6.4</b> Tokens e Corpus</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="processamento.html"><a href="processamento.html#obtendo-tokens-a-partir-de-um-corpus-tokens"><i class="fa fa-check"></i><b>6.4.1</b> Obtendo Tokens a partir de um Corpus: <code>tokens()</code></a></li>
+<li class="chapter" data-level="6.4.2" data-path="processamento.html"><a href="processamento.html#palavras-chave-e-seu-contexto-kwic"><i class="fa fa-check"></i><b>6.4.2</b> Palavras-chave e seu contexto: <code>kwic()</code></a></li>
+<li class="chapter" data-level="6.4.3" data-path="processamento.html"><a href="processamento.html#selecionando-tokens"><i class="fa fa-check"></i><b>6.4.3</b> Selecionando tokens</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="processamento.html"><a href="processamento.html#stemming"><i class="fa fa-check"></i><b>6.5</b> Stemming</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="processamento.html"><a href="processamento.html#gerando-n-grams"><i class="fa fa-check"></i><b>6.5.1</b> Gerando n-grams</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="processamento.html"><a href="processamento.html#dfm-matriz-de-documentos-e-termos"><i class="fa fa-check"></i><b>6.6</b> DFM: Matriz de documentos e termos</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="processamento.html"><a href="processamento.html#refinando-a-seleção-de-features"><i class="fa fa-check"></i><b>6.6.1</b> Refinando a seleção de features</a></li>
+<li class="chapter" data-level="6.6.2" data-path="processamento.html"><a href="processamento.html#realizando-steam-numa-dfm"><i class="fa fa-check"></i><b>6.6.2</b> Realizando Steam numa DFM</a></li>
+<li class="chapter" data-level="6.6.3" data-path="processamento.html"><a href="processamento.html#agrupando-documentos-numa-dfm"><i class="fa fa-check"></i><b>6.6.3</b> Agrupando documentos numa DFM</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="processamento.html"><a href="processamento.html#fcm-matriz-de-co-ocorrência-de-termos"><i class="fa fa-check"></i><b>6.7</b> FCM: Matriz de co-ocorrência de termos</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stat.html"><a href="stat.html"><i class="fa fa-check"></i><b>7</b> Mineração e estatísticas básicas</a><ul>
 <li class="chapter" data-level="7.1" data-path="stat.html"><a href="stat.html#análise-de-frequência"><i class="fa fa-check"></i><b>7.1</b> Análise de frequência</a></li>
@@ -242,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><em>Text as Data</em> para Ciências Sociais</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><em>Texto como Dado</em> para Ciências Sociais</a>
           </h1>
         </div>
 
@@ -254,7 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Capítulo 5</span> Obtenção de conteúdo</h1>
 <!--- preview_chapter("05-obtencao-conteudo.Rmd") --->
 <p><em>Davi Moreira, Mônica Rocabado</em></p>
-<p><span class="math inline">\(~\)</span> <!--- add line space ---></p>
+<p> </p>
+<!--- $~$  add line space --->
 <p>Uma das tarefas mais importantes para a análise de conteúdo consiste na sua própria
 busca e aquisição. O <code>R</code> nos ajuda nessa tarefa a partir de distintas estratégias.
 A seguir apresento aquelas nas quais o uso de técnicas computacionais e programação
@@ -279,9 +299,9 @@ utilizar o pacote <code>readr</code>. Vejamos um exemplo:</p>
 <a href="http://app-splegisreport-prd.azurewebsites.net/default.aspx">SPLegis</a>. Entre as
 informações disponíveis, é possível obter <a href="http://app-splegisreport-prd.azurewebsites.net/Report/VIEW_REL_EMENDA/List.aspx">relatórios dos projetos</a>
 com o conteúdo de todas as ementas através do download de um arquivo em formato <code>.xlsx</code>!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(readxl)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">arquivo_excel &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;Emendas Apresentadas.xlsx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="kw">library</span>(readxl)</a>
+<a class="sourceLine" id="cb127-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb127-3" data-line-number="3">arquivo_excel &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;Emendas Apresentadas.xlsx&quot;</span>)</a></code></pre></div>
 </div>
 <div id="pdf-e-.doc" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> <code>.pdf</code> e <code>.doc</code></h3>
@@ -297,13 +317,13 @@ obtenção e processamento. Com o uso do pacote <code>textreadr</code>, por exem
 simples pode-se transformar o conteúdo do arquivo <code>.pdf</code> num arquivo <code>.txt</code>. Vejamos o
 conteúdo do <a href="http://www.biblioteca.presidencia.gov.br/presidencia/ex-presidentes/luiz-inacio-lula-da-silva/discursos/1o-mandato/2003/01-01-pronunciamento-a-nacao-do-presidente-da-republica-luiz-inacio-lula-da-silva-apos-a-cerimonia-de-posse.pdf/view">discurso de posse do ex-presidente Luis Inácio Lula da Silva realizado em
 01 de janeiro de 2003 no Congresso Nacional</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(textreadr)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co"># lendo arquivo .pdf</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">txt &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/lula-pronunciamento-posse-cd-2003.pdf&quot;</span>)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co"># salvando como .txt</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">writeLines</span>(txt, <span class="st">&quot;lula-pronunciamento-posse-cd-2003.txt&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="kw">library</span>(textreadr)</a>
+<a class="sourceLine" id="cb128-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb128-3" data-line-number="3"><span class="co"># lendo arquivo .pdf</span></a>
+<a class="sourceLine" id="cb128-4" data-line-number="4">txt &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/lula-pronunciamento-posse-cd-2003.pdf&quot;</span>)</a>
+<a class="sourceLine" id="cb128-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb128-6" data-line-number="6"><span class="co"># salvando como .txt</span></a>
+<a class="sourceLine" id="cb128-7" data-line-number="7"><span class="kw">writeLines</span>(txt, <span class="st">&quot;lula-pronunciamento-posse-cd-2003.txt&quot;</span>)</a></code></pre></div>
 <!--- BRAPRSpeech --->
 <div class="infobox note">
 <p>Em breve, o <strong>Projeto BRAPRSpeech</strong> disponibilizará conteúdo e meta-dados de quase 7 mil
@@ -377,31 +397,31 @@ visualizá-lo. Vejamos um exemplo:</p>
 </center>
 <!--- o codigo abaixo permite deixar uma pagina embeded no livro --->
 <p>Ao acessar o código fonte dessa <a href="https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=">página do portal da Câmara dos Deputados</a>, você consegue visualizar o código <code>.html</code> que produz toda visualização,
-incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+incluindo o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro em 17 de Agosto de 2010<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
 </div>
 <div id="obtenção-de-código-fonte---exemplo" class="section level3">
 <h3><span class="header-section-number">5.2.4</span> Obtenção de Código Fonte - Exemplo:</h3>
 <p>Se é possível visualizar o conteúdo, é possível obtê-lo de forma automatizada. Vamos, portanto,
-obter <a href="https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=">o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro</a> em 17 de Agosto de 2010<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+obter <a href="https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=">o conteúdo do discurso proferido pelo então deputado Jair Bolsonaro</a> em 17 de Agosto de 2010<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
 <p>Vamos utilizar as Etapas anteriormente apresentadas:</p>
 <p>De uma só vez, conseguimos cumprir as Etapas 1 e 2 com o código abaixo:</p>
 <p><strong>Etapa 1: Conhecer detalhadamente o caminho para acesso aos dados:</strong> no nosso exemplo, o código
 fonte do endereço virtual que apresenta o discurso também nos apresenta o conteúdo publicado.</p>
 <p><strong>Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:</strong> nesse exemplo,
 trata-se de apenas um endereço que armazenamos no objeto <code>link</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">library</span>(rvest)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw">library</span>(httr)</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="kw">library</span>(xml2)</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co"># definindo o endereço da web</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">link &lt;-<span class="st"> &quot;https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="co"># carregando pacotes ----</span></a>
+<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb129-3" data-line-number="3"><span class="kw">library</span>(rvest)</a>
+<a class="sourceLine" id="cb129-4" data-line-number="4"><span class="kw">library</span>(httr)</a>
+<a class="sourceLine" id="cb129-5" data-line-number="5"><span class="kw">library</span>(xml2)</a>
+<a class="sourceLine" id="cb129-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb129-7" data-line-number="7"><span class="co"># definindo o endereço da web</span></a>
+<a class="sourceLine" id="cb129-8" data-line-number="8">link &lt;-<span class="st"> &quot;https://www.camara.leg.br/internet/SitaqWeb/TextoHTML.asp?etapa=5&amp;nuSessao=174.4.53.O&amp;nuQuarto=56&amp;nuOrador=2&amp;nuInsercao=0&amp;dtHorarioQuarto=11:46&amp;sgFaseSessao=BC&amp;Data=17/08/2010&amp;txApelido=JAIR%20BOLSONARO,%20PP-RJ&amp;txFaseSessao=Breves%20Comunica%C3%A7%C3%B5es&amp;txTipoSessao=Extraordin%C3%A1ria%20-%20CD&amp;dtHoraQuarto=11:46&amp;txEtapa=&quot;</span></a></code></pre></div>
 <p><strong>Etapa 3: Obter os dados:</strong> Podemos facilmente obter o código fonte de um endereço
 na internet com o uso da função <code>readLines</code>. Aplicamos, portanto, a função no
 objeto <code>link</code> e atribuímos seu resultado ao objeto <code>conteudo</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># obtem o codigo fonte</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">conteudo &lt;-<span class="st"> </span><span class="kw">readLines</span>(link)  </a></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="co"># obtem o codigo fonte</span></a>
+<a class="sourceLine" id="cb130-2" data-line-number="2">conteudo &lt;-<span class="st"> </span><span class="kw">readLines</span>(link)  </a></code></pre></div>
 <p>Veja que o objeto <code>conteudo</code> é um vetor cujos elementos são cada uma das linhas
 presentes no código fonte da página. Isso significa que não precisamos mais do
 acesso à internet ou do próprio endereço para processar o conteúdo obtido uma vez
@@ -414,7 +434,7 @@ da página que publicou o discurso), nos mostra que o elemento <code>328</code> 
 o conteúdo de interesse. Veja que, nesse caso, a análise do próprio código fonte da
 página da Câmara dos Deputados apresenta o conteúdo do discurso na linha 328 do código <code>html</code>.</p>
 <p>Para processar os dados obtidos, vamos selecionar apenas o elemento 328 e assim concluímos nossa missão.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">conteudo &lt;-<span class="st"> </span>conteudo[<span class="dv">328</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">conteudo &lt;-<span class="st"> </span>conteudo[<span class="dv">328</span>]</a></code></pre></div>
 <div id="atividade-prática" class="section level4">
 <h4><span class="header-section-number">5.2.4.1</span> Atividade prática</h4>
 <p>Com base no exemplo acima, obtenha o código fonte da página do <a href="https://pt.wikipedia.org/wiki/Chico_Buarque">Chico Buarque na Wikipédia</a>.</p>
@@ -468,160 +488,421 @@ final (<code>dataFinal</code>) de busca pelos discursos. Sendo nosso objetivo ob
 discursos proferidos num mesmo dia, usamos como parâmetros “11/09/2001”.</p>
 <p><strong>Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:</strong></p>
 <p>Nesse exemplo, trata-se de apenas um endereço que armazenamos no objeto <code>link</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># pacotes </span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">library</span>(httr)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">library</span>(XML)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">library</span>(xml2)</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">library</span>(RCurl)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co"># definindo parametros da chamada</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">dataInicial &lt;-<span class="st"> &quot;11/09/2001&quot;</span> </a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">dataFinal &lt;-<span class="st"> &quot;11/09/2001&quot;</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co"># alocando enderenço a objeto link</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/sitcamaraws/SessoesReunioes.asmx/ListarDiscursosPlenario?&quot;</span>,</a>
-<a class="sourceLine" id="cb6-15" data-line-number="15">                <span class="st">&quot;dataIni=&quot;</span>, dataInicial,</a>
-<a class="sourceLine" id="cb6-16" data-line-number="16">                <span class="st">&quot;&amp;dataFim=&quot;</span>, dataFinal, </a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">                <span class="st">&quot;&amp;codigoSessao=&amp;parteNomeParlamentar=&amp;siglaPartido=&amp;siglaUF=&quot;</span>,</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18">                <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="co"># pacotes </span></a>
+<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="kw">library</span>(httr)</a>
+<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="kw">library</span>(XML)</a>
+<a class="sourceLine" id="cb132-4" data-line-number="4"><span class="kw">library</span>(xml2)</a>
+<a class="sourceLine" id="cb132-5" data-line-number="5"><span class="kw">library</span>(RCurl)</a>
+<a class="sourceLine" id="cb132-6" data-line-number="6"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb132-7" data-line-number="7"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb132-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb132-9" data-line-number="9"><span class="co"># definindo parametros da chamada</span></a>
+<a class="sourceLine" id="cb132-10" data-line-number="10">dataInicial &lt;-<span class="st"> &quot;11/09/2001&quot;</span> </a>
+<a class="sourceLine" id="cb132-11" data-line-number="11">dataFinal &lt;-<span class="st"> &quot;11/09/2001&quot;</span></a>
+<a class="sourceLine" id="cb132-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb132-13" data-line-number="13"><span class="co"># alocando enderenço a objeto link</span></a>
+<a class="sourceLine" id="cb132-14" data-line-number="14">link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/sitcamaraws/SessoesReunioes.asmx/ListarDiscursosPlenario?&quot;</span>,</a>
+<a class="sourceLine" id="cb132-15" data-line-number="15">                <span class="st">&quot;dataIni=&quot;</span>, dataInicial,</a>
+<a class="sourceLine" id="cb132-16" data-line-number="16">                <span class="st">&quot;&amp;dataFim=&quot;</span>, dataFinal, </a>
+<a class="sourceLine" id="cb132-17" data-line-number="17">                <span class="st">&quot;&amp;codigoSessao=&amp;parteNomeParlamentar=&amp;siglaPartido=&amp;siglaUF=&quot;</span>,</a>
+<a class="sourceLine" id="cb132-18" data-line-number="18">                <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
 <p><strong>Etapa 3: Obter os dados:</strong></p>
 <p>Para essa etapa, basta fazer uso da função <code>GET</code>. No código abaixo, armazenamos os resultados no objeto <code>response</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1">response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a></code></pre></div>
 <p><strong>Etapa 4: Processar os dados obtidos:</strong></p>
 <p>Organizar o resultado da função <code>GET</code> num formato de matriz de dados (<code>data.frame</code>) é
 simples. Primeiro, transformamos o resultado numa lista, na qual cada elemento será
 uma das sessões legislativas realizadas naquela data. Em segundo lugar, de forma
-interativa, usando a função <code>for</code>, alocamos os campos desejados num objeto <code>data.frame</code><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># analisa um arquivo XML ou HTML e gera uma estrutura no R.</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>) </a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co"># transforma um XML nó em lista. Importante pois permite você reconhecer o caminho para obtenção dos dados. Exemplo: &quot;$sessao$fasesSessao$faseSessao$discursos$discurso$sumario&quot;</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data) </a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co"># data frame que recebera dados dos pronunciamentos</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  </a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(ls)){</a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">    <span class="co"># obtendo quantidade de pronunciamentos de uma respectiva sessao</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12">    quantPronunciamentos &lt;-<span class="st"> </span><span class="kw">length</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos)</a>
-<a class="sourceLine" id="cb8-13" data-line-number="13">    </a>
-<a class="sourceLine" id="cb8-14" data-line-number="14">    sumario &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-15" data-line-number="15">    numInsercao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-16" data-line-number="16">    numQuarto &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-17" data-line-number="17">    indexacao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-18" data-line-number="18">    hora &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-19" data-line-number="19">    uf &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-20" data-line-number="20">    numOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-21" data-line-number="21">    nomeOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-22" data-line-number="22">    partido &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
-<a class="sourceLine" id="cb8-23" data-line-number="23">    </a>
-<a class="sourceLine" id="cb8-24" data-line-number="24">    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>quantPronunciamentos){</a>
-<a class="sourceLine" id="cb8-25" data-line-number="25">      <span class="co"># obtendo todos os dados do pronunciamento</span></a>
-<a class="sourceLine" id="cb8-26" data-line-number="26">      <span class="co"># sumario</span></a>
-<a class="sourceLine" id="cb8-27" data-line-number="27">      sumario[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-28" data-line-number="28"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>sumario)</a>
-<a class="sourceLine" id="cb8-29" data-line-number="29">      <span class="co"># insercao</span></a>
-<a class="sourceLine" id="cb8-30" data-line-number="30">      numInsercao[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-31" data-line-number="31"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroInsercao)</a>
-<a class="sourceLine" id="cb8-32" data-line-number="32">      <span class="co"># quarto</span></a>
-<a class="sourceLine" id="cb8-33" data-line-number="33">      numQuarto[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-34" data-line-number="34"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroQuarto)</a>
-<a class="sourceLine" id="cb8-35" data-line-number="35">      <span class="co"># indexacao</span></a>
-<a class="sourceLine" id="cb8-36" data-line-number="36">      indexacao[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-37" data-line-number="37"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>txtIndexacao)</a>
-<a class="sourceLine" id="cb8-38" data-line-number="38">      <span class="co"># hora</span></a>
-<a class="sourceLine" id="cb8-39" data-line-number="39">      hora[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-40" data-line-number="40"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>horaInicioDiscurso)</a>
-<a class="sourceLine" id="cb8-41" data-line-number="41">      <span class="co"># uf orador</span></a>
-<a class="sourceLine" id="cb8-42" data-line-number="42">      uf[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-43" data-line-number="43"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>uf)</a>
-<a class="sourceLine" id="cb8-44" data-line-number="44">      <span class="co"># numero orador</span></a>
-<a class="sourceLine" id="cb8-45" data-line-number="45">      numOrador[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-46" data-line-number="46"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>numero)</a>
-<a class="sourceLine" id="cb8-47" data-line-number="47">      <span class="co"># nome orador</span></a>
-<a class="sourceLine" id="cb8-48" data-line-number="48">      nomeOrador[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-49" data-line-number="49"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>nome)</a>
-<a class="sourceLine" id="cb8-50" data-line-number="50">      <span class="co"># partido orador</span></a>
-<a class="sourceLine" id="cb8-51" data-line-number="51">      partido[j] &lt;-<span class="st"> </span></a>
-<a class="sourceLine" id="cb8-52" data-line-number="52"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>partido)</a>
-<a class="sourceLine" id="cb8-53" data-line-number="53">    }</a>
-<a class="sourceLine" id="cb8-54" data-line-number="54">    </a>
-<a class="sourceLine" id="cb8-55" data-line-number="55">    <span class="co"># obtendo todos os dados da fase</span></a>
-<a class="sourceLine" id="cb8-56" data-line-number="56">    <span class="co"># codigo</span></a>
-<a class="sourceLine" id="cb8-57" data-line-number="57">    codigoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>codigo)</a>
-<a class="sourceLine" id="cb8-58" data-line-number="58">    <span class="co"># descricao</span></a>
-<a class="sourceLine" id="cb8-59" data-line-number="59">    descricaoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>descricao)</a>
-<a class="sourceLine" id="cb8-60" data-line-number="60">    <span class="co"># obtendo todos os dados da sessao</span></a>
-<a class="sourceLine" id="cb8-61" data-line-number="61">    <span class="co"># codigo</span></a>
-<a class="sourceLine" id="cb8-62" data-line-number="62">    codigoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>codigo)</a>
-<a class="sourceLine" id="cb8-63" data-line-number="63">    <span class="co"># data</span></a>
-<a class="sourceLine" id="cb8-64" data-line-number="64">    dataSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>data)</a>
-<a class="sourceLine" id="cb8-65" data-line-number="65">    <span class="co"># numero</span></a>
-<a class="sourceLine" id="cb8-66" data-line-number="66">    numSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>numero)</a>
-<a class="sourceLine" id="cb8-67" data-line-number="67">    <span class="co"># tipo</span></a>
-<a class="sourceLine" id="cb8-68" data-line-number="68">    tipoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>tipo)</a>
-<a class="sourceLine" id="cb8-69" data-line-number="69">    </a>
-<a class="sourceLine" id="cb8-70" data-line-number="70">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">codigoSessao =</span> <span class="kw">rep</span>(codigoSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-71" data-line-number="71">                         <span class="dt">dataSessao =</span> <span class="kw">rep</span>(dataSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-72" data-line-number="72">                         <span class="dt">numSessao =</span> <span class="kw">rep</span>(numSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-73" data-line-number="73">                         <span class="dt">tipoSessao =</span> <span class="kw">rep</span>(tipoSessao, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-74" data-line-number="74">                         <span class="dt">codigoFase =</span> <span class="kw">rep</span>(codigoFase, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-75" data-line-number="75">                         <span class="dt">descricaoFase =</span> <span class="kw">rep</span>(descricaoFase, <span class="kw">length</span>(nomeOrador)),</a>
-<a class="sourceLine" id="cb8-76" data-line-number="76">                         <span class="dt">numInsercao =</span> numInsercao,</a>
-<a class="sourceLine" id="cb8-77" data-line-number="77">                         <span class="dt">numQuarto =</span> numQuarto,</a>
-<a class="sourceLine" id="cb8-78" data-line-number="78">                         <span class="dt">hora =</span> hora,</a>
-<a class="sourceLine" id="cb8-79" data-line-number="79">                         <span class="dt">numOrador =</span> numOrador,</a>
-<a class="sourceLine" id="cb8-80" data-line-number="80">                         <span class="dt">nomeOrador =</span> nomeOrador,</a>
-<a class="sourceLine" id="cb8-81" data-line-number="81">                         <span class="dt">uf =</span> uf,</a>
-<a class="sourceLine" id="cb8-82" data-line-number="82">                         <span class="dt">partido =</span> partido, </a>
-<a class="sourceLine" id="cb8-83" data-line-number="83">                         <span class="dt">indexacao =</span> indexacao,</a>
-<a class="sourceLine" id="cb8-84" data-line-number="84">                         <span class="dt">sumario =</span> sumario)</a>
-<a class="sourceLine" id="cb8-85" data-line-number="85">    </a>
-<a class="sourceLine" id="cb8-86" data-line-number="86">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
-<a class="sourceLine" id="cb8-87" data-line-number="87">  }</a></code></pre></div>
+interativa, usando a função <code>for</code>, alocamos os campos desejados num objeto <code>data.frame</code><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="co"># analisa um arquivo XML ou HTML e gera uma estrutura no R.</span></a>
+<a class="sourceLine" id="cb134-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>) </a>
+<a class="sourceLine" id="cb134-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb134-4" data-line-number="4"><span class="co"># transforma um XML nó em lista. Importante pois permite você reconhecer o caminho para obtenção dos dados. Exemplo: &quot;$sessao$fasesSessao$faseSessao$discursos$discurso$sumario&quot;</span></a>
+<a class="sourceLine" id="cb134-5" data-line-number="5">ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data) </a>
+<a class="sourceLine" id="cb134-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb134-7" data-line-number="7"><span class="co"># data frame que recebera dados dos pronunciamentos</span></a>
+<a class="sourceLine" id="cb134-8" data-line-number="8">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  </a>
+<a class="sourceLine" id="cb134-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb134-10" data-line-number="10"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(ls)){</a>
+<a class="sourceLine" id="cb134-11" data-line-number="11">    <span class="co"># obtendo quantidade de pronunciamentos de uma respectiva sessao</span></a>
+<a class="sourceLine" id="cb134-12" data-line-number="12">    quantPronunciamentos &lt;-<span class="st"> </span><span class="kw">length</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos)</a>
+<a class="sourceLine" id="cb134-13" data-line-number="13">    </a>
+<a class="sourceLine" id="cb134-14" data-line-number="14">    sumario &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-15" data-line-number="15">    numInsercao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-16" data-line-number="16">    numQuarto &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-17" data-line-number="17">    indexacao &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-18" data-line-number="18">    hora &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-19" data-line-number="19">    uf &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-20" data-line-number="20">    numOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-21" data-line-number="21">    nomeOrador &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-22" data-line-number="22">    partido &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;character&quot;</span>)</a>
+<a class="sourceLine" id="cb134-23" data-line-number="23">    </a>
+<a class="sourceLine" id="cb134-24" data-line-number="24">    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>quantPronunciamentos){</a>
+<a class="sourceLine" id="cb134-25" data-line-number="25">      <span class="co"># obtendo todos os dados do pronunciamento</span></a>
+<a class="sourceLine" id="cb134-26" data-line-number="26">      <span class="co"># sumario</span></a>
+<a class="sourceLine" id="cb134-27" data-line-number="27">      sumario[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-28" data-line-number="28"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>sumario)</a>
+<a class="sourceLine" id="cb134-29" data-line-number="29">      <span class="co"># insercao</span></a>
+<a class="sourceLine" id="cb134-30" data-line-number="30">      numInsercao[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-31" data-line-number="31"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroInsercao)</a>
+<a class="sourceLine" id="cb134-32" data-line-number="32">      <span class="co"># quarto</span></a>
+<a class="sourceLine" id="cb134-33" data-line-number="33">      numQuarto[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-34" data-line-number="34"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>numeroQuarto)</a>
+<a class="sourceLine" id="cb134-35" data-line-number="35">      <span class="co"># indexacao</span></a>
+<a class="sourceLine" id="cb134-36" data-line-number="36">      indexacao[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-37" data-line-number="37"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>txtIndexacao)</a>
+<a class="sourceLine" id="cb134-38" data-line-number="38">      <span class="co"># hora</span></a>
+<a class="sourceLine" id="cb134-39" data-line-number="39">      hora[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-40" data-line-number="40"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>horaInicioDiscurso)</a>
+<a class="sourceLine" id="cb134-41" data-line-number="41">      <span class="co"># uf orador</span></a>
+<a class="sourceLine" id="cb134-42" data-line-number="42">      uf[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-43" data-line-number="43"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>uf)</a>
+<a class="sourceLine" id="cb134-44" data-line-number="44">      <span class="co"># numero orador</span></a>
+<a class="sourceLine" id="cb134-45" data-line-number="45">      numOrador[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-46" data-line-number="46"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>numero)</a>
+<a class="sourceLine" id="cb134-47" data-line-number="47">      <span class="co"># nome orador</span></a>
+<a class="sourceLine" id="cb134-48" data-line-number="48">      nomeOrador[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-49" data-line-number="49"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>nome)</a>
+<a class="sourceLine" id="cb134-50" data-line-number="50">      <span class="co"># partido orador</span></a>
+<a class="sourceLine" id="cb134-51" data-line-number="51">      partido[j] &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb134-52" data-line-number="52"><span class="st">        </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>discursos[[j]]<span class="op">$</span>orador<span class="op">$</span>partido)</a>
+<a class="sourceLine" id="cb134-53" data-line-number="53">    }</a>
+<a class="sourceLine" id="cb134-54" data-line-number="54">    </a>
+<a class="sourceLine" id="cb134-55" data-line-number="55">    <span class="co"># obtendo todos os dados da fase</span></a>
+<a class="sourceLine" id="cb134-56" data-line-number="56">    <span class="co"># codigo</span></a>
+<a class="sourceLine" id="cb134-57" data-line-number="57">    codigoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>codigo)</a>
+<a class="sourceLine" id="cb134-58" data-line-number="58">    <span class="co"># descricao</span></a>
+<a class="sourceLine" id="cb134-59" data-line-number="59">    descricaoFase &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>fasesSessao<span class="op">$</span>faseSessao<span class="op">$</span>descricao)</a>
+<a class="sourceLine" id="cb134-60" data-line-number="60">    <span class="co"># obtendo todos os dados da sessao</span></a>
+<a class="sourceLine" id="cb134-61" data-line-number="61">    <span class="co"># codigo</span></a>
+<a class="sourceLine" id="cb134-62" data-line-number="62">    codigoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>codigo)</a>
+<a class="sourceLine" id="cb134-63" data-line-number="63">    <span class="co"># data</span></a>
+<a class="sourceLine" id="cb134-64" data-line-number="64">    dataSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>data)</a>
+<a class="sourceLine" id="cb134-65" data-line-number="65">    <span class="co"># numero</span></a>
+<a class="sourceLine" id="cb134-66" data-line-number="66">    numSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>numero)</a>
+<a class="sourceLine" id="cb134-67" data-line-number="67">    <span class="co"># tipo</span></a>
+<a class="sourceLine" id="cb134-68" data-line-number="68">    tipoSessao &lt;-<span class="st"> </span><span class="kw">str_trim</span>(ls[i]<span class="op">$</span>sessao<span class="op">$</span>tipo)</a>
+<a class="sourceLine" id="cb134-69" data-line-number="69">    </a>
+<a class="sourceLine" id="cb134-70" data-line-number="70">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">codigoSessao =</span> <span class="kw">rep</span>(codigoSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-71" data-line-number="71">                         <span class="dt">dataSessao =</span> <span class="kw">rep</span>(dataSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-72" data-line-number="72">                         <span class="dt">numSessao =</span> <span class="kw">rep</span>(numSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-73" data-line-number="73">                         <span class="dt">tipoSessao =</span> <span class="kw">rep</span>(tipoSessao, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-74" data-line-number="74">                         <span class="dt">codigoFase =</span> <span class="kw">rep</span>(codigoFase, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-75" data-line-number="75">                         <span class="dt">descricaoFase =</span> <span class="kw">rep</span>(descricaoFase, <span class="kw">length</span>(nomeOrador)),</a>
+<a class="sourceLine" id="cb134-76" data-line-number="76">                         <span class="dt">numInsercao =</span> numInsercao,</a>
+<a class="sourceLine" id="cb134-77" data-line-number="77">                         <span class="dt">numQuarto =</span> numQuarto,</a>
+<a class="sourceLine" id="cb134-78" data-line-number="78">                         <span class="dt">hora =</span> hora,</a>
+<a class="sourceLine" id="cb134-79" data-line-number="79">                         <span class="dt">numOrador =</span> numOrador,</a>
+<a class="sourceLine" id="cb134-80" data-line-number="80">                         <span class="dt">nomeOrador =</span> nomeOrador,</a>
+<a class="sourceLine" id="cb134-81" data-line-number="81">                         <span class="dt">uf =</span> uf,</a>
+<a class="sourceLine" id="cb134-82" data-line-number="82">                         <span class="dt">partido =</span> partido, </a>
+<a class="sourceLine" id="cb134-83" data-line-number="83">                         <span class="dt">indexacao =</span> indexacao,</a>
+<a class="sourceLine" id="cb134-84" data-line-number="84">                         <span class="dt">sumario =</span> sumario)</a>
+<a class="sourceLine" id="cb134-85" data-line-number="85">    </a>
+<a class="sourceLine" id="cb134-86" data-line-number="86">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
+<a class="sourceLine" id="cb134-87" data-line-number="87">  }</a></code></pre></div>
 <p>Com o objeto <code>bd</code> acima, concluímos a primeira subetapa e podemos seguir para a segunda.</p>
 </div>
 <div id="b-obter-o-conteúdo-dos-discursos-inteiror-teor." class="section level3">
 <h3><span class="header-section-number">5.3.3</span> b) obter o conteúdo dos discursos (inteiror teor).**</h3>
 <p>Importante ressaltar que essa etapa só é possível tendo realizado o método acima de <code>ListarDiscursosPlenário</code>, devido exigência do próprio WebService.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">bdDados &lt;-<span class="st"> </span>bd</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  <span class="co"># data frame que recebera os pronunciamentos</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">  </a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bdDados)[<span class="dv">1</span>]){</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6">    link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/SitCamaraWS/SessoesReunioes.asmx/obterInteiroTeorDiscursosPlenario?&quot;</span>,</a>
-<a class="sourceLine" id="cb9-7" data-line-number="7">                  <span class="st">&quot;codSessao=&quot;</span>, bdDados<span class="op">$</span>codigoSessao[i],</a>
-<a class="sourceLine" id="cb9-8" data-line-number="8">                  <span class="st">&quot;&amp;numOrador=&quot;</span>, bdDados<span class="op">$</span>numOrador[i], </a>
-<a class="sourceLine" id="cb9-9" data-line-number="9">                  <span class="st">&quot;&amp;numQuarto=&quot;</span>, bdDados<span class="op">$</span>numQuarto[i],</a>
-<a class="sourceLine" id="cb9-10" data-line-number="10">                  <span class="st">&quot;&amp;numInsercao=&quot;</span>, bdDados<span class="op">$</span>numInsercao[i],</a>
-<a class="sourceLine" id="cb9-11" data-line-number="11">                  <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a>
-<a class="sourceLine" id="cb9-12" data-line-number="12">    <span class="kw">print</span>(link)</a>
-<a class="sourceLine" id="cb9-13" data-line-number="13">    response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a>
-<a class="sourceLine" id="cb9-14" data-line-number="14">    data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</a>
-<a class="sourceLine" id="cb9-15" data-line-number="15">    ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data)</a>
-<a class="sourceLine" id="cb9-16" data-line-number="16">    </a>
-<a class="sourceLine" id="cb9-17" data-line-number="17">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nome =</span> ls<span class="op">$</span>nome,</a>
-<a class="sourceLine" id="cb9-18" data-line-number="18">                         <span class="dt">partido =</span> ls<span class="op">$</span>partido,</a>
-<a class="sourceLine" id="cb9-19" data-line-number="19">                         <span class="dt">uf =</span> ls<span class="op">$</span>uf,</a>
-<a class="sourceLine" id="cb9-20" data-line-number="20">                         <span class="dt">horaInicioDiscurso =</span> ls<span class="op">$</span>horaInicioDiscurso,</a>
-<a class="sourceLine" id="cb9-21" data-line-number="21">                         <span class="dt">discursoRTFBase64 =</span> ls<span class="op">$</span>discursoRTFBase64)</a>
-<a class="sourceLine" id="cb9-22" data-line-number="22">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
-<a class="sourceLine" id="cb9-23" data-line-number="23">    <span class="kw">Sys.sleep</span>(.<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb9-24" data-line-number="24">  }</a></code></pre></div>
-<p>Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato
-RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para
-possibilitar sua leitura:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">bd<span class="op">$</span>discursoRTFBase64 &lt;-<span class="st"> </span><span class="kw">as.character</span>(bd<span class="op">$</span>discursoRTFBase64)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">bd<span class="op">$</span>discursoPlainTxt &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;character&quot;</span>, </a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">                                           <span class="dt">length =</span> <span class="kw">dim</span>(bd)[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bd)[<span class="dv">1</span>]){</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">  bd<span class="op">$</span>discursoPlainTxt[i] &lt;-<span class="st"> </span><span class="kw">decode_rtf</span>(bd<span class="op">$</span>discursoRTFBase64[i])</a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">  <span class="kw">print</span>( bd<span class="op">$</span>discursoPlainTxt)</a>
-<a class="sourceLine" id="cb10-9" data-line-number="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">bdDados &lt;-<span class="st"> </span>bd</a>
+<a class="sourceLine" id="cb135-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb135-3" data-line-number="3">bd &lt;-<span class="st"> </span><span class="kw">data.frame</span>()  <span class="co"># data frame que recebera os pronunciamentos</span></a>
+<a class="sourceLine" id="cb135-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb135-5" data-line-number="5"><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bdDados)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb135-6" data-line-number="6">    link &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;https://www.camara.leg.br/SitCamaraWS/SessoesReunioes.asmx/obterInteiroTeorDiscursosPlenario?&quot;</span>,</a>
+<a class="sourceLine" id="cb135-7" data-line-number="7">                  <span class="st">&quot;codSessao=&quot;</span>, bdDados<span class="op">$</span>codigoSessao[i],</a>
+<a class="sourceLine" id="cb135-8" data-line-number="8">                  <span class="st">&quot;&amp;numOrador=&quot;</span>, bdDados<span class="op">$</span>numOrador[i], </a>
+<a class="sourceLine" id="cb135-9" data-line-number="9">                  <span class="st">&quot;&amp;numQuarto=&quot;</span>, bdDados<span class="op">$</span>numQuarto[i],</a>
+<a class="sourceLine" id="cb135-10" data-line-number="10">                  <span class="st">&quot;&amp;numInsercao=&quot;</span>, bdDados<span class="op">$</span>numInsercao[i],</a>
+<a class="sourceLine" id="cb135-11" data-line-number="11">                  <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb135-12" data-line-number="12">    <span class="kw">print</span>(link)</a>
+<a class="sourceLine" id="cb135-13" data-line-number="13">    response &lt;-<span class="st"> </span><span class="kw">GET</span>(link)</a>
+<a class="sourceLine" id="cb135-14" data-line-number="14">    data &lt;-<span class="st"> </span><span class="kw">xmlParse</span>(response, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</a>
+<a class="sourceLine" id="cb135-15" data-line-number="15">    ls &lt;-<span class="st"> </span><span class="kw">xmlToList</span>(data)</a>
+<a class="sourceLine" id="cb135-16" data-line-number="16">    </a>
+<a class="sourceLine" id="cb135-17" data-line-number="17">    bdTemp &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nome =</span> ls<span class="op">$</span>nome,</a>
+<a class="sourceLine" id="cb135-18" data-line-number="18">                         <span class="dt">partido =</span> ls<span class="op">$</span>partido,</a>
+<a class="sourceLine" id="cb135-19" data-line-number="19">                         <span class="dt">uf =</span> ls<span class="op">$</span>uf,</a>
+<a class="sourceLine" id="cb135-20" data-line-number="20">                         <span class="dt">horaInicioDiscurso =</span> ls<span class="op">$</span>horaInicioDiscurso,</a>
+<a class="sourceLine" id="cb135-21" data-line-number="21">                         <span class="dt">discursoRTFBase64 =</span> ls<span class="op">$</span>discursoRTFBase64)</a>
+<a class="sourceLine" id="cb135-22" data-line-number="22">    bd &lt;-<span class="st"> </span><span class="kw">rbind</span>(bd, bdTemp)</a>
+<a class="sourceLine" id="cb135-23" data-line-number="23">    <span class="kw">Sys.sleep</span>(.<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb135-24" data-line-number="24">  }</a></code></pre></div>
+<p>Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para possibilitar sua leitura. Para tal vamos utilizar o pacote <code>txt4cs</code> que possui a função <code>decode_rtfPTBRA</code>.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;davi-moreira/txt4cs-pkg&quot;</span>, <span class="dt">force =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb136-2" data-line-number="2"><span class="kw">library</span>(txt4cs)</a>
+<a class="sourceLine" id="cb136-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb136-4" data-line-number="4">bd<span class="op">$</span>discursoRTFBase64 &lt;-<span class="st"> </span><span class="kw">as.character</span>(bd<span class="op">$</span>discursoRTFBase64)</a>
+<a class="sourceLine" id="cb136-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb136-6" data-line-number="6">bd<span class="op">$</span>discursoPlainTxt &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;character&quot;</span>, </a>
+<a class="sourceLine" id="cb136-7" data-line-number="7">                                           <span class="dt">length =</span> <span class="kw">dim</span>(bd)[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb136-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb136-9" data-line-number="9"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(bd)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb136-10" data-line-number="10">  bd<span class="op">$</span>discursoPlainTxt[i] &lt;-<span class="st"> </span><span class="kw">decode_rtfPTBRA</span>(bd<span class="op">$</span>discursoRTFBase64[i])</a>
+<a class="sourceLine" id="cb136-11" data-line-number="11"><span class="co">#  print( bd$discursoPlainTxt)</span></a>
+<a class="sourceLine" id="cb136-12" data-line-number="12">}</a></code></pre></div>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+nome
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+partido
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+uf
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+discursoPlainTxt
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+EFRAIM MORAIS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PFL
+</td>
+<td style="text-align:left;">
+PB
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Efraim Moraes) - Nos termos do 3 do art. 60 da Constituição Federal, declaro promulgada a Emenda Constitucional n 32, de 2001. (Palmas.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EFRAIM MORAIS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PFL
+</td>
+<td style="text-align:left;">
+PB
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Efraim Morais) Nobre Deputado, tratando-se de sessão solene, não serão admitidas questões de ordem. Pedimos a compreensão de V.Exa., que tem conhecimento do teor do art. 56 do Regimento Interno. Queremos conduzir a sessão dentro do que estabelece o Regimento. Comunico a V.Exa. que já se encontra marcada sessão do Congresso Nacional para amanhã, às 14h, quando V.Exa. terá oportunidade de formular sua questão de ordem.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIRO TEIXEIRA
+</td>
+<td style="text-align:left;">
+PDT
+</td>
+<td style="text-align:left;">
+RJ
+</td>
+<td style="text-align:left;">
+O SR. MIRO TEIXEIRA (PDT-RJ) Não formularei questão de ordem. Apenas sugiro a V.Exa. que marque sucessivas sessões do Congresso Nacional para que possamos cumprir o que dispõe o art. 2 da Emenda a ser promulgada nesta sessão solene, ou seja, votar as medidas provisórias editadas até agora. Lamento a atitude da Mesa de retirar o som dos microfones do plenário. O Parlamentar, no exercício do seu mandato, é responsável por levar suas questões à Mesa e deve ouvir o que o Presidente diz, como eu ouço V.Exa. agora e me resigno. Agradeço a atenção, mas sem tirar o som dos microfones do plenário, porque é nosso direito pedir a palavra.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AÉCIO NEVES
+</td>
+<td style="text-align:left;">
+PSDB
+</td>
+<td style="text-align:left;">
+MG
+</td>
+<td style="text-align:left;">
+O SR. AÉCIO NEVES (PSDB-MG. Sem revisão do orador.) Exmo. Sr. Deputado Efraim Morais, ilustre Presidente em exercício do Congresso Nacional; Exmo. Sr. Senador Edison Lobão, Presidente do Senado Federal; Exmo. Sr. Deputado e Ministro Aloysio Nunes Ferreira, representando o Exmo. Sr. Presidente da República Fernando Henrique Cardoso; Exmo. Dr. Paulo da Costa Leite, ilustre Presidente do Superior Tribunal de Justiça e hoje representando o Poder Judiciário; excelentíssimos senhores membros das Mesas Diretoras do Senado Federal e da Câmara dos Deputados, Srs. Líderes partidários, Sras. e Srs. Parlamentares, autoridades convidadas a esta solenidade, o ilustre Presidente do Senado há pouco nos brindou com o histórico das medidas provisórias no Parlamento brasileiro desde sua origem no Estado Novo, quando fechou a Constituição e estabeleceu a possibilidade de o Presidente da República legislar por decretos-leis, instrumento que foi extinto com a Constituinte de 1946, mas que depois retornou no ciclo dos governos militares. É desnecessário que eu faça outro histórico parecido. Pretendo apenas dizer aos meus pares da Câmara dos Deputados e do Senado Federal que hoje é um dia histórico não apenas para o Parlamento brasileiro mas também para a democracia. Não tenho dúvidas de que ao promulgarmos hoje essa Emenda à Constituição resgatamos a essência do Poder Legislativo: a capacidade de iniciativa para legislar. Com a participação de cada um dos Líderes partidários, de todos os partidos sem exceção, produzimos enorme entendimento para o qual foi absolutamente fundamental e de público fica este meu registro a compreensão do Poder Executivo, na pessoa do Deputado e hoje Ministro Aloysio Nunes Ferreira, dos Líderes nesta Casa, Deputado Arnaldo Madeira e Arthur Virgílio; elaboramos um texto que possibilitará, a partir de agora e nos próximos anos, o reequilíbrio institucional neste País. Não interessa a nenhum governo circunstancial um Parlamento frágil. Construímos, através das negociações que nos levaram ao texto ora promulgado, uma proposta de equilíbrio, em que o Parlamento reassegura esta que é sua ação prioritária e primária e, ao mesmo tempo, em que o Poder Executivo não se vê maneteado, tolhido de instrumentos absolutamente essenciais ao enfrentamento de crises que possam vir. Portanto, no momento em que este plenário é cenário da sanção deste projeto, sem sombra de dúvidas é um dos grandes momentos vividos por esta Casa. Se alguns ainda não perceberam a dimensão e a profundidade do que estamos vivendo neste instante, certamente o tempo e a história haverão de ser pedagógicos e mostrar que a partir desta terça-feira inicia-se o tempo de uma nova relação de independência, de altivez e, sobretudo, de equilíbrio entre os Poderes. Por isso, é absolutamente fundamental, além da presença do Ministro Aloysio Nunes, um dos que, na qualidade de Deputado, participaram do início das discussões sobre esse texto, a presença do digno representante do Poder Judiciário brasileiro, Ministro Costa Leite, que dizia esta semana considerar o Parlamento o pulmão da democracia. Pois bem, Sr. Presidente. A democracia passa a respirar melhor a partir de hoje, renovada não apenas em suas regras institucionais, mas certamente também no seu espírito, na sua determinação de possibilitar que este País continue avançando, respeitando o equilíbrio institucional, mas cada um fazendo sua parte: Judiciário, Legislativo e Executivo, repito, com autonomia e independência, construindo um País mais justo, mais solidário. Era este o registro que gostaria de fazer nesta singela sessão, mas que tenho a certeza traz um componente de extrema relevância para cada um daqueles que optou na vida pelo exercício da atividade Parlamentar, certamente a mais importante de todas aquelas exercidas na democracia. Não poderia, no momento em que ocupo pela primeira vez a tribuna desta Casa, após os acontecimentos que hoje tomaram conta do mundo, de forma muito simples, mas muito clara, deixar de dizer algumas palavras em nome dos meus pares e daqueles que aqui julgamos representar. Em nome, portanto, da Câmara dos Deputados e dos cidadãos que seus membros representam, expresso, desta tribuna, meu profundo pesar pelos atos de terrorismo ocorridos em Nova York. Enquanto seus autores não forem conhecidos no país, não poderemos atribuir responsabilidade política ou ideológica a ninguém, mas podemos condenar com veemência o apelo à loucura; o uso de meios e métodos que atingem pessoas inocentes e desarmadas. Os episódios mostram, no entanto, que os homens simples do mundo reclamam lucidez de seus dirigentes e pedem tolerância. Para que tenhamos paz, temos de ser tolerantes com os que pensam diferentes de nós; os que acreditam em outros deuses; os que desejam outra forma de convívio social que lhes pareça melhor. Estamos solidários com os feridos e com a família dos que morreram e pedimos a Deus que nos dê a paz de que tanto necessitamos. Muito obrigado. (Palmas.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EFRAIM MORAIS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PFL
+</td>
+<td style="text-align:left;">
+PB
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Efraim Moraes) Exmo. Sr. Deputado Aloysio Nunes Ferreira, Ministro-Chefe da Secretaria-Geral da Presidência da República; Exmo. Sr. Ministro Paulo da Costa Leite, Presidente do Superior Tribunal de Justiça; Exmo. Sr. Aécio Neves, Presidente da Câmara dos Deputados, Sras. e Srs. Senadores, Sras. e Srs. Deputados, estamos agora reunidos em sessão solene para celebrar um momento importante para nossas instituições. Todavia, antes de qualquer referência ao motivo que nos reúne, não há como deixar de invocar o grave momento por que passa o mundo civilizado. A palavra que posso trazer, em nome do Congresso Nacional, é de solidariedade às famílias das vítimas dos infaustos acontecimentos nos Estados Unidos no dia de hoje. Gostaria de lamentar também a escalada de violência da qual é acometida boa parte do mundo nos últimos tempos. São homens, mulheres e crianças inocentes sacrificados no altar da insensatez. Rogo a Deus que dê discernimento aos governantes para que achem o reto caminho que conduza à prevalência da civilização sobre a barbárie. Sras. e Srs. Senadores, Sras. e Srs. Deputados, hoje o Brasil escreve mais um capítulo de sua rica história política. A promulgação da Emenda à Constituição que limita a edição de medidas provisórias devolve ao Congresso sua plena soberania. A promulgação desta emenda restitui ao Poder Legislativo brasileiro prerrogativas que a prática da governança no País foi aos poucos corroendo. Os Constituintes, em sua sabedoria coletiva, não desejavam privar de energia e expediência o Poder Executivo nacional. Sabiam, à época, da necessidade de assegurar ao Chefe do Executivo um processo decisório ágil e livre de obstáculos, sobretudo, com relação a assuntos de “urgência e alta relevância” para a Nação. A medida provisória constituiu um instrumento, por excelência, para o cumprimento desse propósito. Afinal, são medidas que entram em vigor imediatamente, ficando a deliberação parlamentar sobre o aperfeiçoamento de seu conteúdo para momento posterior. A experiência brasileira com as medidas provisórias não constitui uma anomalia, quando comparada à experiência de outras democracias. Trata-se de um tipo de delegação comum a vários países, em especial aos que optaram pelo sistema presidencialista de governo. Nos Estados Unidos, por exemplo, as “ordens executivas” são proposições originárias da Presidência da República e têm caráter semelhante às nossas medidas provisórias. Lá, como aqui, também preocupam a sociedade não só pelo seu grande número de edições, mas principalmente pela ameaça que representam para a integridade do processo legislativo e do sistema representativo. Bill Clinton, por exemplo, editou em seu governo nada menos que 55 medidas por ano. Kennedy, por sua vez, editou a média de 76 a cada ano que ocupou a Casa Branca. No Brasil, o uso da medida provisória por sucessivos presidentes desde a promulgação da Constituição de 1988 revelou-se problemático. O instrumento emergencial aprovado pelos Constituintes ganhou tamanha relevância em nosso País que, de certa forma, tornou-se uma sutil ameaça ao nosso processo legiferante. Na realidade, o que foi concebido para ser provisório passou a ser permanente, com todas as conseq inerentes a tal permanência. Desde sua introdução em nosso ordenamento jurídico, o emprego excessivo das medidas provisórias só tem aumentado. O Presidente José Sarney utilizou o dispositivo 147 vezes, Collor usou-o 160 vezes, e Itamar Franco empregou-o 505 vezes. O Presidente Fernando Henrique Cardoso, até por força de reedições herdadas de governos anteriores, multiplicou o uso da medida provisória geometricamente. Em seu primeiro mandato, entre edições e reedições, a medida provisória foi usada nada menos que 2.609 vezes. Até a semana passada, seu segundo Governo já havia lançado mão desse instrumento 2.677 vezes. As reedições apresentam-se como deturpação adicional ao emprego da medida provisória para legislar no País, consagrando a perenidade daquilo que foi criado para ser estritamente provisório. A medida provisória que estabeleceu mecanismos para incentivar a privatização de bancos estaduais, por exemplo, foi reeditada 69 vezes. A que alterou o Código Florestal e as normas de cobrança do Imposto Territorial Rural chegou a ser reeditada 66 vezes. As conseq do uso excessivo de tal dispositivo podem ser observadas tanto no âmbito do Poder Judiciário quanto na esfera legislativa. Como bem enunciaram o Ministro Marco Aurélio, do Supremo Tribunal Federal, e outras autoridades do Judiciário, as medidas provisórias geram grande instabilidade normativa. Os juízes são freq surpreendidos com medidas provisórias que alteram profundamente as regras normativas nos mais variados setores da economia e da sociedade. Por sua vez, os Congressistas tinham sua pauta de trabalho abarrotado por uma avalanche de medidas provisórias que, não podendo ser apreciadas dentro do prazo de 30 dias, acabavam gerando reedições e mais reedições. Tal avalanche foi também responsável por efeito eminentemente perverso para os Parlamentares, pois esses perdiam até mesmo o direito de estabelecer agenda própria e de propor políticas alternativas, ficando a reboque do que era apresentado pelo Poder Executivo. A Emenda Constitucional que hoje promulgamos não teve por objetivo tolher o Poder Executivo de sua prerrogativa de governar. Ao contrário, o que as duas Casas deste Congresso procuraram fazer foi aperfeiçoar o instrumento da medida provisória, bem como seu papel na formulação e implementação de políticas públicas. Acaba-se a reedição indefinida das medidas. A partir de hoje, a validade da medida provisória é de sessenta dias prorrogáveis. Se a medida provisória não for apreciada em 45 dias, a matéria entrará em regime de urgência, ficando a Câmara e o Senado obrigados a apreciá-la, sob pena de ficarem proibidos de votar qualquer outro projeto. Tornamos expressas vedações que eram apenas implícitas, tais como a proibição de medida provisória sobre matéria de lei complementar, sobre matéria de lei insuscetível de delegação e sobre matéria de lei ordinária que concretize garantias fundamentais. Mais importante, talvez, seja observar que a emenda que hoje promulgamos dá ao Congresso grande parcela de responsabilidade pelas decisões públicas encerradas nas medidas provisórias. Assumimos o ônus político de votar tais medidas de imediato. Sras. e Srs. Senadores, Sras. e Srs. Deputados, esta emenda representa seis anos de tramitação entre nossas duas Casas. Pode até não ser a melhor alternativa para regulamentar dispositivo tão polêmico quanto necessário para a governabilidade do País. Entretanto, trata-se, sem dúvida, da alternativa possível no momento. Trata-se de fruto do consenso político, resultado de vasta deliberação e trabalho parlamentar. Com ela, ganham todos os Poderes da União. O Executivo continua a ter instrumentos para governar, o Judiciário passa a contar com maior estabilidade normativa e o Legislativo viabiliza para si papel positivo no processo decisório nacional. Não tenho dúvidas, pois, Srs. Senadores e Srs. Deputados, de que esta emenda constitui uma conquista de todos. Com ela, apuramos um pouco mais nosso processo legislativo e caminhamos, a passos largos, no sentido de fortalecer nossa democracia. Muito obrigado. ( Palmas. )
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WELLINGTON DIAS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PT
+</td>
+<td style="text-align:left;">
+PI
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Wellington Dias) - A presente sessão solene destina-se a homenagear os 176 anos de fundação do Diário de Pernambuco . Autor: Deputado Marcos de Jesus. Convidamos para compor a Mesa o Sr. Joesil Barros, Vice-Presidente do Diário de Pernambuco e o Sr. Paulo Cabral de Araújo, Presidente dos Diários Associados e do Diário de Pernambuco .
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WELLINGTON DIAS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PT
+</td>
+<td style="text-align:left;">
+PI
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Wellington Dias) - Cento e setenta e seis anos de vida. Essa é a celebração que nos une em torno do Diário de Pernambuco , veículo de comunicação que muito orgulha não somente o povo daquele Estado, mas toda a Nação. Afinal, são quase dois séculos de experiência a serviço da propagação da informação de maneira independente e fidedigna. É tradição nesta Casa a celebração do aniversário daquele que é um dos mais importantes e respeitados órgãos de imprensa do País. Entre muitos títulos, detém o de mais antigo jornal do Brasil e da América Latina, além de ser a mais antiga publicação do gênero em língua portuguesa em todo o mundo. Sua notável capacidade transcendeu o âmbito regional, onde exerce liderança inconteste, para, reconhecidamente, figurar entre os mais modernos jornais brasileiros. Desde sua fundação, em 1825, tem-se mantido fiel ao ideário democrático e à perfeita sintonia entre a evolução das idéias e a modernização tecnológica. Por isso, hoje, detém as mais bem equipadas instalações gráficas da região, sem, contudo, permitir-se contaminar pela tentação do sensacionalismo ou do alinhamento a interesses oligárquicos. Sras. e Srs. Deputados, ninguém é lembrado pela posteridade sem que seu esforço em mudar a História tenha passado pelo trabalho incansável e pela persecução de um elevado ideal. A Antonino José de Miranda Falcão, ilustre figura cuja marca indelével encontra-se aposta na memória do Diário de Pernambuco por ser seu fundador, sobravam pioneirismo, ampla visão de futuro e firmeza de caráter, que se têm traduzido, ainda hoje, em eficiência e sucesso. Batizado inicialmente Diário de Anúncios , que circulava com quatro páginas, publicando simples reclames de interesse da comunidade de Recife o Município então ainda nem era a capital do Estado , o Diário de Pernambuco dedicou-se a acompanhar os fatos de repercussão nacional e internacional e, atualmente, constitui acervo inestimável no que tange à documentação, divulgação e análise da história brasileira. Sabe-se que a rotina para manter a circulação diária de um periódico envolve desde a disponibilização de recursos financeiros até a captação de pessoal qualificado, passando, evidentemente, pelo enfrentamento de intempéries políticas, sociais e econômicas. Nos tempos atuais de disseminação instantânea da informação, a multiplicidade de eventos tende a exercer grande pressão sobre a mídia. Felizmente, a ela o jornal que ora homenageamos tem respondido com o firme propósito de informar sem deformar, informar sempre e da maneira mais detalhada. No organismo social, tanto quanto no corpo humano, opera o princípio comum de que a contribuição fiel de cada órgão é indispensável para o bem-estar do todo. Sob esse enfoque, temos absoluta convicção de que o Diário de Pernambuco honra, e sempre honrará, o compromisso essencial que firmou com as liberdades de pensamento e de expressão, valores vitais para a manutenção do Estado democrático de Direito. Dessa forma, saudamos a todos que fazem o Diário de Pernambuco.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARCOS DE JESUS
+</td>
+<td style="text-align:left;">
+PL
+</td>
+<td style="text-align:left;">
+PE
+</td>
+<td style="text-align:left;">
+O SR. MARCOS DE JESUS (PL-PE. Sem revisão do orador.) Sr.~Presidente, Sras. e Srs. Deputados, Dr. Paulo Cabral, Dr. Joesil Barros, povo brasileiro, não apenas porque sou, orgulhosamente e com muita razão, pernambucano solicitei esta sessão de homenagem ao jornal Diário de Pernambuco . Solicitei-a também porque sou brasileiro, latino-americano, neste momento na condição de homem público e político, e amo as liberdades civis. Não há dúvida de que o começo para valer da liberdade dos cidadãos como direito civil e liberdade ou é um direito ou não é deu-se com o advento da descoberta da imprensa por Gutemberg, na Alemanha. No Brasil, foi justamente no Recife, a eterna Capital do norte do País, onde se começou a praticar, glória das glórias, a arte gráfica. Era o ano imaginem de 1706, em plena virada do século XVII. Tão-só para que se compare, no Rio de Janeiro tal atividade apenas veio a começar em meados daquele século, precisamente em 1747, ou seja, várias décadas após. O resultado não poderia ter sido outro. Afora a Gazeta do Rio de Janeiro surgida em 1808, pela vinda da Família Real, e semente da Imprensa Nacional , por tratar-se de imprensa oficial, e ressalvado o Correio Braziliense , de Hipólito José da Costa, por ser periódico editado em Londres, a inapelável conclusão a que se chega é a comprovação histórica de que o decano dos jornais brasileiros é o nosso homenageado e não apenas do Brasil, senão do continente latino-americano. A rigor, o jornal foi a primeira publicação do gênero em idioma português, no mundo cultura recifense a refletir-se na Europa e alhures. O Diário de Pernambuco atravessa com galhardia as três fases heróicas deste País: a inicial, de 1808 a 1880; a da consolidação, de 1881 a 1930; a moderna, de então até hoje. Senhores, a pérola da imprensa pernambucana surge em 7 de novembro de 1825, e já na introdução do seu primeiro número diz a que veio: compras, vendas, leilões, comércio, aluguéis, arrendamentos, viagens, afretamentos, serviços, roubos, perdas, achados, utilidade pública. Em resumo, uma publicação que desde o seu nascimento já procurava com esta tríade pôr-se ao lado do desenvolvimento socioeconômico, embora ainda muito incipiente, mas que certamente já se queria auto-sustentado, no Brasil. Tanto que sua autodenominação à época como Diário de Anúncios não deslustra o admirável trabalho de um Manuel Figueroa, que lhe deu seus primeiros contornos, muito menos a intuição de Antonino José de Miranda Falcão, que lhe estabeleceu os fundamentos ideológicos, a partir de três compromissos fundamentais: a democracia, a verdade, e o desenvolvimento de Pernambuco. Não há democracia com imprensa censurada, onde a mentira impera, nem justiça social em sociedades em que as idéias não se divulgam. Em Pernambuco, no início do século XIX, já se sabia disso. Portanto, não é de estranhar que o Diário de Pernambuco tenha contado, entre seus profissionais, com os sempre lembrados legendários jornalistas da história da imprensa nacional. É o caso de Aníbal Fernandes e sua luta, nos anos 30, pela reconstitucionalização do País, e do mártir pernambucano Demócrito de Souza Filho, cuja campanha contra o Estado Novo levou à tragédia de seu assassinato, em 1945. Nosso homenageado, já se pode dizer, aproxima-se dos dois séculos, o que de nenhum modo é pouco. São duzentos anos de luta. Luta pelo Recife, por Pernambuco, pelo Nordeste, pelo Brasil. Peleja por ideais libertários, batalha pela honestidade na gestão da coisa pública, pela justiça social, enfim, pelo bem-estar do nosso povo. Pertence ao rol raro das instituições que é muito fácil homenagear, simplesmente porque fazem por merecer. Instituições cujos dirigentes, jornalistas e quadro administrativo, dos mais humildes aos mais graduados trabalhadores, tiveram e têm denominador comum em sua conduta profissional de vida: honestidade e espírito de luta, pensando quase que tão-só em uma idéia fixa, que é o leitor e a comunidade a que servem. É, pois, com verdadeiro prazer que temos a honra de parabenizar este órgão da imprensa de elite, que tanto honra o Estado de que representamos, por tantos anos de profícua e contínua existência, por seu ingente trabalho em favor da sociedade a que se dedica e por tanta abnegação na defesa de seus ideais. Longa vida ao nosso jornal! O Brasil, o Nordeste, Pernambuco, o Recife, todos nós, enfim, estamos de parabéns. Sem o Diário de Pernambuco , o Brasil não seria o que é. Sr. Presidente, é com muito orgulho e com muita alegria que fazemos esta homenagem, que demorou a ser autorizada. Agradeço ao Presidente da Casa, Deputado Aécio Neves, e também aos companheiros da Mesa, que, com alegria e determinação, aprovaram a realização desta sessão solene mais do que justa. Gostaria de ler, Sr. Presidente, algumas notícias do exemplar n 1 do Diário de Pernambuco : HOJE SEGUNDA FEIRA 7 DE NOVEMBRO E 311 DIAS DO ANNO DE 1825 . Um dos anúncios diz o seguinte: Quem quizer comprar um escravo official de sapateiro, de nação Calabar, com ponta de barba e bem ladino, sem vicios nem defeito algum e que seu Senhor vende por o dito escravo não querer estar no matto para onde se mudou, falle ao sobredito Angelo Ribeiro na mesma casa das 3 até 5 horas da tarde. Sr. Presidente, quando folheio o Diário de Pernambuco , as primeiras notícias que leio é sobre o que se passou há 150 anos. Depois, leio as notícias de cem anos atrás, começo a ler o que me interessa, em primeiro lugar a página política, e outras coisas mais. Considero muito interessante esses anúncios. O anúncio n 8 diz: Marcelino de Campos Quaresma tem para vender hum escravo de nação Angola, bem feito e alto ainda sem buço, muito possante e fiel: quem o quizer comprar pode entender-se com o sobredito na rua do Cotovello, pouco adiante do becco das Barreiras ou no Cartorio da Fazenda Nacional, onde o mesmo he empregado. O anúncio n 11 é sobre roubos: Em dias do mez passado furtarão do lugar de Beberibe bairro em que morei, Sr. Presidente, por mais de 15 anos, hoje é superpopuloso, na faixa de 70 a 80 mil habitantes huma burrinha castanha com um filho da mesma cor olha que interessante, Sr. Presidente pertencentes a Bartholomeu Francisco de Souza, quem souber alguma noticia de taes animaes ou descobrir onde elles se acham dirija-se ao sobredito na sua botica na rua do Rosario, que lhe dará de premio 16 mil reis. Poderíamos continuar com a moeda réis, que foi o início de tudo. Depois, mudamos, nos diversos planos econômicos, para o Cruzado, o Cruzado Novo, o Cruzeiro Novo e hoje vemos esta esculhambação. A Bíblia diz que devemos dar graças a Deus por tudo, contudo, temos que fazer alguma coisa para melhorar essa situação. O mais interessante, Sr. Presidente, é a fidalguia, a respeitabilidade e a democracia com que o Diário de Pernambuco , nesses 176 anos, tem divulgado as notícias e prestado um relevante serviço às sociedades pernambucana e brasileira. Portanto, é muito importante para Pernambuco esta sessão solene. Por quê? Estamos homenageando o órgão de maior importância nacional, onde trabalham alguns dos melhores jornalistas do Brasil. Pernambuco é o segundo pólo médico da América do Sul, tem alguns dos melhores médicos do Brasil, além dos melhores engenheiros e advogados. Aqui faço referência, entre tantos outros, ao Dr. Artur Carvalho, advogado; ao médico Dr. Jaime Queiroz; aos jornalistas Dr. Joesil Barros, Dra. Divani e tantos outros da imprensa pernambucana. Na verdade, eles não têm medo de falar o que é preciso, ou melhor, não têm medo de escrever o que é preciso escrever, doa a quem doer. O Diário de Pernambuco não se esquiva de dar a notícia, de falar a realidade do País. Isso é muito importante, Sr. Presidente. Vou ler uma última notícia da edição n 1 do jornal Diário de Pernambuco , que, diga-se de passagem, Sr. Presidente, está completo. O anúncio n 12 diz o seguinte: No 1 do corrente na Praça Grãde desta cidade sonegarão hum menino pardo de nome Leonardo, filho de Marcelino dos Santos de Oliveira morador em terras do Monteiro cujos signaes são : ter uma cicatriz na cabeça procedida de huma queimadura, e o dedo minimo da mão direita de menos; quem o descobrir dando parte no Engenho Monteiro ou annunciando-se por este Diario terá grandes Avilçaras. Considero interessante também, Sr. Presidente, a recomendação que o jornal faz. Naquela época, quando os jornais eram entregues e as pessoas não se encontravam em casa, elas se sentiam chateadas porque queriam que o jornal lhes fosse entregue pessoalmente. Em “Avizo” está dito o seguinte: Faz-se saber aos Srs. Assignantes deste Diario que na occazião de lhe ser entregue se as suas portas se acharem feixadas o Diario será metido por baixo das mesmas, porque se torna muito incommodo procurar duas ou trez vezes a qualquer dos Srs. Assignantes para lhes entregar em mão propria dito Diario.&quot; As pessoas estavam interessadas em receber o Diário, mas muitas vezes o jornaleiro não as encontrava em casa. Sr. Presidente, mais uma vez agradeço à Presidência da Casa o carinho com que aprovou a realização desta sessão solene. Falo pelo Partido Liberal de Pernambuco e também em nome do nosso Líder, Valdemar Costa Neto. Gostaria de dizer da nossa profunda admiração pelo trabalho, pela dedicação, pela forma democrática e independente com que o Diário de Pernambuco expressa suas notícias. Sr. Presidente, que Deus abençoe a todos. Muito obrigado. (Palmas.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WELLINGTON DIAS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PT
+</td>
+<td style="text-align:left;">
+PI
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Wellington Dias) - Gostaríamos de registrar a presença dos Srs. Rosalvo de Oliveira, da CONFAMIL, Confederação Nacional dos Integrantes e Beneficiários das Forças Armadas e Forças Auxiliares; do Sr. Ari Cunha, Vice-Presidente do Correio Braziliense ; e Luiz Arrochela, que representa oficialmente o Sr. Emílio Carazzai, Presidente da Caixa Econômica Federal.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VALDECI PAIVA
+</td>
+<td style="text-align:left;">
+PSL
+</td>
+<td style="text-align:left;">
+RJ
+</td>
+<td style="text-align:left;">
+O SR. VALDECI PAIVA (Bloco/PSL-RJ. Sem revisão do orador.) - Sr. Presidente, Sras. e Srs. Deputados, nobre Deputado Marcos de Jesus, autor do requerimento desta sessão solene; integrantes da Mesa; diretores do jornal Diário de Pernambuco; autoridades presentes, minhas senhoras e meus senhores, hoje homenageamos, pelo transcurso do 176 aniversário de fundação, o Diário de Pernambuco que, sem sombra de dúvida, trabalha com vários editoriais: geral, política, Brasil, economia, esportes, informática, artes, turismo, família, dentre outros. Esse leque dá bem a idéia da capacidade de abrangência e participação do Diário de Pernambuco na vida social e da extensão de seu compromisso como órgão de imprensa, fazendo circular informações e conscientizando a população. Como se vê, trata-se de uma grande empresa de comunicação totalmente voltada para o interesse do leitor, do ouvinte, do internauta ou ainda do espectador, pois, como todos sabemos, o Diário de Pernambuco se utiliza de tecnologia de ponta, proporcionando grande agilidade na confecção de notícias, contribuindo tanto para o trabalho do profissional quanto para a satisfação do consumidor. É por isso que nos sentimos tão gratificados com a realização desta sessão solene. Apesar de não ser pernambucano, por muito tempo tive o privilégio de conviver naquele Estado e sinto-me um pouco pernambucano. Com C muito orgulho não poderíamos nos furtar a comemorar esta data, confirmando o papel do jornal Diário de Pernambuco no cotidiano da vida daquele Estado. Nossos cumprimentos ao Presidente, a toda Diretoria, à equipe de jornalistas, aos repórteres, aos fotógrafos, aos diagramadores, enfim a todos que trabalham para manter o Diário de Pernambuco nos elevados patamares de qualidade de produção de notícias e responsabilidade em termos éticos e profissionais. Pedimos a Deus, a quem servimos, ao Sr. Jesus que continue abençoando o trabalho do profissionais do jornal Diário de Pernambuco . Temos grande satisfação em registrar esse discurso homenageando o jornal. Nosso muito obrigado a todos. Que Deus os abençoe! Muito obrigado. ( Palmas.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARCOS DE JESUS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PL
+</td>
+<td style="text-align:left;">
+PE
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Marcos de Jesus) - Antes de chamar o próximo orador queremos anunciar as autoridades que enviaram telegrama e que por compromissos anteriores não puderam comparecer a esta sessão solene em homenagem ao Diário de Pernambuco : Ministro do Meio Ambiente, José Sarney Filho; Ministro da Justiça, José Gregori; Ministro da Fazenda, Pedro Malan; Ministro de Esporte e Turismo, Carlos Melles; Ministro da Agricultura, Pecuária e Abastecimento, Pratini de Moraes; Ministro do Trabalho e Emprego, Francisco Dornelles; Ministro do Desenvolvimento, Indústria e Comércio Exterior, Sérgio Silva do Amaral. Convidamos para tomar assento à Mesa o Sr. Ari Cunha, Vice-Presidente do Correio Braziliense.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WELLINGTON DIAS
+</td>
+<td style="text-align:left;">
+PT
+</td>
+<td style="text-align:left;">
+PI
+</td>
+<td style="text-align:left;">
+O SR. WELLINGTON DIAS (PT-PI. Sem revisão do orador) Sr. Presidente, Deputado Marcos de Jesus, em nome de quem saúdo os demais Parlamentares presentes; Sr. Joesil Barros, Vice-Presidente do jornal Diário de Pernambuco; Sr. Paulo Cabral de Araújo, Presidente dos Diários Associados e do jornal Diário de Pernambuco , demais autoridades presentes, estava inscrito pela bancada do Partido dos Trabalhadores o Deputado pernambucano Fernando Ferro. Infelizmente, S.Exa. não conseguiu chegar a Brasília. Portanto, incumbiu-me da missão de fazer essa saudação pela bancada do Partido dos Trabalhadores. Devo falar da alegria, como brasileiro e nordestino, de participar desta sessão solene em homenagem a um importante jornal. Sabemos que neste País não é fácil trabalhar com liberdade, com independência, especialmente numa área complexa como a das comunicações. Somos ainda um País que sequer conta com um conselho nacional de comunicações. Portanto, há dificuldade na manutenção dos jornais, que são vozes ativas da verdade neste País. Hoje homenageamos o jornal Diário de Pernambuco , aqueles que o dirigem e, com carinho especial, aqueles que fazem seu jornal no dia-a-dia, desde jornalistas competentes que muito orgulham o Brasil, como jornaleiros que, de rua em rua, e não mais de casa em casa, entregam diariamente os jornais, não só na cidade do Recife, mas por todo o País. Levam notícias do Brasil e do mundo, com a confiabilidade de um jornal que tem na sua história, como foi registrado anteriormente, o privilégio de ser o primeiro jornal em língua portuguesa, portanto, um marco simbólico e que nos posiciona em um grau de importância em relação ao mundo. Faço esta saudação a toda a equipe, a todos aqueles que construíram, que fizeram sua parte e a todos aqueles que continuam no batente. Sou da área de comunicação e sei da importância do trabalho e da responsabilidade que temos para com a vida democrática de um País como o Brasil. Seguramente, é com a democratização dos vários pensamentos que chegam às mais diferentes camadas sociais que construímos a democracia. Não temos dúvida do importante papel do Diário de Pernambuco na democracia brasileira, especialmente em uma região que, com certeza, caminha a passos largos na busca de contribuir também com espaços democráticos. E Pernambuco é um dos Estados brasileiros que marcou, em muitos momentos importantes, a História do Brasil, registrada nos canais de comunicação do Diário de Pernambuco . Ao fazer esta saudação pedimos que Deus abençoe toda a equipe, o povo de Pernambuco e que possamos contar sempre com a forma corajosa e competente com que operam o Diário de Pernambuco . Em nome da bancada do Partido dos Trabalhadores rendemos nossas homenagens, deixando registrado o desejo de que possamos ter por mais e mais séculos a presença do Diário de Pernambuco . Muito obrigado. ( Palmas. )
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARCOS DE JESUS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PL
+</td>
+<td style="text-align:left;">
+PE
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Marcos de Jesus) Antes de chamar o próximo orador, registro a mensagem do Sr. Bispo Emerson Oliveira, da Igreja Universal do Reino de Deus, em Pernambuco, que cumprimenta o Diário de Pernambuco pelos relevantes serviços prestados à sociedade pernambucana brasileira.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SALATIEL CARVALHO
+</td>
+<td style="text-align:left;">
+PMDB
+</td>
+<td style="text-align:left;">
+PE
+</td>
+<td style="text-align:left;">
+O SR. SALATIEL CARVALHO (PMDB-PE. Sem revisão do orador.) Sr.~Presidente, Sras. e Srs. Deputados, caros amigos, Dr. Joesil Barros, Dr. Paulo Cabral, representantes do Diários Associados, do Diário de Pernambuco , ilustres jornalistas, demais convidados, reúne-se a Câmara dos Deputados, em sessão solene, para homenagear com todas as honras o Diário de Pernambuco , que, sem dúvida, é um verdadeiro patrimônio da imprensa nacional, pelo seu 176 aniversário de fundação. Apresentando títulos ímpares, como o de mais antigo periódico do Brasil e da América Latina e mais antiga publicação do gênero em língua portuguesa, em todo o mundo, o Diário de Pernambuco deverá sempre ser objeto da mais entusiástica homenagem, por tudo o que significa como parâmetro de dignidade e ética profissional para a imprensa brasileira. Além disso, ao longo desses 176 anos de existência, manteve-se absolutamente afinado com os interesses e a realidade do Nordeste, de cujo povo se vem fazendo autêntico porta-voz. É um longo percurso de participação na história nacional, onde se acumulam episódios de luta em favor da democracia e da liberdade de expressão. Nos diversos momentos em que os valores consagrados pela República ou a primazia da Constituição se viram ameaçados, o Diário de Pernambuco , longe de se deixar intimidar ou cooptar, manteve incondicional independência na produção da notícia, visando informar e esclarecer a opinião pública, em favor da consciência crítica nacional. Fundado em 7 de novembro de 1825, o jornal compilou a maior coleção brasileira de notícias nacionais e internacionais. Acompanhando e participando dos mais importantes acontecimentos nesses últimos dois séculos, mobilizou o talento, a dedicação e a criatividade de sucessivas gerações. Nas diferentes administrações, consolidou uma tradição de exclusivo compromisso com os interesses do leitor, o que lhe vem garantindo, em patamares incomparáveis em termos de Nordeste, índices extraordinários de credibilidade e penetração. Alguns fatos merecem lembrança. Recém-incorporado aos Diários Associados de Assis Chateaubriand, o jornal atuou de forma excepcional no movimento pelo predomínio da Constituição na crise de 1930. No contexto, ressalta a figura de Aníbal Fernandes, à frente do jornal por mais de 40 anos, mantendo intransigentemente sua posição em favor da liberdade e da democracia. Os mesmos valores pautaram a conduta jornalística quando participou do movimento contra o flagelo nazi-fascista, à época da Segunda Guerra Mundial. Como poucos periódicos brasileiros, aliás, manteve-se corajosamente em oposição ao Estado Novo, combatendo todas as arbitrariedades praticadas pelo Governo Vargas. A história não esquece, também, como foi objeto de violenta represália, mediante o covarde assassinato do jornalista Demócrito de Souza Filho, exatamente quando este discursava contra o regime, da sacada do Diário de Pernambuco , para a população então mobilizada. Foi o compromisso, portanto, com a informação livre e confiável que sempre marcou a linha editorial do jornal. Zeloso de seu papel na história, consciente de sua responsabilidade em relação ao leitor, o Diário de Pernambuco construiu uma reputação incomparável na imprensa brasileira, por meio da qual atesta jamais ter sucumbido ao poder econômico, às facilidades do noticiário sensacionalista, às benesses do jogo político. Por essas razões atinge hoje o Diário de Pernambuco um público sempre crescente, que confia na qualidade da informação recebida, mantida por uma linha editorial livre e absolutamente coerente. É interessante observar ainda, Sr. Presidente, como, apesar de distante do eixo Rio São Paulo, apesar de geograficamente afastado do centro do poder, o Diário de Pernambuco tem sabido equilibrar sua atenção entre a cena nacional e a demanda regional. Ao mesmo tempo em que valoriza e estimula a inteligência da terra, abre espaço para profunda discussão de todas as questões de repercussão nacional. Dito de outro modo, faz inserir a voz do Nordeste no cenário brasileiro, com responsabilidade em relação ao projeto de integração e desenvolvimento regional. É assim que permanece identificado com o que há de mais respeitável e atualizado na imprensa nacional, ao mesmo tempo em que se mantém afinado com os interesses, as mazelas e as ambições do povo do Nordeste. Dispondo hoje do mais bem equipado parque gráfico da região, com uma tiragem que cresce anualmente, o Diário de Pernambuco consagrou-se como um paradigma da imprensa no Brasil, contribuindo hoje com o melhor padrão tecnológico, com os valores atemporais da democracia, da liberdade e do acesso à informação. Aproveitamos a oportunidade para cumprimentar todos os dirigentes, repórteres e demais funcionários pela forma como se têm mantidos ciosos de seu papel na vida da Nação; nossos cumprimentos também ao público leitor, que correspondeu, com confiança e fidelidade, aos ideais de jornalismo preconizados pelo Diário de Pernambuco . Só podemos esperar que, no século XXI, prossiga o Diário de Pernambuco em sua grande tarefa de informar com ética e responsabilidade, construindo a consciência crítica a respeito dos grandes fatos regionais e nacionais. Minhas homenagens sinceras a esse grande jornal que é o Diário de Pernambuco . Muito obrigado, Sr. Presidente.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VALDECI PAIVA
+</td>
+<td style="text-align:left;">
+PSL
+</td>
+<td style="text-align:left;">
+RJ
+</td>
+<td style="text-align:left;">
+O SR. VALDECI PAIVA (Bloco/PSL-RJ. Pela ordem. Sem revisão do orador.)~ Sr. Presidente, Sras. e Srs. Deputados, quero anunciar em primeira mão, aproveitando que a imprensa está presente, o que está acontecendo nos Estados Unidos da América. Trata-se de lamentável episódio que acabou de ocorrer em Nova Iorque. Dois aviões colidiram com as duas torres do Edifício World Trade Center. Tudo indica, conforme os noticiários, que pode ter havido um atentado terrorista. As cenas televisadas mostram o momento em que o segundo avião colidiu propositalmente com a torre. Televisões do mundo inteiro estão mostrando as imagens. Segundo informações que tivemos agora, outros edifícios também foram atingidos, como o Pentágono. Era o que tinha a dizer.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EDUARDO CAMPOS
+</td>
+<td style="text-align:left;">
+PSB
+</td>
+<td style="text-align:left;">
+PE
+</td>
+<td style="text-align:left;">
+O SR. EDUARDO CAMPOS (Bloco/PSB-PE. Sem revisão do orador.) Sr.~Presidente, Deputado Marcos de Jesus; Sr. Paulo Cabral de Araújo, Presidente dos Diários Associados; Sr. Joesil Barros, Vice-Presidente do Diário de Pernambuco ; jornalista Ari Cunha, Vice-Presidente do Correio Braziliense ; Sras. e Srs. Deputados, meus senhores e minhas senhoras, havia redigido um pronunciamento, mas prefiro abandoná-lo para não ficar no formalismo do que já foi escrito há cerca de alguns dias. Falarei, em rápidas palavras, sobre a satisfação que tenho de me pronunciar em nome do meu partido, como pernambucano, em uma sessão de homenagem àquele que foi o primeiro jornal em língua portuguesa em circulação no mundo. A Língua Portuguesa anda muito agredida. Sensibiliza os que fazem os jornais, os que fazem a cultura no País, a necessidade de reagir para preservar a identidade da língua. O jornal Diário de Pernambuco foi, sem sombra de dúvidas, o primeiro veículo em que a Língua Portuguesa pôde se expressar e ficar. Trata-se do jornal mais antigo em circulação na América Latina, que colecionou títulos importantes, passagens das mais destacadas na luta pela liberdade de imprensa. Há pouco, o Deputado Salatiel Carvalho falou do jornalista Aníbal Fernandes. Qualquer pernambucano tem orgulho de tê-lo como conterrâneo, um jornalista que foi deposto, que pagou com o cerceamento da sua própria liberdade, pois foi para a cadeia, pela coragem e determinação de fazer críticas ao regime autoritário de então. Na década de 30, o Diário de Pernambuco foi adquirido pelo eminente jornalista Assis Chateaubriand, figura polêmica que marcou a história do jornalismo brasileiro. Ele construiu uma grande rede de comunicação em um momento de mudança efetiva por que passava o País. Construiu importantes instrumentos de informação para a população. O Diário de Pernambuco sempre foi um espaço para o debate em um Estado muito complexo, de formação política e cultural distinta de outros tantos, marcado pelas diferenças, pela polarização política, que advinha de sua formação econômica, tão bem traduzida pelo mestre Giberto Freyre, que nas páginas desse jornal escreveu grandes passagens da sua vida como cronista, além de sociólogo que foi. Também foi um Estado marcado pela casa grande e pela senzala, que reproduzia no campo da política e da cultura essa polaridade. Sobreviver em um ambiente como esse, com o equilíbrio de uma imprensa livre, não é desafio fácil, é extremamente difícil. O Diário de Pernambuco escreveu, nas suas páginas, o equilíbrio, lançou um espaço para que se apresentasse o contraditório. Mais recentemente, o Diário de Pernambuco vive o processo de modernização. Sai da caneta esferográfica, da máquina de escrever, para se tornar um dos veículos mais modernos. Como pernambucano, marco homenagens ao Sr. Joesil Barros, ao Dr. Paulo Cabral, ao Sr. Gladstone Vieira Belo e a tantos outros pernambucanos que souberam fazer essa travessia em tempos de grande dificuldades econômica e financeira. A informação é on line , interligada com o mundo, e eles souberam fazer essa transição. Hoje, é fácil contarmos a história. Mas dou o testemunho de que não deve ter sido fácil. Presto homenagens a esses bravos lutadores da comunicação, que souberam fazer essa trajetória tão difícil do Diário de Pernambuco e hoje se tornar uma referência, um diário viável, importante para o equilíbrio econômico e financeiro dos Diários Associados, pois tem segurado, pelo que se sabe, outros veículos vivos que informa outras comunidades, dada a coragem e o espírito empreendedor desses brasileiros. Feitas as homenagens, agora vêm os desafios. Nós vivemos em um País que atravessa momento extremamente difícil. Cerca de 50 milhões de brasileiros estão jogados na miséria. O Nordeste brasileiro, especificamente, está sendo o ambiente que abriga a maioria desses miseráveis e enfrenta desafios muito fortes, com um clima de violência jamais visto nas ruas. A economia de base local do Nordeste, propriamente a canavieira, que o Diário de Pernambuco conhece de perto, está em situação de decadência. Portanto, são muitos os desafios para a Nação. A um jornal como o Diário de Pernambuco não basta informar o fato do cotidiano. Mais do que isso, ele tem o desafio de ser prospectivo em relação ao futuro, de animar a nossa população. Dou o testemunho de que ele tem feito isso. Fez, por exemplo, uma campanha de matérias do Nordeste, de Pernambuco, que deu certo. Não só mostrou as dificuldades, mas animou a população, basicamente, no que tem causado hesitação. O Diário de Pernambuco tem feito um trabalho muito importante na conscientização pela paz e no combate à violência, com a campanha da paz, para a qual o jornal tem convocado a juventude, as entidades religiosas e sindicais e a sociedade civil. Mas como nordestino, Dr. Paulo Cabral, no momento em que se extingue a SUDENE e em que temos desafios dessa ordem, é importante que o Diário de Pernambuco seja um instrumento a buscar novo debate sobre a realidade nordestina em função do atual cenário nacional. O modelo econômico imposto à América Latina vem dando provas de falência e de que seus paradigmas não funcionam. A Argentina é uma prova disso. Mas estamos nos aproximando de um pleito muito importante para o País, que definirá as novas regras da condução econômica e social. É importante que o Diário de Pernambuco realize um debate sobre o papel das elites nordestinas políticas nos últimos vinte anos. Essas elites, no meu entender, fracassaram, indistintamente. Amiudou-se muito o debate sobre a economia no Nordeste. Os Estados entraram na guerra fiscal, ficaram nas lutas provincianas, assim perdeu-se a luta estratégica do papel do Nordeste no desenvolvimento nacional. A SUDENE foi prova disso, apesar de ter sido uma conquista também dos Diários Associados e do Diário de Pernambuco , que apoiou aquela luta. Estávamos precisando de um jornal com o prestígio, o conceito e a largueza do Diário de Pernambuco , para que fomentasse um debate regional largo, suprapartidário, com o contraditório sobre os caminhos, ressaltando a necessidade de uma política que integre a região nordestina, não com migalhas ou protecionismos, mas, sobretudo, com a visão do desenvolvimento regional integrado ao desenvolvimento nacional. Esse é um desafio, uma provocação no bom sentido, que gostaria de trazer neste momento de homenagens que o Partido Socialista Brasileiro compartilha com os demais partidos, felicitando a iniciativa do Deputado Marcos de Jesus para esta justa e merecida homenagem. Sugiro, ainda, nesta oportunidade, que este debate seja inserido nas páginas do Diário de Pernambuco , que, com certeza, ganharia audiência nacional e o prestígio do eleitor. Aos que fazem o Diário de Pernambuco nossas sinceras homenagens e a certeza de que ele continuará a fazer notícia e história por séculos a mais. Muito obrigado. (Palmas.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARCOS DE JESUS (PRESIDENTE)
+</td>
+<td style="text-align:left;">
+PL
+</td>
+<td style="text-align:left;">
+PE
+</td>
+<td style="text-align:left;">
+O SR. PRESIDENTE (Marcos de Jesus) Agradecemos à Presidência da Casa, na pessoa do Deputado Aécio Neves, a oportunidade para a realização desta sessão solene. Parabenizamos o Dr. Joesil Barros, Vice-Presidente do Diário de Pernambuco , pelo grande trabalho desempenhado; o Dr. Ari Cunha, Vice-Presidente do Correio Braziliense ; e, especialmente, o Dr. Paulo Cabral de Araújo, Presidente dos Diários Associados e do Diário de Pernambuco . Agradecemos com especial carinho a todos que estiveram presentes nesta sessão solene.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="atividade-prática-1" class="section level4">
 <h4><span class="header-section-number">5.3.3.1</span> Atividade prática</h4>
 <p>Utilizando o código acima, obtenha as falas proferidas do dia da autorização do
@@ -648,11 +929,11 @@ que anualmente disponibiliza relatórios de gestão.</p>
 <p>Para atingir nosso objetivo, vamos utilizar as Etapas anteriormente apresentadas:</p>
 <p><strong>Etapa 1: Conhecer detalhadamente o caminho para acesso aos dados:</strong></p>
 <p>A <a href="%22https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2%22">página do TCE-PE</a> apresenta os relatórios publicados anualmente.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">library</span>(rvest)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">library</span>(XML)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw">library</span>(xml2)</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">link_tce &lt;-<span class="st"> &quot;https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="kw">library</span>(rvest)</a>
+<a class="sourceLine" id="cb137-2" data-line-number="2"><span class="kw">library</span>(XML)</a>
+<a class="sourceLine" id="cb137-3" data-line-number="3"><span class="kw">library</span>(xml2)</a>
+<a class="sourceLine" id="cb137-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb137-5" data-line-number="5">link_tce &lt;-<span class="st"> &quot;https://www.tce.pe.gov.br/internet/index.php/relatorios-de-gestao-fiscal-2&quot;</span></a></code></pre></div>
 <p><strong>Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:</strong></p>
 <p>Aqui selecionamos exatamente os endereços de download de cada um dos arquivos publicados.
 Todos os <code>.pdf</code> são um link dentro do código fonte da página, iremos, portanto, obter os
@@ -660,30 +941,30 @@ links desses relatórios.</p>
 <p>Para tanto, podemos observar que o código fonte possui um padrão que identifica os
 Relatórios de Desempenho anual: <code>rdg</code>. Iremos utilizá-lo para obter somente os documentos
 que possuam esse padrão.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">link_relatorios &lt;-<span class="st"> </span>link_tce <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span>read_html <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># função que irá ler o código fonte escrito em html</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;a&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># nó presente no código fonte antes do pdf</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw">html_attr</span>(<span class="st">&quot;href&quot;</span>) <span class="co"># atributro do nó</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co"># obtenção dos links do relatório através do padrão `rgd`</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7">link_relatorios &lt;-<span class="st"> </span>link_relatorios[<span class="kw">grep</span>(<span class="st">&quot;rdg&quot;</span>, link_relatorios)] </a></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1">link_relatorios &lt;-<span class="st"> </span>link_tce <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb138-2" data-line-number="2"><span class="st">  </span>read_html <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># função que irá ler o código fonte escrito em html</span></a>
+<a class="sourceLine" id="cb138-3" data-line-number="3"><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;a&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># nó presente no código fonte antes do pdf</span></a>
+<a class="sourceLine" id="cb138-4" data-line-number="4"><span class="st">  </span><span class="kw">html_attr</span>(<span class="st">&quot;href&quot;</span>) <span class="co"># atributro do nó</span></a>
+<a class="sourceLine" id="cb138-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb138-6" data-line-number="6"><span class="co"># obtenção dos links do relatório através do padrão `rgd`</span></a>
+<a class="sourceLine" id="cb138-7" data-line-number="7">link_relatorios &lt;-<span class="st"> </span>link_relatorios[<span class="kw">grep</span>(<span class="st">&quot;rdg&quot;</span>, link_relatorios)] </a></code></pre></div>
 <p><strong>Etapa 3: Obter os dados:</strong></p>
 <p>A obtenção dos dados se refere justamente ao download do material para armazenamento
 local. Logo, definimos o diretório onde os arquivos serão salvos e fazemos uso da
 função <code>download.file</code>. Como obtivemos mais de um link, para mais de um relatório,
 no código abaixo apresentamos como obter o primeiro arquivo <code>.pdf</code> presente em <code>link_relatorios[1]</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">download.file</span>(link_relatorios[<span class="dv">1</span>], <span class="dt">destfile =</span> <span class="st">&quot;seu_diretorio/nome_do_arquivo.pdf&quot;</span>, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="kw">download.file</span>(link_relatorios[<span class="dv">1</span>], <span class="dt">destfile =</span> <span class="st">&quot;seu_diretorio/nome_do_arquivo.pdf&quot;</span>, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</a></code></pre></div>
 <p><strong>Etapa 4: Processar os dados obtidos:</strong></p>
 <p>O processo é similar à leitura de conteúdo em arquivo <code>.pdf</code> explicada na seção <a href="scrape.html#pdf"><strong>??</strong></a>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># pacotes</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">library</span>(textreadr)</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="kw">library</span>(here)</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co"># # lendo arquivo .pdf</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">rdg2018 &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;nome_arquivo.pdf&quot;</span>)</a>
-<a class="sourceLine" id="cb14-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co"># salvando como .txt</span></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="kw">writeLines</span>(rdg2018, <span class="st">&quot;meu_arquivo.txt&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1"><span class="co"># pacotes</span></a>
+<a class="sourceLine" id="cb140-2" data-line-number="2"><span class="kw">library</span>(textreadr)</a>
+<a class="sourceLine" id="cb140-3" data-line-number="3"><span class="kw">library</span>(here)</a>
+<a class="sourceLine" id="cb140-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb140-5" data-line-number="5"><span class="co"># # lendo arquivo .pdf</span></a>
+<a class="sourceLine" id="cb140-6" data-line-number="6">rdg2018 &lt;-<span class="st"> </span><span class="kw">read_document</span>(<span class="st">&quot;nome_arquivo.pdf&quot;</span>)</a>
+<a class="sourceLine" id="cb140-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb140-8" data-line-number="8"><span class="co"># salvando como .txt</span></a>
+<a class="sourceLine" id="cb140-9" data-line-number="9"><span class="kw">writeLines</span>(rdg2018, <span class="st">&quot;meu_arquivo.txt&quot;</span>)</a></code></pre></div>
 </div>
 <div id="twitter" class="section level2">
 <h2><span class="header-section-number">5.5</span> Twitter</h2>
@@ -701,9 +982,9 @@ Vale ressaltar que o Twitter exige que para obtenção dos dados você possua um
 no Twitter e autorize o app <code>rstats2twitter</code> no popup que surgirá no seu browser
 ao utilizar alguma das funções no console do <code>R</code>, isso ocorrerá somente na primeira
 vez de uso, criando um token que será salvo para próximas sessões.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">library</span>(rtweet)</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">tabata_timeline &lt;-<span class="st"> </span><span class="kw">get_timeline</span>( <span class="dt">user =</span> <span class="st">&quot;tabataamaralsp&quot;</span>, <span class="dt">n =</span> <span class="dv">30</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="kw">library</span>(rtweet)</a>
+<a class="sourceLine" id="cb141-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb141-3" data-line-number="3">tabata_timeline &lt;-<span class="st"> </span><span class="kw">get_timeline</span>( <span class="dt">user =</span> <span class="st">&quot;tabataamaralsp&quot;</span>, <span class="dt">n =</span> <span class="dv">30</span>)</a></code></pre></div>
 <p>Além do uso de obtenção de hashtags é possível buscar termos que estão sendo tweetados
 ou hashtags através do <code>search_tweets</code> que segue lógica similar ao <code>get_timeline</code>.</p>
 </div>
@@ -730,17 +1011,17 @@ atribuído ao Presidente Bolsonaro para obter seu conteúdo:</p>
 <p class="caption">FAKE NEWS!</p>
 </div>
 </center>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">library</span>(tesseract)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co"># obtendo treinamento na ligua portuguesa</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="kw">tesseract_download</span>(<span class="st">&#39;por&#39;</span>)</a>
-<a class="sourceLine" id="cb16-5" data-line-number="5">por &lt;-<span class="st"> </span><span class="kw">tesseract</span>(<span class="st">&quot;por&quot;</span>) <span class="co"># alocando treinamento na ligua portuguesa</span></a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co"># obtendo texto da imagem</span></a>
-<a class="sourceLine" id="cb16-8" data-line-number="8">text &lt;-<span class="st"> </span>tesseract<span class="op">::</span><span class="kw">ocr</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tweet_bolsonaro_cp.png&quot;</span>, <span class="dt">engine =</span> por)</a>
-<a class="sourceLine" id="cb16-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co"># resultado</span></a>
-<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="kw">cat</span>(text)</a></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="kw">library</span>(tesseract)</a>
+<a class="sourceLine" id="cb142-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb142-3" data-line-number="3"><span class="co"># obtendo treinamento na ligua portuguesa</span></a>
+<a class="sourceLine" id="cb142-4" data-line-number="4"><span class="kw">tesseract_download</span>(<span class="st">&#39;por&#39;</span>)</a>
+<a class="sourceLine" id="cb142-5" data-line-number="5">por &lt;-<span class="st"> </span><span class="kw">tesseract</span>(<span class="st">&quot;por&quot;</span>) <span class="co"># alocando treinamento na ligua portuguesa</span></a>
+<a class="sourceLine" id="cb142-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb142-7" data-line-number="7"><span class="co"># obtendo texto da imagem</span></a>
+<a class="sourceLine" id="cb142-8" data-line-number="8">text &lt;-<span class="st"> </span>tesseract<span class="op">::</span><span class="kw">ocr</span>(<span class="st">&quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tweet_bolsonaro_cp.png&quot;</span>, <span class="dt">engine =</span> por)</a>
+<a class="sourceLine" id="cb142-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb142-10" data-line-number="10"><span class="co"># resultado</span></a>
+<a class="sourceLine" id="cb142-11" data-line-number="11"><span class="kw">cat</span>(text)</a></code></pre></div>
 <p>Segue o resultado:</p>
 <pre><code>## Jair M. Bolsonaro &amp; 8 a Qjairbolsonaro Vie . S O que é ciência política? 09:26 - 06/03/2019 - Twitter for iPhone</code></pre>
 </div>
@@ -754,7 +1035,7 @@ De forma geral, esses pacotes utilizam APIs dessas grandes companhias de tecnolo
 com alguma limitação para uso gratuito, sendo necessário cadastro em sua plataforma e
 credenciamento de cartão de crédito.</p>
 <p>Para se ter um exemplo, vamos explorar o uso do pacote <code>googleLanguageR</code>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;googleLanguageR&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;googleLanguageR&quot;</span>)</a></code></pre></div>
 <p>Para obter uma chave de API que vai possibilitar o uso do pacote você precisa criar
 um conta no <a href="https://cloud.google.com/">Google cloud</a> e habilitá-la com o seu
 cartão de crédito. Vale ressaltar que é uma assinatura gratuita, mas caso ultrapasse
@@ -767,7 +1048,7 @@ o limite da cota gratuita você será cobrado.</p>
 <li>Processamento de linguagem natural permitindo a identificação de sentimento,
 estrutura e significado: Google Natural Language API</li>
 </ol>
-<p>Nosso foco aqui é na transcrição de áudio para texto<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.
+<p>Nosso foco aqui é na transcrição de áudio para texto<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.
 Para usar a API você precisa estar logado na sua conta, entrar no console, acessar
 a página do <a href="https://console.cloud.google.com/apis/api/speech.googleapis.com/overview">Google Cloud Speech API</a> e
 habilitá-la.</p>
@@ -775,11 +1056,10 @@ habilitá-la.</p>
 na página da API do Google Speech já habilitada vá na opção “credenciais”. em seguida em
 “criar credenciais”. Após concluída essa etapa, é necessário criar uma <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">“chave de conta de serviço”</a> e baixar o arquivo JSON.</p>
 <p>O arquivo JSON contém a chave que permite o uso da aplicação. Para prosseguir é necessário carregá-lo com a função <code>gl_auth</code>, conforme abaixo:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">library</span>(googleLanguageR)</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="kw">gl_auth</span>(<span class="st">&quot;arquivo.json&quot;</span>)</a></code></pre></div>
-<p>No nosso exemplo, vamos utilizar o áudio da propaganda de campanha do então candidato
-a Deputado Federal pelo PR, o candidato Tirirca.</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">library</span>(googleLanguageR)</a>
+<a class="sourceLine" id="cb145-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb145-3" data-line-number="3"><span class="kw">gl_auth</span>(<span class="st">&quot;arquivo.json&quot;</span>)</a></code></pre></div>
+<p>No nosso exemplo, vamos utilizar o áudio da propaganda de campanha do então candidato a Deputado Federal pelo PR, o candidato Tiririca.</p>
 <center>
 <div class="figure">
 <img src="images/santinho-tiririca.jpg" alt="Tiririca - 2222" width="300" />
@@ -790,40 +1070,42 @@ a Deputado Federal pelo PR, o candidato Tirirca.</p>
 <p>Antes do uso da função para transcrição, recomenda-se realizar a etapa abaixo para
 unir os canais do som em um formato <code>mono</code> através do pacote <code>tuneR</code> e salvar a leitura
 do áudio em formato <code>.csv</code>.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">library</span>(tuneR)</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb20-3" data-line-number="3">audio &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav&quot;</span></a>
-<a class="sourceLine" id="cb20-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb20-5" data-line-number="5">audio_load &lt;-<span class="st"> </span><span class="kw">readWave</span>(audio)</a>
-<a class="sourceLine" id="cb20-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb20-7" data-line-number="7">audio_load &lt;-<span class="st"> </span><span class="kw">mono</span>(audio_load, <span class="dt">which =</span> <span class="kw">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;both&quot;</span>))</a>
-<a class="sourceLine" id="cb20-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb20-9" data-line-number="9"><span class="kw">writeWave</span>(audio_load, <span class="st">&quot;tiririca_campanha.csv&quot;</span>, <span class="dt">extensible =</span> F)</a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="kw">library</span>(tuneR)</a>
+<a class="sourceLine" id="cb146-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb146-3" data-line-number="3"><span class="co"># Baixe o som:</span></a>
+<a class="sourceLine" id="cb146-4" data-line-number="4">audio &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.wav&quot;</span></a>
+<a class="sourceLine" id="cb146-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb146-6" data-line-number="6"><span class="co">#Leitura do som:</span></a>
+<a class="sourceLine" id="cb146-7" data-line-number="7">audio_load &lt;-<span class="st"> </span><span class="kw">readWave</span>(<span class="st">&quot;audio&quot;</span>)</a>
+<a class="sourceLine" id="cb146-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb146-9" data-line-number="9">audio_load &lt;-<span class="st"> </span><span class="kw">mono</span>(audio_load, <span class="dt">which =</span> <span class="kw">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;both&quot;</span>))</a>
+<a class="sourceLine" id="cb146-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb146-11" data-line-number="11"><span class="kw">writeWave</span>(audio_load, <span class="st">&quot;tiririca_campanha.csv&quot;</span>, <span class="dt">extensible =</span> F)</a></code></pre></div>
 <p>Em seguida, selecione o arquivo que deseja transcrever. Lembre-se que a cota
 gratuita é de 60 minutos por mês e o formato de áudio padrão é <code>wav</code>.</p>
 <p>A transcrição
 do áudio é realizada com a função <code>gl_speech</code>, identificando o código da língua e a
-frequência em Hertz<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">audio_load &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.csv&quot;</span></a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb21-3" data-line-number="3">transcricao &lt;-<span class="st"> </span><span class="kw">gl_speech</span>(audio_load, <span class="dt">sampleRateHertz =</span> 44100L, <span class="dt">languageCode =</span> <span class="st">&quot;pt-BR&quot;</span>)</a></code></pre></div>
+frequência em Hertz<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1">audio_load &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/davi-moreira/txt4cs/master/data/tiririca_campanha.csv&quot;</span></a>
+<a class="sourceLine" id="cb147-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb147-3" data-line-number="3">transcricao &lt;-<span class="st"> </span><span class="kw">gl_speech</span>(audio_load, <span class="dt">sampleRateHertz =</span> 44100L, <span class="dt">languageCode =</span> <span class="st">&quot;pt-BR&quot;</span>)</a></code></pre></div>
 <p>O função <code>gl_speech</code> retorna uma lista com dois elementos: <code>transcript</code> e <code>timings</code>.
 O primeiro com a transcrição e o segunda mostrando as palavras por segundo em seu
 início e fim. Abaixo vemos o resultado da transcrição:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">transcricao<span class="op">$</span>transcript<span class="op">$</span>transcript</a></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1">transcricao<span class="op">$</span>transcript<span class="op">$</span>transcript</a></code></pre></div>
 <pre><code>## [1] &quot;Adivinha quem está falando do vídeo você já te enviar Joel o Tiririca candidato a deputado federal Não esquece peguei vocês enganei vocês vocês pessoal fosse outra pessoa sou eu agastado 2222&quot;</code></pre>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Para uma referência de como transformar objetos <code>xml</code> em <code>data.frame</code> ver: i) (<a href="https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame" class="uri">https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame</a>); ii) (<a href="https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file" class="uri">https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file</a>)<a href="scrape.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Para mais informações sobre as
-possibilidades do pacote veja essa <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html"><strong>vinheta de introdução</strong></a><a href="scrape.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>Para mais detalhes consulte a vinheta <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/speech.html">Google Could Speech API</a><a href="scrape.html#fnref6" class="footnote-back">↩</a></p></li>
+<ol start="5">
+<li id="fn5"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Conteúdo publicado pela Câmara dos Deputados sem revisão do autor.<a href="scrape.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Para uma referência de como transformar objetos <code>xml</code> em <code>data.frame</code> ver: i) (<a href="https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame" class="uri">https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame</a>); ii) (<a href="https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file" class="uri">https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file</a>)<a href="scrape.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Para mais informações sobre as
+possibilidades do pacote veja essa <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html"><strong>vinheta de introdução</strong></a><a href="scrape.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Para mais detalhes consulte a vinheta <a href="https://cran.r-project.org/web/packages/googleLanguageR/vignettes/speech.html">Google Could Speech API</a><a href="scrape.html#fnref9" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

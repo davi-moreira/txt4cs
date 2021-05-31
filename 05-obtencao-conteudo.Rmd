@@ -4,7 +4,9 @@
 
 _Davi Moreira, Mônica Rocabado_
 
-$~$ <!--- add line space --->
+&nbsp;
+
+<!--- $~$  add line space --->
 
 Uma das tarefas mais importantes para a análise de conteúdo consiste na sua própria 
 busca e aquisição. O `R` nos ajuda nessa tarefa a partir de distintas estratégias. 
@@ -57,7 +59,7 @@ simples pode-se transformar o conteúdo do arquivo `.pdf` num arquivo `.txt`. Ve
 conteúdo do [discurso de posse do ex-presidente Luis Inácio Lula da Silva realizado em 
 01 de janeiro de 2003 no Congresso Nacional](http://www.biblioteca.presidencia.gov.br/presidencia/ex-presidentes/luiz-inacio-lula-da-silva/discursos/1o-mandato/2003/01-01-pronunciamento-a-nacao-do-presidente-da-republica-luiz-inacio-lula-da-silva-apos-a-cerimonia-de-posse.pdf/view):
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = F, warning = F, message = F, max.height = "300px"}
 library(textreadr)
 
 # lendo arquivo .pdf
@@ -165,7 +167,7 @@ fonte do endereço virtual que apresenta o discurso também nos apresenta o cont
 **Etapa 2: Armazenar todos os caminhos de acesso aos dados de forma amigável ao programa:** nesse exemplo, 
 trata-se de apenas um endereço que armazenamos no objeto `link`.
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = F, warning = F, message = F, max.height = "300px"}
 # carregando pacotes ----
 library(tidyverse)
 library(rvest)
@@ -267,7 +269,7 @@ discursos proferidos num mesmo dia, usamos como parâmetros "11/09/2001".
 
 Nesse exemplo, trata-se de apenas um endereço que armazenamos no objeto `link`.
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = T, warning = F, message = F, max.height = "300px"}
 # pacotes 
 library(httr)
 library(XML)
@@ -292,7 +294,7 @@ link <- paste("https://www.camara.leg.br/sitcamaraws/SessoesReunioes.asmx/Listar
 
 Para essa etapa, basta fazer uso da função `GET`. No código abaixo, armazenamos os resultados no objeto `response`.
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = T, warning = F, message = F}
 response <- GET(link)
 ```
 
@@ -303,7 +305,7 @@ simples. Primeiro, transformamos o resultado numa lista, na qual cada elemento s
 uma das sessões legislativas realizadas naquela data. Em segundo lugar, de forma 
 interativa, usando a função `for`, alocamos os campos desejados num objeto `data.frame`^[Para uma referência de como transformar objetos `xml` em `data.frame` ver: i) (https://stackoverflow.com/questions/17198658/how-to-parse-xml-to-r-data-frame); ii) (https://stackoverflow.com/questions/13579996/how-to-create-an-r-data-frame-from-a-xml-file)].
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = T, warning = F, message = F, max.height = "300px"}
 # analisa um arquivo XML ou HTML e gera uma estrutura no R.
 data <- xmlParse(response, encoding = "UTF-8") 
 
@@ -400,7 +402,7 @@ Com o objeto `bd` acima, concluímos a primeira subetapa e podemos seguir para a
 
 Importante ressaltar que essa etapa só é possível tendo realizado o método acima de `ListarDiscursosPlenário`, devido exigência do próprio WebService.
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = T, warning = F, message = F, results=F, max.height = "300px"}
 bdDados <- bd
 
 bd <- data.frame()  # data frame que recebera os pronunciamentos
@@ -430,9 +432,9 @@ for( i in 1:dim(bdDados)[1]){
 
 Obtivemos os discursos em seu inteiro teor! No entanto, os dados estão em formato RTF codificado em Base64. Precisamos transformá-los em formato de texto plano para possibilitar sua leitura. Para tal vamos utilizar o pacote `txt4cs` que possui a função `decode_rtfPTBRA`.
 
-```{r, echo = TRUE, eval = F, warning = F, message = F}
+```{r, echo = TRUE, eval = T, warning = F, message = F, results = F, max.height = "300px"}
 
-devtools::install_github("davi-moreira/txt4cs-pkg")
+devtools::install_github("davi-moreira/txt4cs-pkg", force = TRUE)
 library(txt4cs)
 
 bd$discursoRTFBase64 <- as.character(bd$discursoRTFBase64)
@@ -442,13 +444,17 @@ bd$discursoPlainTxt <- vector(mode = "character",
 
 for (i in 1:dim(bd)[1]){
   bd$discursoPlainTxt[i] <- decode_rtfPTBRA(bd$discursoRTFBase64[i])
-  print( bd$discursoPlainTxt)
+#  print( bd$discursoPlainTxt)
 }
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-knitr::kable(bd)
+```{r, echo=FALSE, warning=FALSE, message=FALSE, max.height = "100px"}
+library(kableExtra)
+
+bd %>% select(nome, partido, uf, discursoPlainTxt) %>% 
+  knitr::kable() %>%  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+    scroll_box(width = "100%", height = "200px")
 ```
 
 

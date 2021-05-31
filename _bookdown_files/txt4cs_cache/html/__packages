@@ -21,3 +21,6 @@ purrr
 dplyr
 forcats
 embedr
+httr
+RCurl
+txt4cs
