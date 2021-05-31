@@ -1,19 +1,375 @@
 # Mineração e estatísticas básicas {#stat}
 
-EM CONSTRUÇÃO...
+<!--- preview_chapter("07-statistics.Rmd") --->
+
+_Davi Moreira, Mônica Rocabado_
+
+$~$ <!--- add line space --->
+
+Já vimos como abordar algumas análises básicas. Vamos agora consolidar o conteúdo.
 
 ## Análise de frequência
+Para este processo iremos analisar dados do twitter, capturando dados como já explicado no capt.5 pelo pacote rtweet, buscaremos de forma aleatoria os 1000 mais recentes tweets com o termo "Bolsonaro" no dia 29 de maio de 2021, para reproduzir essa análise você pode utilizar os dados presente no pacote `txt4cs`. A especificação do `type` indica que queremos tweets recentes e populares em nossa análise.
+
+```{r, include=FALSE}
+library(readr)
+library(tidyverse)
+library(quanteda)
+
+tweets <- read.csv("capt7_tweets.csv", encoding = "UTF-8")
+```
+
+
+```{r, warning = F, message = F, cache=T, eval=FALSE}
+library(rtweet)
+tweets <- search_tweets("Bolsonaro", n = 1000, type = "mixed", include_rts = FALSE)
+````
+
+Utilizando o pacote `quanteda` vamos analisar a frequências de hashtags usando `select = "#*"`. Para tal, devemos tratar a base, como indicado no capitulo 6, transformar a base primeiro em um corpus, depois em tokens, removendo pontuações, e depois em um DFM, aproveitando para selecionar somente as hashtags.
+
+```{r, echo = T, eval = TRUE, warning = F, message = F, cache=T}
+library(quanteda)
+
+#transformando em um corpus
+corp_tweets <- corpus(tweets)
+
+#transformando em tokens
+toks_tweets <- tokens(corp_tweets, remove_punct = TRUE) 
+
+#criando uma DFM com as hashtags
+dfmat_tweets <- dfm(toks_tweets, select = "#*")
+```
+
+Com nosso dfm pronto iremos obter a frequência das features contidas nele. Para isso, vamos utilizar a função `textstat_frequency` do pacote `quanteda`, No exemplo abaixo estamos especificando as 20 topfeatures conforme o agrupamento por idioma (lang) do tweet. Lembrando que para verificar as variáveis disponíveis no objeto DFM você pode utilizar a função `docvars`. Com este resultado estaremos obtendo as 20 principais hashtags e o o número de documentos que a feature ocorre (docfreq), no caso cada tweet é um documento, tendo então 1000 documentos. 
+
+```{r, eval = TRUE, warning = F, message = F, cache=T}
+tstat_freq <- textstat_frequency(dfmat_tweets, n = 20, groups = "lang")
+
+top_n(tstat_freq, 5)
+```
+
+Com a base pronta para visualização, plotamos um gráfico indicando as hashtags mais frequentes.
+
+```{r, echo = T, eval = TRUE, warning = F, message = F, cache=T}
+library(ggplot2)
+
+dfmat_tweets %>% 
+  textstat_frequency(n = 20) %>% 
+  ggplot(aes(x = reorder(feature, frequency), y = frequency)) +
+  geom_point() +
+  coord_flip() +
+  labs(x = NULL, y = "Frequency") +
+  theme_minimal()
+
+```
 
 ## Nuvem de palavras
+Outra forma comum da visualização de frequência na análise de texto é a nuvem de palavras. Para isso vamos utilizar a função `textplot_wordcloud` do pacote ``quanteda`
+
+```{r, echo = T,warning = F, message = F, cache=T}
+set.seed(132)
+textplot_wordcloud(dfmat_tweets, max_words = 100)
+```
+
+Podemos potencializar a visualização da nuvem de palavras e comparar grupos.
+Primeiro criamos uma nova variável ao nível do documento que cria faixas de influência através do total de seguidores que o usuário possui. Para isso, criamos a nova variável "Influencia" dentro do `corp_tweets` e estabelecemos uma condição do que consideramos influente. Tudo o que não corresponder ao critério será considerado "não influente", no caso estamos utilizando como parâmetro pessoas com mais de 1000 seguidores. 
+```{r, echo = T, warning = F, message = F, cache=T}
+docvars(corp_tweets, "Influencia") <- factor(ifelse(docvars(corp_tweets, "followers_count") > 1000, "Influente", "Não Influente"))
+```
+
+Com isto feito, agrupamos a dfm de hashtags
+```{r, echo = T, warning = F, message = F, cache=T}
+dfmat_corp_language <- dfm(corp_tweets, select = "#*", groups = "Influencia")
+```
+
+Criamos a worcloud, possibilitando a comparação ao colocar como TRUE o argumento `comparison`
+```{r, echo = T, warning = F, message = F, cache=T}
+set.seed(132)
+textplot_wordcloud(dfmat_corp_language, comparison = TRUE, max_words = 200)
+```
+
+### Atividade prática
+
+Usando a dfm obtida com as falas proferidas no dia do impeachment da Presidenta Dilma, repita o exemplo acima comparando as falas dos deputados do PT, do PCdoB, do PSB e do PSOL com as dos demais partidos. A base esta presente no pacote txt4cs.
+
 
 ## tf-idf
+Uma questão central na mineração de texto e processamento de linguagem natural é como quantificar sobre o que é um documento. Isso pode ser feito através da análise da frequência das palavras que compõem o documento. Logo, uma medida seria a frequência de um termo (tf) em um documento. 
+
+Contudo, há palavras que ocorrem muitas vezes, mas podem não ser importantes. Podemos removê-las antes da análise, mas é possível que algumas dessas palavras sejam mais importantes em alguns documentos do que em outros. 
+
+Uma alternativa seria examinar a frequência de documento inversa de um termo (idf), o que diminui o peso das palavras comumente usadas e aumenta o peso das palavras que não são muito usadas em uma coleção de documentos. 
+
+Combinando as duas alternativas, calcula-se o tf-idf de um termo. Em outras palavras, *a frequência de um termo ajustada pela frequência com que é usado no acervo.*
+
+*tf-idf*: A estatística tf-idf destina-se a *medir a importância de uma palavra para um documento em uma coleção (ou corpus) de documentos*, por exemplo, para um romance em uma coleção de romances, para um site em uma coleção de sites, um discurso numa coleção de discursos.O método resulta na frequência das palavras mais “relevantes”, ou seja, únicas ou mais presentes entre documentos. Ele não vê similaridade, mas justamente a diferença, o que torna aquele documento especial em relação aos demais documentos analisados. Quanto mais perto de 1, mais presente é a palavra.
+
+Vamos ver um exemplo usando o [Projeto Gutenberg](https://www.gutenberg.org/) e os textos [Discourse on Floating Bodies by Galileo Galilei](http://www.gutenberg.org/ebooks/37729), [Treatise on Light by Christiaan Huygens](http://www.gutenberg.org/ebooks/14725), [Experiments with Alternate Currents of High Potential and High Frequency by Nikola Tesla](http://www.gutenberg.org/ebooks/13476), and [Relativity: The Special and General Theory by Albert Einstein](http://www.gutenberg.org/ebooks/5001).
+Para isso, vamos criar o objeto `physics` que irá conter os textos e o metadados indicando o autor que foram baixados pela função `gutenberg_download`
+
+```{r, echo = T, eval = T, warning = F, message = F, cache=T}
+library(gutenbergr) 
+library(tidytext);
+library(tidyverse);
+
+physics <- gutenberg_download(c(37729, 14725, 13476, 30155), 
+                              meta_fields = "author")
+```
+
+Como resultado temos uma tabela contendo 15.410 linhas e 3 colunas, sendo id, texto e autor.
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+knitr::kable(head(physics, 5))
+```
+
+Através do pacote `tidytext`, vamos transformar a base em formato token, em seguida contar a quantidade de termos utilizados por autor. O processo de contagem de termos é essencial para função tf-idf
+```{r, echo = T, warning = F, message = F, cache=T}
+physics_words <- physics %>%
+  unnest_tokens(word, text) %>%
+  count(author, word, sort = TRUE)
+```
+
+Obtemos o valor do tf-idf através da função `bind_tf_idf` do pacote `tidytext`, note que é necessário anteriormente a contagem dos termos por autor para utilizar a função. Outro ponto relevante é a necessidade de definir a base de comparação dos documentos, no caso, autor, dessa forma iremos obter as palavras mais relevantes para cada autor.
+
+```{r, echo = T, warning = F, message = F, cache=T}
+plot_physics <- physics_words %>%
+  bind_tf_idf(word, author, n) %>%
+  arrange(desc(tf_idf)) 
+```
+
+Para análise gráfica, primeiro temos que preparar os dados, assim transformando os termos e autores, que estão em `chr` em fator (`fct`). Os termos indicando que o nível do fator é único e já os autores indicando seus nomes como os níveis dos fatores.
+
+```{r, echo = T, warning = F, message = F, cache=T}
+plot_physics <- plot_physics %>%  
+  mutate(word = factor(word, levels = rev(unique(word)))) %>%
+  mutate(author = factor(author, levels = c("Galilei, Galileo",
+                                            "Huygens, Christiaan", 
+                                            "Tesla, Nikola",
+                                            "Einstein, Albert")))
+```
+
+Com os dados tratados, podemos visualizar graficamente quais os 15 termos mais relevantes e utilizados por cada autor nos textos selecionados:
+
+```{r,  warning = F, message = F}
+plot_physics %>% 
+  group_by(author) %>% 
+  top_n(15, tf_idf) %>% 
+  ungroup() %>%
+  mutate(word = reorder(word, tf_idf)) %>%
+  ggplot(aes(word, tf_idf, fill = author)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "tf-idf") +
+  facet_wrap(~author, ncol = 2, scales = "free") +
+  coord_flip()
+```
+
 
 ## Rede de n-grams
+Caso estejamos  interessados em visualizar todas as relações entre as palavras simultaneamente, em vez de apenas as poucas de cada vez, podemos através de n-grams organizar as palavras em uma rede.
+O pacote `igraph` possui muitas funções poderosas para manipular e analisar redes. Uma maneira de criar um objeto `igraph` a partir de um `data.frame` é a função `graph_from_data_frame()`. No exemplo iremos utilizar o pacote `janeaustenr` que possui os textos completos de 6 livros de Jane Austen.
+
+```{r, echo = T, warning = F, message = F, cache=T}
+library(janeaustenr)
+library(igraph)
+library(ggraph)
+```
+
+Iremos transformar essa base de dados com o pacote `tidytext` em n-grams de dois termos.
+
+```{r, warning = F, message = F, cache=T}
+austen_bigrams <- austen_books() %>%
+unnest_tokens(bigram, text, token = "ngrams", n = 2)
+```
+
+Como visto no capítulo anterior, para trabalhar com n-grams no `tidytext` temos que separar as palavras para podermos filtrar as `stop_words`, utilizaremos a base `stop_words` presente no pacote `tidytext`.
+```{r warning = F, message = F, cache=T}
+bigrams_separated <- austen_bigrams %>%
+separate(bigram, c("word1", "word2"), sep = " ")
+
+bigrams_filtered <- bigrams_separated %>%
+filter(!word1 %in% stop_words$word) %>%
+filter(!word2 %in% stop_words$word)
+
+```
+
+Precisamos então contar quantas vezes os termos aparecem juntos para realizar nossa rede de termos
+```{r, warning = F, message = F, cache=T}
+bigram_counts <- bigrams_filtered %>%
+count(word1, word2, sort = TRUE)
+```
+
+Escolhemos os termos que tenham uma frequência conjunta maior que 20 vezes, e através da função `graph_from_data_frame` transformamos a data.frame em formato `igraph`
+```{r, message=FALSE, warning=FALSE}
+library(igraph)
+bigram_graph <- bigram_counts %>%
+filter(n > 20) %>%
+graph_from_data_frame()
+```
+
+Estabelecemos uma ordem aleatória e geramos nossa rede de relações, para isso vamos precisar do pacote `ggraph`
+```{r, warning = F, message = F, cache=T}
+library(ggraph)
+set.seed(2017)
+
+ggraph(bigram_graph, layout = "fr") +
+geom_edge_link() +
+geom_node_point() +
+geom_node_text(aes(label = name), vjust = 1, hjust = 1)
+```
+
+### Atividade prática
+Utilize o corpus da aprovação do impeachment da Presidenta Dilma Rousseff e aplique a análise de redes de bigramas. A rede para PT e PSDB é diferente?
+
 
 ## Correlação pareada
+Podemos querer examinar a correlação entre palavras e verificar com que frequência elas aparecem juntas em relação à frequência com que aparecem separadas.
+Para tanto, vamos analisar o coeficiente phi, uma medida comum para correlação binária. O foco do coeficiente phi é o quão mais provável é a palavra X e a palavra Y aparecem juntas em relação a aparecerem separadas. Sua interpretação é similar à correlação linear de Pearson em que 1 significa uma correlação perfeita positiva e -1 uma correlação negativa, caso 0 não há correlação.
+
+A função pairwise_cor() do pacote widyr nos permite encontrar o coeficiente phi entre as palavras com base na frequência com que aparecem na mesma seção.
+
+Vamos utilizar o exemplo no livro "Orgulho e Preconceito" de Jane Austen do pacote `janeaustenr`. Para isso inicialmente vamos utilizar o pacote `tidytext` para preparar nossos dados para análise. Vale ressaltar que estamos formatando os dados, assim a divisão inteira por 10 dos números das linhas ocorre pois o texto tem ínicio a partir a linha 10 do data.frame.
+
+```{r, echo = T, warning = F, message = F, cache=T}
+library(widyr)
+library(janeaustenr)
+
+austen_section_words <- austen_books() %>%
+filter(book == "Pride & Prejudice") %>%
+mutate(section = row_number() %/% 10) %>% #divisão inteira
+filter(section > 0) %>%
+unnest_tokens(word, text) %>%
+filter(!word %in% stop_words$word)
+```
+
+Temos o seguinte resultado
+```{r, echo=TRUE, warning = F, message = F, cache=T}
+top_n(austen_section_words, 5)
+```
+
+Para obter a correlação, agrupamos as palavras e filtramos aquelas que possuem uma frequência maior ou igual a 20, aplicando ao final a correlação.
+
+```{r, warning = F, message = F}
+word_cors <- austen_section_words %>%
+group_by(word) %>%
+filter(n() >= 20) %>%
+pairwise_cor(word, section, sort = TRUE)
+```
+
+
+Temos o seguinte resultado
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+top_n(word_cors, 5)
+```
+
+
+Podemos visualizar essa correlação, focando nas palavras de maior interesse, ao filtrar a primeira coluna para conter as palavras que buscamos compreender as correlações existentes. 
+```{r, warning=FALSE, message=FALSE}
+word_cors %>%
+filter(item1 %in% c("elizabeth", "pounds", "married", "pride")) %>%
+group_by(item1) %>%
+top_n(6) %>%
+ungroup() %>%
+mutate(item2 = reorder(item2, correlation)) %>%
+ggplot(aes(item2, correlation)) +
+geom_bar(stat = "identity") +
+facet_wrap(~ item1, scales = "free") +
+coord_flip()
+```
+
+
+
+### Atividade prática
+Utilize o corpus da aprovação do impeachment da Presidenta Dilma Rousseff e aplique a análise vista.
 
 ## Diversidade lexical
+A função textstat_lexdiv() calcula a diversidade lexical em várias medidas com base no número de tokens exclusivos e no comprimento de um documento. Pode ser utilizada para analisar as habilidades lingüísticas de oradores ou autores, ou a complexidade das ideias expressas. Para isso, vamos utilizar o pacote `quanteda`. A mensuração padrão é a _Type-Token Ratio (TTR)_, mas pode-se opter por outros tipos. Essa medida divide o número de tipos pelo número total de tokens, logo quanto mais próximo a 1 maior a complexidade lexical.
+
+Inicialmente devemos preparar nossa base, fazendo a transformação em tokens e dfm, no exemplo não será necessária a transformação em corpus, dado que a base de exemplo já está nesse formato. A base que iremos utilizar refere-se aos discursos de posse da presidência dos EUA.
+
+```{r, echo = T, warning = F, message = F, cache=T}
+library(quanteda)
+
+toks_inaug <- tokens(data_corpus_inaugural, remove_punct = TRUE)
+dfmat_inaug <- dfm(toks_inaug, remove = stopwords('en'))
+tstat_lexdiv <- textstat_lexdiv(dfmat_inaug)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+head(tstat_lexdiv, 5)
+```
+
+Podemos visualizar a relação entre a diversidade lexical dos discursos dos presidentes:
+```{r, warning = F, message = F, cache=T}
+plot(tstat_lexdiv$TTR, type = "l", xaxt = "n", xlab = NULL, ylab = "TTR")
+grid()
+axis(1, at = seq_len(nrow(tstat_lexdiv)), labels = dfmat_inaug$President)
+
+```
+
+
+### Atividade prática
+Na sua área de pesquisa/trabalho, em quais aspectos pode ser relevante a complexidade de um acervo?
+Pense, por exemplo, no caso de campanhas políticas, discursos presidenciais ou votos de ministros do STF. A complexidade/diversidade do vocabulário utilizado importa?
+
 
 ## Similaridade entre documentos/termos
+A função `textstat_dist()` calcula semelhanças e distancias entre documentos ou features para várias medidas. O agrupamento hierárquico pode ser utilizado para visualização.
+Conjutamente com a função iremos utilizar a função `as.dist` que retorna uma matriz de distancia através da distância calculada pela função `textstat_dist`. Afim de obter um cluster hierarquico de análise iremos também utilizar a função `hclust`.
+
+Vamos utilizar a mesma base de discursos dos presidentes dos EUA, em que já possuimos um corpus pronto.
+
+```{r, echo = T, warning = F, message = F, cache=T}
+toks_inaug <- tokens(data_corpus_inaugural)
+dfmat_inaug <- dfm(toks_inaug, remove = stopwords('en'))
+tstat_dist <- as.dist(textstat_dist(dfmat_inaug))
+clust <- hclust(tstat_dist)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+plot(clust, xlab = "Distance", ylab = NULL)
+
+```
+
+
+###  Atividade prática:
+Replique a análise para os partidos com a base de dados de pronunciamentos no dia a aprovação do impeachement da Presidenta Dilma Vana Rousseff.
 
 ## KEYNESS: Análise de Frequência Relativa
+Segundo implementador original da metodologia (WordSmith), Keyness é uma pontuação de associação para *identificar palavras frequentes em documentos em um grupo de referência e de destino*. O algoritmo identifica palavras-chave em uma base, comparando padrões de freqüência.
+
+Uma palavra é dita “chave” se:
+
+* ocorre no texto pelo menos tantas vezes quantas o usuário tenha especificado como frequência mínima
+* sua freqüência no texto, quando comparada com sua freqüência em um corpus de referência, é tal que a probabilidade estatística, conforme calculada por um procedimento apropriado, é menor ou igual a um p − valor especificado pelo usuário.
+
+_Keyness positivo e negativo:_ Uma palavra que é positivamente _chave_ ocorre mais frequentemente do que seria esperado por acaso em comparação com o corpus de referência. Uma palavra que é negativamente _chave_ ocorre com menos frequência do que seria esperado por acaso em comparação com o corpus de referência.
+
+Usando a função `textstat_keyness()`, você pode *comparar frequências de palavras entre documentos de destino e de referência*. Os documentos de destino são artigos de notícias publicados em 2016 e os documentos de referência são os publicados em 2012-2015 neste exemplo. Caso não tenha, recomendo instalar o `quanteda.corpora` para obter os dados para o exemplo através de `devtools::install_github("quanteda/quanteda.corpora")`
+
+```{r, echo = T, warning = F, message = F, cache=T}
+library(quanteda)
+require(quanteda.textstats)
+require(quanteda.textplots)
+require(quanteda.corpora)
+library(lubridate)
+
+corp_news <- download("data_corpus_guardian")
+
+```
+
+Após baixar os dados, os transforme em dfm
+```{r, echo = T, warning = F, message = F, cache=T}
+toks_news <- tokens(corp_news, remove_punct = TRUE)
+dfmat_news <- dfm(toks_news, remove = stopwords('en'))
+```
+
+Após isso, pode-se já utilizar a função que irá verificar a frequencia relativa entre o target (documento de destino) e os documentos de referência
+```{r, echo = T, warning = F, message = F, cache=T}
+tstat_key <- textstat_keyness(dfmat_news,
+target = year(docvars(dfmat_news, 'date')) >= 2016)
+
+attr(tstat_key, 'documents') <- c('2016', '2012-2015')
+
+textplot_keyness(tstat_key)
+
+```
+O gráfico acima nos informa que os termos chave em target (2016) são `trump, 2016, clinton, sanders, cruz, eu, brexit`, em relação aos termos de referência (2012-2015) que são `captions, yesterday, aest, clegg, miliband`. Logo em 2016 os termos chave se referem principalmente as eleições presidenciais de 2016 dos EUA. Já os termos chave negativos, logo que ocorrem com menor frequência em 2016 e maior frequência entre 2012 e 2015 se referem as disputas políticas entre Clegg e Miliband no Reino Unido. 
